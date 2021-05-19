@@ -66,8 +66,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-    </nav>
-    <h1>Hello, world!</h1>
+    </nav>    
     <!-- Messages -->
     {% if messages %}
         <div class="message-container">
@@ -75,8 +74,14 @@
         </div>
     {% endif %}
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    {% block page_header %}
+    {% endblock %}
 
-        
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+
   </body>
 </html>
