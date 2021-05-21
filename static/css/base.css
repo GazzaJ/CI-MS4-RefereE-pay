@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+.light-background {
+    background-color: #e6eaee;
+}
+
+.green {
+    background-color: #00813e;
+}
+
+.dark-blue {
+    background-color: #011e41;
+}
+
+.red {
+    background-color: #e1261c;
+}
