@@ -1,0 +1,90 @@
+[
+    {
+        "pk": 1,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Bishops Cleeve Colts U11 Colts",
+            "short_name": "Bishops Cleeve Colts",
+            "club": 2,
+            "age_group": "U11",
+            "manager_coach": "Keith Carter"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Churchdown Panthers Youth U11 Blacks",
+            "short_name": "Churchdown Panthers Blacks",
+            "club": 8,
+            "age_group": "U11",
+            "manager_coach": "Mark Howard"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Charlton Rovers Youth U11 Blues",
+            "short_name": "Charlton Rovers Blues",
+            "club": 3,
+            "age_group": "U11",
+            "manager_coach": "Rob Morris"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "matches.team",
+        "fields":{ 
+            "team_name":"FC Lakeside Youth U11 Reds",
+            "short_name":"FC Lakseide Reds",
+            "club": 4,
+            "age_group":"U11",
+            "manager_coach":"Alex Hunt"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Leckhampton Rovers Youth U11 All Stars",
+            "short_name": "LRFC All Stars",
+            "club": 1,
+            "age_group": "U11",
+            "manager_coach": "Gareth John"
+        }
+    },    
+    {
+        "pk": 6,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Prestbury Phantoms Youth U11 Raiders",
+            "short_name": "Prestbury Phantoms Raiders",
+            "club": 5,
+            "age_group": "U11",
+            "manager_coach": "James Walker"
+        }
+    },    
+    {
+        "pk": 7,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Southside Star Youth U11 Pumas",
+            "short_name": "Southside Star Pumas",
+            "club": 6,
+            "age_group": "U11",
+            "manager_coach": "James Jackson"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Winchcombe Town Youth U11",
+            "short_name": "Winchcombe Town",
+            "club": 7,
+            "age_group": "U11",
+            "manager_coach": "Mark Duff"
+        }
+    }
+]

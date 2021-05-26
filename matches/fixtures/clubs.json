@@ -1,0 +1,82 @@
+[
+    {
+        "pk": 1,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "Leckhampton Rovers FC",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/leckhampton.jpg",
+            "club_badge": "leckhampton.jpg",
+            "website_url": "https://www.leckhamptonrovers.co.uk/"
+        }
+    },
+    {
+        "pk":2,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "Bishops Cleeve Colts",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/bishops-cleeve-colts.jpg",
+            "club_badge" :"bishops-cleeve-colts.jpg",
+            "website_url": "https://bishopscleevecolts.co.uk/"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "Charlton Rovers AFC",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/charlton-rovers.jpg",
+            "club_badge": "charlton-rovers.jpg",
+            "website_url": "https://www.charltonrovers.co.uk/"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "FC Lakeside",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/fc-lakeside(1).jpg",
+            "club_badge": "fc-lakeside.jpg",
+            "website_url": "http://fclakeside.co.uk/"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "Prestbury Phantoms FC",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/phantoms.jpg",
+            "club_badge": "phantoms.jpg",
+            "website_url": "https://www.prestburyphantoms.co.uk/"
+        }
+    },
+    {
+        "pk": 6,
+        "model":"matches.club",
+        "fields": {
+            "club_name": "Southside Star FC",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/southside-star.jpg",
+            "club_badge": "southside-star.jpg",
+            "website_url": "https://www.southsidestarfc.co.uk/"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "Winchcombe Town FC",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/winchcombe-town(1).jpg",
+            "club_badge": "winchcombe-town.jpg",
+            "website_url": "https://www.winchcombetownfc.co.uk/"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "matches.club",
+        "fields": {
+            "club_name": "Churchdown Panthers FC",
+            "club_badge_url": "https://www.cheltenhamyouthleague.co.uk/img/cyfl/tn/churchdown.jpg",
+            "club_badge": "churchdown.jpg",
+            "website_url": "https://www.churchdownpanthers.co.uk/"
+        }
+    }
+]

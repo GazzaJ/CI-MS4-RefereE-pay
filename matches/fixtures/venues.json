@@ -1,0 +1,114 @@
+[
+    {
+        "pk": 1,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "King George V Playing Field #6",
+            "venue_short_name": "KGV Playing Field #6",
+            "street_address": "Brooklyn Road",
+            "town_or_city": "Cheltenham",
+            "county": "Gloucestershire",
+            "postcode": "GL51 8DT",
+            "country": "England",
+            "venue_map": "kgv.png"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "King George V Playing Field #7",
+            "venue_short_name": "KGV Playing Field #7",
+            "street_address": "Brooklyn Road",
+            "town_or_city": "Cheltenham",
+            "county": "Gloucestershire",
+            "postcode": "GL51 8DT",
+            "country": "England",
+            "venue_map": "kgv.png"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "Naunton Park Playing Field #3",
+            "venue_short_name": "Naunton Park #3",
+            "street_address": "Asquith Road",
+            "town_or_city": "Cheltenham",
+            "county": "Gloucestershire",
+            "postcode": "GL53 7EL",
+            "country": "England",
+            "venue_map": "naunton.png"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "The Burrows Playing Field #4",
+            "venue_short_name": "The Burrows #4",
+            "street_address": "Moorend Grove",
+            "town_or_city": "Cheltenham",
+            "county": "Gloucestershire",
+            "postcode": "GL53 0EY",
+            "country": "England",
+            "venue_map": "burrows.png"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "The Beeches Playing Field #3",
+            "venue_short_name": "The Beeches #3",
+            "street_address": "Cedar Close",
+            "town_or_city": "Cheltenham",
+            "county": "Gloucestershire",
+            "postcode": "GL53 8PF",
+            "country": "England",
+            "venue_map": "beeches.png"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "Priors Farm Playing Field #3",
+            "venue_short_name": "Priors Farm #3",
+            "street_address": "Imjin Road",
+            "town_or_city": "Cheltenham",
+            "county": "Gloucestershire",
+            "postcode": "GL52 5FT",
+            "country": "England",
+            "venue_map": "priors.png"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "Shipton Playing Field",
+            "venue_short_name": "The Burrows #4",
+            "street_address": "Square Ditch",
+            "town_or_city": "Shipton Oliffe",
+            "county": "Gloucestershire",
+            "postcode": "GL54 4HT",
+            "country": "England",
+            "venue_map": ""
+        }
+    },
+    {
+        "pk": 8,
+        "model": "matches.venue",
+        "fields": {
+            "venue_name": "Bishops Cleeve Sports Ground #8",
+            "venue_short_name": "Bishops Cleeve #8",
+            "street_address": "Cheltenham Road",
+            "town_or_city": "Bishops Cleeve",
+            "county": "Gloucestershire",
+            "postcode": "GL52 8LZ",
+            "country": "England",
+            "venue_map": ""
+        }
+    }
+]
