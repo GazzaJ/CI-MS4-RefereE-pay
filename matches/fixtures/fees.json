@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "matches.fee",
         "fields": {
-            "age_group": 1,
+            "age": 1,
             "referee_fee": 5.00,
             "asst_referee": 0,
             "nonpayment_fine": 25.00,
@@ -14,7 +14,7 @@
         "pk": 2,
         "model": "matches.fee",
         "fields": {
-            "age_group": 2,
+            "age": 2,
             "referee_fee": 5.00,
             "asst_referee": 0,
             "nonpayment_fine": 25.00,
@@ -25,7 +25,7 @@
         "pk": 3,
         "model": "matches.fee",
         "fields": {
-            "age_group": 3,
+            "age": 3,
             "referee_fee": 11.00,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -36,7 +36,7 @@
         "pk": 4,
         "model": "matches.fee",
         "fields": {
-            "age_group": 4,
+            "age": 4,
             "referee_fee": 11.00,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -47,7 +47,7 @@
         "pk": 5,
         "model": "matches.fee",
         "fields": {
-            "age_group": 5,
+            "age": 5,
             "referee_fee": 11.00,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -58,7 +58,7 @@
         "pk": 6,
         "model": "matches.fee",
         "fields": {
-            "age_group": 6,
+            "age": 6,
             "referee_fee": 11.00,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -69,7 +69,7 @@
         "pk": 7,
         "model": "matches.fee",
         "fields": {
-            "age_group": 7,
+            "age": 7,
             "referee_fee": 11.00,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -80,7 +80,7 @@
         "pk": 8,
         "model": "matches.fee",
         "fields": {
-            "age_group": 8,
+            "age": 8,
             "referee_fee": 11.00,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -91,7 +91,7 @@
         "pk": 9,
         "model": "matches.fee",
         "fields": {
-            "age_group": 9,
+            "age": 9,
             "referee_fee": 12.50,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -102,7 +102,7 @@
         "pk": 10,
         "model": "matches.fee",
         "fields": {
-            "age_group": 10,
+            "age": 10,
             "referee_fee": 12.50,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -113,7 +113,7 @@
         "pk": 11,
         "model": "matches.fee",
         "fields": {
-            "age_group": 11,
+            "age": 11,
             "referee_fee": 12.50,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
@@ -124,7 +124,7 @@
         "pk": 12,
         "model": "matches.fee",
         "fields": {
-            "age_group": 12,
+            "age": 12,
             "referee_fee": 12.50,
             "asst_referee": 5.00,
             "nonpayment_fine": 25.00,
