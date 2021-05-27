@@ -1,7 +1,7 @@
 [
     {
         "pk": 1,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 1,
@@ -16,7 +16,7 @@
     },
     {
         "pk": 2,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 2,
@@ -31,7 +31,7 @@
     },
     {
         "pk": 3,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 7,
@@ -46,7 +46,7 @@
     },
     {
         "pk": 4,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 6,
@@ -61,7 +61,7 @@
     },
     {
         "pk": 5,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 2,
@@ -76,7 +76,7 @@
     },
     {
         "pk": 6,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 3,
@@ -91,7 +91,7 @@
     },
     {
         "pk": 7,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 1,
@@ -106,7 +106,7 @@
     },
     {
         "pk": 8,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 7,
@@ -121,7 +121,7 @@
     },
     {
         "pk": 9,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 3,
@@ -136,7 +136,7 @@
     },
     {
         "pk": 10,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 4,
@@ -151,7 +151,7 @@
     },
     {
         "pk": 11,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 2,
@@ -166,7 +166,7 @@
     },
     {
         "pk": 12,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 1,
@@ -181,7 +181,7 @@
     },
     {
         "pk": 13,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 4,
@@ -196,7 +196,7 @@
     },
     {
         "pk": 14,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 5,
@@ -211,7 +211,7 @@
     },
     {
         "pk": 15,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 3,
@@ -226,7 +226,7 @@
     },
     {
         "pk": 16,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 2,
@@ -241,7 +241,7 @@
     },
     {
         "pk": 17,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 5,
@@ -256,7 +256,7 @@
     },
     {
         "pk": 18,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 6,
@@ -271,7 +271,7 @@
     },
     {
         "pk": 19,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 4,
@@ -286,7 +286,7 @@
     },
     {
         "pk": 20,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 3,
@@ -301,7 +301,7 @@
     },
     {
         "pk": 21,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 6,
@@ -316,7 +316,7 @@
     },
     {
         "pk": 22,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 7,
@@ -331,7 +331,7 @@
     },
     {
         "pk": 23,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 5,
@@ -346,7 +346,7 @@
     },
     {
         "pk": 24,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 4,
@@ -361,7 +361,7 @@
     },
     {
         "pk": 25,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 7,
@@ -376,7 +376,7 @@
     },
     {
         "pk": 26,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 1,
@@ -391,7 +391,7 @@
     },
     {
         "pk": 27,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 6,
@@ -406,7 +406,7 @@
     },
     {
         "pk": 28,
-        "model": "matches.match",
+        "model": "matches.game",
         "fields": {
             "age_group": 3,
             "team1": 5,
