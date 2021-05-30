@@ -1,13 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <h1 class="text-center">Fixtures</h1>
+{% endblock %}
+
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {{ matches }}
-            </div>
-        </div>
+    <div class="container">        
+        {% for match in matches %} 
+            <a href="">
+                <div class="row ">
+                    <div class="col-lg-2 text-center border border-white">
+                        <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
+                    </div>
+                    <div class="col-lg-3">
+                        <p>{{ match.home_team }}</p>                        
+                        
+                    </div>
+                    <div class="col-lg-2 text-center">
+                        <p>VS</p>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <p>{{ match.away_team }}</p>                        
+                    </div>
+                    <div class="col-lg-2">
+                        <img class="club-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
+                    </div>
+                </div>
+            </a>
+            <div class="row">
+                <div class="col text-center mb-5">
+                    {{ match.date_time }}
+                    <a href="{{ match.venue.map }}">{{ match.venue }}</a>
+                </div>
+            </div> 
+        {% endfor %}
+        
+                  
     </div>
 
 

@@ -17,3 +17,9 @@ html {
 .red {
     background-color: #e1261c;
 }
+
+.club-badge {
+    height: 5rem;
+    width: 5rem;
+    object-fit: contain;
+}

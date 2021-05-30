@@ -8,10 +8,14 @@ def all_matches(request):
     including, sorting and searching
     """
 
-    matches = Game.object.all()
+    matches = Game.objects.all()
+    teams = Team.objects.all()
+    clubs = Club.objects.all()
 
     context = {
         'matches': matches,
+        'teams': teams,
+        'clubs': clubs,
     }
 
     return render(request, 'matches/matches.html', context)
