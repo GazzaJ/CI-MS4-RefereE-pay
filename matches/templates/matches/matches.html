@@ -14,8 +14,8 @@
         <div class="match-overlay"></div>
         {% for match in matches %}            
         
-            <a class="match-text" href="">
-                <div class="row match mb-3 align-items-center center-spot">
+            <a class="match-text" href="{% url 'match_detail' match.id %}">
+                <div class="row match mb-3 align-items-center border-green">
                     <div class="col-4 col-lg-2 team text-center">
                         <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
                     </div>

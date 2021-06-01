@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 from .models import Venue, Club, Age_Group, Fee, Team, Game
 
 
@@ -19,3 +21,19 @@ def all_matches(request):
     }
 
     return render(request, 'matches/matches.html', context)
+
+
+@login_required
+def match_detail(request, game_id):
+    """
+    This view will render the full details
+    of each individual match when selected
+    """
+
+    match = get_object_or_404(Game, pk=game_id)
+
+    context = {
+        'match': match
+    }
+
+    return render(request, 'matches/match_detail.html', context)
