@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block page_header %}
-    <h1 class="text-center">Fixtures</h1>
+    <h1 class="text-center mb-5">Fixtures</h1>
 {% endblock %}
 
 {% block content %}
     <div class="container">        
         {% for match in matches %} 
             <a href="">
-                <div class="row ">
-                    <div class="col-lg-2 text-center border border-white">
+                <div class="row match">
+                    <div class="col-lg-2 team text-center border border-white">
                         <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
                     </div>
                     <div class="col-lg-3">

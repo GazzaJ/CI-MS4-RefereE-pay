@@ -6,26 +6,27 @@
 {% endblock %}
 
 {% block content %}    
-    <div class="container">
-        <div class="row">
-            <div id="home-header" class="col-12 col-lg-9">
+    <div class="container home-container">
+        <div class="overlay"></div>
+        <div class="row justify-content-center align-items-center index-links">
+            <div id="home-header" class="col-12 col-lg-8">
                 <h1 class="text-white">Welcome to RefereE-Pay</h1>
-                <h3 class="text-white">The app that lets you pay your matchday Ref's fees.</h3>
+                <h3 class="text-white py-5">The app that lets you pay your matchday Ref's fees.</h3>
             </div>
-            <div id="sign-in" class="col-12 col-lg-3 mt-10 light-background">
-                <div class="row">
-                    <div class="col">
+            <div id="sign-in" class="col-10 col-lg-4 light-background">
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
                         <p>Already have a RefereE-Pay Account?</p>
-                        <a class="btn btn-lg green text-white rounded-0" href="{% url 'account_login' %}" role="button">Sign-In</a>                        
-                    </div>
-                </div>
+                        <a class="btn btn-lg green text-white rounded-3" href="{% url 'account_login' %}" role="button">Sign-In</a>
+                    </div> 
+                </div>                
                 <div class="row">
-                    <div class="col my-5 mt-5">
-                        <p>Don't have a RefereE-Pay account yet?</p>
-                        <a class="btn btn-lg red text-white rounded-0" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
+                    <div class="col red py-5 mt-5 text-center">
+                        <p class="text-white">Don't have a RefereE-Pay account yet?</p>
+                        <a class="text-white rounded-0" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 {% endblock %}
