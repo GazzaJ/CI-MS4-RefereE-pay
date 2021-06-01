@@ -2,6 +2,7 @@ body {
     background: url('/media/park-goals.jpg') no-repeat center center fixed;
     background-size: cover;    
 }
+
 .overlay {
     height: 100%;
     width: 100%;

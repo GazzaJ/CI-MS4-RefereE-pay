@@ -1,7 +1,28 @@
-.container {
-    background-color: #00813e;
+body {
+    background: url('/media/corner-ball.jpg') no-repeat center center fixed;
+    background-size: cover;    
+}
+
+.match-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgb(255, 255, 255, 0.7);
+    z-index: -9999;
 }
 
 .match {
-    background-color: #00813e;
+    background-color: #fff;
+}
+
+.match-text {
+    color: black;
+}
+
+.center-spot {
+    border: 2px solid #00813e;
+    border-radius: 1rem;
+    padding-right: 1rem;
 }
