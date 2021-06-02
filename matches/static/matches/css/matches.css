@@ -15,6 +15,13 @@ body {
 
 .match {
     background-color: #fff;
+    padding: 1rem;
+}
+
+.club-badge {
+    height: 5rem;
+    width: 5rem;
+    object-fit: contain;
 }
 
 .match-text {
@@ -30,3 +37,10 @@ body {
 .match p {
     margin-bottom: 0;
 }
+
+.match-badge {
+    height: 7rem;
+    width: 7rem;
+    object-fit: contain;
+}
+

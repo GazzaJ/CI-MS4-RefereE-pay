@@ -12,33 +12,50 @@
 {% block content %}
     <div class="container">
         <div class="match-overlay"></div>
-            <div class="row match mb-3 align-items-center border-green">
-                <div class="col-4 col-lg-2 team text-center">
-                    <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
+        <!-- Match teams -->
+            <div class="row match mb-3 mx-1 align-items-center border-green">
+                <div class="col-4 col-lg-2 text-center">
+                    <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
                 </div>
                 <div class="col-8 col-lg-3 text-center">
-                    <p>{{ match.home_team }}</p> 
+                    <p class="coach mb-3">{{ match.home_team }}</p>
+                    <p>Coach: {{ match.home_team.manager_coach }}</p>
                 </div>
                 <div class="col-sm-12 col-lg-2 text-center">
-                    <p>VS</p>
+                    <h3>VS</h3>
                 </div>
                 <div class="col-8 col-lg-3 text-center">
-                    <p>{{ match.away_team }}</p>                        
+                    <p class="coach mb-3">{{ match.away_team }}</p>
+                    <p>Coach: {{ match.away_team.manager_coach }}</p>                        
                 </div>
                 <div class="col-4 col-lg-2 text-center">
-                    <img class="club-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
+                    <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
                 </div>
             </div>
-            <div class="row match mb-3 align-items-center border-green">
-                <div class="col">                    
-                    <p>{{ match.date_time }}</p>
-                    <p>{{ match.venue }}</p>
+            <!-- Venue and KO Time -->
+            <div class="row match mb-3 mx-1 align-items-center border-green">
+                <div class="col text-center">
+                    <h3 class="mb-4">Venue and Kick-off Time</h3>                   
+                    <p class="mb-4">{{ match.date_time }}</p>
+                    <!-- Venue Map Accordion -->                   
+                    <p>
+                        <a class="btn btn-success" data-toggle="collapse" href="#venue-map" role="button" aria-expanded="false" aria-controls="venue-map">
+                          {{ match.venue }}
+                        </a>                        
+                    </p>
+                        <div class="collapse" id="venue-map">
+                            <div class="card card-body">
+                                <img src="/media/{{match.venue.map}}" alt="{{ match.venue }}">
+                            </div>
+                      </div>
                 </div>                
-            </div>            
-            <div class="row match mb-3 align-items-center border-green">
-                <div class="col-12">
+            </div>
+            <!-- Match Officials -->            
+            <div class="row match mb-3 mx-1 align-items-center border-green">
+                <div class="col-12 text-center">
+                    <h3 class="mb-4">Match Officials</h3>
                     <div class="row">
-                        <div class="col text-center">
+                        <div class="col text-center mb-3">
                             <p>Referee: {{ match.referee }}</p>
                         </div>
                     </div>
@@ -52,6 +69,18 @@
                     </div>
                 </div>
             </div>
+    </div>
+    <!-- Action Buttons/Links -->
+    <div class="row no-gutters my-5">
+        <div class="col-4 text-center">
+            <a class="btn border-green" href="{% url 'matches' %}">Back to Fixtures</a>
+        </div>
+        <div class="col-4 text-center">
+            <a class="btn border-green" href="">Chat with Ref</a>
+        </div>
+        <div class="col-4  text-center">
+            <a class="btn border-green" href="">Pay Match Fees</a>
+        </div>
     </div>
 
 
