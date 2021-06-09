@@ -2,9 +2,34 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <h1 class="text-center mb-5">Fixtures</h1>
 {% endblock %}
 
 {% block content %}    
-    
+    <div class="match-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2>Pending Payments</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded">
+
+                    </div>
+                {% else %}
+                    <p>You have not selected any matches for payment!</p>
+                    <a class="btn btn-success" href="{% url 'matches' %}">Back to Matches</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
