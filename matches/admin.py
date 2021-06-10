@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Age_Group, Club, Venue, Team, Game, Fee
+from .models import Club, Venue, Team, Game, Fee
 
 
 class ClubAdmin(admin.ModelAdmin):
@@ -47,7 +47,6 @@ class GameAdmin(admin.ModelAdmin):
     ordering = ('date_time',)
 
 
-admin.site.register(Age_Group)
 admin.site.register(Club, ClubAdmin)
 admin.site.register(Venue, VenueAdmin)
 admin.site.register(Team, TeamAdmin)

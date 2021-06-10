@@ -7,3 +7,8 @@ def review_bag(request):
     """
 
     return render(request, 'bag/bag.html')
+
+
+def add_to_bag(request, match_id):
+    """ Add the match fees tto the shopping bag """
+    

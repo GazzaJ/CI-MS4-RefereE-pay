@@ -55,19 +55,18 @@
                 </div>                
             </div>
             <!-- Match Officials -->
-            <form action="" method="POST">
-                {% csrf_token %}          
+            <form action="" method="POST">          
                 <div class="row match mb-3 mx-1 align-items-center border-green">
                     <div class="col-12 text-center">
                         <h3 class="mb-4">Match Officials</h3>
                         <div class="row">
                             <div class="col text-center mb-3">
-                                <p>Referee: {{ match.referee }}</p>                                
+                                <p>Referee: {{ match.referee }}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-6 text-center">
-                                <p>Asst Referee: {{ match.asst_referee1 }}</p>                                
+                                <p>Asst Referee: {{ match.asst_referee1 }}</p>
                             </div>
                             <div class="col-12 col-md-6 text-center">
                                 <p>Asst Referee: {{ match.asst_referee2 }}</p>
@@ -75,7 +74,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <a class="btn border-green" href="">Review Match Fees</a>
+                                <a class="btn border-green" href="">Pay Match Fees</a>
                             </div>
                         </div>
                     </div>
