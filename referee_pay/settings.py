@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'home',
     'matches',
     'bag',
+    'profiles',
 ]
 
 MIDDLEWARE = [

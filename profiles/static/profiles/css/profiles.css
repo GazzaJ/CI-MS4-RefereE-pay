@@ -1,0 +1,14 @@
+body {
+    background: url('/media/female-football.jpg') no-repeat center center fixed;
+    background-size: cover;    
+}
+
+.profile-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgb(255, 255, 255, 0.7);
+    z-index: -9999;
+}

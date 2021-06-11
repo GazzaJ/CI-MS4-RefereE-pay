@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<h1 class="text-center mb-5">{{ user.username }}'s Profile</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="profile-overlay"></div>
+    </div>
+{% endblock %}
