@@ -85,26 +85,59 @@
                         </p>
                         <div class="collapse" id="match-fees">
                             <div class="card card-body">
-                                <h3 class="mb-4">Match Fees</h3>
-                                <form action="">
+                                <h4 class="mb-4">Match Fees</h4>
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <!-- Referee Fees -->
+                                    <div class="form-row mb-1">
+                                        {% if match.referee %}
+                                            <div class="col-sm-12 col-md-4 text-right">
+                                                <span>Referee: </span>
+                                                    <input type="number" value="1" name="ref-fee" id="ref-fee" readonly>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <span>Match Fee: £ {{ match.home_team.age.referee_fee }}</span>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <span>Travel Exp: </span>
+                                                <input type="text" name="" id="">
+                                                <span>@ {{ match.home_team.age.milage_rate }} /mile (over 10 miles)</span>                                            
+                                            </div>
+                                        {% endif %}                                            
+                                    </div>
+                                    <!-- Asst Referee 1 Fees -->
+                                    <div class="form-row mb-1">
+                                        {% if match.asst_referee1 %}
+                                            <div class="col-sm-12 col-md-4 text-right">
+                                                <span>Asst Referee 1: </span>
+                                                <input type="number" value="1" name="asst1-fee" id="asst1-fee" readonly>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <span>Match Fee: £ {{ match.home_team.age.asst_referee }}</span>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <span>Travel Exp: </span>
+                                                <input type="number" name="asst1-trav" id="asst1-trav" size="3" readonly>
+                                                <span>@ {{ match.home_team.age.milage_rate }} /mile (over 10 miles)</span> 
+                                            </div>                                         
+                                        {% endif %}
+                                    </div>
+                                    <!-- Asst Referee 2 Fees -->
                                     <div class="form-row">
-                                        <div class="col-4 text-center mb-3">
-                                            <p>Referee: {{ match.referee }}</p>
-                                            <p>Fee: {{ match.home_team.age.referee_fee }}</p>
-                                            <p>age: {{ match.home_team.age }}</p>
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <p>Asst Referee: {{ match.asst_referee1 }}</p>
-                                            {% if match.asst_referee1 != "" %}
-                                            <p>Asst Fee: {{ match.home_team.age.asst_referee }}</p>
-                                            {% endif %}
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <p>Asst Referee: {{ match.asst_referee2 }}</p>
-                                            {% if match.asst_referee1 != "" %}
-                                            <p>Asst Fee: {{ match.home_team.age.asst_referee }}</p>
-                                            {% endif %}
-                                        </div>
+                                        {% if match.asst_referee2 %}
+                                            <div class="col-sm-12 col-md-4 text-right">
+                                                <span>Asst Referee 2: </span>
+                                                <input type="number" value="1" name="asst1-fee" id="asst1-fee" size="1" readonly>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <span>Match Fee: £ {{ match.home_team.age.asst_referee }}</span>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <span>Travel Exp: </span>
+                                                <input type="number" name="asst2-trav" id="asst2-trav" size="3" readonly>
+                                                <span>@ {{ match.home_team.age.milage_rate }} /mile (over 10 miles)</span>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </form>
                             </div>
@@ -122,5 +155,6 @@
                 <a class="btn border-green" href="">Chat with Ref</a>
             </div>
         </div>
+    </div>
 
 {% endblock %}
