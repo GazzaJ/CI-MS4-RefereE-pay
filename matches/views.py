@@ -37,3 +37,19 @@ def match_detail(request, game_id):
     }
 
     return render(request, 'matches/match_detail.html', context)
+
+
+@login_required
+def match_fees(request, game_id):
+    """
+    This view will render the full details
+    of each individual match when selected
+    """
+
+    match = get_object_or_404(Game, pk=game_id)
+
+    context = {
+        'match': match
+    }
+
+    return render(request, 'matches/match_fees.html', context)

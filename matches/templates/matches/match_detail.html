@@ -13,74 +13,106 @@
     <div class="container">
         <div class="match-overlay"></div>
         <!-- Match teams -->
-            <div class="row match mb-3 mx-1 align-items-center border-green">
-                <div class="col-4 col-lg-2 text-center">
-                    <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
-                </div>
-                <div class="col-8 col-lg-3 text-center">
-                    <p class="coach mb-3">{{ match.home_team }}</p>
-                    <p>Coach: {{ match.home_team.manager_coach }}</p>
-                </div>
-                <div class="col-sm-12 col-lg-2 text-center">
-                    <h3>VS</h3>
-                </div>
-                <div class="col-8 col-lg-3 text-center">
-                    <p class="coach mb-3">{{ match.away_team }}</p>
-                    <p>Coach: {{ match.away_team.manager_coach }}</p>                        
-                </div>
-                <div class="col-4 col-lg-2 text-center">
-                    <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
+        <div class="row match mb-3 mx-1 align-items-center border-green">
+            <div class="col-4 col-lg-2 text-center">
+                <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
+                    alt="match.home_team.club_name">
+            </div>
+            <div class="col-8 col-lg-3 text-center">
+                <p class="coach mb-3">{{ match.home_team }}</p>
+                <p>Coach: {{ match.home_team.manager_coach }}</p>
+            </div>
+            <div class="col-sm-12 col-lg-2 text-center">
+                <h3>VS</h3>
+            </div>
+            <div class="col-8 col-lg-3 text-center">
+                <p class="coach mb-3">{{ match.away_team }}</p>
+                <p>Coach: {{ match.away_team.manager_coach }}</p>
+            </div>
+            <div class="col-4 col-lg-2 text-center">
+                <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
+                    alt="match.away_team.club_name">
+            </div>
+        </div>
+        <!-- Venue and KO Time -->
+        <div class="row match mb-3 mx-1 align-items-center border-green">
+            <div class="col text-center">
+                <h3 class="mb-4">Venue and Kick-off Time</h3>
+                <p class="mb-4">{{ match.date_time }}</p>
+                <!-- Venue Map Accordion -->
+                <p>
+                    <a class="btn btn-success" data-toggle="collapse" href="#venue-map" role="button"
+                        aria-expanded="false" aria-controls="venue-map">
+                        {{ match.venue }}
+                    </a>
+                </p>
+                <div class="collapse" id="venue-map">
+                    <div class="card card-body">
+                        {% if match.venue.map %}
+                        <img src="/media/{{match.venue.map}}" alt="{{ match.venue }}">
+                        {% else %}
+                        <a class="btn btn-info" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-            <!-- Venue and KO Time -->
-            <div class="row match mb-3 mx-1 align-items-center border-green">
-                <div class="col text-center">
-                    <h3 class="mb-4">Venue and Kick-off Time</h3>                   
-                    <p class="mb-4">{{ match.date_time }}</p>
-                    <!-- Venue Map Accordion -->                   
-                    <p>
-                        <a class="btn btn-success" data-toggle="collapse" href="#venue-map" role="button" aria-expanded="false" aria-controls="venue-map">
-                          {{ match.venue }}
-                        </a>                        
-                    </p>
-                        <div class="collapse" id="venue-map">
+        </div>
+        <!-- Match Officials -->
+        <div class="row match mb-3 mx-1 align-items-center border-green">
+            <div class="col-12 text-center">
+                <h3 class="mb-4">Match Officials</h3>
+                <div class="row">
+                    <div class="col text-center mb-3">
+                        <p>Referee: {{ match.referee }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 text-center">
+                        <p>Asst Referee: {{ match.asst_referee1 }}</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <p>Asst Referee: {{ match.asst_referee2 }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <!-- Venue Map Accordion -->
+                        <p>
+                            <a class="btn btn-success" data-toggle="collapse" href="#match-fees" role="button"
+                                aria-expanded="false" aria-controls="venue-map">
+                                Review Match Fees
+                            </a>
+                        </p>
+                        <div class="collapse" id="match-fees">
                             <div class="card card-body">
-                                {% if match.venue.map %}
-                                    <img src="/media/{{match.venue.map}}" alt="{{ match.venue }}">
-                                {% else %}
-                                    <a class="btn btn-info" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
-                                {% endif %}
-                            </div>
-                      </div>
-                </div>                
-            </div>
-            <!-- Match Officials -->
-            <form action="" method="POST">
-                {% csrf_token %}          
-                <div class="row match mb-3 mx-1 align-items-center border-green">
-                    <div class="col-12 text-center">
-                        <h3 class="mb-4">Match Officials</h3>
-                        <div class="row">
-                            <div class="col text-center mb-3">
-                                <p>Referee: {{ match.referee }}</p>                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 text-center">
-                                <p>Asst Referee: {{ match.asst_referee1 }}</p>                                
-                            </div>
-                            <div class="col-12 col-md-6 text-center">
-                                <p>Asst Referee: {{ match.asst_referee2 }}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <a class="btn border-green" href="">Review Match Fees</a>
+                                <h3 class="mb-4">Match Fees</h3>
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="col-4 text-center mb-3">
+                                            <p>Referee: {{ match.referee }}</p>
+                                            <p>Fee: {{ match.home_team.age.referee_fee }}</p>
+                                            <p>age: {{ match.home_team.age }}</p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <p>Asst Referee: {{ match.asst_referee1 }}</p>
+                                            {% if match.asst_referee1 != "" %}
+                                            <p>Asst Fee: {{ match.home_team.age.asst_referee }}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <p>Asst Referee: {{ match.asst_referee2 }}</p>
+                                            {% if match.asst_referee1 != "" %}
+                                            <p>Asst Fee: {{ match.home_team.age.asst_referee }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form> 
+            </div>
+        </div>
         <!-- Action Buttons/Links -->
         <div class="row no-gutters my-5">
             <div class="col-md-6 text-center">
@@ -88,8 +120,7 @@
             </div>
             <div class="col-md-6 text-center">
                 <a class="btn border-green" href="">Chat with Ref</a>
-            </div>        
+            </div>
         </div>
-    </div>
 
 {% endblock %}

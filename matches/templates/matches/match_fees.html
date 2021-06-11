@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <h1 class="text-center mb-5">Match Fees Detail</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="match-overlay"></div>
+        <!-- Match teams -->
+            <div class="row match mb-3 mx-1 align-items-center border-green">
+                <div class="col-4 col-lg-2 text-center">
+                    <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
+                </div>
+                <div class="col-8 col-lg-3 text-center">
+                    <p class="coach mb-3">{{ match.home_team }}</p>                    
+                </div>
+                <div class="col-sm-12 col-lg-2 text-center">
+                    <h3>VS</h3>
+                </div>
+                <div class="col-8 col-lg-3 text-center">
+                    <p class="coach mb-3">{{ match.away_team }}</p>                                            
+                </div>
+                <div class="col-4 col-lg-2 text-center">
+                    <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
+                </div>
+            </div>
+            
+            <!-- Match Officials -->
+            <form action="" method="POST">
+                {% csrf_token %}          
+                <div class="row match mb-3 mx-1 align-items-center border-green">
+                    <div class="col-12 text-center">
+                        <h3 class="mb-4">Match Officials</h3>
+                        <div class="row">
+                            <div class="col text-center mb-3">
+                                <p>Referee: {{ match.referee }}</p>
+                                <p>Fee: {{ match.home_team.age.referee_fee }}</p>                                
+                                <p>age: {{ match.home_team.age }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6 text-center">
+                                <p>Asst Referee: {{ match.asst_referee1 }}</p>
+                                {% if match.asst_referee1 != "" %}
+                                    <p>Asst Fee: {{ match.home_team.age.asst_referee }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col-12 col-md-6 text-center">
+                                <p>Asst Referee: {{ match.asst_referee2 }}</p>
+                                {% if match.asst_referee1 != "" %}
+                                    <p>Asst Fee: {{ match.home_team.age.asst_referee }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a class="btn border-green" href="">Review Match Fees</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+        <!-- Action Buttons/Links -->
+        <div class="row no-gutters my-5">
+            <div class="col-md-6 text-center">
+                <a class="btn border-green" href="{% url 'matches' %}">Back to Fixtures</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <a class="btn border-green" href="">Chat with Ref</a>
+            </div>        
+        </div>
+    </div>
+
+{% endblock %}
