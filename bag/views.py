@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 
 
 def review_bag(request):
@@ -11,4 +11,3 @@ def review_bag(request):
 
 def add_to_bag(request, match_id):
     """ Add the match fees tto the shopping bag """
-    
