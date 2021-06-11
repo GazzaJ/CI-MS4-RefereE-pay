@@ -6,6 +6,15 @@ html {
     height: 100%;
 }
 
+/*---------- Navbar ----------*/
+
+#website-logo {
+    height: 3rem;
+    width: auto;
+}
+
+/*---------- Colours ----------*/
+
 .light-background {
     background-color: #e6eaee;
 }
@@ -21,6 +30,8 @@ html {
 .red {
     background-color: #e1261c;
 }
+
+/*---------- Footer ----------*/
 
 .fa-logo {
     height: 4rem;   
