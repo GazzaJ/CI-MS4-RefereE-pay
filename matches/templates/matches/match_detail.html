@@ -63,7 +63,7 @@
                 <h3 class="mb-4">Match Officials</h3>
                 <div class="row">
                     <div class="col text-center mb-3">
-                        <p>Referee: {{ match.referee }}</p>
+                        <p>Referee: {{ match.referee }}</p>                        
                     </div>
                 </div>
                 <div class="row">
@@ -83,80 +83,67 @@
                                 Review Match Fees
                             </a>
                         </p>
+                        <!-- Review Match fees and add them to the bag -->
                         <div class="collapse" id="match-fees">
                             <div class="card card-body">
                                 <h4 class="mb-4">Match Fees</h4>
-                                <form class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
+                                <form id="add-ref" class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
                                     {% csrf_token %}
                                     <!-- Referee Fees -->
-                                    <div class="form-row mb-1">
-                                        {% if match.referee %}
+                                    {% if match.referee %}
+                                        <div class="form-row mb-1">
                                             <div class="col-sm-12 col-md-4 text-right">
-                                                <span>Referee: </span>
-                                                    <input type="number" value="1" name="ref-fee" id="ref_id_{{ match.referee }}" data-item_id="{{ match.referee }}" readonly>
+                                                <label for="ref_id_{{ match.referee }}">Referee: </label>
+                                                <input type="text" value="{{ match.referee }}" name="ref-id" id="ref_id_{{ match.referee }}" data-ref_id="{{ match.referee }}" readonly>                                                
                                             </div>
                                             <div class="col-sm-12 col-md-4">
-                                                <span>Match Fee: £ {{ match.home_team.age.referee_fee }}</span>
+                                                <label for="">Match Fee: </label>
+                                                <input type="number" value="{{ ref_fee }}" name="ref-fee" id="ref-fee" readonly>
                                             </div>
                                             <div class="col-sm-12 col-md-4">
-                                                <span>Travel Exp: £</span>
-                                                <input type="number" name="" id="">
+                                                <label>Travel: </label>
+                                                <input type="number" name="ref-trav" id="ref-trav">
                                             </div>
-                                        {% endif %}                                            
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col text-center">
-                                            <input type="submit" class="btn btn-warning" value="Add to Bag">
                                         </div>
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                    </div>
-                                </form>
-                                <form class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <!-- Asst Referee 1 Fees -->
-                                    <div class="form-row mb-1">
+                                        {% endif %}
+                                        <!-- Asst Referee 1 Fees -->
                                         {% if match.asst_referee1 %}
-                                            <div class="col-sm-12 col-md-4 text-right">
-                                                <span>Asst Referee 1: </span>
-                                                <input type="number" value="1" name="asst1-fee" id="asst1_id_{{ match.asst_referee1 }}" data-item_id="{{ match.asst_referee1 }}" readonly>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4">
-                                                <span>Match Fee: £ {{ match.home_team.age.asst_referee }}</span>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4">
-                                                <span>Travel Exp: £</span>
-                                                <input type="number" name="asst1-trav" id="asst1-trav" size="3" readonly>                                                 
-                                            </div>                                         
+                                            <div class="form-row mb-1">
+                                                <div class="col-sm-12 col-md-4 text-right">
+                                                    <label for="asst1_id_{{ match.asst_referee1 }}">Asst Ref 1: </label>
+                                                    <input type="text" value="{{ match.asst_referee1 }}" name="asst1-id" id="asst1-id" data-asst1_id="{{ match.asst_referee1 }}" readonly>                                                
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <label for="">Match Fee: </label>
+                                                    <input type="number" value="{{ asst1_fee }}" name="asst1-fee" id="asst1-fee" readonly>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <label>Travel: </label>
+                                                    <input type="number" name="asst1-trav" id="asst1-trav">
+                                                </div>
+                                            </div>                                        
                                         {% endif %}
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col text-center">
-                                            <input type="submit" class="btn btn-warning" value="Add to Bag">
-                                        </div>
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                    </div>
-                                </form>
-                                <form class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <!-- Asst Referee 2 Fees -->
-                                    <div class="form-row">
+                                        <!-- Asst Referee 2 Fees -->
                                         {% if match.asst_referee2 %}
-                                            <div class="col-sm-12 col-md-4 text-right">
-                                                <span>Asst Referee 2: </span>
-                                                <input type="number" value="1" name="asst2-fee" size="1" id="asste_id_{{ match.asst_referee2 }}" data-item_id="{{ match.asst_referee2 }}" readonly>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4">
-                                                <span>Match Fee: £ {{ match.home_team.age.asst_referee }}</span>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4">
-                                                <span>Travel Exp: £</span>
-                                                <input type="number" name="asst2-trav" id="asst2-trav" size="3" readonly>                                                
-                                            </div>
+                                            <div class="form-row mb-1">
+                                                <div class="col-sm-12 col-md-4 text-right">
+                                                    <label for="asst2_id_{{ match.asst_referee2 }}">Asst Ref 2: </label>
+                                                    <input type="text" value="{{ match.asst_referee2 }}" name="asst2-id" id="asst2-id" data-asst1_id="{{ match.asst_referee2 }}" readonly>                                                
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <label for="">Match Fee: </label>
+                                                    <input type="number" value="{{ asst2_fee }}" name="asst2-fee" id="asst2-fee" readonly>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <label>Travel: </label>
+                                                    <input type="number" name="asst2-trav" id="asst2-trav">
+                                                </div>
+                                            </div>                                           
                                         {% endif %}
                                     </div>
                                     <div class="form-row">
                                         <div class="col text-center">
-                                            <input type="submit" class="btn btn-warning" value="Add to Bag">
+                                            <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>
@@ -178,4 +165,13 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script>
+        $('#add-ref').submit(function(){
+            $('#add-ref-fee').prop('disabled', true);
+        })
+    </script>
 {% endblock %}

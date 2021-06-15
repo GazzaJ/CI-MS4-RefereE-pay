@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from decimal import Decimal
 
 from .models import Venue, Club, Fee, Team, Game
 
@@ -31,9 +32,15 @@ def match_detail(request, game_id):
     """
 
     match = get_object_or_404(Game, pk=game_id)
+    ref_fee = Decimal(match.home_team.age.referee_fee)
+    asst1_fee = Decimal(match.home_team.age.asst_referee)
+    asst2_fee = Decimal(match.home_team.age.asst_referee)
 
     context = {
-        'match': match
+        'match': match,
+        'ref_fee': ref_fee,
+        'asst1_fee': asst1_fee,
+        'asst2_fee': asst2_fee,
     }
 
     return render(request, 'matches/match_detail.html', context)
@@ -46,10 +53,10 @@ def match_fees(request, game_id):
     of each individual match when selected
     """
 
-    match = get_object_or_404(Game, pk=game_id)
+    match = get_object_or_404(Game, pk=game_id)    
 
     context = {
-        'match': match
+        'match': match        
     }
 
     return render(request, 'matches/match_fees.html', context)
