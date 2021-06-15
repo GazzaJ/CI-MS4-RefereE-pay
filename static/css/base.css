@@ -34,7 +34,7 @@ html {
 /*---------- Footer ----------*/
 
 .fa-logo {
-    height: 4rem;   
+    height: 3rem;   
 }
 
 .fa-link::before {
@@ -43,4 +43,8 @@ html {
 
 .border-right {
     border-right: 2px solid white;
+}
+
+.social-link i {
+    font-size: 2rem;
 }
