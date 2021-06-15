@@ -50,6 +50,9 @@ INSTALLED_APPS = [
     'matches',
     'bag',
     'profiles',
+
+    # Other Apps
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -63,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'referee_pay.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -80,6 +85,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
@@ -102,7 +111,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = 'accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/matches/'
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
