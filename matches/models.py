@@ -21,6 +21,13 @@ class Venue(models.Model):
         return self.short_name
 
 
+class Official(models.Model):
+    name = models.CharField(max_length=60, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Club(models.Model):
     club_name = models.CharField(max_length=254, null=False, blank=False)
     club_badge_url = models.URLField(max_length=1024, null=False, blank=False)
@@ -67,9 +74,11 @@ class Game(models.Model):
     date_time = models.DateTimeField(auto_now=False, auto_now_add=False)    
     venue = models.ForeignKey('Venue', null=True, blank=False,
                               on_delete=models.SET_NULL)
-    referee = models.CharField(max_length=60, null=False, blank=False)
-    asst_referee1 = models.CharField(max_length=60, null=False, blank=False)
-    asst_referee2 = models.CharField(max_length=60, null=False, blank=False)
+    referee = models.ForeignKey('Official', related_name='ref', null=True, blank=True, on_delete=models.SET_NULL)
+    asst_referee1 = models.ForeignKey('Official', related_name='asst1', null=True, blank=True,
+                              on_delete=models.SET_NULL)
+    asst_referee2 = models.ForeignKey('Official', related_name='asst2', null=True, blank=True,
+                              on_delete=models.SET_NULL)
 
     def __str__(self):
         return f'{self.home_team} vs {self.away_team}'
