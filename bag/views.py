@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
+from decimal import Decimal
 
 
 def review_bag(request):
@@ -11,15 +13,21 @@ def review_bag(request):
 
 def add_to_bag(request, item_id):
     """ Add the match fees to the shopping bag """
-    quantity = int(request.POST.get('ref-fee'))
+
+    ref = request.POST.get('ref')
+    asst1 = request.POST.get('asst1')
+    asst2 = request.POST.get('asst2')
     redirect_url = request.POST.get('redirect_url')
+
+    # Check if bag in session, create one if not
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
-        bag[item_id] += quantity
+        messages.error(request, 'This item is already in your bag')
     else:
-        bag[item_id] = quantity
+        # Add the Product ID and Quantity to the bag
+        bag[item_id] = ref, asst1, asst2
 
     request.session['bag'] = bag
-    print(request.session['bag'])
+    print(request.session['bag'])    
     return redirect(redirect_url)

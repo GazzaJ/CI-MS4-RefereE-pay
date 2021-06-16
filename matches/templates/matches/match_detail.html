@@ -96,7 +96,7 @@
                                         <div class="form-row mb-1">
                                             <div class="col-sm-12 col-md-4 text-right">
                                                 <label for="ref_id_{{ match.referee }}">Referee: </label>
-                                                <input type="text" value="{{ match.referee }}" name="ref-id" id="ref_id_{{ match.referee }}" data-ref_id="{{ match.referee }}" readonly>                                                
+                                                <input type="text" value="{{ match.referee }}" name="ref" id="ref_id_{{ match.referee }}" data-item_id="{{ match.id}}" readonly>                                                
                                             </div>
                                             <div class="col-sm-12 col-md-4">
                                                 <label for="">Match Fee: </label>
@@ -113,7 +113,7 @@
                                             <div class="form-row mb-1">
                                                 <div class="col-sm-12 col-md-4 text-right">
                                                     <label for="asst1_id_{{ match.asst_referee1 }}">Asst Ref 1: </label>
-                                                    <input type="text" value="{{ match.asst_referee1 }}" name="asst1-id" id="asst1-id" data-asst1_id="{{ match.asst_referee1 }}" readonly>                                                
+                                                    <input type="text" value="{{ match.asst_referee1 }}" name="asst1" id="asst1-id" data-item_id="{{ match.id }}" readonly>                                                
                                                 </div>
                                                 <div class="col-sm-12 col-md-4">
                                                     <label for="">Match Fee: </label>
@@ -130,7 +130,7 @@
                                             <div class="form-row mb-1">
                                                 <div class="col-sm-12 col-md-4 text-right">
                                                     <label for="asst2_id_{{ match.asst_referee2 }}">Asst Ref 2: </label>
-                                                    <input type="text" value="{{ match.asst_referee2 }}" name="asst2-id" id="asst2-id" data-asst1_id="{{ match.asst_referee2 }}" readonly>                                                
+                                                    <input type="text" value="{{ match.asst_referee2 }}" name="asst2" id="asst2-id" data-asst1_id="{{ match.id }}" readonly>                                                
                                                 </div>
                                                 <div class="col-sm-12 col-md-4">
                                                     <label for="">Match Fee: </label>
