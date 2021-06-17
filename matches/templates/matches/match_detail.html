@@ -30,6 +30,7 @@
             <div class="col-8 col-lg-3 text-center">
                 <p class="coach mb-3">{{ match.away_team }}</p>
                 <p>Coach: {{ match.away_team.manager_coach }}</p>
+                <p>{{ match.id }}</p>
             </div>
             <div class="col-4 col-lg-2 text-center">
                 <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
@@ -94,51 +95,43 @@
                                     <!-- Referee Fees -->
                                     {% if match.referee %}
                                         <div class="form-row mb-1">
-                                            <div class="col-sm-12 col-md-4 text-right">
-                                                <label for="ref_id_{{ match.referee }}">Referee: </label>
-                                                <input type="text" value="{{ match.referee }}" name="ref" id="ref_id_{{ match.referee }}" data-item_id="{{ match.id}}" readonly>                                                
+                                            <input type="hidden" value=1 name="quantity" id="quantity" data-item-id="{{ match.id }}">
+                                            <div class="col-sm-12 col-md-4 text-left">
+                                                <p>Referee: {{ match.referee }}</p>
                                             </div>
-                                            <div class="col-sm-12 col-md-4">
-                                                <label for="">Match Fee: </label>
-                                                <input type="number" value="{{ ref_fee }}" name="ref-fee" id="ref-fee" readonly>
+                                            <div class="col-sm-12 col-md-4 text-left">
+                                                <p>Match Fee: {{ ref_fee }}</p>
                                             </div>
-                                            <div class="col-sm-12 col-md-4">
-                                                <label>Travel: </label>
-                                                <input type="number" name="ref-trav" id="ref-trav">
+                                            <div class="col-sm-12 col-md-4 text-left">
+                                                <p>Travel: {{ ref_trav }}</p>
                                             </div>
                                         </div>
                                         {% endif %}
                                         <!-- Asst Referee 1 Fees -->
                                         {% if match.asst_referee1 %}
                                             <div class="form-row mb-1">
-                                                <div class="col-sm-12 col-md-4 text-right">
-                                                    <label for="asst1_id_{{ match.asst_referee1 }}">Asst Ref 1: </label>
-                                                    <input type="text" value="{{ match.asst_referee1 }}" name="asst1" id="asst1-id" data-item_id="{{ match.id }}" readonly>                                                
+                                                <div class="col-sm-12 col-md-4 text-left">
+                                                    <p>Asst Ref 1: {{ match.asst_referee1 }}</p>                                                                                                    
                                                 </div>
-                                                <div class="col-sm-12 col-md-4">
-                                                    <label for="">Match Fee: </label>
-                                                    <input type="number" value="{{ asst1_fee }}" name="asst1-fee" id="asst1-fee" readonly>
+                                                <div class="col-sm-12 col-md-4 text-left">
+                                                    <p>Match Fee: {{ asst1_fee }}</p>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4">
-                                                    <label>Travel: </label>
-                                                    <input type="number" name="asst1-trav" id="asst1-trav">
+                                                <div class="col-sm-12 col-md-4 text-left">
+                                                    <p>Travel: {{ asst1_trav }}</p>                                                    
                                                 </div>
                                             </div>                                        
                                         {% endif %}
                                         <!-- Asst Referee 2 Fees -->
                                         {% if match.asst_referee2 %}
                                             <div class="form-row mb-1">
-                                                <div class="col-sm-12 col-md-4 text-right">
-                                                    <label for="asst2_id_{{ match.asst_referee2 }}">Asst Ref 2: </label>
-                                                    <input type="text" value="{{ match.asst_referee2 }}" name="asst2" id="asst2-id" data-asst1_id="{{ match.id }}" readonly>                                                
+                                                <div class="col-sm-12 col-md-4 text-left">
+                                                    <p>Asst Ref 2: {{ match.asst_referee2 }}</p>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4">
-                                                    <label for="">Match Fee: </label>
-                                                    <input type="number" value="{{ asst2_fee }}" name="asst2-fee" id="asst2-fee" readonly>
+                                                <div class="col-sm-12 col-md-4 text-left">
+                                                    <p>Match Fee: {{ asst2_fee }}</p>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4">
-                                                    <label>Travel: </label>
-                                                    <input type="number" name="asst2-trav" id="asst2-trav">
+                                                <div class="col-sm-12 col-md-4 text-left">
+                                                    <p>Travel: {{ asst2_trav }}</p>
                                                 </div>
                                             </div>                                           
                                         {% endif %}

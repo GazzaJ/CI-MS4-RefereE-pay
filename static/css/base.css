@@ -31,6 +31,17 @@ html {
     background-color: #e1261c;
 }
 
+/*---------- Fonts ----------*/
+
+h1, h2, h3 {
+    font-family: "Exo", sans-serif;
+    font-weight: bold;
+}
+
+p, .nav-link {
+    font-family: "Roboto", sans-serif;
+}
+
 /*---------- Footer ----------*/
 
 .fa-logo {
