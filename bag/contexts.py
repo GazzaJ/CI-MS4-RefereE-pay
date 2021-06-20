@@ -22,8 +22,6 @@ def bag_contents(request):
 
     context = {        
         'bag_items': bag_items,
-        'quantity': quantity,
-        'match': match,
         'grand_total': grand_total,
     }
 

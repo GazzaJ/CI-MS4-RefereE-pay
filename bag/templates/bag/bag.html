@@ -23,8 +23,8 @@
             <div class="col">
                 {% if bag_items %}
                     <div class="table-responsive rounded">
-                        <p>{{ match.referee }}</p>
-                        <p>{{ match.asst_referee1 }}</p>
+                        <p>Ref: {{ item.match.referee }}</p>
+                        <p>Assistant : {{ item.match.asst_referee1 }}</p>
                         <p>{{ match.asst_referee2 }}</p>
                         <p>{{ ref_total }}</p>
                         <p>{{ game_total }}</p>

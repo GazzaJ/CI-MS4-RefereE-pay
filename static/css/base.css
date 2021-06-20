@@ -13,6 +13,15 @@ html {
     width: auto;
 }
 
+.grand_total {
+    color: #e1261c !important;
+    font-weight: bold !important;
+}
+
+.zero-total {
+    color: #00813e !important;
+}
+
 /*---------- Colours ----------*/
 
 .light-background {
