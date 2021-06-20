@@ -96,42 +96,51 @@
                                     {% if match.referee %}
                                         <div class="form-row mb-1">
                                             <input type="hidden" value=1 name="quantity" id="quantity" data-item-id="{{ match.id }}">
-                                            <div class="col-sm-12 col-md-4 text-left">
+                                            <div class="col-sm-12 col-md-3 text-left">
                                                 <p>Referee: {{ match.referee }}</p>
                                             </div>
-                                            <div class="col-sm-12 col-md-4 text-left">
+                                            <div class="col-sm-12 col-md-3 text-left">
                                                 <p>Match Fee: {{ ref_fee }}</p>
                                             </div>
-                                            <div class="col-sm-12 col-md-4 text-left">
+                                            <div class="col-sm-12 col-md-3 text-left">
                                                 <p>Travel: {{ ref_trav }}</p>
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 text-left">
+                                                <p>Total: {{ ref_total }}</p>
                                             </div>
                                         </div>
                                         {% endif %}
                                         <!-- Asst Referee 1 Fees -->
                                         {% if match.asst_referee1 %}
                                             <div class="form-row mb-1">
-                                                <div class="col-sm-12 col-md-4 text-left">
+                                                <div class="col-sm-12 col-md-3 text-left">
                                                     <p>Asst Ref 1: {{ match.asst_referee1 }}</p>                                                                                                    
                                                 </div>
-                                                <div class="col-sm-12 col-md-4 text-left">
+                                                <div class="col-sm-12 col-md-3 text-left">
                                                     <p>Match Fee: {{ asst1_fee }}</p>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4 text-left">
+                                                <div class="col-sm-12 col-md-3 text-left">
                                                     <p>Travel: {{ asst1_trav }}</p>                                                    
+                                                </div>
+                                                <div class="col-sm-12 col-md-3 text-left">
+                                                    <p>Total: {{ asst1_total }}</p>
                                                 </div>
                                             </div>                                        
                                         {% endif %}
                                         <!-- Asst Referee 2 Fees -->
                                         {% if match.asst_referee2 %}
                                             <div class="form-row mb-1">
-                                                <div class="col-sm-12 col-md-4 text-left">
+                                                <div class="col-sm-12 col-md-3 text-left">
                                                     <p>Asst Ref 2: {{ match.asst_referee2 }}</p>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4 text-left">
+                                                <div class="col-sm-12 col-md-3 text-left">
                                                     <p>Match Fee: {{ asst2_fee }}</p>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4 text-left">
+                                                <div class="col-sm-12 col-md-3 text-left">
                                                     <p>Travel: {{ asst2_trav }}</p>
+                                                </div>
+                                                <div class="col-sm-12 col-md-3 text-left">
+                                                    <p>Total: {{ asst2_total }}</p>
                                                 </div>
                                             </div>                                           
                                         {% endif %}
