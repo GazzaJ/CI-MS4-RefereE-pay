@@ -14,12 +14,12 @@
 {% block content %}
     <div class="container">
         <div class="match-overlay"></div>
-        <form action="">
+        <form id="filter" action="{% url 'matches' %}" method="GET">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="age">Age Group</label>
-                    <select class="form-control" id="age">
+                    <select class="form-control" id="age" name="age" onchange="form.submit()">
                         <option selected disabled></option>
                         {% for age in fees %}
                             <option>{{ age }}</option>
@@ -30,25 +30,24 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="team">Team</label>
-                    <select class="form-control" id="team">
+                    <select class="form-control" id="team" name="team" onchange="form.submit()">
                         <option selected disabled></option>
                         {% for team in teams %}
                             <option>{{ team }}</option>
                         {% endfor %}
                     </select>
                 </div>
-            </div>
+            </div>           
         </form>
     </div>
-        {% for match in matches %}            
-        
+        {% for match in matches %}        
             <a class="match-text" href="{% url 'match_detail' match.id %}">
                 <div class="row match mb-3 align-items-center border-green">
                     <div class="col-4 col-lg-2 team text-center">
                         <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
                     </div>
                     <div class="col-8 col-lg-3 text-center">
-                        <p>{{ match.home_team }}</p> 
+                        <p>{{ match.home_team }}</p>                         
                     </div>
                     <div class="col-sm-12 col-lg-2 text-center">
                         <p><strong>VS</strong></p>
@@ -61,12 +60,9 @@
                     </div>
                 </div>
             </a>
-            
-        
-
-        {% endfor %}
-                
+        {% endfor %}                
     </div>
 
 
 {% endblock %}
+

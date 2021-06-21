@@ -30,7 +30,6 @@
             <div class="col-8 col-lg-3 text-center">
                 <p class="coach mb-3">{{ match.away_team }}</p>
                 <p>Coach: {{ match.away_team.manager_coach }}</p>
-                <p>{{ match.id }}</p>
             </div>
             <div class="col-4 col-lg-2 text-center">
                 <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
@@ -79,83 +78,84 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <!-- Venue Map Accordion -->
                         <p>
                             <a class="btn btn-success" data-toggle="collapse" href="#match-fees" role="button"
                                 aria-expanded="false" aria-controls="venue-map">
                                 Review Match Fees
                             </a>
                         </p>
-                        <!-- Review Match fees and add them to the bag -->
-                        <div class="collapse" id="match-fees">
-                            <div class="card card-body">
-                                <h4 class="mb-4">Match Fees</h4>
-                                <form id="add-ref" class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <!-- Referee Fees -->
-                                    {% if match.referee %}
-                                        <div class="form-row mb-1">
-                                            <input type="hidden" value=1 name="quantity" id="quantity" data-item-id="{{ match.id }}">
-                                            <div class="col-sm-12 col-md-3 text-left">
-                                                <p>Referee: {{ match.referee }}</p>
-                                            </div>
-                                            <div class="col-sm-12 col-md-3 text-left">
-                                                <p>Match Fee: {{ ref_fee }}</p>
-                                            </div>
-                                            <div class="col-sm-12 col-md-3 text-left">
-                                                <p>Travel: {{ ref_trav }}</p>
-                                            </div>
-                                            <div class="col-sm-12 col-md-3 text-left">
-                                                <p>Total: {{ ref_total }}</p>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                        <!-- Asst Referee 1 Fees -->
-                                        {% if match.asst_referee1 %}
-                                            <div class="form-row mb-1">
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Asst Ref 1: {{ match.asst_referee1 }}</p>                                                                                                    
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Match Fee: {{ asst1_fee }}</p>
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Travel: {{ asst1_trav }}</p>                                                    
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Total: {{ asst1_total }}</p>
-                                                </div>
-                                            </div>                                        
-                                        {% endif %}
-                                        <!-- Asst Referee 2 Fees -->
-                                        {% if match.asst_referee2 %}
-                                            <div class="form-row mb-1">
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Asst Ref 2: {{ match.asst_referee2 }}</p>
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Match Fee: {{ asst2_fee }}</p>
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Travel: {{ asst2_trav }}</p>
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 text-left">
-                                                    <p>Total: {{ asst2_total }}</p>
-                                                </div>
-                                            </div>                                           
-                                        {% endif %}
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col text-center">
-                                            <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
-                                        </div>
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                     </div>
-                </div>
+                </div>     
+                <!-- Review Match fees and add them to the bag -->
+                <div class="collapse" id="match-fees">
+                    <div class="card card-body">
+                        <h4 class="mb-4">Match Fees</h4>
+                        <form id="add-ref" class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
+                            {% csrf_token %}
+                            <!-- Referee Fees -->
+                            {% if match.referee %}
+                                <div class="form-row mb-1">
+                                    <input type="hidden" value=1 name="quantity" id="quantity" data-item_id="{{ match.id }}">
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Referee: {{ match.referee }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Match Fee: {{ ref_fee }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Travel: {{ ref_trav }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <label for="ref_total">Total</label>
+                                        <input class="total" value="{{ ref_total }}" type="number" name="ref_total" id="ref_total" data-item_id="{{ match.id }}">
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <!-- Asst Referee 1 Fees -->
+                            {% if match.asst_referee1 %}
+                                <div class="form-row mb-1">
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Asst Ref 1: {{ match.asst_referee1 }}</p>                                                                                                    
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Match Fee: {{ asst1_fee }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Travel: {{ asst1_trav }}</p>                                                    
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <label for="asst1_total">Total</label>
+                                        <input class="total" value="{{ asst1_total }}" type="number" name="asst1_total" id="asst1_total"  data-item_id="{{ match.id }}">
+                                    </div>
+                                </div>                                        
+                            {% endif %}
+                            <!-- Asst Referee 2 Fees -->
+                            {% if match.asst_referee2 %}
+                                <div class="form-row mb-1">
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Asst Ref 2: {{ match.asst_referee2 }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Match Fee: {{ asst2_fee }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <p>Travel: {{ asst2_trav }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3 text-left">
+                                        <label for="asst2_total">Total</label>
+                                        <input class="total" value="{{ asst2_total }}" type="number" name="asst2_total" id="asst2_total"  data-item_id="{{ match.id }}">
+                                    </div>
+                                </div>                                           
+                            {% endif %}
+                            <div class="form-row">
+                                <div class="col text-center">
+                                    <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>
+                    </div>
+                </div>                
             </div>
         </div>
         <!-- Action Buttons/Links -->

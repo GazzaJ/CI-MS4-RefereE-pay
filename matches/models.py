@@ -39,7 +39,7 @@ class Club(models.Model):
 
 
 class Fee(models.Model):
-    age = models.CharField(max_length=50, null=False, blank=False)
+    age = models.CharField(max_length=50, null=True, blank=False)
     referee_fee = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
     asst_referee = models.DecimalField(max_digits=6, decimal_places=2,
@@ -58,7 +58,7 @@ class Team(models.Model):
     short_name = models.CharField(max_length=100, null=False, blank=False)
     club_name = models.ForeignKey('Club', null=False, blank=False,
                                   on_delete=models.CASCADE)
-    age = models.ForeignKey('Fee', null=False, blank=False,
+    age = models.ForeignKey('Fee', null=True, blank=False,
                             on_delete=models.CASCADE)
     manager_coach = models.CharField(max_length=100, null=False, blank=False)
 
@@ -66,7 +66,9 @@ class Team(models.Model):
         return self.team_name
 
 
-class Game(models.Model):    
+class Game(models.Model):
+    age = models.ForeignKey('Fee', null=True, blank=False,
+                            related_name="age_group", on_delete=models.CASCADE)    
     home_team = models.ForeignKey('Team', related_name='home_team', null=False,
                                   blank=False, on_delete=models.CASCADE)
     away_team = models.ForeignKey('Team', related_name='away_team', null=False,
