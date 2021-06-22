@@ -22,14 +22,21 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
-                        <p>Ref: {{ item.match.referee }}</p>
-                        <p>Assistant : {{ item.match.asst_referee1 }}</p>
-                        <p>{{ match.asst_referee2 }}</p>
-                        <p>{{ ref_total }}</p>
-                        <p>{{ game_total }}</p>
-                        <p>{{ bag_items }}</p>
-                    </div>
+                    {% for item in bag_items %}
+                        <div class="table-responsive rounded">
+                            <p>Item ID: {{ item.item_id }}</p>                            
+                            <p>Match ID {{ match_id }}</p>
+                            <p>Ref: {{ item.match.referee }}</p>
+                            <p>Assistant 1 : {{ item.match.asst_referee1 }}</p>
+                            <p>Assistant 2 : {{ item.match.asst_referee2 }}</p>
+                            <p>{{ match.asst_referee2 }}</p>
+                            <p>Ref Total: £ {{ item.match.ref_total }}</p>
+                            <p>Asst Ref 1 Total: £ {{ item.match.asst1_total }}</p>
+                            <p>Asst Ref 2 Total: £ {{ item.match.asst2_total }}</p>
+                            <p>Match Total: £ {{ item.match_total }}</p>
+                            <p>{{ bag_items }}</p>                                
+                        </div>
+                    {% endfor %}
                 {% else %}
                     <p>You have not selected any matches for payment!</p>
                     <a class="btn btn-success" href="{% url 'matches' %}">Back to Matches</a>
