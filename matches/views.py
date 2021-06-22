@@ -70,6 +70,7 @@ def match_detail(request, game_id):
         ref_fee = match.home_team.age.referee_fee
         ref_trav = 0
         ref_total = ref_fee + ref_trav
+        match.ref_total = ref_total
 
     if match.asst_referee1 is None:
         asst1_total = 0
@@ -77,6 +78,7 @@ def match_detail(request, game_id):
         asst1_fee = match.home_team.age.asst_referee
         asst1_trav = 0
         asst1_total = asst1_fee + asst1_trav
+        match.asst1_total = asst1_total
 
     if match.asst_referee2 is None:
         asst2_total = 0
@@ -84,6 +86,9 @@ def match_detail(request, game_id):
         asst2_fee = match.home_team.age.asst_referee
         asst2_trav = 0
         asst2_total = asst2_fee + asst2_trav
+        match.asst2_total = asst2_total
+
+    match.save()
 
     context = {
         'match': match,

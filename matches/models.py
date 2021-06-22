@@ -81,6 +81,12 @@ class Game(models.Model):
                               on_delete=models.SET_NULL)
     asst_referee2 = models.ForeignKey('Official', related_name='asst2', null=True, blank=True,
                               on_delete=models.SET_NULL)
+    ref_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                       null=False, default=0)
+    asst1_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                       null=False, default=0)
+    asst2_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                       null=False, default=0)
 
     def __str__(self):
         return f'{self.home_team} vs {self.away_team}'

@@ -90,8 +90,9 @@
                 <div class="collapse" id="match-fees">
                     <div class="card card-body">
                         <h4 class="mb-4">Match Fees</h4>
-                        <form id="add-ref" class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
+                        <form id="GameForm" name="GameForm" class="form" action="{% url 'add_to_bag' match.id %}" method="POST">
                             {% csrf_token %}
+                            {{ form|crispy }}
                             <!-- Referee Fees -->
                             {% if match.referee %}
                                 <div class="form-row mb-1">
@@ -107,7 +108,7 @@
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="ref_total">Total</label>
-                                        <input class="total" value="{{ ref_total }}" type="number" name="ref_total" id="ref_total" data-item_id="{{ match.id }}">
+                                        <input class="total" value="{{ ref_total }}" type="number" name="ref_total" id="ref_total" data-item_id="{{ match.id }}" readonly>
                                     </div>
                                 </div>
                             {% endif %}
@@ -125,7 +126,7 @@
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="asst1_total">Total</label>
-                                        <input class="total" value="{{ asst1_total }}" type="number" name="asst1_total" id="asst1_total"  data-item_id="{{ match.id }}">
+                                        <input class="total" value="{{ asst1_total }}" type="number" name="asst1_total" id="asst1_total"  data-item_id="{{ match.id }}" readonly>
                                     </div>
                                 </div>                                        
                             {% endif %}
@@ -143,7 +144,7 @@
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="asst2_total">Total</label>
-                                        <input class="total" value="{{ asst2_total }}" type="number" name="asst2_total" id="asst2_total"  data-item_id="{{ match.id }}">
+                                        <input class="total" value="{{ asst2_total }}" type="number" name="asst2_total" id="asst2_total"  data-item_id="{{ match.id }}" readonly>
                                     </div>
                                 </div>                                           
                             {% endif %}
