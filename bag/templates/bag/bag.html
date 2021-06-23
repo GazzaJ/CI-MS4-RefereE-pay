@@ -15,8 +15,19 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2>Pending Payments</h2>
+                <h2>Pending Match Payments</h2>
                 <hr>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col">
+                {%  if bag_items %}
+                    {% if bag_items == 1 %}                    
+                        <h5>You have {{ match_count }} match in your Kit Bag</h5>
+                    {% else %}
+                        <h5>You have {{ match_count }} matches in your Kit Bag</h5>
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
         <div class="row">
@@ -31,12 +42,13 @@
                                     <th scope="col">Asst Ref 1</th>
                                     <th scope="col">Asst Ref 2</th>
                                     <th scope="col">Match Total</th>
+                                    <th></th>
                                 </tr>
                             </thead>                                
                             {% for item in bag_items %}                                
                                 <tr>
                                     <td>
-                                        <p class="my-0">{{item.match}}</p>
+                                        <p class="my-0 bag-match">{{item.match}}</p>
                                     </td>                                   
                                     <td>
                                         <p class="my-0">{{ item.match.referee }}</p>
@@ -55,6 +67,7 @@
                                             <p class="text-center my-0">-</p>
                                         {% endif %}                                        
                                     </td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -81,7 +94,12 @@
                                     <td>
                                         <p class="text-center"><strong>{{ item.match_total }}</strong></p>
                                     </td>
-                                </tr>
+                                    <td>
+                                        <a class="remove-item btn btn-warning btn-sm" id="remove_{{ item.item_id }}">Remove
+                                            <i class="far fa-trash-alt"></i>
+                                        </a>
+                                    </td>                                    
+                                </tr>                                
                             {% endfor %}
                                 <tr>
                                     <td></td>
@@ -93,6 +111,7 @@
                                     <td>
                                         <p class="text-center my-0 grand-total"><strong>{{ grand_total }}</strong></p>
                                     </td>
+                                    <td></td>
                                 </tr>                                                                    
                         </table>                                                            
                     </div>                        
@@ -107,8 +126,26 @@
                 <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
             </div>
             <div class="col-md-6 text-center">
-                <a class="btn btn-warning" href="">Secure Checkout</a>
+                <a class="btn blue-btn" href="">Secure Checkout</a>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}    
+    <script type="text/javascript">
+        // Remove match from the kit bag and reload
+        $('.remove item').click(function(e){
+            var csrfToken = "{{ csrf_token }}";
+            var itemID = $(this).attr('id').split('remove_')[1];
+            var url = '/bag/remove/${itemID}';
+            var data = {'csrfmiddlewaretoken': csrfToken};
+
+            $.post(url, data)
+             .done(function(){
+                 location.reload();
+             })
+        })
+    </script>
 {% endblock %}

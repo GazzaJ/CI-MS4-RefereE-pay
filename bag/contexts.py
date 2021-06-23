@@ -28,7 +28,8 @@ def bag_contents(request):
     context = {        
         'bag_items': bag_items,
         'match_total': match_total,
-        'grand_total': grand_total,        
+        'grand_total': grand_total,
+        'match_count': match_count,        
     }
 
     return context
