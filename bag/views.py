@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+from matches.models import Game
+
 
 @login_required
 def review_bag(request):
@@ -16,6 +18,7 @@ def review_bag(request):
 def add_to_bag(request, item_id):
     """ Add the match fees to the shopping bag """    
 
+    match = Game.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')    
 
@@ -27,8 +30,9 @@ def add_to_bag(request, item_id):
     else:
         # Add the Product ID and Quantity to the bag
         bag[item_id] = quantity
+        messages.success(request, f'Added {match.home_team} vs { match.away_team }to your kit bag!')
 
-    request.session['bag'] = bag    
+    request.session['bag'] = bag
     return redirect(redirect_url)
 
 

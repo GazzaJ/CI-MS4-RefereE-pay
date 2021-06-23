@@ -6,7 +6,7 @@ html {
     height: 100%;
 }
 
-/*---------- Navbar ----------*/
+/* ---------- Navbar ---------- */
 
 #website-logo {
     height: 3rem;
@@ -22,7 +22,7 @@ html {
     color: #00813e !important;
 }
 
-/*---------- Colours ----------*/
+/* ---------- Colours ---------- */
 
 .light-background {
     background-color: #e6eaee;
@@ -40,7 +40,7 @@ html {
     background-color: #e1261c;
 }
 
-/*---------- Fonts ----------*/
+/* ---------- Fonts ---------- */
 
 h1, h2, h3, h4, h5 {
     font-family: "Exo", sans-serif;
@@ -52,7 +52,29 @@ a {
     font-family: "Roboto", sans-serif;
 }
 
-/*---------- Footer ----------*/
+/* ---------- Toasts ---------- */
+
+.message-container {
+    position: fixed;
+    top: 4.7rem;
+    left: 1rem;
+    z-index: 99999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 0.125rem;
+}
+
+.toast-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Footer ---------- */
 
 .fa-logo {
     height: 3rem;   
