@@ -30,3 +30,18 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag    
     return redirect(redirect_url)
+
+
+@login_required
+def remove_from_bag(request, item_id):
+    """ Removes the selected match from the kit bag """
+
+    try:
+        bag = request.session.get('bag', {})
+        bag.pop(item_id)
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)        
+
+    except Exception as e:
+        return HttpResponse(status=500)

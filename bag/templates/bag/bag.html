@@ -136,10 +136,10 @@
 {{ block.super }}    
     <script type="text/javascript">
         // Remove match from the kit bag and reload
-        $('.remove item').click(function(e){
+        $('.remove-item').click(function(e){            
             var csrfToken = "{{ csrf_token }}";
-            var itemID = $(this).attr('id').split('remove_')[1];
-            var url = '/bag/remove/${itemID}';
+            var itemId = $(this).attr('id').split('remove_')[1];            
+            var url = `/bag/remove/${itemId}/`;
             var data = {'csrfmiddlewaretoken': csrfToken};
 
             $.post(url, data)
