@@ -22,9 +22,9 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
-                        <table class="table table-sm table-borderless">
-                            <thead>
+                    <div class="table-responsive rounded table table-striped">
+                        <table id="bag-table" class="table table-sm table-borderless">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Match</th>
                                     <th scope="col">Referee</th>
@@ -36,35 +36,64 @@
                             {% for item in bag_items %}                                
                                 <tr>
                                     <td>
-                                        <p scope="col">{{item.match}}</p>
+                                        <p class="my-0">{{item.match}}</p>
                                     </td>                                   
                                     <td>
-                                        <p>{{ item.match.referee }}</p>
+                                        <p class="my-0">{{ item.match.referee }}</p>
                                     </td>
                                     <td>
-                                        <p>{{ item.match.asst_referee1 }}</p>
+                                        {% if item.match.asst_referee1 is not None %}
+                                            <p class="my-0">{{ item.match.asst_referee1 }}</p>
+                                        {% else %}
+                                            <p class="text-center my-0">-</p>
+                                        {% endif %}
                                     </td>                                    
                                     <td>
-                                        <p>{{ item.match.asst_referee2 }}</p>
+                                        {% if item.match.asst_referee2 is not None %}
+                                            <p class="my-0">{{ item.match.asst_referee2 }}</p>
+                                        {% else %}
+                                            <p class="text-center my-0">-</p>
+                                        {% endif %}                                        
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>
+                                        <p>{{ item.match.date_time }}</p>
+                                    </td>
                                     <td>
                                         <p>{{ item.match.ref_total }}</p>
                                     </td>
                                     <td>
-                                        <p>{{ item.match.asst1_total }}</p>
+                                        {% if item.match.asst_referee1 is not None %}
+                                            <p>{{ item.match.asst1_total }}</p>
+                                        {% else %}
+                                            <p class="text-center my-0">-</p>
+                                        {% endif %}
                                     </td>
                                     <td>
-                                        <p>{{ item.match.asst2_total }}</p>
+                                        {% if item.match.asst_referee2 is not None %}
+                                            <p>{{ item.match.asst2_total }}</p>
+                                        {% else %}
+                                            <p class="text-center">-</p>
+                                        {% endif %}
                                     </td>
                                     <td>
-                                        <p><strong>{{ item.match_total }}</strong></p>
+                                        <p class="text-center"><strong>{{ item.match_total }}</strong></p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <p class="my-0 grand-total"><strong>Grand Total:</strong></p>
+                                    </td>
+                                    <td>
+                                        <p class="text-center my-0 grand-total"><strong>{{ grand_total }}</strong></p>
                                     </td>
                                 </tr>                                                                    
-                            {% endfor %}
                         </table>                                                            
                     </div>                        
                 {% else %}
