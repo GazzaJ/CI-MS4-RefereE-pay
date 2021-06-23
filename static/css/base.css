@@ -40,6 +40,26 @@ html {
     background-color: #e1261c;
 }
 
+.danger {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.warning {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+.success {
+    background-color: #28a745 !important;
+    color: #fff !important;
+}
+
+.info {
+    background: #17a2b8 !important;
+    color: #fff !important;
+}
+
 /* ---------- Fonts ---------- */
 
 h1, h2, h3, h4, h5 {
@@ -56,8 +76,8 @@ a {
 
 .message-container {
     position: fixed;
-    top: 4.7rem;
-    left: 1rem;
+    top: 4.5rem;
+    right: 1rem;
     z-index: 99999;
 }
 
@@ -67,6 +87,60 @@ a {
 
 .toast-capper {
     height: 0.125rem;
+}
+
+.bag-notification-wrapper {
+    height: 6.25rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    position: absolute;
+    top: -7.0px;
+    right: 20rem;
+}
+
+/* ----- Copied from CI Boutiuque Ado Project -----*/
+
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
 }
 
 .toast-img {

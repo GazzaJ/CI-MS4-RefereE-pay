@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -18,7 +18,7 @@ def review_bag(request):
 def add_to_bag(request, item_id):
     """ Add the match fees to the shopping bag """    
 
-    match = Game.objects.get(pk=item_id)
+    match = get_object_or_404(Game, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')    
 
@@ -41,11 +41,14 @@ def remove_from_bag(request, item_id):
     """ Removes the selected match from the kit bag """
 
     try:
+        match = get_object_or_404(Game, pk=item_id)
         bag = request.session.get('bag', {})
         bag.pop(item_id)
+        messages.success(request, f'Removed {match.home_team} vs {match.away_team} from your kit bag!')
 
         request.session['bag'] = bag
-        return HttpResponse(status=200)        
+        return HttpResponse(status=200)               
 
     except Exception as e:
+        messages.error(request, f'Error removing match {e}')
         return HttpResponse(status=500)
