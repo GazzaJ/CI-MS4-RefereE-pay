@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'home',
     'matches',
     'bag',
+    'checkout',
     'profiles',
 
     # Other Apps
