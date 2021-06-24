@@ -99,7 +99,7 @@ def match_detail(request, game_id):
         'asst1_total': asst1_total,
         'asst2_fee': asst2_fee,
         'asst2_trav': asst2_trav,
-        'asst2_total': asst2_total
+        'asst2_total': asst2_total,
     }
 
     return render(request, 'matches/match_detail.html', context)

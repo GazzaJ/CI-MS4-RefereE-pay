@@ -92,9 +92,18 @@ a {
 .bag-notification-wrapper {
     height: 6.25rem;
     overflow-x: hidden;
-    overflow-y: scroll;
-
+    overflow-y: auto;
 }
+
+.toast-total {
+    font-size: 1.15rem;
+}
+
+.toast-bag-text {
+    font-size: 0.8rem;
+}
+
+
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */
 

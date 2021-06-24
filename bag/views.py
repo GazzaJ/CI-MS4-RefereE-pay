@@ -26,7 +26,7 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
-        messages.error(request, 'This item is already in your bag')
+        messages.error(request, 'This match is already in your kit bag!')
     else:
         # Add the Product ID and Quantity to the bag
         bag[item_id] = quantity
