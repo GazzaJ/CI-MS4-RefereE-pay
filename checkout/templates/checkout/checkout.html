@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}    
+    <h1 class="text-center mt-3 mb-3">Kit Bag</h1>    
+{% endblock %}
+
+{% block content %}    
+    <div class="checkout-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2>Checkout</h2>
+                <hr>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 col-lg-6 order-lg-last mb-3">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-center">Summary of Payments</h3>
+                        <hr>
+                    </div>
+                </div>
+                {% for item in bag_items %}
+                <a href="{% url 'match_detail' item.match.id %}">
+                    <div class="row">
+                        <div class="col-4 col-lg-2 team text-center">
+                            <img class="checkout-badge image-fluid w-100"
+                                src="{{ item.match.home_team.club_name.club_badge_url }}"
+                                alt="item.match.home_team.club_name">
+                        </div>
+                        <div class="col-8 col-lg-3 text-center">
+                            <p>{{ item.match.home_team.short_name }}</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-2 text-center">
+                                    <p><strong>VS</strong></p>
+                                </div>
+                                <div class="col-8 col-lg-3 text-center">
+                                    <p>{{ item.match.away_team.short_name }}</p>                        
+                                </div>
+                                <div class="col-4 col-lg-2 text-center">
+                                    <img class="checkout-badge image-fluid w-100" src="{{ item.match.away_team.club_name.club_badge_url }}" alt="item.match.away_team.club_name">
+                                </div>
+                    </div>
+                </a>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Ref Total:</p>
+                        <p><strong>£ {{ item.match.ref_total }}</strong></p> 
+                    </div>
+                    <div class="col-3">
+                        <p>Asst 1 Total:</p>
+                        {% if item.match.asst_referee1 is not None %}
+                        <p><strong>£ {{ item.match.asst1_total }}</strong></p>
+                        {% else %}
+                            <p class="text-center my-0">-</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-3">
+                        <p>Asst 2 Total:</p>
+                        {% if item.match.asst_referee2 is not None %}
+                            <p><strong>£ {{ item.match.asst2_total }}</strong></p>
+                        {% else %}
+                            <p class="text-center my-0">-</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-3">
+                        <p>Match Total:</p>
+                        <p class="text-danger"><strong>£ {{ item.match_total }}</strong></p>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>Please complete the form below to complete your payment</p>
+                <form action="{% url 'checkout' %}" method=POST id="payment-form">
+                    {% csrf_token %}
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label px-2 w-auto">Details</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                        {{ order_form.phone_number | as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend>Billing Address</legend>
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.county_or_state | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
+                        <div class="form-check form-check-inline float-right mr-0">
+                            {% if user.is_authenticated %}
+                                <label class="form-check-label" for="save-id">Save your information to your profile</label>
+                                <input class="form-check-input ml-2 mr-0" type="checkbox" type="checkbox" name="save-info" id="save-id" checked>                            
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    <fieldset class="rounded px-3">
+                        <legend class="fieldset-label px-2 w-auto">Payment</legend>
+                        <div class="mb-3" id="card-element">
+
+                        </div>
+                        <!-- Form Errors displayed in this DIV -->
+                        <div class="mb-3 text-danger" id="card-errors" role="alert">
+
+                        </div>
+                    </fieldset>
+                    <div class="submit-button text-center mt-5 mb-2">
+                        <button class="btn blue-btn" id="submit button">
+                            <span>Complete Payment</span>
+                            <span>
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </button>
+                        <p class="text-danger mt-2">
+                            <span>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span>Your card will be charged <strong>£ {{ grand_total | floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
+                </form>
+            </div>            
+        </div>        
+    </div>
+{% endblock %}
