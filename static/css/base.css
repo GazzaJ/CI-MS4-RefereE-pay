@@ -60,6 +60,12 @@ html {
     color: #fff !important;
 }
 
+.border-green {
+    border: 2px solid #00813e;
+    border-radius: 1rem;
+    padding-right: 1rem;
+}
+
 /* ---------- Fonts ---------- */
 
 h1, h2, h3, h4, h5 {
