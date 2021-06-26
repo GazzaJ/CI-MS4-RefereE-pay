@@ -7,7 +7,7 @@ from .forms import OrderForm
 def checkout(request):
     bag = request.session.get('bag', {})
     if not bag:
-        messages.error(request, "There is nothing in your kit bag at the moment" )
+        messages.error(request, "There is nothing in your kit bag at the moment")
         return redirect(reverse('matches'))
 
     order_form = OrderForm()

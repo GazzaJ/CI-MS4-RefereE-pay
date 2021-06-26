@@ -6,24 +6,17 @@
 {% endblock %}
 
 {% block page_header %}    
-    <h1 class="text-center mt-3 mb-3">Kit Bag</h1>    
+    <h1 class="text-center mt-5 mb-3">Checkout</h1>    
 {% endblock %}
 
 {% block content %}    
     <div class="checkout-overlay"></div>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2>Checkout</h2>
-                <hr>
-            </div>
-        </div>
-        
-        <div class="row">
+                
+        <div class="row checkout-match my-5">
             <div class="col-12 col-lg-6 order-lg-last mb-3">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mt-5">
                         <h3 class="text-center">Summary of Payments</h3>
                         <hr>
                     </div>
@@ -50,7 +43,7 @@
                                 </div>
                     </div>
                 </a>
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-3">
                         <p>Ref Total:</p>
                         <p><strong>£ {{ item.match.ref_total }}</strong></p> 
@@ -73,14 +66,23 @@
                     </div>
                     <div class="col-3">
                         <p>Match Total:</p>
-                        <p class="text-danger"><strong>£ {{ item.match_total }}</strong></p>
+                        <p class="text-success text-center"><strong>£ {{ item.match_total }}</strong></p>
                     </div>
                 </div>
                 <hr>
                 {% endfor %}
+                <div class="row warning">
+                    <div class="col-9">
+                        <p class="text-uppercase text-right"><strong>Grand Total £ :</strong></p>
+                    </div>
+                    <div class="col-3">
+                        <p class="text-danger text-center"><strong>£ {{ grand_total }}</strong></p>
+                        <hr>                        
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <p>Please complete the form below to complete your payment</p>
+            <div class="col-12 col-lg-6 mt-5 mb-1">
+                <p><strong>Please fill in the form below to complete your payment</strong></p>
                 <form action="{% url 'checkout' %}" method=POST id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">

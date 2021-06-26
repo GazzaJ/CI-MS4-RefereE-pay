@@ -103,7 +103,12 @@ a {
     font-size: 0.8rem;
 }
 
+/* ---------- Buttons ---------- */
 
+.blue-btn {
+    background-color: #011e41;
+    color: #fff;    
+}
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */
 
