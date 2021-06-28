@@ -14,7 +14,8 @@ def checkout(request):
 
     bag = request.session.get('bag', {})
     if not bag:
-        messages.error(request, "There is nothing in your kit bag at the moment")
+        messages.error(request, "There is nothing in your kit \
+            bag at the moment")
         return redirect(reverse('matches'))
 
     current_bag = bag_contents(request)
@@ -23,16 +24,20 @@ def checkout(request):
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
-        currecncy=settings.STRIPE_CURRENCY,
+        currency=settings.STRIPE_CURRENCY,
     )
 
-    print(intent)
-
     order_form = OrderForm()
+
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing! \
+            Did you forget to set it in the environment?')
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51J6Y1QB2KPTgpLEAS9z7xZn7rBS2nwe1OJ1UvQzr9doMolVH2tgdgK5QsUXz8DJPy8YHuJK5FZvKS2dL5vodfcPj00l86IjwbJ'
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
