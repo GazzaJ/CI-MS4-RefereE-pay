@@ -1,5 +1,5 @@
 body {
-    background: url('/media/referee.jpg') no-repeat center center fixed;
+    background: url('/media/assistant_ref.jpg') no-repeat center center fixed;
     background-size: cover;    
 }
 
@@ -20,6 +20,7 @@ body {
 
 #payment-form {
     background-color: #e6eaee;
+    border-radius: 0.5rem;
 }
 
 .checkout-match {

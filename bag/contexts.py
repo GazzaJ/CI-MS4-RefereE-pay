@@ -15,7 +15,7 @@ def bag_contents(request):
         match = get_object_or_404(Game, pk=item_id)
         match_total = match.ref_total + match.asst1_total + match.asst2_total
         match_count += quantity
-        grand_total += match_total                        
+        grand_total += match_total
 
         bag_items.append({
             'item_id': item_id,

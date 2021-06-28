@@ -83,10 +83,10 @@
             </div>
             <div class="col-12 col-lg-6 mt-5 mb-1">
                 <p><strong>Please fill in the form below to complete your payment</strong></p>
-                <form action="{% url 'checkout' %}" method=POST id="payment-form">
+                <form  action="{% url 'checkout' %}" method=POST id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label px-2 w-auto">Details</legend>
+                        <legend class="fieldset-label px-2 py-2 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.phone_number | as_crispy_field }}
@@ -116,14 +116,14 @@
 
                         </div>
                     </fieldset>
-                    <div class="submit-button text-center mt-5 mb-2">
+                    <div class="submit-button text-center mt-4 mb-2">
                         <button class="btn blue-btn" id="submit button">
                             <span>Complete Payment</span>
                             <span>
                                 <i class="fas fa-lock"></i>
                             </span>
                         </button>
-                        <p class="text-danger mt-2">
+                        <p class="text-danger py-4">
                             <span>
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
