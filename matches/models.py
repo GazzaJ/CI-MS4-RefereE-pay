@@ -44,8 +44,6 @@ class Fee(models.Model):
                                       null=False, default=0)
     asst_referee = models.DecimalField(max_digits=6, decimal_places=2,
                                        null=False, default=0)
-    nonpayment_fine = models.DecimalField(max_digits=6, decimal_places=2,
-                                          null=False, default=0)
     milage_rate = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
 

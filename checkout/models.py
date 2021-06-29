@@ -1,14 +1,14 @@
 import uuid
-
+from datetime import datetime
 from django.db import models
 from django_countries.fields import CountryField
+
 from django.db.models import Sum
 
-from matches.models import Game, Fee
+from matches.models import Game
 
 
 class Order(models.Model):
-
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -20,26 +20,30 @@ class Order(models.Model):
     postcode = models.CharField(max_length=20, null=True, blank=True)
     country = CountryField(blank_label='Country', null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)    
-    match_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    match_fines = models.ForeignKey(Fee, null=True, on_delete=models.SET_NULL, default=0)    
-    grand_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    match_total = models.DecimalField(max_digits=6, decimal_places=2, 
+                                      null=False, default=0)
+    match_fines = models.DecimalField(max_digits=6, decimal_places=2, 
+                                      null=False, default=0)    
+    grand_total = models.DecimalField(max_digits=6, decimal_places=2, 
+                                      null=False, default=0)
 
     def _generate_order_number(self):
         """ Generate a unique order number using UUID """
         return uuid.uuid4().hex.upper()
-    
+      
     def update_total(self):
         """
-        Update grand total each time a line item
+        Update grand total each time a new match
         is added
         """
-        self.match_total = ref_total + self.asst1_total + self.asst2_total
+        self.match_total = self.lineitems.aggregate(Sum(
+            lineitem_total))['lineitem_total__sum']
         # Add in fine for late payments here
         # something like if order_date > match_date
         # then lineitemtotal + fine
-        self.grand_total = self.match_total+self.fines
+        self.grand_total = self.match_total + self.match_fines
         self.save()
-    
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set an order number
@@ -51,3 +55,23 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number
+
+
+class OrderLineItems(models.Model):
+    order = models.ForeignKey(Order, null=False, blank=False, 
+                              on_delete=models.CASCADE, related_name='lineitems')
+    match = models.ForeignKey(Game, null=False, blank=False, 
+                              on_delete=models.CASCADE)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, 
+                                         null=False, blank=False, editable=False)
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the lineitem
+        total and update the grand total
+        """
+        self.lineitem_total = self.match.ref_total + self.match.asst1_total + self.match.asst2_total
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Match Total {self.lineitem_total} on {self.order.order_number}'
