@@ -1,9 +1,10 @@
 import uuid
-from datetime import datetime
+
 from django.db import models
 from django_countries.fields import CountryField
-
 from django.db.models import Sum
+from django.conf import settings
+import datetime
 
 from matches.models import Game
 
@@ -18,31 +19,21 @@ class Order(models.Model):
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     county_or_state = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    country = CountryField(blank_label='Country', null=True, blank=True)
-    date = models.DateTimeField(auto_now_add=True)    
-    match_total = models.DecimalField(max_digits=6, decimal_places=2, 
-                                      null=False, default=0)
-    match_fines = models.DecimalField(max_digits=6, decimal_places=2, 
+    country = CountryField(blank_label='Country', null=True, blank=True)    
+    date = models.DateTimeField(auto_now_add=True)
+    order_total = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)    
-    grand_total = models.DecimalField(max_digits=6, decimal_places=2, 
+    grand_total = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
 
     def _generate_order_number(self):
         """ Generate a unique order number using UUID """
         return uuid.uuid4().hex.upper()
-      
+
     def update_total(self):
         """
-        Update grand total each time a new match
-        is added
         """
-        self.match_total = self.lineitems.aggregate(Sum(
-            lineitem_total))['lineitem_total__sum']
-        # Add in fine for late payments here
-        # something like if order_date > match_date
-        # then lineitemtotal + fine
-        self.grand_total = self.match_total + self.match_fines
-        self.save()
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
 
     def save(self, *args, **kwargs):
         """
@@ -57,20 +48,40 @@ class Order(models.Model):
         return self.order_number
 
 
-class OrderLineItems(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, 
-                              on_delete=models.CASCADE, related_name='lineitems')
-    match = models.ForeignKey(Game, null=False, blank=False, 
-                              on_delete=models.CASCADE)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, 
-                                         null=False, blank=False, editable=False)
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    match = models.ForeignKey(Game, null=False, blank=False, on_delete=models.CASCADE)
+    payment_due_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    match_fines = models.DecimalField(max_digits=6, decimal_places=2,
+                                      null=False, default=0)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                         null=False, blank=False,
+                                         editable=False)
+
+    def Fines(self, *args, **kwargs):
+        match_date = self.match.date_time
+        due_date = match_date + 1
+        if self.o > due_date:
+            match_fines = settings.NONPAYMENT_FINE
+        else:
+            match_fines = 500
+        return self.match_fines
+
 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem
         total and update the grand total
-        """
-        self.lineitem_total = self.match.ref_total + self.match.asst1_total + self.match.asst2_total
+        """        
+        if self.payment_due_date is None:
+            self.payment_due_date = self.match.date_time + datetime.timedelta(days=1)
+            if self.order.date > self.payment_due_date:
+                self.match_fines = settings.NONPAYMENT_FINE
+            else:
+                self.match_fines = 500
+        self.lineitem_total = self.match.ref_total + self.match.asst1_total + self.match.asst2_total + self.match_fines
         super().save(*args, **kwargs)
 
     def __str__(self):

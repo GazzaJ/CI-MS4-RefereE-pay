@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order
+from .models import Order, OrderLineItem
 from matches.models import Game
 from bag.contexts import bag_contents
 
@@ -34,15 +34,12 @@ def checkout(request):
             for item_id, item_qty in bag.items():
                 try:
                     match = Game.objects.get(id=item_id)
-                    # my code
-                    ref_total = match.ref_total
-                    asst1_total = match.asst1_total
-                    asst2_total = match.asst2_total
-                    match_fines = 0
-                    off_total = ref_total + asst1_total + asst2_total
-                    match_total = off_total + match_fines
-                    # end of my code
-                    order.save()
+                    if isinstance(item_qty, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            match=match,                            
+                        )
+                        order_line_item.save()
                 except Game.DoesNotExist:
                     messages.error(request, (
                         "One of the matches in your kit bag wasn't found \
