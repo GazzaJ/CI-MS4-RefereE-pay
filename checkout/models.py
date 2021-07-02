@@ -60,16 +60,7 @@ class OrderLineItem(models.Model):
                                          null=False, blank=False,
                                          editable=False)
 
-    def Fines(self, *args, **kwargs):
-        match_date = self.match.date_time
-        due_date = match_date + 1
-        if self.o > due_date:
-            match_fines = settings.NONPAYMENT_FINE
-        else:
-            match_fines = 500
-        return self.match_fines
-
-
+    
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem
@@ -80,7 +71,7 @@ class OrderLineItem(models.Model):
             if self.order.date > self.payment_due_date:
                 self.match_fines = settings.NONPAYMENT_FINE
             else:
-                self.match_fines = 500
+                self.match_fines = 0
         self.lineitem_total = self.match.ref_total + self.match.asst1_total + self.match.asst2_total + self.match_fines
         super().save(*args, **kwargs)
 

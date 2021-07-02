@@ -3,10 +3,9 @@
         "pk": 1,
         "model": "matches.fee",
         "fields": {
-            "age": 1,
+            "age": "U9",
             "referee_fee": 5.00,
             "asst_referee": 0,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -14,10 +13,9 @@
         "pk": 2,
         "model": "matches.fee",
         "fields": {
-            "age": 2,
+            "age": "U10",
             "referee_fee": 5.00,
             "asst_referee": 0,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -25,10 +23,9 @@
         "pk": 3,
         "model": "matches.fee",
         "fields": {
-            "age": 3,
+            "age": "U11",
             "referee_fee": 11.00,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -36,10 +33,9 @@
         "pk": 4,
         "model": "matches.fee",
         "fields": {
-            "age": 4,
+            "age": "U12",
             "referee_fee": 11.00,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -47,10 +43,9 @@
         "pk": 5,
         "model": "matches.fee",
         "fields": {
-            "age": 5,
+            "age": "U13",
             "referee_fee": 11.00,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -58,10 +53,9 @@
         "pk": 6,
         "model": "matches.fee",
         "fields": {
-            "age": 6,
+            "age": "U14",
             "referee_fee": 11.00,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -69,10 +63,9 @@
         "pk": 7,
         "model": "matches.fee",
         "fields": {
-            "age": 7,
+            "age": "U15",
             "referee_fee": 11.00,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -80,10 +73,9 @@
         "pk": 8,
         "model": "matches.fee",
         "fields": {
-            "age": 8,
+            "age": "U16",
             "referee_fee": 11.00,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -91,10 +83,9 @@
         "pk": 9,
         "model": "matches.fee",
         "fields": {
-            "age": 9,
+            "age": "U17",
             "referee_fee": 12.50,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -102,10 +93,9 @@
         "pk": 10,
         "model": "matches.fee",
         "fields": {
-            "age": 10,
+            "age": "U18",
             "referee_fee": 12.50,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -113,10 +103,9 @@
         "pk": 11,
         "model": "matches.fee",
         "fields": {
-            "age": 11,
+            "age": "Adults",
             "referee_fee": 12.50,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     },
@@ -124,10 +113,9 @@
         "pk": 12,
         "model": "matches.fee",
         "fields": {
-            "age": 12,
+            "age": "Veterans",
             "referee_fee": 12.50,
             "asst_referee": 5.00,
-            "nonpayment_fine": 25.00,
             "milage_rate": 0.36
         }
     }    
