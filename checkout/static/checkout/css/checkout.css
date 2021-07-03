@@ -14,7 +14,7 @@ body {
 }
 
 .checkout-badge {
-    height: auto;    
+    max-height: 4rem;    
     object-fit: contain;
 }
 
@@ -25,6 +25,13 @@ body {
 
 .checkout-match {
     background-color: #fff;
+}
+/* ---------- Checkout Success ---------- */
+
+.success-heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #011e41;
 }
 
 /* ---------- Stripe Elements ----------*/

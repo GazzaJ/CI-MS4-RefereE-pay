@@ -40,8 +40,7 @@
         <div class="row match mb-3 mx-1 align-items-center border-green">
             <div class="col text-center">
                 <h3 class="mb-4">Venue and Kick-off Time</h3>
-                <p class="mb-4">{{ match.date_time }}</p>
-                <p>Due: {{ match.payment_due_date }}</p>
+                <p class="mb-4">{{ match.date_time }}</p>                
                 <!-- Venue Map Accordion -->
                 <p>
                     <a class="btn btn-success" data-toggle="collapse" href="#venue-map" role="button"
@@ -102,10 +101,10 @@
                                         <p>Referee: {{ match.referee }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Match Fee: {{ ref_fee }}</p>
+                                        <p>Match Fee: £ {{ ref_fee }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Travel: {{ ref_trav }}</p>
+                                        <p>Travel: £ {{ ref_trav }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="ref_total">Total</label>
@@ -120,10 +119,10 @@
                                         <p>Asst Ref 1: {{ match.asst_referee1 }}</p>                                                                                                    
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Match Fee: {{ asst1_fee }}</p>
+                                        <p>Match Fee: £ {{ asst1_fee }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Travel: {{ asst1_trav }}</p>                                                    
+                                        <p>Travel: £ {{ asst1_trav }}</p>                                                    
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="asst1_total">Total</label>
@@ -138,10 +137,10 @@
                                         <p>Asst Ref 2: {{ match.asst_referee2 }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Match Fee: {{ asst2_fee }}</p>
+                                        <p>Match Fee: £ {{ asst2_fee }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Travel: {{ asst2_trav }}</p>
+                                        <p>Travel: £ {{ asst2_trav }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="asst2_total">Total</label>
@@ -156,6 +155,12 @@
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </form>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <p class="text-danger"><strong>You have 24hrs from Kick-off to pay the Match Officials fees.</strong></p>
+                                <p class="text-danger mt-3">If you fail to pay the fee you will incur a <strong>£25 </strong>non-payment fine</p>                                 
+                            </div>
+                        </div>
                     </div>
                 </div>                
             </div>
