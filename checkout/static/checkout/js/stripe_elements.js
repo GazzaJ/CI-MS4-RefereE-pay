@@ -47,7 +47,7 @@ card.addEventListener('change', function (event) {
 // Code to manage payment form submit
 var form = document.getElementById('payment-form')
 
-form.addEventListener('submit', function (ev) {
+form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
