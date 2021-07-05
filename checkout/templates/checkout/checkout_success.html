@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         {% for item in order.lineitems.all %}
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-1 text-center">
                                     <img class="checkout-badge image-fluid w-100"
                                     src="{{ item.match.home_team.club_name.club_badge_url }}"
@@ -106,7 +106,7 @@
                     
                         <div class="row ml-3">
                             <div class="col-12 col-md-4">
-                                <p>Full Name</p>
+                                <p>Full Name:</p>
                             </div>
                             <div class="col-12 col-md-8">
                                 <p>{{ order.full_name }}</p>
