@@ -30,7 +30,7 @@ def add_to_bag(request, item_id):
     else:
         # Add the Product ID and Quantity to the bag
         bag[item_id] = quantity
-        messages.success(request, f'Added {match.home_team} vs { match.away_team }to your kit bag!')
+        messages.success(request, f'Added {match.home_team} vs { match.away_team } to your kit bag!')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
