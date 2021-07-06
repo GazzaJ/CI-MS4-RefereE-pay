@@ -35,11 +35,16 @@ some customisation copied from CI Boutique Ado Project-->
                         </div>
 
                         <div class="col-3">
-                            <p class="toast-bag-text">{{ item.match.date_time }}</p>
+                            <p class="toast-bag-text">£ {{ item.match_fines }}</p>
                         </div>
                         <div class="col-3">
                             <p class="toast-bag-text">£ {{ item.match_total }}</p>
                         </div>                    
+                    </div>
+                    <div class="row">
+                        <div class="col text-small text-center">
+                            <p>{{ item.match.date_time }}</p>
+                        </div>
                     </div>
                     <hr class="mt-0">
                 {% endfor %}
