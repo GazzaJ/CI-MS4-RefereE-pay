@@ -4,7 +4,7 @@ from .models import Order, OrderLineItem
 
 class OrderLineItemAdminInLine(admin.TabularInline):
     model = OrderLineItem
-    readonly_fields = ('match_fines', 'lineitem_total',)
+    readonly_fields = ('match_fees', 'match_fines', 'lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):

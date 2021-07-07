@@ -56,6 +56,8 @@ class OrderLineItem(models.Model):
                               related_name='lineitems')
     match = models.ForeignKey(Game, null=False, blank=False, on_delete=models.CASCADE)
     payment_due_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    match_fees = models.DecimalField(max_digits=6, decimal_places=2,
+                                      null=False, default=0)
     match_fines = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
@@ -74,6 +76,7 @@ class OrderLineItem(models.Model):
                 self.match_fines = settings.NONPAYMENT_FINE
             else:
                 self.match_fines = 0
+        self.match_fees = self.match.ref_total + self.match.asst1_total + self.match.asst2_total
         self.lineitem_total = self.match.ref_total + self.match.asst1_total + self.match.asst2_total + self.match_fines
         super().save(*args, **kwargs)
 
