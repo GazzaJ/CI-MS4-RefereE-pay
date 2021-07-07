@@ -73,7 +73,7 @@
                                         <p class="text-center">{{ item.match_sub_total }}</p>
                                     </td>
                                     <td>
-                                        <p class="text-center text-danger"><strong>{{ item.match_fines }}</strong></p>
+                                        <p class="text-center text-danger"><strong>{{ item.match_fines |floatformat:2 }}</strong></p>
                                     </td>
                                     <td>
                                         <p class="text-center"><strong>{{ item.match_total }}</strong></p>

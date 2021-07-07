@@ -185,3 +185,11 @@ a {
 .social-link i {
     font-size: 2rem;
 }
+
+/* ---------- Media Queries ----------*/
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}

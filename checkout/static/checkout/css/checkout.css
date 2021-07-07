@@ -106,6 +106,7 @@ select option[value=""] {
     height: 100%;
     color:#fff
 }
+
 /* ----- Adapted from (https://codepen.io/glafontaine/pen/geMYaJ) ----- */
 .box {
     margin: 0 auto;
