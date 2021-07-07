@@ -7,10 +7,14 @@ from django.conf import settings
 import datetime
 
 from matches.models import Game
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, null=True, blank=True,
+                                     related_name="orders", 
+                                     on_delete=models.SET_NULL)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -19,8 +23,8 @@ class Order(models.Model):
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     county_or_state = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    country = CountryField(blank_label='Country', null=True, blank=True)    
-    date = models.DateTimeField(auto_now_add=True)        
+    country = CountryField(blank_label='Country *', null=True, blank=True)    
+    date = models.DateTimeField(auto_now_add=True)
     grand_total = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')

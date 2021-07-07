@@ -84,7 +84,7 @@
                                     £ {{ item.lineitem_total }}
                                 </div>
                                 <div class="col-2 text-right alignitem-center">
-                                    £ {{ item.match_fines }}
+                                    £ {{ item.match_fines |floatformat:2 }}
                                 </div>
                             </div>
                         {% endfor %}

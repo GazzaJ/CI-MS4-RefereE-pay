@@ -63,7 +63,7 @@ body {
     color: #aab7c4;
 }
 
-/*.fieldset-label {
+.fieldset-label {
     position: relative;
     right: .5rem;
 }
@@ -72,7 +72,17 @@ body {
 #card-element {
     color: #000;
     border: 1px solid #000;
-}*/
+}
+
+select,
+select option {
+    color: #000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
 
 /* ---------- Checkout Loader ----------*/
 
