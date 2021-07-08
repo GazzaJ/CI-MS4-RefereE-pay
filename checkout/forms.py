@@ -11,30 +11,30 @@ class OrderForm(forms.ModelForm):
                   'county_or_state', 'country',)
 
 
-def __init__(self, *args, **kwargs):
-    """
-    Add placeholders and classes. Remove auto-generated
-    labels and set autofocus on first field
-    """
-    super().__init__(*args, **kwargs)
-    placeholders = {
-        'full_name': 'Full Name',
-        'email': 'Email Address',
-        'phone_number': 'Phone Number',
-        'street_address1': 'Street Address1',
-        'street_address2': 'Street Address2',
-        'town_or_city': 'Town or City',
-        'county_or_state': 'County or State',
-        'postcode': 'Postcode',        
-    }
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes. Remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'full_name': 'Full Name',
+            'email': 'Email Address',
+            'phone_number': 'Phone Number',
+            'street_address1': 'Street Address1',
+            'street_address2': 'Street Address2',
+            'town_or_city': 'Town or City',
+            'county_or_state': 'County or State',
+            'postcode': 'Postcode',        
+        }
 
-    self.fields['full_name'].widget.attrs['autofocus'] = True
-    for field in self.fields:
-        if field != 'country':
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-        self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-        self.fields[field].label = False
+        self.fields['full_name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            if field != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False

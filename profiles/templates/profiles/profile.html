@@ -15,9 +15,23 @@
     <div class="container">
         <div class="profile-overlay"></div>
         <div class="row">
-            <div class="col">
-                {{ profile }}
+            <div class="col-12 col-lg-6">
+                <p>Profile Information</p>
+                <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-success rounded-3 mt-3 mb-5">Update</button> 
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>Order History</p>
+                {{ orders }}
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

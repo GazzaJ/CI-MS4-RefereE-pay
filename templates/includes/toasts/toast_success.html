@@ -19,7 +19,7 @@ some customisation copied from CI Boutique Ado Project-->
                 <img class="toast-img img-fluid" src="/media/success.png" alt="Success">
             </div>
         </div>
-        {% if grand_total != 0 %}
+        {% if grand_total != 0 and not on_profile_page %}
             <p>Kit bag contains ({{ match_count }}) matches</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}

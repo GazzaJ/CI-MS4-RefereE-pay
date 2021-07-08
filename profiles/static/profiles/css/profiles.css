@@ -13,7 +13,25 @@ body {
     z-index: -9999;
 }
 
-/* Allauth form formatting */
+#profile-update-form .form-control {
+    color: #000;
+}
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#id_profile_country,
+#id_profile_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_profile_country option:first-child {
+    color: #aab7c4;
+}
+
+
+/* ----- Allauth form formatting ----- */
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
     color: #6c757d;
