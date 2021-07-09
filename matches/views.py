@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
-from .models import Venue, Club, Fee, Team, Game
+from .models import Club, Fee, Team, Game
 
 
 def all_matches(request):
@@ -62,6 +62,7 @@ def match_detail(request, game_id):
     asst2_trav = 0
     asst2_total = 0
 
+    user = request.user
     match = get_object_or_404(Game, pk=game_id)
     if match.referee is None:
         ref_total = 0
@@ -100,6 +101,7 @@ def match_detail(request, game_id):
         'asst2_fee': asst2_fee,
         'asst2_trav': asst2_trav,
         'asst2_total': asst2_total,
+        'user': user,
     }
 
     return render(request, 'matches/match_detail.html', context)

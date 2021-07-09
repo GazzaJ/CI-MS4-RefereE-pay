@@ -146,14 +146,16 @@
                                         <label for="asst2_total">Total</label>
                                         <input class="total" value="{{ asst2_total }}" type="number" name="asst2_total" id="asst2_total"  data-item_id="{{ match.id }}" readonly>
                                     </div>
-                                </div>                                           
+                                </div>                                                                         
                             {% endif %}
+                            {% if user.get_full_name == match.home_team.manager_coach or request.user.is_superuser %}
                             <div class="form-row">
                                 <div class="col text-center">
                                     <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
+                            {% endif %}
                         </form>
                         <div class="row mt-3">
                             <div class="col">
