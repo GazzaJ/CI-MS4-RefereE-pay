@@ -5,9 +5,7 @@ Hi {{ order.full_name }}
 
     Payment Number: {{ order.order_number }}
     Payment Date: {{ order.date }}
-
-    Match Officials Fees: {{ order.match_fees }}
-    Non-payment Fine: {{ order.match_fines }}
+    
     Grand Total: {{ order.grand_total }}
 
     Your phone number is on file as {{ order.phone_number }}.
