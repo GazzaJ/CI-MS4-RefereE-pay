@@ -30,6 +30,10 @@ body {
     color: #aab7c4;
 }
 
+.order-history {
+    max-height: 31rem;
+    overflow-y: auto;
+}
 
 /* ----- Allauth form formatting ----- */
 .allauth-form-inner-content p {
