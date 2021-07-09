@@ -1,0 +1,21 @@
+Hi {{ order.full_name }}
+
+    This is a confirmation of your payment using RefereE-pay.
+    Your payment information is below:
+
+    Payment Number: {{ order.order_number }}
+    Payment Date: {{ order.date }}
+
+    Match Officials Fees: {{ order.match_fees }}
+    Non-payment Fine: {{ order.match_fines }}
+    Grand Total: {{ order.grand_total }}
+
+    Your phone number is on file as {{ order.phone_number }}.
+
+    if you have any questions regarding this or future payments, feel free to contact us at {{ contact_email }}.
+
+Thank you for using RefereE-Pay!
+
+Best Regards,
+
+The RefereE-Pay team
