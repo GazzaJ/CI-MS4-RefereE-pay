@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from .models import Club, Fee, Team, Game
+from checkout.models import Order, OrderLineItem
 
 
 def all_matches(request):
@@ -62,7 +63,10 @@ def match_detail(request, game_id):
     asst2_trav = 0
     asst2_total = 0
 
-    user = request.user
+    user = request.user    
+    
+    # Calculate and save Match officials fees
+    
     match = get_object_or_404(Game, pk=game_id)
     if match.referee is None:
         ref_total = 0
@@ -90,6 +94,15 @@ def match_detail(request, game_id):
 
     match.save()
 
+    # Determine whether a fixture has been paid for
+    paid = False
+    orders = Order.objects.all()
+    for order in orders:
+        print(order.original_bag)
+        for item in order.original_bag:
+            if item == game_id:
+                paid = True
+
     context = {
         'match': match,
         'ref_fee': ref_fee,
@@ -102,6 +115,9 @@ def match_detail(request, game_id):
         'asst2_trav': asst2_trav,
         'asst2_total': asst2_total,
         'user': user,
+        'orders': orders,
+        'paid': paid,
+
     }
 
     return render(request, 'matches/match_detail.html', context)

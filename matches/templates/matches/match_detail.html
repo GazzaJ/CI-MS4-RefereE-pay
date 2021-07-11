@@ -149,20 +149,29 @@
                                 </div>                                                                         
                             {% endif %}
                             {% if user.get_full_name == match.home_team.manager_coach or request.user.is_superuser %}
-                            <div class="form-row">
-                                <div class="col text-center">
-                                    <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
+                            {% if not paid %}
+                                <div class="form-row">
+                                    <div class="col text-center">
+                                        <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
+                                    </div>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </div>
+                                {% endif %}
                             {% endif %}
                         </form>
+
+                        {% if paid %}
+                        <h5 class="text-success text-uppercase mt-2">PAID</h5>
+                        {% endif %}
+
+                        {% if not paid %}
                         <div class="row mt-3">
                             <div class="col">
                                 <p class="text-danger"><strong>You have 24hrs from Kick-off to pay the Match Officials fees.</strong></p>
                                 <p class="text-danger mt-3">If you fail to pay the fee you will incur a <strong>£25 </strong>non-payment fine</p>                                 
                             </div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>                
             </div>
