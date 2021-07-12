@@ -13,19 +13,29 @@
     <div class="checkout-overlay"></div>
     <div class="container">
                 
-        <div class="row checkout-match my-5 border-green rounded-3">
-            <div class="col-12 col-lg-6 order-lg-last mb-3">
+        <div class="">
+            <div class="col-12 mb-3">
                 <div class="row">
                     <div class="col-12 mt-5">
                         <h3 class="text-center">Create a Game</h3>
                         <hr>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
+                        <form method="POST" action="{% url 'add_match' %}" class="form my-5 mx-3" enctype="mulyipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="text-center">
+                                <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
+                                <button class="btn btn-success rounded-3" type="submit">Add Match</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>          
+
             </div>
         </div>
-        <div class="row">
-            
-        </div>           
     </div>
     <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
     

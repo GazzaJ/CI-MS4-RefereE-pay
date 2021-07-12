@@ -86,6 +86,22 @@
                         </a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Admin
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'add_match' %}">Add Match
+                            <i class="fas fa-sign-in-alt"></i>
+                        </a>                         
+                        <a class="dropdown-item" href="{% url 'review_bag' %}">Edit Match
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>
+                        <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
+                            <i class="fas fa-cash-register"></i>
+                        </a> 
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link {% if grand_total > 0 %}grand-total{% else %}zero-total{% endif %}" href="{% url 'review_bag' %}">
                         <i class="fas fa-shopping-bag"></i>
