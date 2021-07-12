@@ -99,14 +99,10 @@ def match_detail(request, game_id):
     # Determine whether a fixture has been paid for
     paid = False
     orders = Order.objects.all()
-    for order in orders:
-        print(order.original_bag)
-        print(type(order.original_bag))
-        bag = order.original_bag
-        print(type(bag))
-        new_bag = json.loads(bag)
-        print(type(new_bag))
-        
+    for order in orders:        
+        bag = order.original_bag        
+        new_bag = json.loads(bag)       
+
         if game_id in new_bag.keys():
             paid = True
 
