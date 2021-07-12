@@ -6,6 +6,8 @@ from django.db.models import Q
 from .models import Club, Fee, Team, Game
 from checkout.models import Order, OrderLineItem
 
+import json
+
 
 def all_matches(request):
     """
@@ -63,7 +65,7 @@ def match_detail(request, game_id):
     asst2_trav = 0
     asst2_total = 0
 
-    user = request.user    
+    user = request.user
     
     # Calculate and save Match officials fees
     
@@ -99,9 +101,14 @@ def match_detail(request, game_id):
     orders = Order.objects.all()
     for order in orders:
         print(order.original_bag)
-        for item in order.original_bag:
-            if item == game_id:
-                paid = True
+        print(type(order.original_bag))
+        bag = order.original_bag
+        print(type(bag))
+        new_bag = json.loads(bag)
+        print(type(new_bag))
+        
+        if game_id in new_bag.keys():
+            paid = True
 
     context = {
         'match': match,
