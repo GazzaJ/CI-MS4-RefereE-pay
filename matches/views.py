@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from .models import Club, Fee, Team, Game
-from checkout.models import Order, OrderLineItem
+from checkout.models import Order
+from .forms import GameForm
 
 import json
 
@@ -21,7 +22,7 @@ def all_matches(request):
     fees = Fee.objects.all()
 
     query1 = None
-    
+
     if request.GET:
         if 'age' in request.GET:
             age_group = request.GET['age']
@@ -124,4 +125,15 @@ def match_detail(request, game_id):
     }
 
     return render(request, 'matches/match_detail.html', context)
+
+
+def add_match(request):
+    """ Add a new game to the app """
+    form = GameForm()
+    template = 'matches/add_match.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 

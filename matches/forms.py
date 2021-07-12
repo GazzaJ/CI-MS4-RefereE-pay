@@ -10,5 +10,9 @@ class GameForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        matches = Game.objects.all()
 
-        self.fields[]
+        self.fields['home_team'].choices
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-black rounded-3'
+
