@@ -73,7 +73,8 @@ class Team(models.Model):
 
 class Game(models.Model):
     age = models.ForeignKey('Fee', null=True, blank=False,
-                            related_name="age_group", on_delete=models.CASCADE)             
+                            related_name="age_group", on_delete=models.CASCADE)
+    competition = models.ForeignKey('Competition', null=False, blank=False, on_delete=models.CASCADE)    
     home_team = models.ForeignKey('Team', related_name='home_team', null=False,
                                   blank=False, on_delete=models.CASCADE)
     away_team = models.ForeignKey('Team', related_name='away_team', null=False,
