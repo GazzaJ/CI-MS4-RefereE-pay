@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Club, Venue, Team, Game, Fee
+from .models import Club, Venue, Team, Game, Fee, Competition
 
 
 class ClubAdmin(admin.ModelAdmin):
@@ -7,6 +7,12 @@ class ClubAdmin(admin.ModelAdmin):
         'club_name',
         'club_badge',
         'website_url',
+    )
+
+
+class CompetitionAdmin(admin.ModelAdmin):
+    list_display = (
+        'comp',
     )
 
 
@@ -37,7 +43,7 @@ class FeeAdmin(admin.ModelAdmin):
 
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = (
+    list_display = (        
         'home_team',
         'away_team',
         'venue',
@@ -48,6 +54,7 @@ class GameAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Club, ClubAdmin)
+admin.site.register(Competition, CompetitionAdmin)
 admin.site.register(Venue, VenueAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Game, GameAdmin)

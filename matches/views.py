@@ -100,8 +100,8 @@ def match_detail(request, game_id):
     paid = False
     orders = Order.objects.all()
     for order in orders:        
-        bag = order.original_bag        
-        new_bag = json.loads(bag)       
+        bag = order.original_bag
+        new_bag = json.loads(bag)
 
         if game_id in new_bag.keys():
             paid = True
