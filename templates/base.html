@@ -68,21 +68,31 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'account_login' %}">Log In
-                            <i class="fas fa-sign-in-alt"></i>
+                            <span class="float-right text-success">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </span>
                         </a>
                         <div class="dropdown-divider"></div>  
                         <a class="dropdown-item" href="{% url 'review_bag' %}">Kit Bag
-                            <i class="fas fa-shopping-bag"></i>
+                            <span class="float-right">
+                                <i class="fas fa-shopping-bag"></i>
+                            </span>
                         </a>
                         <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
-                            <i class="fas fa-cash-register"></i>
+                            <span class="float-right">
+                                <i class="fas fa-cash-register"></i>
+                            </span>
                         </a>
                         <a class="dropdown-item" href="{% url 'profile' %}">Profile
-                            <i class="fas fa-user"></i>
+                            <span class="float-right">
+                                <i class="fas fa-user"></i>
+                            </span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out
-                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="float-right text-danger">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span>
                         </a>
                     </div>
                 </li>
@@ -92,13 +102,19 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'add_match' %}">Add Match
-                            <i class="fas fa-sign-in-alt"></i>
+                            <span class="float-right">
+                                <i class="fas fa-calendar-plus"></i>
+                            </span>
                         </a>                         
                         <a class="dropdown-item" href="{% url 'review_bag' %}">Edit Match
-                            <i class="fas fa-shopping-bag"></i>
+                            <span class="float-right">
+                                <i class="fas fa-edit"></i>
+                            </span>
                         </a>
                         <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
-                            <i class="fas fa-cash-register"></i>
+                            <span class="float-right">
+                                <i class="fas fa-cash-register"></i>
+                            </span>
                         </a> 
                     </div>
                 </li>
