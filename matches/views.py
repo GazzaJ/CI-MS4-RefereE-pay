@@ -168,3 +168,28 @@ def add_match(request):
     }
 
     return render(request, template, context)
+
+
+def edit_match(request, game_id):
+    """ Edit the selected match details """
+    match = get_object_or_404(Game, pk=game_id)
+    if request.method == "POST":
+        form = GameForm(request.POST, instance=match)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'You successfully updated the game!')
+            return redirect(reverse('match_detail', args=[match.id]))
+        else:
+            messages.error(request, 'Failed to update the game. \
+                Please ensure the form has valid inputs')
+    else:
+        form = GameForm(instance=match)
+        messages.info(request, f'You are editting {match.home_team} vs {match.away_team}')
+
+    template = 'matches/edit_match.html'
+    context = {
+        'form': form,
+        'match': match,
+    }
+
+    return render(request, template, context)
