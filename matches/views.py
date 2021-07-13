@@ -153,11 +153,11 @@ def add_match(request):
     if request.method == "POST":
         form = GameForm(request.POST)
         if form.is_valid:
-            form.save()
-            messages.success(request, 'You successfully added a new game!')
-            return redirect(reverse('add_match'))
+            match = form.save()
+            messages.success(request, 'You successfully added a new match!')
+            return redirect(reverse('match_detail', args=[match.id]))
         else:
-            messages.error(request, 'Failed to create a new game. \
+            messages.error(request, 'Failed to create a new match. \
                 Please ensure the form has valid inputs')
     else:
         form = GameForm()
@@ -177,10 +177,10 @@ def edit_match(request, game_id):
         form = GameForm(request.POST, instance=match)
         if form.is_valid:
             form.save()
-            messages.success(request, 'You successfully updated the game!')
+            messages.success(request, 'You successfully updated the match!')
             return redirect(reverse('match_detail', args=[match.id]))
         else:
-            messages.error(request, 'Failed to update the game. \
+            messages.error(request, 'Failed to update the match. \
                 Please ensure the form has valid inputs')
     else:
         form = GameForm(instance=match)
@@ -193,3 +193,11 @@ def edit_match(request, game_id):
     }
 
     return render(request, template, context)
+
+
+def delete_match(request, game_id):
+    """ Deletes the selected match details """
+    match = get_object_or_404(Game, pk=game_id)
+    match.delete()
+    messages.success(request, 'You have successfully deleted the match!')
+    return redirect(reverse('matches'))
