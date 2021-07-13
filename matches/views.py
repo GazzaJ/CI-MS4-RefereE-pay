@@ -5,7 +5,7 @@ from django.db.models import Q
 
 from .models import Club, Fee, Team, Game
 from checkout.models import Order
-from .forms import GameForm
+from .forms import GameForm, CompetitionForm
 
 import json
 
@@ -97,7 +97,7 @@ def match_detail(request, game_id):
 
     match.save()
 
-    # Determine whether a fixture has been paid for
+    # Determine whether a fixture has been paid for or not
     paid = False
     orders = Order.objects.all()
     for order in orders:        
@@ -127,13 +127,44 @@ def match_detail(request, game_id):
     return render(request, 'matches/match_detail.html', context)
 
 
+def add_competition(request):
+    """ Add a new competition to the app """
+    if request.method == "POST":
+        comp_form = CompetitionForm(request.POST)
+        if comp_form.is_valid():
+            messages.success(request, 'You successfully added a new competition!')
+            return redirect(request, 'add_match')
+        else:
+            messages.error(request, 'Failed to create a new competition. \
+                Please ensure the form has valid inputs')
+    else:
+        comp_form = CompetitionForm()
+
+    template = 'matches/add_match.html'
+    context = {
+        'comp_form': comp_form,
+    }
+
+    return render(request, template, context)
+
+
 def add_match(request):
     """ Add a new game to the app """
-    form = GameForm()
+    if request.method == "POST":
+        form = GameForm(request.POST)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'You successfully added a new game!')
+            return redirect(reverse('add_match'))
+        else:
+            messages.error(request, 'Failed to create a new game. \
+                Please ensure the form has valid inputs')
+    else:
+        form = GameForm()
+
     template = 'matches/add_match.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
-
