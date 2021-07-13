@@ -16,24 +16,39 @@
         <div class="match-overlay"></div>
         <!-- Match teams -->
         <div class="row match mb-3 mx-1 align-items-center border-green">
-            <div class="col-4 col-lg-2 text-center">
-                <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
-                    alt="match.home_team.club_name">
-            </div>
-            <div class="col-8 col-lg-3 text-center">
-                <p class="coach mb-3">{{ match.home_team }}</p>
-                <p>Coach: {{ match.home_team.manager_coach }}</p>
-            </div>
-            <div class="col-sm-12 col-lg-2 text-center">
-                <h3>VS</h3>
-            </div>
-            <div class="col-8 col-lg-3 text-center">
-                <p class="coach mb-3">{{ match.away_team }}</p>
-                <p>Coach: {{ match.away_team.manager_coach }}</p>
-            </div>
-            <div class="col-4 col-lg-2 text-center">
-                <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
-                    alt="match.away_team.club_name">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-4 col-lg-2 text-center">
+                        <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
+                            alt="match.home_team.club_name">
+                    </div>
+                    <div class="col-8 col-lg-3 text-center">
+                        <p class="coach mb-3">{{ match.home_team }}</p>
+                        <p>Coach: {{ match.home_team.manager_coach }}</p>
+                    </div>
+                    <div class="col-sm-12 col-lg-2 text-center">
+                        <h3>VS</h3>
+                    </div>
+                    <div class="col-8 col-lg-3 text-center">
+                        <p class="coach mb-3">{{ match.away_team }}</p>
+                        <p>Coach: {{ match.away_team.manager_coach }}</p>
+                    </div>
+                    <div class="col-4 col-lg-2 text-center">
+                        <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
+                            alt="match.away_team.club_name">
+                    </div>
+                </div>
+                {% if request.user.is_superuser %}
+                    <div class="row">
+                        <div class="col-12 col-md-6 text-right">
+                            <a class="btn btn-sm btn-warning mr-2" href="{% url 'edit_match' match.id %}">Edit Match</a>
+                        </div>
+                        <div class="col-12 col-md-6 text-left">
+                            <a class="btn btn-sm btn-outline-danger ml-2" href="{% url 'delete_match' match.id %}">Delete
+                                Match</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
         <!-- Venue and KO Time -->
