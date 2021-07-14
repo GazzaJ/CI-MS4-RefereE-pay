@@ -16,7 +16,7 @@ def all_matches(request):
     including, sorting and searching
     """   
 
-    matches = Game.objects.all()    
+    matches = Game.objects.all()   
     teams = Team.objects.all()
     clubs = Club.objects.all()
     fees = Fee.objects.all()

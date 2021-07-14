@@ -64,60 +64,72 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      My Account
+                        My Account
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'account_login' %}">Log In
+                        {% if request.user.is_authenticated %}
+                        <a class="dropdown-item disabled" href="{% url 'account_login' %}">Log In
                             <span class="float-right text-success">
                                 <i class="fas fa-sign-in-alt"></i>
                             </span>
                         </a>
-                        <div class="dropdown-divider"></div>  
-                        <a class="dropdown-item" href="{% url 'review_bag' %}">Kit Bag
-                            <span class="float-right">
-                                <i class="fas fa-shopping-bag"></i>
-                            </span>
-                        </a>
-                        <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
-                            <span class="float-right">
-                                <i class="fas fa-cash-register"></i>
-                            </span>
-                        </a>
-                        <a class="dropdown-item" href="{% url 'profile' %}">Profile
-                            <span class="float-right">
-                                <i class="fas fa-user"></i>
-                            </span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out
-                            <span class="float-right text-danger">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </span>
-                        </a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'account_login' %}">Log In
+                                <span class="float-right text-success">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </span>
+                            </a>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                            <div class="dropdown-divider"></div>  
+                            <a class="dropdown-item" href="{% url 'review_bag' %}">Kit Bag
+                                <span class="float-right">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </span>
+                            </a>
+                            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
+                                <span class="float-right">
+                                    <i class="fas fa-cash-register"></i>
+                                </span>
+                            </a>
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile
+                                <span class="float-right">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out
+                                <span class="float-right text-danger">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+                            </a>
+                        {% endif %}
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Admin
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'add_match' %}">Add Match
-                            <span class="float-right">
-                                <i class="fas fa-calendar-plus"></i>
-                            </span>
-                        </a>                         
-                        <a class="dropdown-item" href="{% url 'review_bag' %}">Edit Match
-                            <span class="float-right">
-                                <i class="fas fa-edit"></i>
-                            </span>
+                {% if request.user.is_superuser %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
                         </a>
-                        <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
-                            <span class="float-right">
-                                <i class="fas fa-cash-register"></i>
-                            </span>
-                        </a> 
-                    </div>
-                </li>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'add_match' %}">Add Match
+                                <span class="float-right">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </span>
+                            </a>                         
+                            <a class="dropdown-item" href="{% url 'matches' %}">Edit Match
+                                <span class="float-right">
+                                    <i class="fas fa-edit"></i>
+                                </span>
+                            </a>
+                            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
+                                <span class="float-right">
+                                    <i class="fas fa-cash-register"></i>
+                                </span>
+                            </a> 
+                        </div>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link {% if grand_total > 0 %}grand-total{% else %}zero-total{% endif %}" href="{% url 'review_bag' %}">
                         <i class="fas fa-shopping-bag"></i>
