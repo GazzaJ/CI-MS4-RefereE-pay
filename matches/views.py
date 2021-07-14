@@ -22,6 +22,8 @@ def all_matches(request):
     fees = Fee.objects.all()
 
     query1 = None
+    search = None
+
 
     if request.GET:
         if 'age' in request.GET:
@@ -30,14 +32,23 @@ def all_matches(request):
             query1 = Q(age__age=age_group) | Q(age__age=age_group)
             matches = matches.filter(query1)
 
-        if 'team' in request.GET:
-            team = request.GET['team']            
-            query2 = Q(home_team__team_name=team) | Q(away_team__team_name=team)
-            matches = matches.filter(query2)        
-
-        else:
-            messages.error(request, "You didn't enter any search criteria")
+        #if 'team' in request.GET:
+        #    team = request.GET['team']            
+        #    query2 = Q(home_team__team_name=team) | Q(away_team__team_name=team)
+        #    matches = matches.filter(query2)        
+#
+        #else:
+        #    messages.error(request, "You didn't enter any search criteria")
             return redirect(reverse('matches'))
+            
+        if 'q' in request.GET:
+            search = request.GET['q']
+            if not search:
+                messages.error(request, "You didn't enter any search criteria")
+                return redirect(reverse('matches'))
+            searches = Q(home_team__team_name__icontains=search) | Q(
+                away_team__team_name__icontains=search)
+            matches = matches.filter(searches)
 
     context = {
         'matches': matches,
