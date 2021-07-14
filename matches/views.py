@@ -22,25 +22,36 @@ def all_matches(request):
     fees = Fee.objects.all()
 
     query1 = None
+    query2 = None
     search = None
 
-
     if request.GET:
-        if 'age' in request.GET:
-            age_group = request.GET['age']
-            print(age_group)
-            query1 = Q(age__age=age_group) | Q(age__age=age_group)
+        if 'age' and 'team' in request.GET:
+            print('BINGO!')
+            q1 = request.GET['age']
+            q2 = request.GET['team']
+            qu1 = Q(home_team__team_name__contains=q1) | Q(
+                    away_team__team_name__contains=q1)
+            qu2 = Q(home_team__team_name=q2) | Q(away_team__team_name=q2)
+            matches = matches.filter(qu1, qu2)
+
+        if 'team' in request.GET:
+            team = request.GET['team']
+            query2 = Q(home_team__team_name=team) | Q(
+                       away_team__team_name=team)
+            matches = matches.filter(query2)
+
+        elif 'age' in request.GET:
+            age_group = request.GET['age']            
+            query1 = Q(home_team__team_name__contains=age_group) | Q(
+                       away_team__team_name__contains=age_group)
             matches = matches.filter(query1)
 
-        #if 'team' in request.GET:
-        #    team = request.GET['team']            
-        #    query2 = Q(home_team__team_name=team) | Q(away_team__team_name=team)
-        #    matches = matches.filter(query2)        
-#
-        #else:
-        #    messages.error(request, "You didn't enter any search criteria")
+        else:
+            messages.error(request, "You didn't enter any search criteria")
             return redirect(reverse('matches'))
-            
+
+        # Filter results by search box query
         if 'q' in request.GET:
             search = request.GET['q']
             if not search:

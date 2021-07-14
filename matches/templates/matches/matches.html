@@ -15,31 +15,37 @@
     <div class="container">
         <div class="match-overlay"></div>
         <form id="filter" action="{% url 'matches' %}" method="GET">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="form-group">
-                    <label for="age">Age Group</label>
-                    <select class="form-control" id="age" name="age" onchange="form.submit()">
-                        <option selected></option>
-                        {% for age in fees %}
-                            <option>{{ age }}</option>
-                        {% endfor %}
-                    </select>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="age">Age Group</label>
+                        <select class="form-control" id="age" name="age">
+                            <option selected></option>
+                            {% for age in fees %}
+                                <option>{{ age }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="team">Team</label>
+                        <select class="form-control" id="team" name="team">
+                            <option selected disabled></option>
+                            {% for team in teams %}
+                                <option>{{ team }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="form-group">
-                    <label for="team">Team</label>
-                    <select class="form-control" id="team" name="team" onchange="form.submit()">
-                        <option selected disabled></option>
-                        {% for team in teams %}
-                            <option>{{ team }}</option>
-                        {% endfor %}
-                    </select>
+            <div class="row">
+                <div class="col-12 text-center my-2">
+                    <button class="btn btn-success" type="submit" >Filter</button>
                 </div>
-            </div>           
+            </div>                       
         </form>
-    </div>        
+            
         {% for match in matches %}               
             <a class="match-text" href="{% url 'match_detail' match.id %}">
                 <div class="row match mb-3 align-items-center border-green">
@@ -84,4 +90,3 @@
 
 
 {% endblock %}
-
