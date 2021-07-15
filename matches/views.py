@@ -149,8 +149,13 @@ def match_detail(request, game_id):
     return render(request, 'matches/match_detail.html', context)
 
 
+@login_required
 def add_competition(request):
     """ Add a new competition to the app """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to add a competition!")
+        return redirect(reverse, 'home')
+
     if request.method == "POST":
         comp_form = CompetitionForm(request.POST)
         if comp_form.is_valid():
@@ -170,8 +175,13 @@ def add_competition(request):
     return render(request, template, context)
 
 
+@login_required
 def add_match(request):
     """ Add a new game to the app """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to add a amtch!")
+        return redirect(reverse, 'home')
+
     if request.method == "POST":
         form = GameForm(request.POST)
         if form.is_valid:
@@ -192,8 +202,13 @@ def add_match(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_match(request, game_id):
     """ Edit the selected match details """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to edit a match!")
+        return redirect(reverse, 'home')
+
     match = get_object_or_404(Game, pk=game_id)
     if request.method == "POST":
         form = GameForm(request.POST, instance=match)
@@ -216,9 +231,13 @@ def edit_match(request, game_id):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_match(request, game_id):
     """ Deletes the selected match details """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to delete a match!")
+        return redirect(reverse, 'home')
+
     match = get_object_or_404(Game, pk=game_id)
     match.delete()
     messages.success(request, 'You have successfully deleted the match!')
