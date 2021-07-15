@@ -86,7 +86,23 @@
                 </div>
             </a>           
         {% endfor %}                
+        <div class="row">
+            <div class="col-12 btt-button text-center">
+                <a class="btt-link">
+                    <i class="fas fa-arrow-alt-circle-up my-auto btt-icon"></i>
+                </a>	
+            </div>
+        </div>
     </div>
 
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
 {% endblock %}
