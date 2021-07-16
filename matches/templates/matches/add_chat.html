@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
+{% endblock %}
+
+{% block page_header %}    
+    <h1 class="text-center mt-5 mb-3">Add a Message</h1>    
+{% endblock %}
+
+{% block content %}    
+    <div class="match-overlay"></div>
+    <div class="container">
+                
+        <div class="row">
+            <div class="col-12 mb-3">                
+                <div class="col-12 col-md-6 match my-5 border-green rounded-3">
+                    <form method="POST" action="{% url 'add_chat' match.id %}" class="form my-5 mx-3" enctype="mulyipart/form-data">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <div class="text-center">
+                            <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
+                            <button class="btn btn-success rounded-3" type="submit">Add Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
+    
+{% endblock %}
+
+

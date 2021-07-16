@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from django_countries.fields import CountryField
 
@@ -99,3 +100,15 @@ class Game(models.Model):
 
     class Meta:
         ordering = ['date_time']
+
+
+class Chat(models.Model):
+    match = models.ForeignKey(Game, null=False, blank=False, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, max_length=100, blank=False, null=False, on_delete=models.CASCADE)
+    body = models.TextField()
+    image = models.ImageField(null=True, blank=True)
+    date = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+    def __str__(self):
+        return self.author
+

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Club, Venue, Team, Game, Fee, Competition
+from .models import Club, Venue, Team, Game, Fee, Competition, Chat
 
 
 class ClubAdmin(admin.ModelAdmin):
@@ -53,6 +53,17 @@ class GameAdmin(admin.ModelAdmin):
     ordering = ('date_time',)
 
 
+class ChatAdmin(admin.ModelAdmin):
+    list_display = (
+        'match',
+        'author',
+        'date',
+    )
+
+    ordering = ('date',)
+
+
+admin.site.register(Chat, ChatAdmin)
 admin.site.register(Club, ClubAdmin)
 admin.site.register(Competition, CompetitionAdmin)
 admin.site.register(Venue, VenueAdmin)

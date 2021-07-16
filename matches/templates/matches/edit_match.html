@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
 {% endblock %}
 
 {% block page_header %}    
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}    
-    <div class="checkout-overlay"></div>
+    <div class="match-overlay"></div>
     <div class="container">
                 
         <div class="row">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
-                        <form method="POST" action="{% url 'edit_match' match.id %}" class="form my-5 mx-3" enctype="mulyipart/form-data">
+                        <form method="POST" action="{% url 'edit_match' match.id %}" class="form my-5 mx-3" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="text-center">

@@ -5,7 +5,7 @@ from django.db.models import Q
 
 from .models import Club, Fee, Team, Game
 from checkout.models import Order
-from .forms import GameForm, CompetitionForm
+from .forms import GameForm, CompetitionForm, ChatForm
 
 import json
 
@@ -231,6 +231,7 @@ def edit_match(request, game_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_match(request, game_id):
     """ Deletes the selected match details """
@@ -242,3 +243,38 @@ def delete_match(request, game_id):
     match.delete()
     messages.success(request, 'You have successfully deleted the match!')
     return redirect(reverse('matches'))
+
+
+@login_required
+def match_chat(request, game_id):
+    match = get_object_or_404(Game, pk=game_id)
+
+    context = {
+        'match': match,
+    }
+
+    return render(request, 'matches/match_chat.html', context)
+
+
+@login_required
+def add_chat(request, game_id):
+    match = get_object_or_404(Game, pk=game_id)
+    if request.method == "POST":
+        form = ChatForm(request.POST)
+        if form.is_valid:
+            match = form.save()
+            messages.success(request, 'You successfully added a new message!')
+            return redirect(reverse('match_chat', args=[match.id]))
+        else:
+            messages.error(request, 'Failed to create a new message. \
+                Please ensure the form has valid inputs')
+    else:
+        form = ChatForm()
+
+    template = 'matches/add_chat.html'
+    context = {
+        'form': form,
+        'match': match,
+    }
+
+    return render(request, template, context)
