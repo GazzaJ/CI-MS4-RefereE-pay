@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
-from .models import Club, Fee, Team, Game
+from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
 from .forms import GameForm, CompetitionForm, ChatForm
 
@@ -259,22 +259,37 @@ def match_chat(request, game_id):
 @login_required
 def add_chat(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
+    user = request.user
+    data = {
+        'match': match,
+        'author': user,
+        }
     if request.method == "POST":
-        form = ChatForm(request.POST)
+        form = ChatForm(request.POST, request.FILES)
         if form.is_valid:
-            match = form.save()
+            chat = form.save()
             messages.success(request, 'You successfully added a new message!')
-            return redirect(reverse('match_chat', args=[match.id]))
+            return redirect(reverse('match_chat', args=[chat.id]))
         else:
             messages.error(request, 'Failed to create a new message. \
                 Please ensure the form has valid inputs')
     else:
-        form = ChatForm()
+        form = ChatForm(initial=data)
 
     template = 'matches/add_chat.html'
     context = {
         'form': form,
         'match': match,
+        'author': user,
     }
 
     return render(request, template, context)
+
+# def edit_project (request, offset):
+#     this_project = Project.objects.get(pk=offset)
+#     data = {'project_name' : 'abc'}
+#     form = edit_project_info(request.POST, instance=this_project, initial=data)
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponseRedirect('/project_profile/%s/' % offset)
