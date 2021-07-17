@@ -65,3 +65,21 @@ body {
     font-weight: bold;
 }
 
+/* ---------- Chat ----------*/
+
+.coach-chat {
+    background-color: rgb(60, 174, 219);
+    color: #fff;
+    border-radius: 0 5px 5px 5px;    
+}
+
+.ref-chat {
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px 0 5px 5px;
+}
+
+.chat-image {
+    height: 5rem;
+    width: auto;
+}

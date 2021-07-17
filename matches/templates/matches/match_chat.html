@@ -68,14 +68,44 @@
         <div class="row match border-green text-center mt-3">
             <div class="col">
                 <h3 class="mb-4">Messages</h3>
-                <div class="row">
-                    <div class="col-12">
-
-                    </div>
-                </div>
+                {% for chat in chats %}
+                    {% if chat.match.id == match.id %}
+                        {% if chat.author.get_full_name == match.home_team.manager_coach %}
+                        <div class="row mb-3 ml-3">
+                            {{ chat.author }}
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 col-md-5 coach-chat text-left">
+                                       <p>{{ chat.body }}</p>
+                                        {% if chat.image %}                                        
+                                            <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail" alt="">
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-7"></div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% if chat.author.get_full_name == match.referee %}
+                        <div class="row mb-3 mr-3">
+                            <div class="col-12 text-right">
+                            {{ chat.author }}
+                                <div class="row">
+                                    <div class="col-12 col-md-7"></div>
+                                    <div class="col-12 col-md-5 ref-chat text-left">
+                                        {{ chat.body }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Author: {{ chat.author.get_full_name }}</p>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
-        
+               
         <div class="row no-gutters my-5">
             <div class="col-md-6 text-center">
                 <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>

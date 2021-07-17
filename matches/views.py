@@ -248,9 +248,11 @@ def delete_match(request, game_id):
 @login_required
 def match_chat(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
+    chats = Chat.objects.all()     
 
     context = {
         'match': match,
+        'chats': chats,
     }
 
     return render(request, 'matches/match_chat.html', context)
@@ -269,7 +271,7 @@ def add_chat(request, game_id):
         if form.is_valid:
             chat = form.save()
             messages.success(request, 'You successfully added a new message!')
-            return redirect(reverse('match_chat', args=[chat.id]))
+            return redirect(reverse('match_chat', args=[match.id]))
         else:
             messages.error(request, 'Failed to create a new message. \
                 Please ensure the form has valid inputs')
@@ -285,11 +287,3 @@ def add_chat(request, game_id):
 
     return render(request, template, context)
 
-# def edit_project (request, offset):
-#     this_project = Project.objects.get(pk=offset)
-#     data = {'project_name' : 'abc'}
-#     form = edit_project_info(request.POST, instance=this_project, initial=data)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect('/project_profile/%s/' % offset)
