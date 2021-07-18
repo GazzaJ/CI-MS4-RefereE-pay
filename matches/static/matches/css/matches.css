@@ -67,6 +67,18 @@ body {
 
 /* ---------- Chat ----------*/
 
+.team-author {
+    background-color: rgb(60, 174, 219);
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+.ref-author {
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
 .coach-chat {
     background-color: rgb(60, 174, 219);
     color: #fff;

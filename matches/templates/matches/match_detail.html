@@ -176,7 +176,7 @@
                         </form>
 
                         {% if paid %}
-                        <h5 class="text-success text-uppercase mt-2">PAID</h5>
+                            <h5 class="text-success text-uppercase mt-2">PAID</h5>
                         {% endif %}
 
                         {% if not paid %}
@@ -196,9 +196,14 @@
             <div class="col-md-6 text-center">
                 <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
             </div>
-            <div class="col-md-6 text-center">
-                <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
-            </div>
+                      
+            {% if post %}
+                {% if user.get_full_name == match.home_team.manager_coach or request.user.is_superuser %}
+                    <div class="col-md-6 text-center">
+                        <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
+                    </div>
+                {% endif %}
+            {% endif %}
         </div>
     </div>
 

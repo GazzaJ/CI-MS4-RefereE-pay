@@ -66,41 +66,51 @@
         </div>
         <!-- Messages Window -->
         <div class="row match border-green text-center mt-3">
-            <div class="col">
+            <div class="col mx-5">
                 <h3 class="mb-4">Messages</h3>
                 {% for chat in chats %}
-                    {% if chat.match.id == match.id %}
+                    {% if chat.match.id == match.id %}                    
                         {% if chat.author.get_full_name == match.home_team.manager_coach %}
-                        <div class="row mb-3 ml-3">
-                            {{ chat.author }}
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-12 col-md-5 coach-chat text-left">
-                                       <p>{{ chat.body }}</p>
-                                        {% if chat.image %}                                        
-                                            <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail" alt="">
-                                        {% endif %}
-                                    </div>
-                                    
-                                    <div class="col-12 col-md-7"></div>
+                        <!-- Coach's Messages -->
+                            <div class="row">
+                                <div class="col-2 team-author">
+                                    <p>{{ chat.author }}</p>
                                 </div>
+                                <div class="col-10"></div>
                             </div>
-                            {% endif %}
-                        </div>
-                        {% if chat.author.get_full_name == match.referee %}
-                        <div class="row mb-3 mr-3">
-                            <div class="col-12 text-right">
-                            {{ chat.author }}
-                                <div class="row">
-                                    <div class="col-12 col-md-7"></div>
-                                    <div class="col-12 col-md-5 ref-chat text-left">
-                                        {{ chat.body }}
-                                    </div>
+                            <div class="row mb-3">
+                                <div class="col-12 col-md-6 coach-chat text-left">
+                                    <p>{{ chat.body }}</p>
+                                    {% if chat.image %}
+                                    <a href="/media/{{ chat.image }}" target="_blank">                                        
+                                        <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail mb-2" alt="">
+                                    </a>
+                                    {% endif %}
                                 </div>
+                                <div class="col-12 col-md-6"></div>                           
                             </div>
-                        </div>
-                        <p>Author: {{ chat.author.get_full_name }}</p>
                         {% endif %}
+
+                        {% if chat.author.get_full_name == ref %}
+                        <!-- Referee's Messages -->
+                            <div class="row">
+                                <div class="col-10"></div>
+                                <div class="col-2 ref-author">
+                                    <p>{{ chat.author }}</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-12 col-md-6"></div>
+                                <div class="col-12 col-md-6 ref-chat text-left">
+                                    <p>{{ chat.body }}</p>
+                                    {% if chat.image %}
+                                        <a href="/media/{{ chat.image }}" target="_blank">                                        
+                                            <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail mb-2" alt="">
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}                        
                     {% endif %}
                 {% endfor %}
             </div>

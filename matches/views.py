@@ -8,6 +8,7 @@ from checkout.models import Order
 from .forms import GameForm, CompetitionForm, ChatForm
 
 import json
+import datetime
 
 
 def all_matches(request):
@@ -129,6 +130,11 @@ def match_detail(request, game_id):
         if game_id in new_bag.keys():
             paid = True
 
+    post = False
+    today = datetime.datetime.now()
+    if match.date_time.replace(tzinfo=None) > today:
+        post = True
+
     context = {
         'match': match,
         'ref_fee': ref_fee,
@@ -143,7 +149,7 @@ def match_detail(request, game_id):
         'user': user,
         'orders': orders,
         'paid': paid,
-
+        'post': post,
     }
 
     return render(request, 'matches/match_detail.html', context)
@@ -248,11 +254,13 @@ def delete_match(request, game_id):
 @login_required
 def match_chat(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
-    chats = Chat.objects.all()     
+    chats = Chat.objects.all()
+    ref = str(match.referee)    
 
     context = {
         'match': match,
         'chats': chats,
+        'ref': ref,
     }
 
     return render(request, 'matches/match_chat.html', context)
