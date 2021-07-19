@@ -5,7 +5,7 @@ from django.db.models import Q
 
 from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
-from .forms import GameForm, CompetitionForm, ChatForm
+from .forms import GameForm, CompetitionForm, ChatForm, FeesForm
 
 import json
 import datetime
@@ -90,15 +90,17 @@ def match_detail(request, game_id):
     asst2_total = 0
 
     user = request.user
-    
+
     # Calculate and save Match officials fees
-    
+
     match = get_object_or_404(Game, pk=game_id)
+    ref = str(match.referee)
+
     if match.referee is None:
         ref_total = 0
     else:
         ref_fee = match.home_team.age.referee_fee
-        ref_trav = 0
+        ref_trav = match.ref_trav
         ref_total = ref_fee + ref_trav
         match.ref_total = ref_total
 
@@ -106,7 +108,7 @@ def match_detail(request, game_id):
         asst1_total = 0
     else:
         asst1_fee = match.home_team.age.asst_referee
-        asst1_trav = 0
+        asst1_trav = match.asst1_trav
         asst1_total = asst1_fee + asst1_trav
         match.asst1_total = asst1_total
 
@@ -114,7 +116,7 @@ def match_detail(request, game_id):
         asst2_total = 0
     else:
         asst2_fee = match.home_team.age.asst_referee
-        asst2_trav = 0
+        asst2_trav = match.asst2_trav
         asst2_total = asst2_fee + asst2_trav
         match.asst2_total = asst2_total
 
@@ -147,12 +149,50 @@ def match_detail(request, game_id):
         'asst2_trav': asst2_trav,
         'asst2_total': asst2_total,
         'user': user,
+        'ref': ref,
         'orders': orders,
         'paid': paid,
         'post': post,
     }
 
     return render(request, 'matches/match_detail.html', context)
+
+
+@login_required
+def add_travel(request, game_id):
+    match = get_object_or_404(Game, pk=game_id)
+    user = request.user
+    ref = str(match.referee)
+    asst1 = str(match.asst_referee1)
+    asst2 = str(match.asst_referee2)
+
+
+    if request.method == 'POST':
+        form = FeesForm(request.POST, instance=match)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'You successfully updated your travel \
+                             expenses!')
+            return redirect(reverse('match_detail', args=[match.id]))
+        else:
+            messages.error(request, "Failed to update your expenses\
+                Please ensure the form is valis.")
+
+    else:
+        form = FeesForm(instance=match)
+    
+    template = 'matches/add_travel.html'
+    context = {
+        'form': form,
+        'user': user,
+        'ref': ref,
+        'asst1': asst1,
+        'asst2': asst2,
+        'match': match,
+    }
+
+    return render(request, template, context)
+        
 
 
 @login_required
@@ -212,7 +252,8 @@ def add_match(request):
 def edit_match(request, game_id):
     """ Edit the selected match details """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have the permissions to edit a match!")
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       edit a match!")
         return redirect(reverse, 'home')
 
     match = get_object_or_404(Game, pk=game_id)

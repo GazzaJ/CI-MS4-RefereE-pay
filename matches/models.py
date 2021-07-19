@@ -75,7 +75,8 @@ class Team(models.Model):
 class Game(models.Model):
     age = models.ForeignKey('Fee', null=True, blank=False,
                             related_name="age_group", on_delete=models.CASCADE)
-    competition = models.ForeignKey('Competition', null=False, blank=False, on_delete=models.CASCADE)     
+    competition = models.ForeignKey('Competition', null=False, blank=False,
+                                    on_delete=models.CASCADE)     
     home_team = models.ForeignKey('Team', related_name='home_team', null=False,
                                   blank=False, on_delete=models.CASCADE)
     away_team = models.ForeignKey('Team', related_name='away_team', null=False,
@@ -83,17 +84,26 @@ class Game(models.Model):
     date_time = models.DateTimeField(auto_now=False, auto_now_add=False)    
     venue = models.ForeignKey('Venue', null=True, blank=False,
                               on_delete=models.SET_NULL)
-    referee = models.ForeignKey('Official', related_name='ref', null=True, blank=True, on_delete=models.SET_NULL)
-    asst_referee1 = models.ForeignKey('Official', related_name='asst1', null=True, blank=True,
-                              on_delete=models.SET_NULL)
-    asst_referee2 = models.ForeignKey('Official', related_name='asst2', null=True, blank=True,
-                              on_delete=models.SET_NULL)
+    referee = models.ForeignKey('Official', related_name='ref', null=True,
+                                blank=True, on_delete=models.SET_NULL)
+    asst_referee1 = models.ForeignKey('Official', related_name='asst1',
+                                      null=True, blank=True,
+                                      on_delete=models.SET_NULL)
+    asst_referee2 = models.ForeignKey('Official', related_name='asst2',
+                                      null=True, blank=True,
+                                      on_delete=models.SET_NULL)
+    ref_trav = models.DecimalField(max_digits=6, decimal_places=2, blank=True,
+                                   null=True, default=0)
+    asst1_trav = models.DecimalField(max_digits=6, decimal_places=2, 
+                                     blank=True, null=True, default=0)
+    asst2_trav = models.DecimalField(max_digits=6, decimal_places=2, 
+                                     blank=True, null=True, default=0)
     ref_total = models.DecimalField(max_digits=6, decimal_places=2,
-                                       null=False, default=0)
+                                    null=False, default=0)
     asst1_total = models.DecimalField(max_digits=6, decimal_places=2,
-                                       null=False, default=0)
+                                      null=False, default=0)
     asst2_total = models.DecimalField(max_digits=6, decimal_places=2,
-                                       null=False, default=0)
+                                      null=False, default=0)
 
     def __str__(self):
         return f'{self.home_team} vs {self.away_team}'

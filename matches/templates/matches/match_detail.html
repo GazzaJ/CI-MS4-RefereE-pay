@@ -117,10 +117,10 @@
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <p>Match Fee: £ {{ ref_fee }}</p>
-                                    </div>
-                                    <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Travel: £ {{ ref_trav }}</p>
-                                    </div>
+                                    </div>                                    
+                                        <div class="col-sm-12 col-md-3 text-left">
+                                            <p>Travel: £ {{ match.ref_trav }}</p>
+                                        </div>                                                                        
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="ref_total">Total</label>
                                         <input class="total" value="{{ ref_total }}" type="number" name="ref_total" id="ref_total" data-item_id="{{ match.id }}" readonly>
@@ -137,7 +137,7 @@
                                         <p>Match Fee: £ {{ asst1_fee }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Travel: £ {{ asst1_trav }}</p>                                                    
+                                        <p>Travel: £ {{ match.asst1_trav }}</p>                                                    
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="asst1_total">Total</label>
@@ -155,7 +155,7 @@
                                         <p>Match Fee: £ {{ asst2_fee }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <p>Travel: £ {{ asst2_trav }}</p>
+                                        <p>Travel: £ {{ match.asst2_trav }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
                                         <label for="asst2_total">Total</label>
@@ -164,15 +164,23 @@
                                 </div>                                                                         
                             {% endif %}
                             {% if user.get_full_name == match.home_team.manager_coach or request.user.is_superuser %}
-                            {% if not paid %}
-                                <div class="form-row">
-                                    <div class="col text-center">
-                                        <input id="add-ref-fee" type="submit" class="btn btn-warning" value="Add to Bag">
+                                {% if not paid %}
+                                    <div class="form-row">
+                                        <div class="col text-center">
+                                            <input id="add_to_bag" type="submit" class="btn btn-warning" value="Add to Bag">
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                </div>
                                 {% endif %}
                             {% endif %}
+                            {% if user == ref or user.is_superuser %}
+                            <a class="btn btn-info" href="{% url 'add_travel' match.id %}">Add Travel
+                                <span class="float-right">
+                                    <i class="fas fa-car-side"></i>
+                                </span>
+                            </a>
+                            {% endif %}
+                            
                         </form>
 
                         {% if paid %}
@@ -207,13 +215,4 @@
         </div>
     </div>
 
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-    <script>
-        $('#add-ref').submit(function(){
-            $('#add-ref-fee').prop('disabled', true);
-        })
-    </script>
 {% endblock %}

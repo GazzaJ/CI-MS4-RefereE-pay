@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
+{% endblock %}
+
+{% block page_header %}    
+    <h1 class="text-center mt-5 mb-3">Game Admin</h1>    
+{% endblock %}
+
+{% block content %}    
+    <div class="match-overlay"></div>
+    <div class="container">
+                
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="row">
+                    <div class="col-12 col-md-6 mt-5">
+                        <h3 class="text-center">Add your travel expenses for {{ match }}
+                            <span class="ml-3">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </span>
+                        </h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
+                        <form method="POST" action="{% url 'add_travel' match.id %}" class="form my-5 mx-3">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="text-center">
+                                <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
+                                <button class="btn btn-success rounded-3" type="submit">Add Expense</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>          
+
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
+    
+{% endblock %}
+
+

@@ -2,6 +2,17 @@ from django import forms
 from .models import Game, Competition, Chat
 
 
+class FeesForm(forms.ModelForm):
+    
+    class Meta:
+        model = Game
+        fields = (
+            'ref_trav',
+            'asst1_trav',
+            'asst2_trav',
+        )
+
+
 class CompetitionForm(forms.ModelForm):
     comp = forms.CharField(max_length=100, label='Competition',
                            empty_value=None)

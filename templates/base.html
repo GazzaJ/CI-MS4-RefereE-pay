@@ -106,6 +106,7 @@
                         {% endif %}
                     </div>
                 </li>
+
                 {% if request.user.is_superuser %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -121,12 +122,7 @@
                                 <span class="float-right">
                                     <i class="fas fa-edit"></i>
                                 </span>
-                            </a>
-                            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
-                                <span class="float-right">
-                                    <i class="fas fa-cash-register"></i>
-                                </span>
-                            </a> 
+                            </a>                             
                         </div>
                     </li>
                 {% endif %}
