@@ -1,5 +1,5 @@
 from django import forms
-from .models import Game, Competition, Chat
+from .models import Game, Competition, Chat, Club, Team
 
 
 class FeesForm(forms.ModelForm):
@@ -14,12 +14,24 @@ class FeesForm(forms.ModelForm):
 
 
 class CompetitionForm(forms.ModelForm):
-    comp = forms.CharField(max_length=100, label='Competition',
-                           empty_value=None)
 
     class Meta:
         model = Competition
         fields = ('comp',)
+
+
+class ClubForm(forms.ModelForm):
+
+    class Meta:
+        model = Club
+        fields = '__all__'
+
+
+class TeamForm(forms.ModelForm):
+
+    class Meta:
+        model = Team
+        fields = '__all__'
 
 
 class GameForm(forms.ModelForm):

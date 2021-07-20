@@ -12,9 +12,10 @@
 {% block content %}    
     <div class="match-overlay"></div>
     <div class="container">
+                
         <div class="row">
             <div class="col-12 col-md-6 mt-5">
-                <h3 class="text-center">Create a New Match
+                <h3 class="text-center">Create a New Club
                     <span class="ml-3">
                         <i class="fas fa-futbol"></i>
                     </span>
@@ -24,17 +25,17 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
-                <form method="POST" action="{% url 'add_match' %}" class="form my-5 mx-3" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_club' %}" class="form my-5 mx-3" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-center">
                         <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
-                        <button class="btn btn-success rounded-3" type="submit">Add Match</button>
+                        <button class="btn btn-success rounded-3" type="submit">Add Club</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
+    </div>   
     
 {% endblock %}
 

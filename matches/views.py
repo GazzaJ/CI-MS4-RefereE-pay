@@ -5,7 +5,7 @@ from django.db.models import Q
 
 from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
-from .forms import GameForm, CompetitionForm, ChatForm, FeesForm
+from .forms import GameForm, CompetitionForm, ChatForm, FeesForm, ClubForm, TeamForm
 
 import json
 import datetime
@@ -166,7 +166,6 @@ def add_travel(request, game_id):
     asst1 = str(match.asst_referee1)
     asst2 = str(match.asst_referee2)
 
-
     if request.method == 'POST':
         form = FeesForm(request.POST, instance=match)
         if form.is_valid:
@@ -180,7 +179,7 @@ def add_travel(request, game_id):
 
     else:
         form = FeesForm(instance=match)
-    
+
     template = 'matches/add_travel.html'
     context = {
         'form': form,
@@ -192,30 +191,88 @@ def add_travel(request, game_id):
     }
 
     return render(request, template, context)
-        
 
 
 @login_required
 def add_competition(request):
     """ Add a new competition to the app """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have the permissions to add a competition!")
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       add a competition!")
         return redirect(reverse, 'home')
 
     if request.method == "POST":
-        comp_form = CompetitionForm(request.POST)
-        if comp_form.is_valid():
-            messages.success(request, 'You successfully added a new competition!')
-            return redirect(request, 'add_match')
+        form = CompetitionForm(request.POST)
+        if form.is_valid():
+            competition = form.save()
+            messages.success(request, 'You successfully added a new \
+                             competition!')
+            return redirect(reverse('matches'))
         else:
             messages.error(request, 'Failed to create a new competition. \
                 Please ensure the form has valid inputs')
     else:
-        comp_form = CompetitionForm()
+        form = CompetitionForm()
 
-    template = 'matches/add_match.html'
+    template = 'matches/add_competition.html'
     context = {
-        'comp_form': comp_form,
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def add_club(request):
+    """ Add a new Club to the DB """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       add a club!")
+        return redirect(reverse, 'home')
+
+    if request.method == "POST":
+        form = ClubForm(request.POST, request.FILES)
+        if form.is_valid:
+            club = form.save()
+            messages.success(request, 'You successfully added a new club!')
+            return redirect(reverse('matches'))
+        else:
+            messages.error(request, 'Failed to create a new club. \
+                Please ensure the form has valid inputs')
+    else:
+        form = ClubForm()
+    
+    template = 'matches/add_club.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def add_team(request):
+    """ Add a new Team to the DB """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       add a team!")
+        return redirect(reverse, 'home')
+
+    if request.method == "POST":
+        form = TeamForm(request.POST)
+        if form.is_valid:
+            team = form.save()
+            messages.success(request, 'You successfully added a new team!')
+            return redirect(reverse('matches'))
+        else:
+            messages.error(request, 'Failed to create a new team. \
+                Please ensure the form has valid inputs')
+    else:
+        form = TeamForm()
+    
+    template = 'matches/add_team.html'
+    context = {
+        'form': form,
     }
 
     return render(request, template, context)
@@ -225,7 +282,8 @@ def add_competition(request):
 def add_match(request):
     """ Add a new game to the app """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have the permissions to add a amtch!")
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       add a match!")
         return redirect(reverse, 'home')
 
     if request.method == "POST":
@@ -335,4 +393,3 @@ def add_chat(request, game_id):
     }
 
     return render(request, template, context)
-
