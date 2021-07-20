@@ -17,16 +17,18 @@
             <div class="col-12 mb-3">
                 <div class="row">
                     <div class="col-12 col-md-6 mt-5">
-                        <h3 class="text-center">Add your travel expenses for {{ match }}
+                        <h3 class="text-center">Add your Travel Expenses
                             <span class="ml-3">
-                                <i class="fas fa-money-bill-wave"></i>
+                                <i class="fas fa-car-side"></i>
                             </span>
                         </h3>
                         <hr>
                     </div>
                 </div>
+                <!-- Form to allow match officials to add travel expenses -->                
                 <div class="row">
-                    <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
+                    <div class="col-1"></div>
+                    <div class="col-12 col-md-4 match my-5 border-green rounded-3">
                         <form method="POST" action="{% url 'add_travel' match.id %}" class="form my-5 mx-3">
                             {% csrf_token %}
                             {{ form | crispy }}
@@ -36,12 +38,42 @@
                             </div>
                         </form>
                     </div>
-                </div>          
-
+                    <div class="col-1"></div>
+                    <!-- Visual Summary of the teams and date -->
+                    <div class="col-12 col-md-6 match border-green game-summary">
+                        <div class="row">
+                            <!-- Home Team Club Badge -->
+                            <div class="col-2 text-center">
+                                <img class="trav-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
+                                    alt="match.home_team.club_name">
+                            </div>
+                            <!-- Home Team -->
+                            <div class="col-3 text-center">
+                                <p class="coach mb-3">{{ match.home_team }}</p>                        
+                            </div>
+                            <div class="col-2 text-center">
+                                <h3>VS</h3>
+                            </div>                          
+                            <!-- Away Team -->
+                            <div class="col-3 text-center">
+                                <p class="coach mb-3">{{ match.away_team }}</p>                        
+                            </div>
+                            <!-- Away Team Club Badge -->
+                            <div class="col-2 text-center">
+                                <img class="trav-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
+                                    alt="match.away_team.club_name">
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <p>{{ match.date_time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
     
 {% endblock %}
 

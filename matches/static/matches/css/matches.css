@@ -95,3 +95,25 @@ body {
     height: 5rem;
     width: auto;
 }
+
+/* ----- Travel Expense Form ----- */
+
+.trav-badge {
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
+}
+
+.game-summary {
+    max-height: 10rem;
+}
+
+/* ---------- Media Queries ----------*/
+
+@media (min-width: 320px) {
+    .match-badge {
+        height: 5rem;
+        width: 5rem;
+        object-fit: contain;
+    }
+}

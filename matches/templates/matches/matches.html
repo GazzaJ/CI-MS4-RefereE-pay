@@ -67,17 +67,17 @@
                                 <img class="club-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-12 text-center">
                                 <p>{{ match.date_time }}</p>
                             </div>
                         </div>
                         {% if request.user.is_superuser %}
-                            <div class="row">
-                                <div class="col-12 col-md-6 text-center">
+                            <div class="row mt-3">
+                                <div class="col-6 text-center">
                                     <a class="btn btn-sm btn-warning" href="{% url 'edit_match' match.id %}">Edit Match</a>
                                 </div>
-                                <div class="col-12 col-md-6 text-center">
+                                <div class="col-6 text-center">
                                     <a class="btn btn-sm btn-outline-danger" href="{% url 'delete_match' match.id %}">Delete Match</a>
                                 </div>
                             </div>
