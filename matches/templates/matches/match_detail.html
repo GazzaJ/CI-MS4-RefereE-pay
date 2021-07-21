@@ -44,8 +44,10 @@
                             <a class="btn btn-sm btn-warning mr-2" href="{% url 'edit_match' match.id %}">Edit Match</a>
                         </div>
                         <div class="col-6 text-left">
-                            <a class="btn btn-sm btn-outline-danger ml-2" href="{% url 'delete_match' match.id %}">Delete
-                                Match</a>
+                            <!--
+                            
+                            -->
+                            <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteModal">Delete Match</button>
                         </div>
                     </div>
                 {% endif %}
@@ -163,8 +165,8 @@
                                     </div>
                                 </div>                                                                         
                             {% endif %}
-                            <!-- Add to Kit Bag button -->
-                            {% if name == coach and job or user.is_superuser %}
+                            <!-- Link to add match to Kit Bag for Coach -->
+                            {% if name == coach and job %}
                                 {% if not paid %}
                                     <div class="form-row">
                                         <div class="col-12 text-center">
@@ -175,14 +177,9 @@
                                 {% endif %}
                             {% endif %}
                             <!-- Link for Match Officials to add their travel expenses -->
-                            {% if name == ref or user.is_superuser %}
+                            {% if name == ref and job %}
                                 {% if not paid %}
                                     <div class="form-row">
-                                        <div class="col-12 col-md-6 text-center my-3">
-                                            <input id="add_to_bag" type="submit" class="btn btn-warning" value="Add to Bag">
-                                        </div>
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                {% endif %}
                                         <div class="col-12 col-md-6 text-center my-3">
                                             <a class="btn btn-info" href="{% url 'add_travel' match.id %}">Add Travel
                                                 <span class="float-right">
@@ -191,7 +188,23 @@
                                             </a>
                                         </div>
                                     </div>
-                            {% endif %}                            
+                                {% endif %}
+                            {% endif %}
+                            <!-- Links for superusers to Add Travel for Raf and Add a Match to the Kit Bag -->
+                            {% if user.is_superuser %}
+                                {% if not paid %}
+                                    <div class="form-row">
+                                        <div class="col-12 col-md-6 text-right my-3">
+                                            <input id="add_to_bag" type="submit" class="btn btn-warning mr-2" value="Add to Bag">
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                {% endif %}
+                                        <div class="col-12 col-md-6 text-left my-3">
+                                            <a class="btn btn-info ml-2" href="{% url 'add_travel' match.id %}">Add Travel                                                
+                                            </a>
+                                        </div>
+                                    </div>
+                            {% endif %}                   
                         </form>
                         <!-- If game is paid for show Paid -->
                         {% if paid %}
@@ -225,7 +238,32 @@
             {% endif %}
         </div>
     </div>
-    <p>{{ user }}</p>
-    <p>{{ role }}</p>
+    
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="x-close" aria-hidden="true">
+                            <i class="fas fa-times-circle"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You are about to delete the match:</p>
+                    <p class="text-danger"><strong>{{ match }}</strong></p>
+                    <p>Are you sure you want to perform this task?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-sm btn-outline-danger ml-2" href="{% url 'delete_match' match.id %}">
+                        Delete Match
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

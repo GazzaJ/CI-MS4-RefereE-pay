@@ -108,6 +108,19 @@ body {
     max-height: 10rem;
 }
 
+/* ---------- Delete Confirmation Modal ---------- */
+
+.modal-header {
+    background-color: #e1261c;
+    color: #fff;
+}
+
+.x-close {
+    color: #fff;
+    font-weight: bold;
+
+}
+
 /* ---------- Media Queries ----------*/
 
 @media (min-width: 320px) {
