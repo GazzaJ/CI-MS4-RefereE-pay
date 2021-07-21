@@ -42,6 +42,9 @@ class GameForm(forms.ModelForm):
             'ref_total',
             'asst1_total',
             'asst2_total',
+            'ref_trav',
+            'asst1_trav',
+            'asst2_trav',
         )
 
     def __init__(self, *args, **kwargs):
