@@ -164,7 +164,7 @@
                                 </div>                                                                         
                             {% endif %}
                             <!-- Add to Kit Bag button -->
-                            {% if user.get_full_name == match.home_team.manager_coach %}
+                            {% if name == coach and job or user.is_superuser %}
                                 {% if not paid %}
                                     <div class="form-row">
                                         <div class="col-12 text-center">
@@ -175,7 +175,7 @@
                                 {% endif %}
                             {% endif %}
                             <!-- Link for Match Officials to add their travel expenses -->
-                            {% if user == ref or user.is_superuser %}
+                            {% if name == ref or user.is_superuser %}
                                 {% if not paid %}
                                     <div class="form-row">
                                         <div class="col-12 col-md-6 text-center my-3">
@@ -217,7 +217,7 @@
             </div>
                       
             {% if post %}
-                {% if user.get_full_name == match.home_team.manager_coach or user.get_full_name == ref or user.is_superuser %}
+                {% if name == coach and job or name == ref and job or user.is_superuser %}
                     <div class="col-md-6 text-center mt-3">
                         <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
                     </div>
@@ -225,5 +225,7 @@
             {% endif %}
         </div>
     </div>
+    <p>{{ user }}</p>
+    <p>{{ role }}</p>
 
 {% endblock %}

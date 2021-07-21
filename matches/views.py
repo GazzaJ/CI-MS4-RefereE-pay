@@ -5,6 +5,7 @@ from django.db.models import Q
 
 from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
+from profiles.models import UserProfile
 from .forms import GameForm, CompetitionForm, ChatForm, FeesForm, ClubForm, TeamForm
 
 import json
@@ -90,12 +91,21 @@ def match_detail(request, game_id):
     asst2_total = 0
 
     user = request.user
+    name = user.get_full_name
+    job = False
 
-    # Calculate and save Match officials fees
+    profile = UserProfile.objects.get(user=user)
+    role = profile.role
 
     match = get_object_or_404(Game, pk=game_id)
     ref = str(match.referee)
+    coach = match.home_team.manager_coach
 
+    # Determine User Role
+    if role == "Coach" or role == "Referee":
+        job = True
+
+    # Calculate and save Match officials fees
     if match.referee is None:
         ref_total = 0
     else:
@@ -125,13 +135,15 @@ def match_detail(request, game_id):
     # Determine whether a fixture has been paid for or not
     paid = False
     orders = Order.objects.all()
-    for order in orders:        
+    for order in orders:
         bag = order.original_bag
         new_bag = json.loads(bag)
 
         if game_id in new_bag.keys():
             paid = True
 
+    # Determine whether the match is in the future or past
+    # Only allow messages if in the future
     post = False
     today = datetime.datetime.now()
     if match.date_time.replace(tzinfo=None) > today:
@@ -153,6 +165,9 @@ def match_detail(request, game_id):
         'orders': orders,
         'paid': paid,
         'post': post,
+        'job': job,
+        'coach': coach,
+        'name': name,
     }
 
     return render(request, 'matches/match_detail.html', context)
@@ -160,6 +175,9 @@ def match_detail(request, game_id):
 
 @login_required
 def add_travel(request, game_id):
+    """
+    Allows Match officials to update their travel expenses
+    """
     match = get_object_or_404(Game, pk=game_id)
     user = request.user
     ref = str(match.referee)
@@ -241,7 +259,7 @@ def add_club(request):
                 Please ensure the form has valid inputs')
     else:
         form = ClubForm()
-    
+
     template = 'matches/add_club.html'
     context = {
         'form': form,
@@ -269,7 +287,7 @@ def add_team(request):
                 Please ensure the form has valid inputs')
     else:
         form = TeamForm()
-    
+
     template = 'matches/add_team.html'
     context = {
         'form': form,
@@ -354,7 +372,7 @@ def delete_match(request, game_id):
 def match_chat(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
     chats = Chat.objects.all()
-    ref = str(match.referee)    
+    ref = str(match.referee)
 
     context = {
         'match': match,

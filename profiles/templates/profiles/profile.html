@@ -15,14 +15,16 @@
     <div class="container">
         <div class="profile-overlay"></div>
         <div class="row">
+            <!-- Profile Information Form -->
             <div class="col-12 col-lg-6">
                 <p>Profile Information</p>
                 <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <button class="btn btn-success rounded-3 mt-3 mb-5">Update</button> 
-                </form>
+                </form>                
             </div>
+            <!-- Order History Table -->
             <div class="col-12 col-lg-6">
                 <p>Order History</p>
                 <div class="order-history table-responsive">
