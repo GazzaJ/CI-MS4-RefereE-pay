@@ -71,20 +71,7 @@
                             <div class="col-12 text-center">
                                 <p>{{ match.date_time }}</p>
                             </div>
-                        </div>
-                        {% if request.user.is_superuser %}
-                            <div class="row mt-3">
-                                <div class="col-6 text-center">
-                                    <a class="btn btn-sm btn-warning" href="{% url 'edit_match' match.id %}">Edit Match</a>
-                                </div>
-                                <div class="col-6 text-center">
-                                    <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal"
-                                        data-target="#delete-Modal"></button>
-                                        Delete Match
-                                    </button>
-                                </div>
-                            </div>
-                        {% endif %}
+                        </div>                        
                     </div>
                 </div>
             </a>           
@@ -97,31 +84,6 @@
             </div>
         </div>
     </div>
-    <!-- Delete Confirmation Modal -->
-    <div class="modal fade" id="delete-Modal" tabindex="-1" aria-labelledby="delete-ModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="delete-ModalLabel">Confirm Deletion!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span class="x-close" aria-hidden="true">
-                            <i class="fas fa-times-circle"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>You are about to delete the match:</p>
-                    <p class="text-danger"><strong>{{ match }}</strong></p>
-                    <p>Are you sure you want to perform this task?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-sm btn-outline-danger" href="{% url 'delete_match' match.id %}">Delete Match</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 {% endblock %}
 
