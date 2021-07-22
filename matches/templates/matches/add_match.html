@@ -23,6 +23,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- Form to facilitate new Match creation -->
             <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
                 <form method="POST" action="{% url 'add_match' %}" class="form my-5 mx-3" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -33,9 +34,56 @@
                     </div>
                 </form>
             </div>
+            <!-- Render the game details as they are entered -->
+            <div class="col-12 col-md-6 match border-green rounded-3">
+                <div class="row">
+                    <div class="col-12 col-md-6 match border-green game-summary">
+                        <div class="row">
+                            <!-- Home Team Club Badge -->
+                            <div class="col-2 text-center">
+                                <img class="trav-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
+                                    alt="match.home_team.club_name">
+                            </div>
+                            <!-- Home Team -->
+                            <div class="col-3 text-center">
+                                <p class="coach mb-3">{{ match.home_team }}</p>                        
+                            </div>
+                            <div class="col-2 text-center">
+                                <h3>VS</h3>
+                            </div>                          
+                            <!-- Away Team -->
+                            <div class="col-3 text-center">
+                                <p class="coach mb-3">{{ match.away_team }}</p>                        
+                            </div>
+                            <!-- Away Team Club Badge -->
+                            <div class="col-2 text-center">
+                                <img class="trav-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
+                                    alt="match.away_team.club_name">
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <p>{{ match.date_time }}</p>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
         </div>
     </div>
     
 {% endblock %}
 
-
+{% block postloadjs %}
+{{ block.super }}
+    <script type="text/javascript">
+        /*Adapted from https://stackoverflow.com/questions/31398473/
+        load-image-in-div-from-url-obtained-from-a-text-box/31398762*/
+        function addImage() {
+            var url = document.getElementById("image_url").value;
+            var image = new Image();
+            image.src = url;
+            document.getElementById("image-container").appendChild(image);
+        }
+    </script>
+{% endblock %}

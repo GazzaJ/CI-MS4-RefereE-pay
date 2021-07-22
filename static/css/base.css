@@ -122,6 +122,11 @@ a {
 
 /* ---------- Buttons ---------- */
 
+.green-btn {
+    background-color: #00813e;
+    color: #fff;    
+}
+
 .blue-btn {
     background-color: #011e41;
     color: #fff;    
@@ -131,12 +136,35 @@ a {
     background-color: #fff;
     color: #011e41 !important;
     border: 2px solid #011e41 !important;
+    font-weight: bold;
 }
 
 .toggle-grn {
-    background-color: #fff;
+    background-color: #fff !important;
     color: #00813e !important;
     border: 2px solid #00813e !important;
+    font-weight: bold;
+}
+
+.toggle-info {
+    background-color: #fff !important;
+    color: #17a2b8 !important;
+    border: 2px solid #17a2b8 !important;
+    font-weight: bold;
+}
+
+.toggle-primary {
+    background-color: #fff !important;
+    color: #007bff !important;
+    border: 2px solid #007bff !important;
+    font-weight: bold;
+}
+
+.toggle-warning {
+    background-color: #fff !important;
+    color: #ffc107 !important;
+    border: 2px solid #ffc107 !important;
+    font-weight: bold;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */

@@ -41,7 +41,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center my-2">
-                    <button class="btn btn-success" type="submit" >Filter</button>
+                    <button class="btn btn-success green-btn" type="submit" >Filter</button>
                 </div>
             </div>                       
         </form>
@@ -93,5 +93,11 @@
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
+
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });
+        });            
 	</script>
 {% endblock %}
