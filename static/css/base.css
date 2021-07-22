@@ -109,6 +109,17 @@ a {
     font-size: 0.8rem;
 }
 
+.toast-img {
+    max-width: 6rem;
+    height: auto;
+}
+
+.toast-msg {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #011e41;
+}
+
 /* ---------- Buttons ---------- */
 
 .blue-btn {
@@ -161,11 +172,6 @@ a {
 
 .arrow-dark {
     border-bottom-color: #343a40 !important;
-}
-
-.toast-img {
-    max-width: 100%;
-    height: auto;
 }
 
 /* ---------- Footer ---------- */
