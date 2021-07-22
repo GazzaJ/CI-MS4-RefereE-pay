@@ -16,17 +16,31 @@
             <div id="sign-in" class="col-10 col-lg-4 light-background">
                 <div class="row mt-5">
                     <div class="col-12 text-center">
-                        <p>Already have a RefereE-Pay Account?</p>
-                        <a class="btn btn-lg green text-white rounded-3" href="{% url 'account_login' %}" role="button">Sign-In</a>
+                        <h5>Already have a RefereE-Pay Account?</h5>
+                        <a class="btn btn-lg green text-white rounded-3 mt-2 green-btn shadow" href="{% url 'account_login' %}" role="button">Sign-In</a>
                     </div> 
                 </div>                
                 <div class="row">
                     <div class="col red py-5 mt-5 text-center">
-                        <p class="text-white">Don't have a RefereE-Pay account yet?</p>
-                        <a class="text-white btn-lg btn blue-btn rounded-3" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
+                        <h5 class="text-white">Don't have a RefereE-Pay account yet?</h5>
+                        <a class="text-white btn-lg btn blue-btn rounded-3 mt-2 blue-btn shadow" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
                     </div>
                 </div>
             </div>
         </div>        
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
+            });
+        });
+    </script>
 {% endblock %}

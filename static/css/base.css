@@ -127,6 +127,18 @@ a {
     color: #fff;    
 }
 
+.toggle-blu {
+    background-color: #fff;
+    color: #011e41 !important;
+    border: 2px solid #011e41 !important;
+}
+
+.toggle-grn {
+    background-color: #fff;
+    color: #00813e !important;
+    border: 2px solid #00813e !important;
+}
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */
 
 .arrow-up {
