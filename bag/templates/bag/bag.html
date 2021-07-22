@@ -111,14 +111,14 @@
                     </div>                        
                 {% else %}
                     <p>You have not selected any matches for payment!</p>
-                    <a class="btn btn-success" href="{% url 'matches' %}">Back to Matches</a>
+                    <a class="btn green-btn" href="{% url 'matches' %}">Back to Matches</a>
                 {% endif %}
             </div>
         </div>
         {% if grand_total > 0 %}
             <div class="row no-gutters my-5">
                 <div class="col-md-6 text-center">
-                    <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
+                    <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
                 </div>
                 <div class="col-md-6 text-center">
                     <a class="btn blue-btn" href="{% url 'checkout' %}">Secure Checkout</a>
@@ -143,5 +143,17 @@
                  location.reload();
              })
         })
+
+        $(document).ready(function() {
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
+            });            
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });
+            $(".btn-warning").hover(function() {
+                $(this).toggleClass("toggle-warning");
+            });            
+        });
     </script>
 {% endblock %}
