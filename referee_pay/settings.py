@@ -130,7 +130,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-WSGI_APPLICATION = 'ci-ms4-referee-pay.wsgi.application'
+WSGI_APPLICATION = 'referee_pay.wsgi.application'
 
 
 # Database
