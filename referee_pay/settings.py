@@ -27,7 +27,7 @@ SECRET_KEY = 'emj%dx)j-+4m%#(xg+s6=29_tj8hm7+)wapeef@aejq+c4%e3!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ci-ms4-referee-pay.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -136,12 +136,17 @@ WSGI_APPLICATION = 'referee_pay.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # DATABASES = {
 #     'default': dj_database_url.parse('postgres://eeqcmzpocumovf:caee17feaf3ea0d413d4eee4824a7865f0216078f8c1da38da88c3ddb459558c@ec2-34-252-251-16.eu-west-1.compute.amazonaws.com:5432/d1dst0bcqr5n1g')
