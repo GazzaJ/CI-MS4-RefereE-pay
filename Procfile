@@ -1,1 +1,1 @@
-web: gunicorn ci-ms4-referee-pay.wsgi.application
+web: gunicorn ci-ms4-referee-pay.wsgi:application
