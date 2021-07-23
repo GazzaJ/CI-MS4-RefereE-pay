@@ -86,5 +86,71 @@
             "age": 3,
             "manager_coach": "Mark Duff"
         }
+    },
+    {
+        "pk": 9,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Bishops Cleeve Colts Youth U10 Albion",
+            "short_name": "Bishops Cleeve Colts Albion",
+            "club_name": 2,
+            "age": 2,
+            "manager_coach": "Mark Skeldon"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Charlton Rovers Youth U10 Reds",
+            "short_name": "Charlton Rovers U10 Reds",
+            "club_name": 3,
+            "age": 2,
+            "manager_coach": "Jon King"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "FC Lakeside Youth U10 Whites",
+            "short_name": "FC Lakeside U10 Whites",
+            "club_name": 4,
+            "age": 2,
+            "manager_coach": "Andrew Sprosen"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Prestbury Phantoms Youth U10 Ghosts",
+            "short_name": "Prestbury Phantoms Ghosts",
+            "club_name": 5,
+            "age": 2,
+            "manager_coach": "Chris Harding"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Leckhampton Rovers Youth U10 Warriors",
+            "short_name": "LRFC U10 Warriors",
+            "club_name": 1,
+            "age": 2,
+            "manager_coach": "Simon Bickerdike"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "matches.team",
+        "fields": {
+            "team_name": "Southside Star Youth U10 Wildcats",
+            "short_name": "Southside Star U10 Wildcats",
+            "club_name": 6,
+            "age": 2,
+            "manager_coach": "Simon Gill"
+        }
     }
 ]

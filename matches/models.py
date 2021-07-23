@@ -10,7 +10,7 @@ class Venue(models.Model):
     street_address = models.CharField(max_length=80, null=False, blank=False)
     town_or_city = models.CharField(max_length=50, null=False, blank=False)
     county = models.CharField(max_length=60, null=False, blank=False)
-    postcode = models.CharField(max_length=20, null=False, blank=False)
+    postcode = models.CharField(max_length=50, null=False, blank=False)
     country = CountryField(blank_label='Country', null=True, blank=True)
     map = models.ImageField(null=True, blank=True)
     map_url = models.URLField(max_length=1024, null=False, blank=False)

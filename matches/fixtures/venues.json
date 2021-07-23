@@ -9,7 +9,7 @@
             "town_or_city": "Cheltenham",
             "county": "Gloucestershire",
             "postcode": "GL51 8DT",
-            "country": "England",
+            "country": "",
             "map": "kgv.png",
             "map_url": ""
         }
@@ -24,7 +24,7 @@
             "town_or_city": "Cheltenham",
             "county": "Gloucestershire",
             "postcode": "GL51 8DT",
-            "country": "England",
+            "country": "",
             "map": "kgv.png",
             "map_url": ""
         }
@@ -39,7 +39,7 @@
             "town_or_city": "Cheltenham",
             "county": "Gloucestershire",
             "postcode": "GL53 7EL",
-            "country": "England",
+            "country": "",
             "map": "naunton.png",
             "map_url": ""
         }
@@ -54,7 +54,7 @@
             "town_or_city": "Cheltenham",
             "county": "Gloucestershire",
             "postcode": "GL53 0EY",
-            "country": "England",
+            "country": "",
             "map": "burrows.png",
             "map_url": ""
         }
@@ -69,7 +69,7 @@
             "town_or_city": "Cheltenham",
             "county": "Gloucestershire",
             "postcode": "GL53 8PF",
-            "country": "England",
+            "country": "",
             "map": "beeches.png",
             "map_url": ""
         }
@@ -84,7 +84,7 @@
             "town_or_city": "Cheltenham",
             "county": "Gloucestershire",
             "postcode": "GL52 5FT",
-            "country": "England",
+            "country": "",
             "map": "priors.png",
             "map_url": ""
         }
@@ -99,7 +99,7 @@
             "town_or_city": "Shipton Oliffe",
             "county": "Gloucestershire",
             "postcode": "GL54 4HT",
-            "country": "England",
+            "country": "",
             "map": "",
             "map_url": ""
         }
@@ -114,7 +114,7 @@
             "town_or_city": "Bishops Cleeve",
             "county": "Gloucestershire",
             "postcode": "GL52 8LZ",
-            "country": "England",
+            "country": "",
             "map": "",
             "map_url": ""
         }
