@@ -1,1 +1,1 @@
-web: gunicorn referee_pay.wsgi.application
+web: gunicorn referee-pay.wsgi.application
