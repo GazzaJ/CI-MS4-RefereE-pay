@@ -65,9 +65,9 @@
                 <div class="collapse" id="venue-map">
                     <div class="card card-body">
                         {% if match.venue.map %}
-                        <img src="/media/{{match.venue.map}}" alt="{{ match.venue }}">
+                            <img src="{{ MEDIA_URL }}{{match.venue.map}}" alt="{{ match.venue }}">
                         {% else %}
-                        <a class="btn btn-info" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
+                            <a class="btn btn-info" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
                         {% endif %}
                     </div>
                 </div>
