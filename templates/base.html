@@ -43,7 +43,7 @@
     <!-- Navbar adapted from Bootstrap:- https://getbootstrap.com/docs/4.6/components/navbar/ -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img id="website-logo" src="/media/refereepay-logo.png" alt="Website logo">
+            <img id="website-logo" src="{{ MEDIA_URL }}refereepay-logo.png" alt="Website logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
