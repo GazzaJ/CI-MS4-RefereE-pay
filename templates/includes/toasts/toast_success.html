@@ -11,15 +11,13 @@ some customisation copied from CI Boutique Ado Project-->
     </div>
     <div class="toast-body">
         <div class="row">
-            <div class="col-12 text-center">
-                <img class="toast-img" src="{{ MEDIA_URL }}success.png" alt="Success">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 mt-2">
+            <div class="col-12 col-md-8 mt-2">
                 <p class="toast-msg">{{ message }}</p>
                 <hr class="my-2">            
             </div>
+            <div class="col-12 col-md-4 text-center">
+                <img class="toast-img" src="{{ MEDIA_URL }}success.png" alt="Success">
+            </div>        
         </div>
         {% if grand_total != 0 and not on_profile_page %}
             <p>Kit bag contains ({{ match_count }}) matches</p>
