@@ -67,7 +67,11 @@
                         {% if match.venue.map %}
                             <img src="{{ MEDIA_URL }}{{match.venue.map}}" alt="{{ match.venue }}">
                         {% else %}
-                            <a class="btn btn-info" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a class="btn btn-info google-link" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
+                            </div>
+                        </div>
                         {% endif %}
                     </div>
                 </div>
