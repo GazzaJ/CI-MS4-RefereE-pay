@@ -14,10 +14,18 @@ body {
 }
 
 .home-container {
-    height: 80vh;
+    min-height: 80%;
 }
 
 .index-links {
+    padding-top: 15%;
     height: 100%;    
 }
 
+/* ---------- Media Queries ---------- */
+
+@media (max-width: 767.9px) {
+    footer {
+        padding-top: 2rem;
+    }    
+}

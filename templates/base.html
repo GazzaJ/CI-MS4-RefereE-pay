@@ -141,23 +141,23 @@
                         </div>
                     </li>
                 {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link {% if grand_total > 0 %}grand-total{% else %}zero-total{% endif %}" href="{% url 'review_bag' %}">
-                        <i class="fas fa-shopping-bag"></i>
-                        {% if grand_total %}
-                            £ {{ grand_total|floatformat:2 }}
-                        {% else %}
-                            £0.00
-                        {% endif %}
-                    </a>
-                </li>        
-            </ul>
-            {% if request.user.is_authenticated %}
-                <form method="GET" action="{% url 'matches' %}" class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search for a team" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            {% endif %}
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if grand_total > 0 %}grand-total{% else %}zero-total{% endif %}" href="{% url 'review_bag' %}">
+                            <i class="fas fa-shopping-bag"></i>
+                            {% if grand_total %}
+                                £ {{ grand_total|floatformat:2 }}
+                            {% else %}
+                                £0.00
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endif %}        
+            </ul>            
+            <form method="GET" action="{% url 'matches' %}" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search for a team" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>            
         </div>
     </nav>    
     <!-- Messages -->
