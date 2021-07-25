@@ -110,7 +110,7 @@ a {
 }
 
 .toast-img {
-    max-width: 6rem;
+    max-width: 100%;
     height: auto;
 }
 
@@ -237,5 +237,11 @@ a {
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
+    }
+}
+
+@media (max-width: 767.9px) {
+    .toast-img{
+        max-width: 50%;
     }
 }

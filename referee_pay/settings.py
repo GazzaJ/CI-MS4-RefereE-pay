@@ -25,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['ci-ms4-referee-pay.herokuapp.com', 'localhost']
 
@@ -144,11 +145,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://eeqcmzpocumovf:caee17feaf3ea0d413d4eee4824a7865f0216078f8c1da38da88c3ddb459558c@ec2-34-252-251-16.eu-west-1.compute.amazonaws.com:5432/d1dst0bcqr5n1g')
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
