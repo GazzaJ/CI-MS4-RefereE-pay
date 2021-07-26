@@ -131,10 +131,13 @@ body {
 
 /* ---------- Media Queries ----------*/
 
-@media (min-width: 320px) {
+@media (max-width: 767.9px) {
     .match-badge {
         height: 5rem;
         width: 5rem;
         object-fit: contain;
+    }
+    .kit-checkout {
+        margin-top: 0.5rem;
     }
 }

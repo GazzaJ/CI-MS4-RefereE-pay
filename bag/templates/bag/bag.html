@@ -33,82 +33,79 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded table table-striped">
-                        <table id="bag-table" class="table table-sm table-borderless">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">Match</th>
-                                    <th scope="col">Referee</th>
-                                    <th scope="col">Asst Ref 1</th>
-                                    <th scope="col">Asst Ref 2</th>
-                                    <th scope="col">SubTotal</th>
-                                    <th scope="col">Fine</th>
-                                    <th scope="col">Match Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>                                
-                            {% for item in bag_items %}                                
-                                <tr>
-                                    <td>
-                                        <p class="my-0 bag-match">{{item.match}}</p>                                        
-                                    </td>                                   
-                                    <td>
+                    {% for item in bag_items %} 
+                        <div class="row">
+                            <div class="col-12 text-center bg-dark">
+                                <p class="my-0 bag-match text-white">{{item.match}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center bg-dark">
+                                <div class="row">
+                                    <div class="col-3 text-center">
+                                        <p class="text-white">Ref</p>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <p class="text-white">Asst 1</p>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <p class="text-white">Asst2</p>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <p class="text-white">Subtotal</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-3 text-center">
                                         <p class="my-0">{{ item.match.ref_total }}</p>
-                                    </td>
-                                    <td>
-                                        {% if item.match.asst_referee1 is not None %}
-                                            <p class="my-0">{{ item.match.asst1_total }}</p>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                    {% if item.match.asst_referee1 is not None %}
+                                        <p class="my-0">{{ item.match.asst1_total }}</p>
                                         {% else %}
-                                            <p class="text-center my-0">-</p>
+                                        <p class="text-center my-0">-</p>
                                         {% endif %}
-                                    </td>                                    
-                                    <td>
+                                    </div>
+                                    <div class="col-3 text-center">
                                         {% if item.match.asst_referee2 is not None %}
                                             <p class="my-0">{{ item.match.asst2_total }}</p>
                                         {% else %}
-                                            <p class="text-center my-0">-</p>
-                                        {% endif %}                                        
-                                    </td>
-                                    <td>
-                                        <p class="text-center">{{ item.match_sub_total }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-center text-danger"><strong>{{ item.match_fines |floatformat:2 }}</strong></p>
-                                    </td>
-                                    <td>
-                                        <p class="text-center"><strong>{{ item.match_total }}</strong></p>
-                                    </td>
-                                    <td>
-                                        <a class="remove-item btn btn-warning btn-sm" id="remove_{{ item.item_id }}">Remove
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>{{ item.match.date_time }}</p>                                        
-                                    </td>
-                                    <td>
-                                        <p>{{ item.payment_due_date }}</p>
-                                    </td>
-                                </tr>                                
-                            {% endfor %}
-                                <tr>
-                                    <td><p>{{ item.match.date_time }}</p></td>
-                                    <td><p>{{ item.payment_due_date }}</p></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <p class="my-0 grand-total"><strong>Grand Total:</strong></p>
-                                    </td>
-                                    <td>
-                                        <p class="text-center my-0 grand-total"><strong>{{ grand_total }}</strong></p>
-                                    </td>
-                                    <td></td>
-                                </tr>                                                                    
-                        </table>                                                            
-                    </div>                        
+                                            <p class="my-0">-</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <p>{{ item.match_sub_total }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="text-right mr-2">Non-payment fine: </p>
+                            </div>
+                            <div class="col-3">
+                                <p class="text-center text-danger"><strong>£ {{ item.match_fines |floatformat:2 }}</strong></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="text-right mr-2">Match Total: </p>
+                            </div>
+                            <div class="col-3">
+                                <p class="text-center"><strong>£ {{ item.match_total }}</strong></p>
+                            </div>
+                        </div>
+                    {% endfor %}                                        
+                        <div class="row">                            
+                            <div class="col-9 bg-warning">
+                                <p class="text-right mr-2 my-0 grand-total"><strong>Grand Total:</strong></p>
+                            </div>
+                            <div class="col-3 bg-warning">
+                                <p class="text-center my-0 grand-total"><strong>{{ grand_total }}</strong></p>
+                            </div>
+                        </div>
                 {% else %}
                     <p>You have not selected any matches for payment!</p>
                     <a class="btn green-btn" href="{% url 'matches' %}">Back to Matches</a>
@@ -117,11 +114,11 @@
         </div>
         {% if grand_total > 0 %}
             <div class="row no-gutters my-5">
-                <div class="col-md-6 text-center">
+                <div class="col-12 col-md-6 text-center">
                     <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
                 </div>
-                <div class="col-md-6 text-center">
-                    <a class="btn blue-btn" href="{% url 'checkout' %}">Secure Checkout</a>
+                <div class="col-12 col-md-6 text-center">
+                    <a class="btn blue-btn kit-checkout" href="{% url 'checkout' %}">Secure Checkout</a>
                 </div>
             </div>
         {% endif %}
