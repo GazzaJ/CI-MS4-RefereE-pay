@@ -23,6 +23,7 @@ def all_matches(request):
     clubs = Club.objects.all()
     fees = Fee.objects.all()
 
+    query = None
     query1 = None
     query2 = None
     search = None
@@ -37,23 +38,25 @@ def all_matches(request):
             matches = matches.filter(qu1, qu2)
 
         if 'team' in request.GET:
-            team = request.GET['team']
-            if not team:
-                messages.error(request, "You didn't enter any search criteria")
-                return redirect(reverse('matches'))
-            query2 = Q(home_team__team_name=team) | Q(
-                    away_team__team_name=team)
-            matches = matches.filter(query2)
-
-        if 'age' in request.GET:
-            age_group = request.GET['age']
-            if not age_group:
+            the_team = request.GET['team']
+            if not the_team:
                 messages.error(request, "You didn't enter any search criteria")
                 return redirect(reverse('matches'))            
-            query1 = Q(home_team__team_name__contains=age_group) | Q(
-                 away_team__team_name__contains=age_group)
-            matches = matches.filter(query1)
-        
+            query = Q(home_team__team_name=the_team) | Q(
+                 away_team__team_name=the_team)
+            matches = matches.filter(query)
+
+        else:
+            if 'age' in request.GET:
+                age_group = request.GET['age']
+                if not age_group:
+                    messages.error(request, "You didn't enter any search \
+                                   criteria")
+                    return redirect(reverse('matches'))            
+                query1 = Q(home_team__team_name__contains=age_group) | Q(
+                    away_team__team_name__contains=age_group)
+                matches = matches.filter(query1)
+
         # Filter results by search box query
         if 'q' in request.GET:
             search = request.GET['q']            
@@ -63,6 +66,9 @@ def all_matches(request):
             searches = Q(home_team__team_name__icontains=search) | Q(
                 away_team__team_name__icontains=search)
             matches = matches.filter(searches)
+            if matches.count() == 0:
+                messages.info(request, 'Your team cannot be found in the database')
+                return redirect(reverse('matches'))
 
     context = {
         'matches': matches,
