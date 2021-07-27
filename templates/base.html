@@ -63,10 +63,10 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         My Account
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="accountDropdown">
                         {% if request.user.is_authenticated %}
                         <a class="dropdown-item disabled" href="{% url 'account_login' %}">Log In
                             <span class="float-right text-success">
@@ -109,10 +109,10 @@
 
                 {% if request.user.is_superuser %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Admin
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="adminDropdown">
                             <a class="dropdown-item" href="{% url 'add_competition' %}">Add Competition
                                 <span class="float-right">
                                     <i class="fas fa-trophy"></i>
@@ -133,7 +133,7 @@
                                     <i class="fas fa-calendar-plus"></i>
                                 </span>
                             </a>                         
-                            <a class="dropdown-item" href="{% url 'matches' %}">Edit Match
+                            <a class="dropdown-item" href="{% url 'admin:index' %}">DB Admin
                                 <span class="float-right">
                                     <i class="fas fa-edit"></i>
                                 </span>

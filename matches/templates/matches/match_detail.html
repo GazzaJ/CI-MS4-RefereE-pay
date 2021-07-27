@@ -233,7 +233,7 @@
         <!-- Action Buttons/Links -->
         <div class="row no-gutters my-5">            
             <!-- If the match is in the future then display Messages button -->
-            {% if name == coach and job or name == ref and job %}
+            {% if name == coach and job or name == ref and job or user.is_superuser %}
                 {% if post %}
                     <div class="col-12 col-md-6 text-center">
                         <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
@@ -246,7 +246,7 @@
                         <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
                     </div>
                 {% endif %}
-            {% endif %}
+            {% endif %}            
         </div>
     </div>
     
