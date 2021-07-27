@@ -137,16 +137,13 @@ def match_detail(request, game_id):
     paid = False
     orders = Order.objects.all()
     for order in orders:
-        bag = order.original_bag        
-        print(bag)        
-        print(game_id)
+        bag = order.original_bag
 
-        if str(game_id) in bag:
-            print("TRUE")
+        if str(game_id) in bag:            
             paid = True
 
     # Determine whether the match is in the future or past
-    # Only allow messages if in the future
+    # Only allow messages if match in the future
     post = False
     today = datetime.datetime.now()
     if match.date_time.replace(tzinfo=None) > today:
