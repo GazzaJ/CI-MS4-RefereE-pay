@@ -13,20 +13,28 @@
                 <h1 class="text-white">Welcome to RefereE-Pay</h1>
                 <h3 class="text-white py-5">The app that lets you pay your matchday Ref's fees.</h3>
             </div>
-            <div id="sign-in" class="col-10 col-lg-4 light-background">
-                <div class="row mt-5">
-                    <div class="col-12 text-center">
-                        <h5>Already have a RefereE-Pay Account?</h5>
-                        <a class="btn btn-lg green text-white rounded-3 mt-2 green-btn shadow" href="{% url 'account_login' %}" role="button">Sign-In</a>
-                    </div> 
-                </div>                
-                <div class="row">
-                    <div class="col red py-5 mt-5 text-center">
-                        <h5 class="text-white">Don't have a RefereE-Pay account yet?</h5>
-                        <a class="text-white btn-lg btn blue-btn rounded-3 mt-2 blue-btn shadow" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
+            {% if not user.is_authenticated %}
+                <div id="sign-in" class="col-10 col-lg-4 light-background">
+                    <div class="row mt-5">
+                        <div class="col-12 text-center">
+                            <h5>Already have a RefereE-Pay Account?</h5>
+                            <a class="btn btn-lg green text-white rounded-3 mt-2 green-btn shadow" href="{% url 'account_login' %}" role="button">Sign-In</a>
+                        </div> 
+                    </div>                
+                    <div class="row">
+                        <div class="col-12 red py-5 mt-5 text-center">
+                            <h5 class="text-white">Don't have a RefereE-Pay account yet?</h5>
+                            <a class="text-white btn-lg btn blue-btn rounded-3 mt-2 blue-btn shadow" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
+                        </div>
                     </div>
+                    {% else %}
+                    <div class="col-12 col-lg-4 text-center my-5">
+                        <a class="btn btn-lg btn-danger" href="{% url 'matches' %}">                   
+                            Let's Get Started!
+                        </a>
+                    </div>                
                 </div>
-            </div>
+            {% endif %}
         </div>        
     </div>
 {% endblock %}
