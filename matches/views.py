@@ -137,10 +137,12 @@ def match_detail(request, game_id):
     paid = False
     orders = Order.objects.all()
     for order in orders:
-        bag = order.original_bag
-        new_bag = json.loads(bag)
+        bag = order.original_bag        
+        print(bag)        
+        print(game_id)
 
-        if game_id in new_bag.keys():
+        if str(game_id) in bag:
+            print("TRUE")
             paid = True
 
     # Determine whether the match is in the future or past
