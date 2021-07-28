@@ -376,6 +376,7 @@ def delete_match(request, game_id):
 
 @login_required
 def match_chat(request, game_id):
+    """ A view to display the messages between Coach and Referee """
     match = get_object_or_404(Game, pk=game_id)
     chats = Chat.objects.all()
     ref = str(match.referee)
@@ -391,6 +392,9 @@ def match_chat(request, game_id):
 
 @login_required
 def add_chat(request, game_id):
+    """ This view enables the user to enter comments and images 
+    which are rendered to the Matches Chat template
+    """
     match = get_object_or_404(Game, pk=game_id)
     user = request.user
     data = {
@@ -417,3 +421,18 @@ def add_chat(request, game_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def all_clubs(request):
+    """ This view will render all Clubs """
+    clubs = Club.objects.all()
+
+    template = 'matches/clubs.html'
+
+    context = {        
+        'clubs': clubs,
+    }
+
+    return render(request, template, context)
+

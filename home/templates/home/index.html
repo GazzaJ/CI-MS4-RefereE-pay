@@ -14,7 +14,7 @@
                 <h3 class="text-white py-5">The app that lets you pay your matchday Ref's fees.</h3>
             </div>
             {% if not user.is_authenticated %}
-                <div id="sign-in" class="col-10 col-lg-4 light-background">
+                <div id="sign-in" class="col-10 col-lg-4 light-background my-5">
                     <div class="row mt-5">
                         <div class="col-12 text-center">
                             <h5>Already have a RefereE-Pay Account?</h5>
@@ -27,13 +27,13 @@
                             <a class="text-white btn-lg btn blue-btn rounded-3 mt-2 blue-btn shadow" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
                         </div>
                     </div>
-                    {% else %}
-                    <div class="col-12 col-lg-4 text-center my-5">
-                        <a class="btn btn-lg btn-danger" href="{% url 'matches' %}">                   
-                            Let's Get Started!
-                        </a>
-                    </div>                
                 </div>
+            {% else %}
+                <div class="col-12 col-lg-4 text-center my-5">
+                    <a class="btn btn-lg btn-danger" href="{% url 'matches' %}">                   
+                        Let's Get Started!
+                    </a>
+                </div>                
             {% endif %}
         </div>        
     </div>
