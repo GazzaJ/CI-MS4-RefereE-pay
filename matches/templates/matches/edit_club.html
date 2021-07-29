@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'matches/css/matches.css' %}">
+{% endblock %}
+
+{% block page_header %}    
+    <h1 class="text-center mt-5 mb-3">Game Admin</h1>    
+{% endblock %}
+
+{% block content %}    
+    <div class="match-overlay"></div>
+    <div class="container">
+                
+        <div class="row">
+            <div class="col-12 mb-3">                
+                               
+                <div class="row">
+                    <div class="col-12 col-md-6 mt-5">
+                        <h3 class="text-center">Edit a Club
+                            <span class="ml-3">
+                                <i class="fas fa-futbol"></i>
+                            </span>
+                        </h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
+                        <form method="POST" action="{% url 'edit_club' club.id %}" class="form my-5 mx-3" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="text-center">
+                                <a class="btn btn-danger rounded-3 mr-3" href="{% url 'clubs' %}">Cancel</a>
+                                <button class="btn btn-success rounded-3" type="submit">Update Club</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>          
+
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
+    
+{% endblock %}
+
+

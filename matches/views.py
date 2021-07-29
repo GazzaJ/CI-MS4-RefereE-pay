@@ -423,7 +423,6 @@ def add_chat(request, game_id):
     return render(request, template, context)
 
 
-@login_required
 def all_clubs(request):
     """ This view will render all Clubs """
     clubs = Club.objects.all()
@@ -436,3 +435,33 @@ def all_clubs(request):
 
     return render(request, template, context)
 
+
+@login_required
+def edit_club(request, club_id):
+    """ Edit the selected Club's detail """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       edit this club!")
+        return redirect(reverse, 'clubs')
+
+    club = get_object_or_404(Club, pk=club_id)
+    if request.method == "POST":
+        form = ClubForm(request.POST, instance=club)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'You successfully updated the Club!')
+            return redirect(reverse('clubs'))
+        else:
+            messages.error(request, 'Failed to update the Club. \
+                Please ensure the form has valid inputs')
+    else:
+        form = ClubForm(instance=club)
+        messages.info(request, f'You are editting {club.club_name}')
+
+    template = 'matches/edit_club.html'
+    context = {
+        'form': form,
+        'club': club,
+    }
+
+    return render(request, template, context)
