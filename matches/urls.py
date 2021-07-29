@@ -14,5 +14,6 @@ urlpatterns = [
     path('chat/<int:game_id>/', views.match_chat, name='match_chat'),
     path('add_chat/<int:game_id>/', views.add_chat, name='add_chat'),
     path('clubs', views.all_clubs, name='clubs'),
-    path('edit_club/<int:club_id>', views.edit_club, name='edit_club'),
+    path('edit_club/<int:club_id>/', views.edit_club, name='edit_club'),
+    path('delete_club/<int:club_id>/', views.delete_club, name='delete_club'),
 ]
