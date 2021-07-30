@@ -16,4 +16,6 @@ urlpatterns = [
     path('clubs', views.all_clubs, name='clubs'),
     path('edit_club/<int:club_id>/', views.edit_club, name='edit_club'),
     path('delete_club/<int:club_id>/', views.delete_club, name='delete_club'),
+    path('teams/<int:club_id>/', views.club_teams, name='teams'),
+    path('edit_team/<int:team_id>', views.edit_team, name='edit_team'),
 ]

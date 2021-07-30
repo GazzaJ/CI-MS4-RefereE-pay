@@ -246,6 +246,19 @@ def add_competition(request):
     return render(request, template, context)
 
 
+def all_clubs(request):
+    """ This view will render all Clubs """
+    clubs = Club.objects.all()
+
+    template = 'matches/clubs.html'
+
+    context = {        
+        'clubs': clubs,
+    }
+
+    return render(request, template, context)
+
+
 @login_required
 def add_club(request):
     """ Add a new Club to the DB """
@@ -318,6 +331,55 @@ def delete_club(request, club_id):
     messages.success(request, f'You have successfully \
                      deleted {club.club_name}')
     return redirect(reverse('clubs'))
+
+
+def club_teams(request, club_id):
+    """ A view to render all teams associated 
+    to a particular club
+    """
+    club = get_object_or_404(Club, pk=club_id)
+    teams = Team.objects.filter(club_name=club_id)
+
+    template = 'matches/teams.html'
+    context = {
+        'teams': teams,
+        'club': club,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_team(request, team_id):
+    """ Edit the selected Team's details """
+    team = get_object_or_404(Team, pk=team_id)
+    club_id = team.club_name.id
+    print(club_id)
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions to \
+                       edit this team!")
+        return redirect(reverse('teams', args=(club_id,)))
+
+    if request.method == "POST":
+        form = TeamForm(request.POST, instance=team)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'You successfully updated the Team!')
+            return redirect(reverse('teams', args=(club_id,)))
+        else:
+            messages.error(request, 'Failed to update the team. \
+                Please ensure the form has valid inputs')
+    else:
+        form = TeamForm(instance=team)
+        messages.info(request, f'You are editting {team.team_name}')
+
+    template = 'matches/edit_team.html'
+    context = {
+        'form': form,
+        'team': team,
+    }
+
+    return render(request, template, context)
 
 
 @login_required
@@ -464,19 +526,6 @@ def add_chat(request, game_id):
         'form': form,
         'match': match,
         'author': user,
-    }
-
-    return render(request, template, context)
-
-
-def all_clubs(request):
-    """ This view will render all Clubs """
-    clubs = Club.objects.all()
-
-    template = 'matches/clubs.html'
-
-    context = {        
-        'clubs': clubs,
     }
 
     return render(request, template, context)
