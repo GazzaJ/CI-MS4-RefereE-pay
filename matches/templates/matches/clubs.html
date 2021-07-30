@@ -7,7 +7,7 @@
 
 {% block page_header %}
     <hr>
-    <h1 class="text-center mt-5 mb-3">Fixtures</h1>
+    <h1 class="text-center mt-5 mb-3">Club Directory</h1>
     <hr>
 {% endblock %}
 
@@ -60,20 +60,42 @@
                                 <img src="{{ club.club_badge_url }}" class="card-img-top card-img" alt="{{ club.club_name }}">
                             </a>
                         {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title mt-2">{{ club.club_name }}</h5>
-                            <p>{{ club.id }}</p>
-                        </div>
+                            <div class="card-body">
+                                <h5 class="card-title mt-2">{{ club.club_name }}</h5>                                
+                            </div>
                         {% if user.is_superuser %}
-                        <div class="card-body">
-                            <a href="{% url 'edit_club' club.id %}" class="btn btn-primary">Edit</a>
-                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#clubModal">Delete</button>
-                            <!--<a class="btn btn-sm btn-outline-danger ml-2" href="{% url 'delete_club' club.id %}">
-                                Delete Match
-                            </a>-->
+                            <div class="card-body">
+                                <a href="{% url 'edit_club' club.id %}" class="btn btn-primary">Edit</a>
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#club{{ club.id }}Modal">Delete</button>                                
+                            </div>
+                        {% endif %}                    
+                    </div>
+                </div>
+                <!-- Delete Confirmation Modal -->    
+                <div class="modal fade" id="club{{ club.id }}Modal" tabindex="-1" aria-labelledby="clubModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="clubModalLabel">Confirm Deletion!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="x-close" aria-hidden="true">
+                                        <i class="fas fa-times-circle"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>You are about to delete the club:</p>
+                                <p class="text-danger"><strong>{{ club.club_name }}</strong></p>
+                                <p>Are you sure you want to perform this task?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-sm btn-outline-danger ml-2" href="{% url 'delete_club' club.id %}">
+                                    Delete Club
+                                </a>                                
+                            </div>
                         </div>
                     </div>
-                    {% endif %}                    
                 </div>                
             {% endfor %}
         </div>
@@ -86,32 +108,8 @@
             </div>
         </div>
     </div>
-    <!-- Delete Confirmation Modal -->
-    {% if club.id %}
-    <div class="modal fade" id="clubModal" tabindex="-1" aria-labelledby="clubModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="clubModalLabel">Confirm Deletion!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span class="x-close" aria-hidden="true">
-                            <i class="fas fa-times-circle"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>You are about to delete the club:</p>
-                    <p class="text-danger"><strong>{{ club.id }}</strong></p>
-                    <p>Are you sure you want to perform this task?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Cancel</button>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endif %}
+    
+    
     
 
 {% endblock %}
