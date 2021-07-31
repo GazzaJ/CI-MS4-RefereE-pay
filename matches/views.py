@@ -357,14 +357,14 @@ def edit_team(request, team_id):
     print(club_id)
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
-                       edit this team!")
+                       edit this team!")        
         return redirect(reverse('teams', args=(club_id,)))
 
     if request.method == "POST":
         form = TeamForm(request.POST, instance=team)
         if form.is_valid:
             form.save()
-            messages.success(request, 'You successfully updated the Team!')
+            messages.success(request, 'You successfully updated the Team!')            
             return redirect(reverse('teams', args=(club_id,)))
         else:
             messages.error(request, 'Failed to update the team. \

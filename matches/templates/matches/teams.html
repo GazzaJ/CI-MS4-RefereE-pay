@@ -13,8 +13,7 @@
     {% else %}        
         <img src="{{ club.club_badge_url }}" class="card-img-top card-img" alt="{{ club.club_name }}">        
     {% endif %}
-    <h2 class="text-center">{{club.club_name}}</h2>
-    <hr>
+    <h2 class="text-center">{{club.club_name}}</h2>    
 {% endblock %}
 
 {% block content %}
@@ -53,23 +52,24 @@
             </div>                       
         </form>
         <!-- Individual Club Cards -->
-        {% for team in teams %}
-            <div class="row mb-3">
-                <div class="col-8">
-                    <div class="row match border-green">
-                        <div class="col-8 col-md-4 text-center">
+        <div class="row mb-3">
+            <div class="col-12 col-md-8 match border-green">
+                {% for team in teams %}
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4 text-center">
                             <p>{{ team.team_name }}</p>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 text-center">
                             <p>{{ team.manager_coach }}</p>
                         </div>
-                        <div class="col-12 col-md-4">
-                            <a href="{% url 'edit_team' team.id %}" class="btn btn-primary">Edit</a>
-                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#team{{ team.id }}Modal">Delete</button>
-                        </div>
-                    </div>                                           
-                </div>
-            </div>
+                        {% if user.is_superuser %}
+                            <div class="col-12 col-md-4 text-center">
+                                <a href="{% url 'edit_team' team.id %}" class="btn btn-sm btn-primary">Edit</a>
+                                <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#team{{ team.id }}Modal">Delete</button>
+                            </div>
+                        {% endif %}
+                        <hr>
+                    </div>
                 <!-- Delete Confirmation Modal -->    
                 <div class="modal fade" id="team{{ team.id }}Modal" tabindex="-1" aria-labelledby="clubModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -97,6 +97,12 @@
                     </div>
                 </div>                
             {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="{% url 'clubs' %}">Back to Clubs</a>
+            </div>
         </div>
         <!-- Back to top Button -->               
         <div class="row mb-3">
