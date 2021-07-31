@@ -65,7 +65,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="{% url 'teams' club.id %}">Teams</a>
+                                    <a class="btn blue-btn mb-3" href="{% url 'teams' club.id %}">Teams</a>
                                 </div>
                             </div>
                         {% if user.is_superuser %}
@@ -126,6 +126,9 @@
         $(document).ready(function() {
             $(".green-btn").hover(function() {
                 $(this).toggleClass("toggle-grn");
+            });
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
             });
         });            
 	</script>

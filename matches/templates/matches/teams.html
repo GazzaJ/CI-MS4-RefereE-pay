@@ -13,7 +13,7 @@
     {% else %}        
         <img src="{{ club.club_badge_url }}" class="card-img-top card-img" alt="{{ club.club_name }}">        
     {% endif %}
-    <h2 class="text-center">{{club.club_name}}</h2>    
+    <h2 class="text-center mt-3">{{club.club_name}}</h2>    
 {% endblock %}
 
 {% block content %}
@@ -50,23 +50,31 @@
                     <button class="btn btn-success green-btn" type="submit" >Filter</button>
                 </div>
             </div>                       
-        </form>
-        <!-- Individual Club Cards -->
-        <div class="row mb-3">
-            <div class="col-12 col-md-8 match border-green">
+        </form>        
+        <div class="row d-flex justify-content-center"">
+            <div class="col-12 col-md-8 match teams border-green">
+                <!-- List of Teams and Coaches by Club -->
                 {% for team in teams %}
                     <div class="row mb-3">
-                        <div class="col-12 col-md-4 text-center">
+                        <div class="col-12 col-md-6 text-center">
                             <p>{{ team.team_name }}</p>
                         </div>
-                        <div class="col-12 col-md-4 text-center">
+                        <div class="col-12 col-md-6 text-center">
                             <p>{{ team.manager_coach }}</p>
                         </div>
+                        <!-- Additional column with action buttons for superuser -->
                         {% if user.is_superuser %}
-                            <div class="col-12 col-md-4 text-center">
-                                <a href="{% url 'edit_team' team.id %}" class="btn btn-sm btn-primary">Edit</a>
-                                <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#team{{ team.id }}Modal">Delete</button>
-                            </div>
+                            <div class="row mb-3">
+                                <div class="col-12 col-md-4 text-center">
+                                    <p>{{ team.team_name }}</p>
+                                </div>
+                                <div class="col-12 col-md-4 text-center">
+                                    <p>{{ team.manager_coach }}</p>
+                                </div>
+                                <div class="col-12 col-md-4 text-center">
+                                    <a href="{% url 'edit_team' team.id %}" class="btn btn-sm btn-primary">Edit</a>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#team{{ team.id }}Modal">Delete</button>
+                                </div>
                         {% endif %}
                         <hr>
                     </div>
@@ -99,12 +107,14 @@
             {% endfor %}
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <a href="{% url 'clubs' %}">Back to Clubs</a>
+        <!-- Return to Clubs Page -->
+        <div class="row my-5">
+            <div class="col-12 text-center">
+                <a class="btn blue-btn" href="{% url 'clubs' %}">Back to Clubs</a>
             </div>
         </div>
-        <!-- Back to top Button -->               
+        <!-- Back to top Button -->
+        {% if forloop.counter > 10 %}               
         <div class="row mb-3">
             <div class="col-12 btt-button text-center">
                 <a class="btt-link">
@@ -112,10 +122,8 @@
                 </a>	
             </div>
         </div>
+        {% endif %}
     </div>
-    
-    
-    
 
 {% endblock %}
 
@@ -129,6 +137,9 @@
         $(document).ready(function() {
             $(".green-btn").hover(function() {
                 $(this).toggleClass("toggle-grn");
+            });
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
             });
         });            
 	</script>
