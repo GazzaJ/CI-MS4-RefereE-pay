@@ -67,7 +67,7 @@ body {
 .card-img {
     margin: 0.5rem;
     height: 16rem;
-    width: auto;
+    width: 95%;
     object-fit: contain;
 }
 

@@ -53,7 +53,7 @@
                     <div class="card mb-3">
                         {% if club.club_badge %}
                             <a href="{{ club.website_url }}" target="_blank">
-                                <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="card-img-top card-img" alt="{{ club.club_name }}">
+                                <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="card-img-top card-img image-fluid" alt="{{ club.club_name }}">
                             </a>
                         {% else %}
                             <a href="{{ club.website_url }}" target="_blank">
