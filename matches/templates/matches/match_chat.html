@@ -17,10 +17,10 @@
         <!-- Match Summary -->
         <div class="row match border-green">
             <div class="col-12">
-                <div class="row mb-3 mx-1 align-items-center ">
+                <div class="row mb-3 align-items-center ">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-4 col-lg-2 text-center">
+                            <div class="col-4 col-lg-2 text-center pl-0">
                                 <img class="match-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
                                     alt="match.home_team.club_name">
                             </div>
@@ -40,9 +40,9 @@
                                     alt="match.away_team.club_name">
                             </div>
                         </div>
-                        <div class="row mb-3 mx-1 align-items-center">
+                        <div class="row my-3 mx-1 align-items-center">
                             <div class="col text-center">                                
-                                <p>{{ match.venue }} on {{ match.date_time }}</p>                                
+                                <p class="chat-venue"><strong>{{ match.venue }} on {{ match.date_time }}</strong></p>                                
                             </div>
                         </div>
                         <div class="row mb-3 mx-1 align-items-center">
@@ -65,49 +65,47 @@
             </div>
         </div>
         <!-- Messages Window -->
-        <div class="row match border-green text-center mt-3">
-            <div class="col mx-5">
+        <div class="row text-center mt-3 d-flex justify-content-center">
+            <div class="col-12 col-md-10 match border-green mx-5">
                 <h3 class="mb-4">Messages</h3>
                 {% for chat in chats %}
                     {% if chat.match.id == match.id %}                    
                         {% if chat.author.get_full_name == match.home_team.manager_coach %}
-                        <!-- Coach's Messages -->
+                        <!-- Coach's Messages -->                            
                             <div class="row">
-                                <div class="col-2 team-author">
-                                    <p>{{ chat.author }}</p>
-                                </div>
-                                <div class="col-10"></div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-12 col-md-6 coach-chat text-left">
+                                <div class="col-10 col-md-8 coach-chat bubble1 text-left">
                                     <p>{{ chat.body }}</p>
+                                    <!-- Chat Image -->
                                     {% if chat.image %}
                                     <a href="/media/{{ chat.image }}" target="_blank">                                        
-                                        <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail mb-2" alt="">
+                                        <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail my-2" alt="">
                                     </a>
                                     {% endif %}
-                                </div>
-                                <div class="col-12 col-md-6"></div>                           
+                                    <div class="row">
+                                        <div class="col-12 text-right">
+                                            {{ chat.author }}
+                                        </div>
+                                    </div>
+                                </div>                                                           
                             </div>
                         {% endif %}
 
                         {% if chat.author.get_full_name == ref %}
-                        <!-- Referee's Messages -->
-                            <div class="row">
-                                <div class="col-10"></div>
-                                <div class="col-2 ref-author">
-                                    <p>{{ chat.author }}</p>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-12 col-md-6"></div>
-                                <div class="col-12 col-md-6 ref-chat text-left">
+                        <!-- Referee's Messages -->                            
+                            <div class="row">                                
+                                <div class="col-10 col-md-8 ref-chat bubble2 text-left">
                                     <p>{{ chat.body }}</p>
+                                    <!-- Chat Image -->
                                     {% if chat.image %}
                                         <a href="/media/{{ chat.image }}" target="_blank">                                        
                                             <img src="/media/{{ chat.image }}" class="chat-image img-thumbnail mb-2" alt="">
                                         </a>
                                     {% endif %}
+                                    <div class="row mt-2">
+                                        <div class="col-12 text-left">
+                                            {{ chat.author }}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         {% endif %}                        
@@ -115,15 +113,34 @@
                 {% endfor %}
             </div>
         </div>
-               
-        <div class="row no-gutters my-5">
-            <div class="col-md-6 text-center">
-                <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
+        {% if post %}       
+            <div class="row no-gutters my-5">
+                <div class="col-12 col-md-6 text-center">
+                    <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
+                </div>
+                
+                <div class="col-12 col-md-6 text-center">
+                    <a class="btn blue-btn" href="{% url 'add_chat' match.id %}">Add Message</a>
+                </div>
             </div>
-            <div class="col-md-6 text-center">
-                <a class="btn blue-btn" href="{% url 'add_chat' match.id %}">Add Message</a>
+        {% else %}
+            <div class="row no-gutters my-5">
+                <div class="col-12 text-center">
+                    <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
+                </div>
             </div>
-        </div>
+        {% endif %}
     </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">		
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });
+        });            
+	</script>
 {% endblock %}

@@ -233,19 +233,13 @@
         <!-- Action Buttons/Links -->
         <div class="row no-gutters my-5">            
             <!-- If the match is in the future then display Messages button -->
-            {% if name == coach and job or name == ref and job or user.is_superuser %}
-                {% if post %}
+            {% if name == coach and job or name == ref and job or user.is_superuser %}                
                     <div class="col-12 col-md-6 text-center">
                         <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
                     </div>
                     <div class="col-12 col-md-6 text-center mt-3">
                         <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
-                    </div>
-                {% else %}
-                    <div class="col-12 text-center">
-                        <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
-                    </div>
-                {% endif %}
+                    </div>                
             {% endif %}            
         </div>
     </div>

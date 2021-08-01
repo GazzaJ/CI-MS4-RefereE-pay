@@ -147,14 +147,7 @@ def match_detail(request, game_id):
 
         if str(game_id) in bag:            
             paid = True
-
-    # Determine whether the match is in the future or past
-    # Only allow messages if match in the future
-    post = False
-    today = datetime.datetime.now()
-    if match.date_time.replace(tzinfo=None) > today:
-        post = True
-
+    
     context = {
         'match': match,
         'ref_fee': ref_fee,
@@ -169,8 +162,7 @@ def match_detail(request, game_id):
         'user': user,
         'ref': ref,
         'orders': orders,
-        'paid': paid,
-        'post': post,
+        'paid': paid,        
         'job': job,
         'coach': coach,
         'name': name,
@@ -489,10 +481,18 @@ def match_chat(request, game_id):
     chats = Chat.objects.all()
     ref = str(match.referee)
 
+    # Determine whether the match is in the future or past
+    # Only allow new messages if match in the future
+    post = False
+    today = datetime.datetime.now()
+    if match.date_time.replace(tzinfo=None) > today:
+        post = True
+
     context = {
         'match': match,
         'chats': chats,
         'ref': ref,
+        'post': post,
     }
 
     return render(request, 'matches/match_chat.html', context)
