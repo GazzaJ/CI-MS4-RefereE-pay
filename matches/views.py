@@ -326,7 +326,7 @@ def delete_club(request, club_id):
 
 
 def club_teams(request, club_id):
-    """ A view to render all teams associated 
+    """ A view to render all teams associated
     to a particular club
     """
     club = get_object_or_404(Club, pk=club_id)

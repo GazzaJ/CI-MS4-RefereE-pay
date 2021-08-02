@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearableFileInput 
 from .models import Game, Competition, Chat, Club, Team
 
 
@@ -25,6 +26,9 @@ class ClubForm(forms.ModelForm):
     class Meta:
         model = Club
         fields = '__all__'
+
+    club_badge = forms.ImageField(label="Image", required=False,
+                             widget=CustomClearableFileInput)
 
 
 class TeamForm(forms.ModelForm):
