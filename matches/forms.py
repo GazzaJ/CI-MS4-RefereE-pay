@@ -1,5 +1,5 @@
 from django import forms
-from .widgets import CustomClearableFileInput, CustomDateTimeInput
+from .widgets import CustomClearableFileInput
 from .models import Game, Competition, Chat, Club, Team
 
 
@@ -37,11 +37,15 @@ class TeamForm(forms.ModelForm):
         model = Team
         fields = '__all__'
 
+class DateTimeInput(forms.DateTimeInput):
+    input_type = "datetime-local"
+
 
 class GameForm(forms.ModelForm):
 
-    class Meta:        
+    class Meta:
         model = Game
+        widgets = {'date_time': DateTimeInput()}
         exclude = (
             'ref_total',
             'asst1_total',
@@ -51,36 +55,7 @@ class GameForm(forms.ModelForm):
             'asst2_trav',
         )
 
-    date_time = forms.ImageField(label="KO Date & Time", required=False,
-                                 widget=CustomDateTimeInput)
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        
-        placeholders = {
-            'age': 'Age Group',
-            'competition': 'Competition',
-            'home_team': 'Home Team',
-            'away_team': 'Away Team',
-            'date_time': 'KO Date & Time',
-            'venue': 'Match Venue',
-            'referee': 'Referee',
-            'asst_referee1': 'Assistant Referee #1',
-            'asst_referee2': 'Assistant Referee #2',
-        }
-
-        self.fields['home_team'].choices
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black rounded-3'
-
-        # for field in self.fields:            
-        #     if self.fields[field].required:
-        #         placeholder = f'{placeholders[field]} *'
-        #     else:
-        #         placeholder = placeholders[field]
-        #         self.fields[field].widget.attrs['placeholder'] = placeholder
-        # self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
-        # self.fields[field].label = False
+    
 
 
 class ChatForm(forms.ModelForm):

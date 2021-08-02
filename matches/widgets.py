@@ -10,6 +10,7 @@ class CustomClearableFileInput(ClearableFileInput):
 clearable_file_input.html'
 
 
-class CustomDateTimeInput(DateTimeBaseInput):
-    format_key = 'DATETIME_INPUT_FORMATS'
-    template_name = 'matches/custom_widget_templates/custom_datetime.html'
+# class DateTimeInput(DateTimeBaseInput):
+#     input_type = 'date'
+#     format_key = 'DATETIME_INPUT_FORMATS'
+#     template_name = 'matches/custom_widget_templates/custom_datetime.html'
