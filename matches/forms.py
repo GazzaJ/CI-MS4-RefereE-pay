@@ -1,5 +1,5 @@
 from django import forms
-from .widgets import CustomClearableFileInput 
+from .widgets import CustomClearableFileInput, CustomDateTimeInput
 from .models import Game, Competition, Chat, Club, Team
 
 
@@ -27,8 +27,8 @@ class ClubForm(forms.ModelForm):
         model = Club
         fields = '__all__'
 
-    club_badge = forms.ImageField(label="Image", required=False,
-                             widget=CustomClearableFileInput)
+    club_badge = forms.ImageField(label="Club Badge", required=False,
+                                  widget=CustomClearableFileInput)
 
 
 class TeamForm(forms.ModelForm):
@@ -50,6 +50,9 @@ class GameForm(forms.ModelForm):
             'asst1_trav',
             'asst2_trav',
         )
+
+    date_time = forms.ImageField(label="KO Date & Time", required=False,
+                                 widget=CustomDateTimeInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
