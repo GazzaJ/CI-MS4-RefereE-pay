@@ -1,6 +1,6 @@
 <input type="{{ widget.type }}" name="{{ widget.name }}"
   {% if widget.value != None %} 
-    value="{{ widget.value|stringformat:'s' }}"
+    value="{{ widget.value|format='%Y-%m-%dT%H-%M' }}"
   {% endif %}
   {% include "django/forms/widgets/attrs.html" %}>
 

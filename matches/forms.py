@@ -46,7 +46,7 @@ class GameForm(forms.ModelForm):
 
     class Meta:
         model = Game
-        widgets = {'date_time': DateTimeInput()}
+        widgets = {'date_time': DateTimeInput(format='%Y-%m-%dT%H-%M')}        
         exclude = (
             'ref_total',
             'asst1_total',
