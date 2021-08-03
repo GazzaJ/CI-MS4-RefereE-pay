@@ -4,7 +4,7 @@ from .models import Game, Competition, Chat, Club, Team
 
 
 class FeesForm(forms.ModelForm):
-    
+
     class Meta:
         model = Game
         fields = (
@@ -37,6 +37,7 @@ class TeamForm(forms.ModelForm):
         model = Team
         fields = '__all__'
 
+
 class DateTimeInput(forms.DateTimeInput):
     input_type = "datetime-local"
 
@@ -54,8 +55,6 @@ class GameForm(forms.ModelForm):
             'asst1_trav',
             'asst2_trav',
         )
-
-    
 
 
 class ChatForm(forms.ModelForm):

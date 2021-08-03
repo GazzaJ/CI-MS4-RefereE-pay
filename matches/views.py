@@ -289,7 +289,7 @@ def edit_club(request, club_id):
 
     club = get_object_or_404(Club, pk=club_id)
     if request.method == "POST":
-        form = ClubForm(request.POST, instance=club)
+        form = ClubForm(request.POST, request.FILES, instance=club)
         if form.is_valid:
             form.save()
             messages.success(request, 'You successfully updated the Club!')
