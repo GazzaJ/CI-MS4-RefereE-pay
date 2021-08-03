@@ -47,7 +47,12 @@ class TestClubForm(TestCase):
         self.assertEqual(form.errors['club_name'][0], 'This field is required.')
 
     def test_club_badge_not_required(self):
-        form = ClubForm({'club_badge': 'whaddon.jpg'})
+        form = ClubForm({
+            'club_name': 'Leckhampton Rovers FC',
+            'club_badge': '',
+            'club_badge_url': 'www.cheltenhamyouthleague.co.uk/img/cyfl/tn/leckhampton(1).jpg',
+            'website_url': 'www.leckhamptonrovers.co.uk/'
+            })
         self.assertTrue(form.is_valid())
 
     def test_club_badge_url_required(self):
