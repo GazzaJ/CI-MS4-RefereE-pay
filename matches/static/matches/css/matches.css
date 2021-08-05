@@ -196,7 +196,7 @@ https://codingislove.com/css-speech-bubbles/ -----*/
 @media (max-width: 767.9px) {
     
     .container {
-        width: 90vw;
+        width: 95vw;
     }
     
     .match-badge {
@@ -204,6 +204,11 @@ https://codingislove.com/css-speech-bubbles/ -----*/
         width: 5rem;
         object-fit: contain;
     }
+
+    .fee-btn {
+        font-size: 0.8rem;
+    }
+
     .kit-checkout {
         margin-top: 0.5rem;
     }
