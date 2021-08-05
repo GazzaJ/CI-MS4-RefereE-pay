@@ -51,6 +51,9 @@ class GameForm(forms.ModelForm):
             'asst2_trav',
         )
 
+    date_time = forms.DateTimeField(label="KO Date & Time", required=True,
+                                    widget=CustomDateTimeInput)
+
 
 class ChatForm(forms.ModelForm):
 

@@ -449,7 +449,7 @@ def edit_match(request, game_id):
     else:
         form = GameForm(instance=match,
                         initial={
-                            'date_time': match.date_time
+                            'date_time': match.date_time.strftime("%Y-%m-%dT%H:%M:%S")
                         })
         messages.info(request, f'You are editting {match.home_team} vs {match.away_team}')
 
