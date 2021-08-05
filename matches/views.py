@@ -106,6 +106,13 @@ def match_detail(request, game_id):
     ref = str(match.referee)
     coach = match.home_team.manager_coach
 
+    # Determine whether the match is in the future or past
+    # Only allow edits if match in the future
+    edit = False
+    today = datetime.datetime.now()
+    if match.date_time.replace(tzinfo=None) > today:
+        edit = True
+
     # Determine User Role
     if role == "Coach" or role == "Referee":
         job = True
@@ -160,10 +167,11 @@ def match_detail(request, game_id):
         'user': user,
         'ref': ref,
         'orders': orders,
-        'paid': paid,        
+        'paid': paid,
         'job': job,
         'coach': coach,
         'name': name,
+        'edit':edit,
     }
 
     return render(request, 'matches/match_detail.html', context)
