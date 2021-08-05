@@ -65,7 +65,7 @@
                 <div class="collapse" id="venue-map">
                     <div class="card card-body">
                         {% if match.venue.map %}
-                            <img src="{{ MEDIA_URL }}{{match.venue.map}}" alt="{{ match.venue }}">
+                            <img class="img-fluid venue-map" src="{{ MEDIA_URL }}{{match.venue.map}}" alt="{{ match.venue }}">
                         {% else %}
                             <div class="row justify-content-center">
                                 <div class="col-6">
@@ -125,7 +125,7 @@
                                             <p>Travel: £ {{ match.ref_trav }}</p>
                                         </div>                                                                        
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <label for="ref_total">Total</label>
+                                        <label for="ref_total">Total: £ </label>
                                         <input class="total" value="{{ ref_total }}" type="number" name="ref_total" id="ref_total" data-item_id="{{ match.id }}" readonly>
                                     </div>
                                 </div>
@@ -143,8 +143,8 @@
                                         <p>Travel: £ {{ match.asst1_trav }}</p>                                                    
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <label for="asst1_total">Total</label>
-                                        <input class="total" value="{{ asst1_total }}" type="number" name="asst1_total" id="asst1_total"  data-item_id="{{ match.id }}" readonly>
+                                        <label for="asst1_total">Total: £ </label>
+                                        <input class="total" value="{{ asst1_total }}" type="number" size="2" name="asst1_total" id="asst1_total"  data-item_id="{{ match.id }}" readonly>
                                     </div>
                                 </div>                                        
                             {% endif %}
@@ -161,7 +161,7 @@
                                         <p>Travel: £ {{ match.asst2_trav }}</p>
                                     </div>
                                     <div class="col-sm-12 col-md-3 text-left">
-                                        <label for="asst2_total">Total</label>
+                                        <label for="asst2_total">Total: £ </label>
                                         <input class="total" value="{{ asst2_total }}" type="number" name="asst2_total" id="asst2_total"  data-item_id="{{ match.id }}" readonly>
                                     </div>
                                 </div>                                                                         

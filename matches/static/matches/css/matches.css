@@ -38,8 +38,14 @@ body {
     object-fit: contain;
 }
 
+.venue-map {
+    max-width: 100%;
+    height: auto;
+}
+
 .total {
     border: none;
+    max-width: 30%;
 }
 
 /* ---------- Buttons ----------*/
