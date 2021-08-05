@@ -1,5 +1,5 @@
 from django import forms
-from .widgets import CustomClearableFileInput
+from .widgets import CustomClearableFileInput, CustomDateTimeInput
 from .models import Game, Competition, Chat, Club, Team
 
 
@@ -38,15 +38,10 @@ class TeamForm(forms.ModelForm):
         fields = '__all__'
 
 
-class DateTimeInput(forms.DateTimeInput):
-    input_type = "datetime-local"
-
-
 class GameForm(forms.ModelForm):
 
     class Meta:
         model = Game
-        widgets = {'date_time': DateTimeInput(format='%Y-%m-%dT%H-%M')}        
         exclude = (
             'ref_total',
             'asst1_total',

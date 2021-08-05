@@ -8,7 +8,6 @@ from checkout.models import Order
 from profiles.models import UserProfile
 from .forms import GameForm, CompetitionForm, ChatForm, FeesForm, ClubForm, TeamForm
 
-import json
 import datetime
 
 
@@ -25,7 +24,6 @@ def all_matches(request):
 
     query = None
     query1 = None
-    query2 = None
     search = None
 
     if request.GET:
@@ -349,14 +347,14 @@ def edit_team(request, team_id):
     print(club_id)
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
-                       edit this team!")        
+                       edit this team!")
         return redirect(reverse('teams', args=(club_id,)))
 
     if request.method == "POST":
         form = TeamForm(request.POST, instance=team)
         if form.is_valid:
             form.save()
-            messages.success(request, 'You successfully updated the Team!')            
+            messages.success(request, 'You successfully updated the Team!')
             return redirect(reverse('teams', args=(club_id,)))
         else:
             messages.error(request, 'Failed to update the team. \
@@ -449,7 +447,10 @@ def edit_match(request, game_id):
             messages.error(request, 'Failed to update the match. \
                 Please ensure the form has valid inputs')
     else:
-        form = GameForm(instance=match)
+        form = GameForm(instance=match,
+                        initial={
+                            'date_time': match.date_time
+                        })
         messages.info(request, f'You are editting {match.home_team} vs {match.away_team}')
 
     template = 'matches/edit_match.html'
