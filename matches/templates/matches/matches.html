@@ -14,6 +14,7 @@
 {% block content %}
     <div class="container">
         <div class="match-overlay"></div>
+        <!-- Filter Matches by Age or Team -->
         <form id="filter" action="{% url 'matches' %}" method="GET">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
@@ -42,10 +43,10 @@
             <div class="row">
                 <div class="col-12 text-center my-2">
                     <button class="btn btn-success green-btn" type="submit" >Filter</button>
+                    <a class="btn blue-btn" href="{% url 'matches' %}">Reset</a>
                 </div>
             </div>                       
-        </form>
-        
+        </form>        
         {% for match in page_obj %}               
             <a class="match-text" href="{% url 'match_detail' match.id %}">
                 <div class="row match mb-3 align-items-center border-green">
@@ -75,7 +76,7 @@
                     </div>
                 </div>
             </a>           
-        {% endfor %}                
+        {% endfor %}                       
         <div class="row mb-3">
             <div class="col-12 btt-button text-center">
                 <a class="btt-link">
@@ -115,8 +116,8 @@
                     </li>
                 {% endif %}
             </ul>
-        </nav>               
-{{is_paginated}}
+        </nav>             
+
 {% endblock %}
 
 {% block postloadjs %}
@@ -129,6 +130,9 @@
         $(document).ready(function() {
             $(".green-btn").hover(function() {
                 $(this).toggleClass("toggle-grn");
+            });
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
             });
         });            
 	</script>

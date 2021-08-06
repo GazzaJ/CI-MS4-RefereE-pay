@@ -19,12 +19,6 @@ def all_matches(request):
     """   
 
     matches = Game.objects.all()
-    # Pagination comes Django Documentation
-    # https://docs.djangoproject.com/en/3.2/topics/pagination/
-    paginator = Paginator(matches, 10)
-    page = request.GET.get('page')
-    page_obj = paginator.get_page(page)    
-
     teams = Team.objects.all()
     clubs = Club.objects.all()
     fees = Fee.objects.all()
@@ -74,6 +68,12 @@ def all_matches(request):
             if matches.count() == 0:
                 messages.info(request, 'Your team cannot be found in the database')
                 return redirect(reverse('matches'))
+
+    # Pagination comes Django Documentation
+    # https://docs.djangoproject.com/en/3.2/topics/pagination/
+    paginator = Paginator(matches, 10)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
 
     context = {
         'matches': matches,
