@@ -13,43 +13,11 @@
 
 {% block content %}
     <div class="container">
-        <div class="match-overlay"></div>
-        <!-- Club Filtering -->
-        <form id="filter" action="{% url 'matches' %}" method="GET">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <label for="age">Age Group</label>
-                        <select class="form-control" id="age" name="age">
-                            <option selected></option>
-                            {% for age in fees %}
-                                <option>{{ age }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <label for="team">Team</label>
-                        <select class="form-control" id="team" name="team">
-                            <option selected disabled></option>
-                            {% for team in teams %}
-                                <option>{{ team }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center my-3 mb-5">
-                    <button class="btn btn-success green-btn" type="submit" >Filter</button>
-                </div>
-            </div>                       
-        </form>
+        <div class="match-overlay"></div>        
         <!-- Individual Club Cards -->
         <div class="row">
-            {% for club in clubs %}
-                <div class="col-12 col-md-4 col-lg-3 text-center">
+            {% for club in clubs %}            
+                <div class="col-12 col-md-4 col-lg-3 text-center">                    
                     <div class="card mb-3">
                         {% if club.club_badge %}
                             <a href="{{ club.website_url }}" target="_blank">

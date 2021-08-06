@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
@@ -17,7 +18,13 @@ def all_matches(request):
     including, sorting and searching
     """   
 
-    matches = Game.objects.all()   
+    matches = Game.objects.all()
+    # Pagination comes Django Documentation
+    # https://docs.djangoproject.com/en/3.2/topics/pagination/
+    paginator = Paginator(matches, 10)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)    
+
     teams = Team.objects.all()
     clubs = Club.objects.all()
     fees = Fee.objects.all()
@@ -73,6 +80,9 @@ def all_matches(request):
         'teams': teams,
         'clubs': clubs,
         'fees': fees,
+        'page': page,
+        'page_obj': page_obj,
+        'paginator': paginator,
     }
 
     return render(request, 'matches/matches.html', context)
@@ -247,7 +257,7 @@ def add_competition(request):
 def all_clubs(request):
     """ This view will render all Clubs """
     clubs = Club.objects.all()
-
+    
     template = 'matches/clubs.html'
 
     context = {        

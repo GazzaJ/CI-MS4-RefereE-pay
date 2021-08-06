@@ -45,6 +45,9 @@ class Club(models.Model):
     def __str__(self):
         return self.club_name
 
+    class Meta:
+        ordering = ['club_name']
+
 
 class Fee(models.Model):
     age = models.CharField(max_length=50, null=True, blank=False)
