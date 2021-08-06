@@ -346,11 +346,22 @@ def club_teams(request, club_id):
     to a particular club
     """
     club = get_object_or_404(Club, pk=club_id)
-    teams = Team.objects.filter(club_name=club_id)
+    fees = Fee.objects.all()
+    teams = Team.objects.filter(club_name=club_id).order_by('age')
+
+    if 'age' in request.GET:
+                age_group = request.GET['age']
+                if not age_group:
+                    messages.error(request, "You didn't enter any search \
+                                   criteria")
+                    return redirect(reverse('teams'))            
+                qs = Q(team_name__contains=age_group)
+                teams = teams.filter(qs)
 
     template = 'matches/teams.html'
     context = {
         'teams': teams,
+        'fees': fees,
         'club': club,
     }
 

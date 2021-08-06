@@ -21,7 +21,7 @@
         <div class="match-overlay"></div>
         <!-- Club Filtering -->
         <form id="teams-filter" action="" method="GET">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="age">Age Group</label>
@@ -37,6 +37,7 @@
             <div class="row">
                 <div class="col-12 text-center my-3 mb-5">
                     <button class="btn btn-success green-btn" type="submit" >Filter</button>
+                    <a class="btn blue-btn" href="{% url 'teams' club.id %}">Reset</a>
                 </div>
             </div>                       
         </form>
