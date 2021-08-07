@@ -533,7 +533,7 @@ This website has been built using the following core technologies:
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
 
 
-#### Database Management System
+#### Database
 - ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Atlas  
 - ![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster  
 - ![MongoDB Charts](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Charts") - MongoDB Charts was used to create the website's dashboard
@@ -616,14 +616,44 @@ As this is a full-stack website it has been deployed to Heroku.com using the fol
   - Choose an appropriate plan for your project (Hobby Dev-Free plan selected for initial deployment)
 
 > To use Postgres you will need to go back to gitpod and install: **dj_database_url** and **psycopg2-binary**. 
-   - pip3 install dj_database_url
-   - pip3 install psycopg2-binary 
-   In your app's settings.py file import dj_database_url
-   Then scroll down to the Database settings and add a call to **dj_database_url.parse**
-   Provide your database URL (Heroku - Settings - Reveal Config Vars - )
+`pip3 install dj_database_url`
+`pip3 install psycopg2-binary`
+- In your app's settings.py file import dj_database_url
+`import dj_database_url`
+- Then scroll down to the Database settings and add a call to **dj_database_url.parse**
+```
+DATABASE = {  
+    'default': dj_database_URL.parse('DATABASE_URL')
+}
+```
+- Retrieve your database URL from Heroku  (Heroku - Settings - Reveal Config Vars - )
    
 Connect to Database and Run Migrations
-Load all of your fixture data if this is how you are working
+`python3 manage.py migrate`
+Load any fixture data you have if this is how you have elected to add your data
+`python3 manage.py loaddata <filename>.json`
+- Create a superuser
+`python3 manage.py createsuperuser`
+- Create an IF - ELSE statement in the Database setrtings section of settings.py to allow access to either database whether you are in DEVELOPMENT or DEPLOYED mode
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_URL.parse('os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {'ENGINE': 'django.db.backends.sqlite3'
+                    'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+```
+Your Postgres database should now be ready for use.
+
+For our app to work correctly we need to install Gunicorn
+`pip3 install gunicorn`
+
+Next we need to create a procfile in our app, and add in the following code:
+`web:gunicorn <your app name>.wsgi:application`
 
 ### **Heroku Deployment**
 The above steps will automatically bring you to the "Deploy" tab of your new app.  
