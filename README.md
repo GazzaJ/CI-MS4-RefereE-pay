@@ -544,6 +544,7 @@ This website has been built using the following core technologies:
 - ![Git](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/git-logo.png "git logo") - used for maintaining version control of the saved files.
 - ![GitHub](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Github logo") - used as the primary repository for storying the files and documentation.
 - ![Heroku](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-logo.png "Heroku logo")  - Deployment site
+- [AWS](https://aws.amazon.com/?nc2=h_lg) - used to store all media and static files
 
 ##### Other
 
@@ -556,42 +557,10 @@ All of the testing conducted on this app', as well as any bugs encountered and e
 
 ______
 ## **Database Creation** <a name="database"></a>
-This app is connected to a MongoDB Atlas Cluster
-The following steps were used to create the MongoDB Project Database, and subsequent Collections
- 1. Log in to [MongoDB Atlas](https://mongodb.com)
- 2. Start a new Project  
+This app was developed using a SQLite3 database, but was transferred over to a Postgres DB on Deployment.
+The ER diagram below illustrates the relationships between the each of the Models.
+![RefereE-Pay Schema](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/RefereE-Pay%20Database%20Schema.jpeg)
 
- ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-project.jpg)  
- 
- 3. Create a new Cluster  
-   a. Shared Cluster (Free) option selected 
- 4. Select a Cloud provider
-   a. AWS in Ireland Selected
- 5. Select Data tier
-  a. Basic M0 tier selected for the purposes of this project 
- 6. Add a Cluster Name
- 7. Click Create Cluster  
-
- ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-clusters.jpg)  
- 
- 8. Database Access (Left hand Menu under the Security Heading)  
-
- ![Network Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-dbaccess.jpg)  
-
- 9. Add a Database user
- 10. Set Network Access (Left hand Menu under the Security Heading)  
-
- ![Network Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-network.jpg)  
- 
- 11. Add IP Address  
-   a. Allow Access from Anywhere **(Not recommended for full production apps)**
- 13. Confirm
- 14. Select Clusters under Data Storage  
- The buttons will become active once the Cluster has been provisioned
- 15. Click Collections to add a database and start adding documents to your database collections
-  a. Provide a Database Name
-  b. Add a Name for your first collection of documents
- 16. Click "Create"
 
 ## **Deployment** <a name="deployment"></a>
 All of the files necessary to run this website have been stored in the GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
@@ -604,18 +573,30 @@ By forking the GitHub Repository you can make a copy of the original repository 
 - You should now have a copy of the original repository in your GitHub account.
 ### **Making a Local Clone**
 - Log in to GitHub and locate the GitHub Repository
-- Under the repository name, click "Clone or download".
-- To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+- Under the repository name, click the green "Clone or download" button; then the Download Zip button, extracting the files into your desired directory.
+- Alternatively one can clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 - Open Git Bash
 - Change the current working directory to the location where you want the cloned directory to be made.
-- Type git clone, and then paste the URL you copied in Step 3.
-- 
-    - IP - (0.0.0.0 Used, but not recommended for production apps)
-    - PORT - (5000 used)
-    - 
-    - MONGODB URI - The URI for your MongoDB Database
-    - MONGODB PASSWORD - The password for your MongoDB Database
-    **The web app will not function without these variables.**
+- Enter the following command into the terminal
+`git clone https://github.com/gazzaj/ci-ms4-referee-pay`
+- For the app to function correctly you MUST install all of the files in the requirements.txt file. To do this, type the following command into the terminal.
+`pip3 install -r requirements.txt`
+- Set up the following environment variables to use the full functionality of the site.
+
+   - DANGO_SECRET_KEY = your secret key.
+   Unique Django secret keys can be obtained here [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
+
+   - STRIPE_PUBLIC_KEY = your stripe public key.
+
+   - STRIPE_SECRET_KEY = your stripe secret key.
+
+   - STRIPE_WEBHOOK_SECRET = your stripe webhook secret.
+
+    **The web app will not function correctly without these variables.**
+
+Your stripe variables can be found on your [Stripe dashboard](https://www.stripe.com)
+
+Then migrate:
 
 ### **Heroku app creation**
 As this is a full-stack website it has been deployed to Heroku.com using the following procedure:
