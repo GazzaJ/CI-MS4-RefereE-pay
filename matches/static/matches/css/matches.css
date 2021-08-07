@@ -48,6 +48,13 @@ body {
     max-width: 30%;
 }
 
+.paid {
+    font-family: 'Saira Stencil One', sans-serif !important;
+    font-weight: bold;
+    color: #00813e;
+    border: 2px dashed #00813e;
+}
+
 /* ---------- Buttons ----------*/
 
 
