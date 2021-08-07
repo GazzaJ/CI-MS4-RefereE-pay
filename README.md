@@ -1,6 +1,6 @@
 ![RefereE-Pay](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/readme-title.jpg "RefereE-Pay")
 
-# [**RefereE-Pay**]()
+# [**RefereE-Pay**](https://ci-ms4-referee-pay.herokuapp.com/matches/clubs)
 
 ## **Project Justification**
 The idea for this web app came about as a direct result of the ongoing COVID-19 pandemic. This crisis affected many aspects of our lives, not least of which were the consequences for grass-roots football. When the initial lockdowns eased and sports were once agaion allowed; the environment in which we participated was dramatically different, with a higher emphasis placed on reducing person to person contact.
@@ -34,7 +34,7 @@ My aim is to achieved the above with a visually appealing, interactive yet intui
  - enable useres to view their payment history, so thay can claim back monies owed to them
  - Provide Admin with a means to create Edit and Delete fixtures as required.
 
-[The live website can be viewed here!]()
+[The live website can be viewed here!](https://ci-ms4-referee-pay.herokuapp.com/matches/clubs)
 
 ![Am I responsive images]( "Am I Responsive")
 
@@ -115,66 +115,79 @@ ___
 I refer to the five planes of UX to provide a framework for discussing the finer points of this app's design and development.
 
 #### **Strategy**  
-The purpose of RefereE-Pay web app is to provide grassroots football coaches and managers with an electronic means of communicating with and paying match officials fees. The aim is to try and provide a visual dashboard of each fixture, containing all of the information needed bey either home or away coach or the ref, in a single location.
- - As the site owner and grassroots team coach I get to create a potential solution for 
+The purpose of RefereE-Pay web app is to provide grassroots football coaches and managers with an electronic means of communicating with and paying match officials fees. The aim is to try and provide a visual dashboard of each fixture, containing all of the information needed by either the home or away coach. or the ref, in a single location.
+ - As the site owner and grassroots team coach I get to create a potential solution for a 
  - Users get access to all of the fixtures in the data base; are able to filter, and access individual fixtures which they can subsequently pay the match fees for.
 
 #### **Scope**  
 The key features required for this app to function as designed are centred around CRUD interactions with a MongoDB Atlas cloud database management system.:
- - **Create** or upload fixtures for a group of teams in an age group. 
+ - **Create** fixtures for a group of teams in an age group. 
  - **Read**, or view all of the fixtures stored in the database.
     - Filter those fixtures by age group, or Team name
-    - Search functionality enables the user to search the database of fixtures using a keyword of their choice.
- - **Update** Enable Admin users to edit Fixtures as required, and also allow referees to input any travelk expenses they have  into the fixture information
- - **Delete** function for Site Admins, who can remove fixtures as required
+    - Search functionality enables the user to search the database for a particular team and display their games
+ - **Update** Enable Admin users to edit Clubs, Teams and Fixtures as required, and also allow the Match Officials to input any travelk expenses they have into the fixture information
+ - **Delete** function for Site Admins, who can remove Clubs, Teams and fixtures as required
 
-In order to prevent unwanted editing or deletions of user's recipes, the website has been designed with a basic level of security. Thus, to access the full functionality users are required to Sign-up to the App, which provides access to the CRUD functionality.
- - User interactions are tracked and managed through the use of a *"Session Cookie"*
- - Uploads are unlimited, however users can only edit and delete their own previously uploaded recipes
- - Users can elect to provide additional basic information about themselves and to choose whether to subscribe or not
+In order to prevent unwanted editing or deletions of records, I have used the @login_required decorator in functions and also built in logic which requires the user to be a superuser in oprder perform deletions. Thus, to access the full functionality users are required to Sign-up to the App as a superuser.
 
 ##### Functional Requirements
-App functionality is provided through a simple and intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing what they can view and potential functionality.
+App functionality is provided through a typical intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing what they can view and achieve.
 Additional interactive anchor links are provided throughout to provide users with multiple ways of navigating around the app.
 
 ##### Content Requirements
-Much of the content on this revolves around the fixtures Model, which is a list of games I have uploaded through a fixtures file. Additional fixtures files were also used in the "matches" app to populated related Models
-Outside of this I have tried to use football themes images and icons to maintain a consistent look.
+Much of the content in this app revolves around the Matches Model, which is a list of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality
+Outside of this I have maintained football themed images and icons to maintain a consistent look.
 
 The typography selected for this site was not as important, but nonetheless needed to be clear and functional. 
-I had considered using a sporty font but didn't want to over
-I deliberately stuck with a clean and simple, structured layout to make it easy to view  and also edit the content.
+I had considered using a sporty font but didn't want to detratct from the purpose of the site
+I deliberately stuck with a clean and simple, structured layout to make it easy to view and edit the content.
 
-Design elements and imagery are able to be reused through through the wonders of Django template inheritance.
-Each Fixture has been deliberately structured to group critical pieces of information into distinct sections
+It was obviously important that the imagery used in this app was related to football, and more importantly, amateur football, which is the intended audience for this app.
+
+Design elements and imagery are able to be re-used through through the wonders of Django template inheritance.
+Each match has been deliberately structured to group critical pieces of information into distinct sections.
 ___
 
 #### **Structure**  
-RefereE-Pay is constructed from **XX** distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only **XX** options: 
- - Home with Sign-up and Log-in links, 
- - Fixtures, which enables anonymous users to view the fixtures list (but not interact with the individual fixtures)
- - Log-in
+The structure of RefereE-Pay is user dependent with user roles dictating what each group can achieve:
+  - **Anonymous Users** can view the fixture list, Clubs and Teams only. They do not have access to the match details.
+  - **Registered Users** can view the match details, but cannot complete any transactions
+  - **Registered Coaches** are able to view the Fixtures, Clubs and Teams as well as the individual Match Details. They have the ability to add their teams HOME games to the kit bag and to complete payment. Home team coaches are also able to add messages to the fixture to communicate with the Match Official
+  - **Match Officials** - have the same viewing capabilities as Coaches but obviously cannot pay the required match fees. They can add their travel expenses and send in app messages to the Home team Coach
+  - **SuperUsers** - have full and unrestricted access to all functionality
 
-Once through this initial authentication stage users are presented with additional functionality, from which they are able to interact fully with the site: Recipes | Add Recipes | Manage Recipes | Profile | Dashboard | Sign-out
+constructed from **XX** distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only **XX** options: 
+
+The workflow for RefereE-Pay is quite complex, but I have attempted to capture it below:
 ![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
-A further two subdomains enable the user to Edit a profile or recipe document. 
 
 ##### **Interaction Design**
-Interaction with each page is achieved through the main navbar, or anchor links wehere available.
+Interaction with each page is achieved through the main navbar, or through the use of stratcgically placed anchor links where appropriate.
 Aside from this each page is self contained:
- - **Recipes**
- Displays the recipes in the database and allows users to interact with the database through country filter and text search functions, which alter what is displayed dependent on search criteria.
-   - There is an anchor link on the bottom of the page to take users directly to the "Add Recipe" page.
- - **Add Recipes**
- This is a self contained apge allowing users to input all of the recipe details. Once uploaded users are taken back to the Recipes Page.
- - **Manage Recipes**
- This is one of the few pages which has a subdomain linked to it. Visually similar to the Recipes page the Manage Recipes page ONLY displays the recipes uploaded by the session user.
- Rather than opening the recipe, each recipe card Floating Action Button on this page offers the user a choice of Editting or Deleting the recipes.
-   - Chosing edit will redirect the user to the Edit Recipes page, laid out in an identical format to the Add recipes page, except pre-populated with data from the database. Whether confirming edit or cancelling the changes, the user is redirected back to the Manage recipes page
-   - Selecting Delete simply initiates the delete process. There is no redirect; a delete confirmation modal opens from where the user can complete the deletion. Users return to the Manage Recipes page once deletion is complete.
+ - **Matches**
+ Initially displays a paginated list of ALL matches. This list can be filtered based on user selections, to focus on a specific age group, and team of choice. The search box also enables the user to narrow down to a particular team 
+ - **Match Detail**
+ Selecting any of the displayed matches enables the user to drill down into the match detail and discover:
+    - Home and Away Teams
+    - Home and Away team Coaches
+    - The venue and Kick Off time
+    - Interactive dropdown showing the Venue Map (where provided)
+    - Match Officials
+    - Interactive dropdown of Match officials Fees
+    - Message the 
+    
+   From this page, Coaches can add a particular match to their kit bag for checkout at their convenience. To avoid confusion, any match they have already paid for is marked with a "PAID" label and the the "Add to Bag" button is removed. 
+ - **Kit Bag**
+ This section of the app stores (for the duration of the session) any of the matches a user has selected for payment, and provides the user with a useful summary of the:
+   - Match Fees
+   - Match Fines
+   - Match Total
+   - Grand Total 
+  
+- **Checkout**
+This page enables users to pay the match officials fees for any games they have in their kit bag.  
+
  - **User Profile**
- The user Profile page initially displays the basic information from the registration process. Users can access the Edit Profile subdomain by selecting the Edit Profile button at the bottom of the page. This will enable them to add more detail if they so choose. Completing the Edit rpofile process will return the user back to the Profile page to view their changes.  - **Dashboard**
- This is a self contained page where users can track the sites progress to filling in the map, and see which users have uploaded the most recipes.
 
  - **Data Input**
 The primary User inputs are achieved using a series of forms through which, users are able to add and change their data (Recipes or User Profile). 
@@ -182,13 +195,13 @@ The primary User inputs are achieved using a series of forms through which, user
 
 
 ##### **Information Design**
-Information is provided to users on four key pages; Recipes, Manage Recipes, Profile and Dashboard.
+Information is provided to users on multiple pages; Matches, Match Detail, Profile and Dashboard.
 Despite rendering slightly different information the structure of the Recipe and Manage Recipe Pages are deliberately similar.
 
 ___
 
 #### **Skeleton** 
-The W3 Recipes website initially comprises three main pages:
+The RefereE-Pay website initially comprises three main pages:
  - Landing Page
  - Registration Page for first time visitors to gain access to the content
  - Log-in Page for returning visitors
@@ -252,7 +265,7 @@ These anchor links provide user feedback by either changing or reversing colours
  Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed or changed.
 
 ##### **Navigation Design**
-I have used a standard Materialize, mobile responsive navbar for W3Recipes.
+I have used a standard Bootstrap, mobile responsive navbar for RefereE-Pay.
 The menu items change depending on the user's status (logged-in or not).
  - New users only see: Home, Sign-up and Log-in
  - Once signed-up users are able to see the full menu list which enables them to interact with the whole app.
@@ -581,7 +594,7 @@ The following steps were used to create the MongoDB Project Database, and subseq
  16. Click "Create"
 
 ## **Deployment** <a name="deployment"></a>
-All of the files necessary to run this website have been stored in a GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
+All of the files necessary to run this website have been stored in the GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
 
 ### **Forking the GitHub Repository**
 By forking the GitHub Repository you can make a copy of the original repository on your GitHub account, which enables you to view and/or make your own changes without affecting the original repository. This can be achieved using the following steps...
@@ -596,10 +609,10 @@ By forking the GitHub Repository you can make a copy of the original repository 
 - Open Git Bash
 - Change the current working directory to the location where you want the cloned directory to be made.
 - Type git clone, and then paste the URL you copied in Step 3.
-- It is important that you create an env.py file to save your Environment Variables such as:
+- 
     - IP - (0.0.0.0 Used, but not recommended for production apps)
     - PORT - (5000 used)
-    - Security Key (for Session Cookie)
+    - 
     - MONGODB URI - The URI for your MongoDB Database
     - MONGODB PASSWORD - The password for your MongoDB Database
     **The web app will not function without these variables.**
@@ -616,6 +629,20 @@ As this is a full-stack website it has been deployed to Heroku.com using the fol
   - Heroku will let you know whether your chosen name is available
 - Select the most appropriate region for your location
 - Click the "Create app" button
+- Select the Resources tab
+  - Type postgres into the Ad-ons search bos 
+  - Select Heroku Postgres
+  - Choose an appropriate plan for your project (Hobby Dev-Free plan selected for initial deployment)
+
+> To use Postgres you will need to go back to gitpod and install: **dj_database_url** and **psycopg2-binary**. 
+   - pip3 install dj_database_url
+   - pip3 install psycopg2-binary 
+   In your app's settings.py file import dj_database_url
+   Then scroll down to the Database settings and add a call to **dj_database_url.parse**
+   Provide your database URL (Heroku - Settings - Reveal Config Vars - )
+   
+Connect to Database and Run Migrations
+Load all of your fixture data if this is how you are working
 
 ### **Heroku Deployment**
 The above steps will automatically bring you to the "Deploy" tab of your new app.  
@@ -729,10 +756,9 @@ Much of the structure of this site follows what was taught during the Backend De
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
- - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
+ - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Django and Automated testing in Python and some of the different databases structures. Chris Zielinski's Walkthrough projects were extremely helpful and enjoyable.
  - Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
- - Precious Ijege for opening my eyes to potential vulnerabilities and potential back doors in my web app.
- - My grateful appreciation goes out to Precious Ijege for running through the project with a fine tooth comb and helpinmg me ensure it was fit for submission.
+ - My mentor Precious Ijege for his support and advice throughout this final project. Thank you also for providing such a thorough review of the finished project helping ensure it was fit for submission.
  - My appreciation to all the users who took time to test the web app:
 ______
 ### **Technical Support** <a name="technical"></a>
