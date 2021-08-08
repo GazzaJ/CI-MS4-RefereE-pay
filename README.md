@@ -135,11 +135,12 @@ App functionality is provided through a typical intuitive, mobile responsive nav
 Additional interactive anchor links are provided throughout to provide users with multiple ways of navigating around the app.
 
 ##### Content Requirements
-Much of the content in this app revolves around the Matches Model, which is a list of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality
-Outside of this I have maintained football themed images and icons to maintain a consistent look.
+Much of the content in this app revolves around the Matches Model, which contains lists of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality
+Outside of this I have maintained football themed images and icons to maintain a consistent look and a bit of amusement.
 
 The typography selected for this site was not as important, but nonetheless needed to be clear and functional. 
-I had considered using a sporty font but didn't want to detratct from the purpose of the site
+>>**I had considered using a sport themed font for this app, but decided I want to overdo it, and certainly didn't want to detratct from the main purpose of the site.** 
+
 I deliberately stuck with a clean and simple, structured layout to make it easy to view and edit the content.
 
 It was obviously important that the imagery used in this app was related to football, and more importantly, amateur football, which is the intended audience for this app.
@@ -365,49 +366,41 @@ I typically find great inspiration for colour schemes on Pinterest. For W3Recipe
 ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour-palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
 
 ##### **Typography**  
-Selecting the correct typography for this site is just as important as the other design aspects. My aim was to find fonts to reflect a more relaxed style, welcoming the user into the site. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
+Selecting the correct typography for this site wasn't as important as it had been for some of the other projects I have worked on. Since this app comprises an e-commerce platform my aim was to find complimentary fonts which were relatively simple yet easily. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
+ - Simplicity
  - Readability
- - Relaxed Style
- - Weight
 
-With these criteria and ideas in mind, I started loading various fonts into my CSS file and experimented with different combinations to find the ones which complemented each other and provided an aesthetically pleasing look to the site.
-I have used Google fonts for each of my builds to date as it has an extensive library of fonts and is simple and reliable to use.  
-![Google Fonts]https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts"
- After some experimentation I settled on the following font styles:
- - Main Website Title and occasional text (Shrikhand)  
+With these criteria and ideas in mind, I started searched through the [Google Fonts](https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom) library, however my main font was eventually chosen when I created the website logo using the Exo font.
+
+ - Main Website Headings, Club and Team Names (Exo)  
 It was important to have a font which was clear and readable. I was also looking for bolder/thicker font for impact.  
 
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg)  
+![Exo Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/exo-font.jpg "Exo Font")  
 
  - Page headings (Galada)  
 For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.  
 
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg)  
+![Roboto Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/roboto-font.jpg "Roboto Font")  
 
- - Recipe Titles (Molle)  
-I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.  
-
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg)  
-
- - Recipe Detail (Happy Monkey)  
-Given the recipe notebook style I was trying to achieve I wanted a font which looked more natural and 'written' than the typical online typography.  
-
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) 
 
 ##### **Imagery** 
-I was originally planning on using world map as the primary landing page image but decided against as this would have been confusing. I opted to go with a food montage which was an image I purchased from iStock
->**_I chose this image for the range of food types and the vibrant colour combining some of the greens browns and oranges I was looking to incorporate into the app.
+I had a very clear plan for the site images right from the very early planning stages. I wanted to find images showing amateur football in action including the referee or other match officials. I found a decent selection of good quality, licence free images on Pixabay. The full list of images and credits are in the Cedits section.
 
-The second image was sourced on the internet while searching for images for a Kebab recipe. It's just a great image which I liked and was keen to incorporate into the app.
+I also wanted to add some fun to the messages rendered by the app by adding footbal icons matching the level of message, such as:
+ - Error = Red Card
 
-Last but certainly not the least was my desire to have a subtle food related background behind the interactive elements. I found a really cool version designed and distributed by Freepik. The original version would have been too distracting so I opted to adjust the contrast and colours to fade the image. I also added my logo into the circular gap in the centre.
->**_I selected this particular image because it had a range of food types; each one is a decent size and they are not too densely packed._**
+ - Warning = Yellow Card
+
+ - Alert = Tactics Board
+
+ - Success = Goal
+
 ______
 
 ## **Database Schema** <a name="dbschema"></a>  
-W3Recipes uses Mongo DB Atlas, a non-relational database to store and retrieve all of the user input data.
-The schema for W3 Recipes is relatively simple and is illustrated below:
-![DB Schema](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/db-schema.jpg "DB Schema")
+This app was developed using a SQLite3 database, but was transferred over to a Postgres DB on Deployment.
+The ER diagram below illustrates the relationships between the each of the Models.
+![RefereE-Pay Schema](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/RefereE-Pay%20Database%20Schema.jpeg)
 
 The schema contains four collections, with each collection containing multiple documents. 
  - **Users**
@@ -557,9 +550,8 @@ All of the testing conducted on this app', as well as any bugs encountered and e
 
 ______
 ## **Database Creation** <a name="database"></a>
-This app was developed using a SQLite3 database, but was transferred over to a Postgres DB on Deployment.
-The ER diagram below illustrates the relationships between the each of the Models.
-![RefereE-Pay Schema](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/RefereE-Pay%20Database%20Schema.jpeg)
+
+
 
 
 ## **Deployment** <a name="deployment"></a>
