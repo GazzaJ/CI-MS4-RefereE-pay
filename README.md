@@ -115,20 +115,39 @@ ___
 I refer to the five planes of UX to provide a framework for discussing the finer points of this app's design and development.
 
 #### **Strategy**  
-The purpose of RefereE-Pay web app is to provide grassroots football coaches and managers with an electronic means of communicating with and paying match officials fees. The aim is to try and provide a visual dashboard of each fixture, containing all of the information needed by either the home or away coach. or the ref, in a single location.
- - As the site owner and grassroots team coach I get to create a potential solution for a 
- - Users get access to all of the fixtures in the data base; are able to filter, and access individual fixtures which they can subsequently pay the match fees for.
+The purpose of RefereE-Pay web app is to provide grassroots football coaches and managers with an electronic means of communicating with and paying match officials fees. The aim is to try and provide a visual dashboard of each fixture, containing all of the relevant information needed by either the home or away coach. or the ref, in a single location.
+ - As the site owner and grassroots team coach I get to create a potential solution for the grassroots game
+ - Users get access to all of the fixtures in the data base; are able to filter and search to narrow down to a specific team, 
+ - On selecting one of their fixtures the home team coach can add the match to the kit bag and subsequently pay the match fees.
+ - The home team coach can also communicate with the referee through the app so that the coms are associated with the match
+ - Referees are able to update their travel expenses, if they have any.
+ - The Referee can also communicate with the home team coach with respect to a particular match/fixture.
+ - Admin Users can add and edit Clubs, Teams and Matches, as well as act as a proxy for the user and perform the tasks of either coach or ref.
+ 
+>> **The ultimate intention is to provide a more hollistic and cashless solution to matchday payments and communication.**
 
-#### **Scope**  
-The key features required for this app to function as designed are centred around CRUD interactions with a MongoDB Atlas cloud database management system.:
- - **Create** fixtures for a group of teams in an age group. 
- - **Read**, or view all of the fixtures stored in the database.
-    - Filter those fixtures by age group, or Team name
-    - Search functionality enables the user to search the database for a particular team and display their games
- - **Update** Enable Admin users to edit Clubs, Teams and Fixtures as required, and also allow the Match Officials to input any travelk expenses they have into the fixture information
+#### **Scope**
+This app is intended to address **two** key needs not currently solved by existing commercial apps, namely:
+- **Paying Match Officials match fees electronically.**
+- **In app communication with the ref; with messages linked and viewed by individual match.** 
+
+The scope could easily extend to try and include sophisticated league and match creation algorithms, or seek to track and display results. This app is a MVP; a concept of what could be provided to address the above needs in the time available to complete the project. The additional features could certainly be developed and added in the future, which could eventually produce a single hollistic app for all league, match, payment and communication needs.
+
+I have grouped the key features required for this app to function as intended into their associated CRUD category for thoroughess:
+ - **Create** Competitions, Clubs, Teams and Matches by specific age group. 
+ - **Read**, or view all of the Clubs, Teams or Matches stored in the database.
+    - Display all relevant match detail in one convenient dashboard
+    - Filter those matches by age group, or Team name
+    - Search for a team and display that teams games
+ - **Update** Enable Admin users to edit Clubs, Teams and Matches as required, and also allow the Match Officials to input any travel expenses they have into the fixture information.
+ Enable Coaches and Referees to communicate with each other through a simple in app message app.
  - **Delete** function for Site Admins, who can remove Clubs, Teams and fixtures as required
 
-In order to prevent unwanted editing or deletions of records, I have used the @login_required decorator in functions and also built in logic which requires the user to be a superuser in oprder perform deletions. Thus, to access the full functionality users are required to Sign-up to the App as a superuser.
+The final but most critical part of this app is the requirement for site security, which serves three purpooses:
+1. Mimic existing commercial app security
+It may come as a surprise but existing app provided by Regional FA's have tight security limiting access to registered club and match officials 
+2. Provide security for the e-commerce platform so users feel their transactions are secure (User Story #)
+3. Prevent unwanted and unauthorised editing or deletions of records, 
 
 ##### Functional Requirements
 App functionality is provided through a typical intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing what they can view and achieve.
@@ -136,28 +155,19 @@ Additional interactive anchor links are provided throughout to provide users wit
 
 ##### Content Requirements
 Much of the content in this app revolves around the Matches Model, which contains lists of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality
-Outside of this I have maintained football themed images and icons to maintain a consistent look and a bit of amusement.
-
-The typography selected for this site was not as important, but nonetheless needed to be clear and functional. 
->>**I had considered using a sport themed font for this app, but decided I want to overdo it, and certainly didn't want to detratct from the main purpose of the site.** 
-
-I deliberately stuck with a clean and simple, structured layout to make it easy to view and edit the content.
-
-It was obviously important that the imagery used in this app was related to football, and more importantly, amateur football, which is the intended audience for this app.
-
-Design elements and imagery are able to be re-used through through the wonders of Django template inheritance.
-Each match has been deliberately structured to group critical pieces of information into distinct sections.
+I have deliberately included just enough content for this app to function as defined in the Scope, and no more. This has been a conscious decision to prevent unnecessary scope creep.
+ 
 ___
 
 #### **Structure**  
 The structure of RefereE-Pay is user dependent with user roles dictating what each group can achieve:
-  - **Anonymous Users** can view the fixture list, Clubs and Teams only. They do not have access to the match details.
-  - **Registered Users** can view the match details, but cannot complete any transactions
+  - **Anonymous Users** can view the fixture list, Clubs and Teams only. They do not have access to the match details, nor can they access the payment system.
+  - **Registered Users** have the functionality as anonymous users with the addition of viewing match details, but cannot access the kit bag or complete any transactions.
   - **Registered Coaches** are able to view the Fixtures, Clubs and Teams as well as the individual Match Details. They have the ability to add their teams HOME games to the kit bag and to complete payment. Home team coaches are also able to add messages to the fixture to communicate with the Match Official
   - **Match Officials** - have the same viewing capabilities as Coaches but obviously cannot pay the required match fees. They can add their travel expenses and send in app messages to the Home team Coach
   - **SuperUsers** - have full and unrestricted access to all functionality
 
-constructed from **XX** distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only **XX** options: 
+The app is constructed from **19** distinct pages which are accessed through the main and mobile navbars. 
 
 The workflow for RefereE-Pay is quite complex, but I have attempted to capture it below:
 ![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
@@ -382,6 +392,7 @@ For these I was looking for a more relaxed, fun font with a slightly cursive sty
 
 ![Roboto Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/roboto-font.jpg "Roboto Font")  
 
+>>**I had considered using a sport themed font for this app, but decided I want to overdo it, and certainly didn't want to detratct from the main purpose of the site.**
 
 ##### **Imagery** 
 I had a very clear plan for the site images right from the very early planning stages. I wanted to find images showing amateur football in action including the referee or other match officials. I found a decent selection of good quality, licence free images on Pixabay. The full list of images and credits are in the Cedits section.
