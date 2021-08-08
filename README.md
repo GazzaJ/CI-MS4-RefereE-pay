@@ -124,7 +124,7 @@ The purpose of RefereE-Pay web app is to provide grassroots football coaches and
  - The Referee can also communicate with the home team coach with respect to a particular match/fixture.
  - Admin Users can add and edit Clubs, Teams and Matches, as well as act as a proxy for the user and perform the tasks of either coach or ref.
  
->> **The ultimate intention is to provide a more hollistic and cashless solution to matchday payments and communication.**
+> **The ultimate intention is to provide a more hollistic and cashless solution to matchday payments and communication.**
 
 #### **Scope**
 This app is intended to address **two** key needs not currently solved by existing commercial apps, namely:
@@ -170,7 +170,7 @@ The structure of RefereE-Pay is user dependent with user roles dictating what ea
 The app is constructed from **19** distinct pages which are accessed through the main and mobile navbars. 
 
 The workflow for RefereE-Pay is quite complex, but I have attempted to capture it below:
-![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
+![Workflow](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/referee-pay-flow.jpg "Website workflow")
 
 ##### **Interaction Design**
 Interaction with each page is achieved through the main navbar, or through the use of stratcgically placed anchor links where appropriate.
@@ -411,7 +411,7 @@ ______
 ## **Database Schema** <a name="dbschema"></a>  
 This app was developed using a SQLite3 database, but was transferred over to a Postgres DB on Deployment.
 The ER diagram below illustrates the relationships between the each of the Models.
-![RefereE-Pay Schema](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/RefereE-Pay%20Database%20Schema.jpeg)
+![RefereE-Pay Schema](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/referee-pay-db-schema.jpeg "Database Schema")
 
 The schema contains four collections, with each collection containing multiple documents. 
  - **Users**
@@ -529,18 +529,16 @@ This website has been built using the following core technologies:
 
 ##### Integrations
 
-- ![Flask](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/flask.png "Flask") - The project uses the Flask micro-framework and links with jinja to create the webpages
-- ![Jinja](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/jinja.png "Jinja") - The project uses the Jinja templating engine
-- ![Materialize CSS](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/materialize-css.png "Bootstrap 4") - Materialize CSS
+- ![Django](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/flask.png "Django") - The project uses the Django framework
+- ![Bootstrap CSS](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/materialize-css.png "Bootstrap 4") - Bootstrap 4.6
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
 
 
 #### Database
-- ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Atlas  
-- ![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster  
-- ![MongoDB Charts](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Charts") - MongoDB Charts was used to create the website's dashboard
+- ![SQLite3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "SQLit3") - SQLite3  
+- ![Postgres](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "Postgres") - Postgres was used as the deployed DB  
 
 ##### Version Control, storage and hosting
 
@@ -620,7 +618,7 @@ As this is a full-stack website it has been deployed to Heroku.com using the fol
 
 > To use Postgres you will need to go back to gitpod and install: **dj_database_url** and **psycopg2-binary**. 
 `pip3 install dj_database_url`
-`pip3 install psycopg2-binary`
+`pip3 install psycopg2_binary`
 - In your app's settings.py file import dj_database_url
 `import dj_database_url`
 - Then scroll down to the Database settings and add a call to **dj_database_url.parse**
@@ -631,9 +629,10 @@ DATABASE = {
 ```
 - Retrieve your database URL from Heroku  (Heroku - Settings - Reveal Config Vars - )
    
-Connect to Database and Run Migrations
+- Connect to Database and Run Migrations by typing the following in the terminal:
 `python3 manage.py migrate`
-Load any fixture data you have if this is how you have elected to add your data
+
+- Load any fixture data you have used, if this is how you have elected to add your data
 `python3 manage.py loaddata <filename>.json`
 - Create a superuser
 `python3 manage.py createsuperuser`
@@ -652,13 +651,20 @@ else:
 ```
 Your Postgres database should now be ready for use.
 
-For our app to work correctly we need to install Gunicorn
+- For our app to work correctly we need to install Gunicorn
 `pip3 install gunicorn`
 
-Next we need to create a procfile in our app, and add in the following code:
+- Next we need to create a procfile in our app, and add in the following code:
 `web:gunicorn <your app name>.wsgi:application`
 
 ### **Heroku Deployment**
+1. To start the Heroku deployment, first log into Heroku from the terminal using:
+`heroku login -i`
+2. You will need to tempoarily disable the static files as we will set these up on Amazon AWS. To do this type
+`heroku config:set DISABLE_COLLECTSTATIC=1 --app <app name>`
+3. In `settings.py` add Heroku to the allowed hosts and localhost so the project can run locally and as a deployed site
+`ALLOWED_HOSTS = ['<your Heroku app name>.heroku.com', 'localhost']`
+4. 
 The above steps will automatically bring you to the "Deploy" tab of your new app.  
 ![Deployment](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-github.jpg)
 
@@ -684,23 +690,51 @@ This will reveal a form for inputting the key and value pairs necessary to conne
 
 |  KEY  |  VALUE  |
 |:-----:|:-------:|
-|   IP  | 0.0.0.0 |
-|  PORT |  5000   |
-| SECRET KEY | Randomly Generated Fort Knox Key|
-| MONGO_URI | Your unique MongoDB URI |
-| MONGO_DBNAME | Your unique Mongo DB name |
+|   DATABASE_URL  | 0.0.0.0 |
+|  SECRET_KEY |  5000   |
+| STRIPE_PUBLIC_KEY | Your Stripe Public Key|
+| STRIPE_SECRET_KEY | Your Stripe Secret Key |
+| STRIPE_WH_SECRET | Your Stripe Webhook secret key |
 
-The above Mongo_URI variable can be found in the appropriate Mongo DB Project under Cluster by selecting "Connect"
- 1. Select "Clusters"
- 2. Select "Connect"
- 3. Select "Connect your application"
- 4. Choose your Driver and Version
-   - **Remember to substitute in your own DBNAME and Password**
  5. Copy your connection string
 
 ### **Enabling Automatic Deployment**
  - Select the Heroku "Deploy" tab
  - In the "Automatic deploys" section select the branch you wish to use
+
+### **Connect to Amazon AWS**
+Amazon AWS has been utilised to store both STATIC and MEDIA files for our deployed web app.
+Follow these steps to connect your app to AWS:
+1. Create an Amazon AWS account
+   - Follow all of the registration steps until you are back at the AWS Console view
+2. Create a new **"Bucket"** for your data.
+   - Navigate to the S3 service of AWS, and under the buckets section select **Create bucket**
+   - Name the bucket (advisable to give it the same name as your website)
+   - Select the Region nearest you.
+   - Uncheck the **Block Public Access** checkbox
+   - Scroll down and select **Create bucket**
+3. Select your newly created bucket from the Buskets window and then select the **Properties** Tab
+   - Scroll down towards the botton and **Enable Static web hosting**
+   - in the Index and Error input boxes enter `index.html` and `error.html` respectively
+   - Save the properties
+4. New select the Bucket **Permissions Tab**
+   - scroll to the bottom and type the following into the **Cross-origin resource sharing (CORS)** box
+   ```
+   [
+        {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+        }
+    ]
+   ```
  
 **There is no difference between the developed version of W3Recipes and that deployed on Heroku**
 ______
