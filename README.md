@@ -329,7 +329,7 @@ For returning users there is a separate All Auth Log-In page to grant access int
 ##### Matches Page
 The Matches page could be considered one of the key pages on the site as it is the entry point for each of the match detail pages which subsequently allow users to add their matches to the kit bag for payment. Uses READ functionality to display basic detail for each match. and provides the ability to filter matchesd by different categories. A seaarch box will allow users to  find specific teams. This page has pagination controls which are set to display a specific number of matches to limit scrolling.
 Registered Users can select any match to view the full details of that match.
-![Matches](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/matches.png "Matches Page Wireframe")
+![Matches](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/matches-page.png "Matches Page Wireframe")
 
 
 ##### Match Detail Page
@@ -342,9 +342,10 @@ Provides users with the full match details such as:
  - Messages
 ...and will permit home team coaches to pay match fees and also communicate with the referee.
 ![Match Detail](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/match-detail.png "Match Detail Wireframe")
-##### Refs Page
 
-![Ref's Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Ref's PAge Wireframe")
+##### Refs Page
+This page is intended as a dashboard for the Referee and match officials to interact with the Team coaches and add their travel expenses.
+![Ref's Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/refs-page.png "Ref's Page Wireframe")
 > **In hindsight I decided not to build this page, but to instead allow the Ref and Home Team Coach to interact with the Match Detail page. From this page the Match Officials can add their travel expenses and communicate with the Home team coach.**
 
 ##### Clubs
@@ -354,29 +355,29 @@ Admin / Superusers also have the functionality to Edit or Delete the club at thi
 
 ##### Add Club
 A very simple form page where Admin/Superusers can add a new club to the directory
-![Add Clubs](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/add-clubs.png "Add Club Wireframe")
+![Add Clubs](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/add-club.png "Add Club Wireframe")
 
 ##### Edit Club
 Almost a mirror image of the Add Club form page. The Edit Club page displays current club information and allows Admin/Superusers to edit the details as required.
-![Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Edit Club Wireframe")
+![Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/edit-club.png "Edit Club Wireframe")
 
 ##### Teams
 A simple page listing each of the chosen Club's teams by age group and displaying the Manager/Coach for that Team.
 Admin / Superusers also have the functionality to Edit or Delete the Team at this point.
-![Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/teams.png "Teams Page Wireframe")
+![Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/teams-page.png "Teams Page Wireframe")
 
 ##### Add Team Page
 A very simple form page where Admin/Superusers can add a new team to the directory.
-![Add Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Add Teams Wireframe")
+![Add Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/add-team.png "Add Teams Wireframe")
 ##### Edit Team
 Similat to the Edit teams page this page is a replica of the Add Team form page. The Edit Team page displays current Team information and allows Admin/Superusers to edit the details as required.
-![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Edit Team Wireframe")
+![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/edit-team.png "Edit Team Wireframe")
 
 ##### Kit Bag
 This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
 Edit redirects the user to a page similar to the Full Recipe page but with editing functionality.
 Selecting Delete will render a check modal to double check the deletion request before removing the recipe.  
-![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Edit Team Wireframe")
+![Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/order-detail.png "Kit Bag Wireframe")
 
 ##### Payment
 If the user selects EDIT on the Manage Recipes page, they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is an option to Cancel the edit.  
@@ -476,11 +477,7 @@ The following table lists the primary features provided by the W3Recipes app.
 | 014   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
 | 015 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
 
-> **_I chose not to add a recipe category filter in this release as I thought it would make the top of the recipes page too clutters and would be an inelegant solution. Ideally I would like to incorporate an conditional dropdown menu where users can select between recipe category or countries._**
 
-> **_The UK map is provided because the standard Atlas Charts world map only recognises the UK as a country and not the individual countries. Showing the individual countries is only possible by selecting the UK Countries map._**
-
-> **_I have chosen not to provide a contact form for this web app. I believe that being able to contact the developer by email is sufficient for this initial release._**
 
 ____
 
@@ -489,52 +486,16 @@ Despite not being explicitly required for this build I have chosen to implement 
 
  1. User Login
 
- User registers on the site with a simple username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library.
 
-![Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg)
-
- 2. Session Cookie
-
- Once a user signs up or logs-in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username.  
-
- 3.  Restricted Access
-
- The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes. I have also attempted to prevent backdoor access to the delete function through retyping another url and inserting delete_recipe/Object_id.
- > **Thanks to Kotaro (Toto) Tanaka for highlighting this one while reviewing the app.**
-
-![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restricted-1.jpg)
-
- 4.  Restricted Access
-
- I have also attempted to prevent backdoor access to editing recipes from the Recipes or Full Recipe pages.  
-
-![Unauthorised Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restrict-2.jpg)
-
- 5.  Deletion Check
-
- When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete that particular recipe.  
-
-![Deletion Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg)
-
- 6. Profanity Filter  
-
-  Basic profanity filter, analyses user input and replaces any matching profanities with "****"
-
-![Profanity Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profane.jpg)
-
-7. Flask-SSLify
-
-Configures the app to redirect all incoming requests to https//
 
 
 ### **Features Left to implement**
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate in the future:
 |   Feature     |     Description      |
 |---------------|----------------------|
-| Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's. This would be useful as it's a social media norm rather than using URL's |
-| Image Validation | Validate image properties (size, aspect ratio etc) prior to uploading                 |
-|Inappropriate image filter| Filter inappropriate images from being uploaded or worse, displayed |
 | Conditional dropdown and seach | To reduce the number of search boxes on the Recipes page. Render either countries or recipe categories in the dropdown based on what the users selects|
+| Algorythm based match creation| To create a more sophisticated means of creating multiple games at once rather than manually creating each game|
+|Person to Person Payment| The ability to pay the Match officials directly rather than paying the app as it currently stands|
 ______
 
 ## **Technologies Used** <a name="technologies"></a>  
@@ -551,16 +512,16 @@ This website has been built using the following core technologies:
 
 ##### Integrations
 
-- ![Django](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/flask.png "Django") - The project uses the Django framework
-- ![Bootstrap CSS](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/materialize-css.png "Bootstrap 4") - Bootstrap 4.6
+- ![Django](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/django.jpg "Django") - The project uses the Django framework
+- ![Bootstrap CSS](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/Bootstrap-logo.png "Bootstrap 4") - Bootstrap 4.6
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
 
 
 #### Database
-- ![SQLite3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "SQLit3") - SQLite3  
-- ![Postgres](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "Postgres") - Postgres was used as the deployed DB  
+- ![SQLite3](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/sqlite.jpg "SQLit3") - SQLite3  
+- ![Postgres](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/postgres.png "Postgres") - Postgres was used as the deployed DB  
 
 ##### Version Control, storage and hosting
 
@@ -568,7 +529,7 @@ This website has been built using the following core technologies:
 - ![Git](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/git-logo.png "git logo") - used for maintaining version control of the saved files.
 - ![GitHub](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Github logo") - used as the primary repository for storying the files and documentation.
 - ![Heroku](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-logo.png "Heroku logo")  - Deployment site
-- [AWS](https://aws.amazon.com/?nc2=h_lg) - used to store all media and static files
+- [AWS](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/aws.png "AWS logo") - used to store all media and static files
 
 ##### Other
 
@@ -799,16 +760,19 @@ The photos used in this site, or in pre-populated recipes by the developer were 
 | Photo | Description | Source | Attribution |
 |-------|-------------|--------|-------------|
 | 001   | [App Logo](https://www.freelogodesign.org/manager) | Free Logo Design | Designed by the developer |
-| 002   |[Landing Page](https://pixabay.com/photos/football-goals-grass-lawn-4789850/)| Pixabay | No Attribution Required |
-| 003   | [Shish Kebab](https://www.pexels.com/photo/food-plate-restaurant-dinner-5175623/) | Pexels | Shameel Mukkath |
+| 002   |[Landing Page](https://pixabay.com/photos/football-goals-grass-lawn-4789850/)| Pixabay | olebertelsen |
+| 003   | [Matches Background](https://pixabay.com/photos/football-ball-sport-goal-kick-1678992/) | Pixabay | SeppH |
 | 004   | [Club Badges](https://www.cheltenhamyouthleague.co.uk/clubdirlist/1021)| Cheltenham Youth Football League website |  |
-| 005   | [Kofta Kebab](https://cdn.pixabay.com/photo/2015/08/20/15/15/grill-897553_960_720.jpg) | Pixabay | No Attribution Required |
-| 006   | [Welsh Cakes](https://cdn.pixabay.com/photo/2018/10/05/14/55/cake-3726058_960_720.jpg) | Pixabay | No Attribution Required |
-| 007   | [Lamingtons](https://upload.wikimedia.org/wikipedia/commons/c/c5/Mocha_Flake_amingtons.jpg) | Wikimedia Commons | Andy Cavell |
-| 008   | [Goal](https://thenounproject.com/term/goal/56918/) | thenounproject.com  | Amos Kofi Commey |
-| 009   | [Yellow Card](https://pixabay.com/photos/avocados-guacamole-drink-food-386795/) | thenounproject.com adapted by the developer | inDhika coloured by the developer |
-| 010   | [Red Card](https://pixabay.com/photos/food-refreshment-yorkshire-puddings-3264773/) | thenounproject.com adapted by the developer | inDhika coloured by the developer |
-
+| 005   | [Checkout](https://pixabay.com/photos/referee-linesman-sport-football-4733190/) | Pixabay | Planet_fox |
+| 006   | [Goal](https://thenounproject.com/term/goal/56918/) | thenounproject  | Amos Kofi Commey |
+| 007   | [Yellow Card](https://thenounproject.com/term/yellow-card/2022056/) | thenounproject adapted by the developer | inDhika coloured by the developer |
+| 008   | [Red Card](https://thenounproject.com/term/yellow-card/2022056/) | thenounproject adapted by the developer | inDhika coloured by the developer |
+| 009   | [Tactics Board](https://thenounproject.com/term/football-tactics/2278781/) | thenounproject | ProSymbols, US |
+| 010   | [Burrows](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Concil | Cheltenham Borough Concil |
+| 011   | [Beeches](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Concil | Cheltenham Borough Concil |
+| 012   | [King George V](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Concil | Cheltenham Borough Concil |
+| 013   | [Naunton Park](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Concil | Cheltenham Borough Concil |
+| 014   | [Priors Fam](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Concil | Cheltenham Borough Concil |
 ____
 
 ### **Code Snippets** <a name="code"></a>
