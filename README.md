@@ -187,7 +187,17 @@ Aside from this each page is self contained:
     - Interactive dropdown of Match officials Fees
     - Message the 
     
-   From this page, Coaches can add a particular match to their kit bag for checkout at their convenience. To avoid confusion, any match they have already paid for is marked with a "PAID" label and the the "Add to Bag" button is removed. 
+   From this page, Coaches can add a particular match to their kit bag for checkout at their convenience. To avoid confusion, any match they have already paid for is marked with a "PAID" label and the the "Add to Bag" button is removed.
+ - **Clubs**
+ The clubs page displays all of the clubs saved in the database as a card displaying club badge and club name. Clicking the club badge redirects the user to the club website. Below the badge and name sits a **"Teams"** button which takes the user to a separate page which displays all of the teams saved in the database, for that club.
+Admin / Superusers also have Edit and delete buttons to select from.
+   - Edit - redirects to a form displaying club information where the superuser can change the club name, badge or website URL.
+   - Delete  - does as it says once the superuser has confirmed the deletion
+ - **Teams**
+ The Teams page displays all of the teams for the selected CLub by age group and shows team name and the Manager/coach for that team. There is limited data in the team menu, as designed, however this could be increased in the future to include contact details for the Manager/Coach. 
+Admin / Superusers have the ability to Edit and Delete the teams:
+   - Edit - redirects the superuser to a form page where the team detail can be adjusted
+   - Delete  - does as it says once the superuser has confirmed the deletion
  - **Kit Bag**
  This section of the app stores (for the duration of the session) any of the matches a user has selected for payment, and provides the user with a useful summary of the:
    - Match Fees
@@ -199,15 +209,18 @@ Aside from this each page is self contained:
 This page enables users to pay the match officials fees for any games they have in their kit bag.  
 
  - **User Profile**
+Displays the users billing address, if they have elected to save it, and a summary of the matches they have paid for.
+ - **Admin**
+A special menu option has been provided for Admin/Superusers to create new Competitions, Clubs, Teams and Matches. Each one redirects the superuser to a form page where they can input and save the relevant information.
+Match creation is currently simplistic choice based form. Future versions could use a more sophisticated 
+> I had opted to keep this as a superusers task because it didn't make sense to enable any user to log in and start creating new teams.
 
- - **Data Input**
-The primary User inputs are achieved using a series of forms through which, users are able to add and change their data (Recipes or User Profile). 
-> A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However, this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus, the goal; has been to make it as easy as possible for the user to input this data.**
+
 
 
 ##### **Information Design**
-Information is provided to users on multiple pages; Matches, Match Detail, Profile and Dashboard.
-Despite rendering slightly different information the structure of the Recipe and Manage Recipe Pages are deliberately similar.
+Information is provided to users on multiple pages; Matches, Match Detail, Clubs, Teams, Kit Bag and Profile.
+Despite rendering slightly different information the structure of each page has been designed to provide a similar layout and theme.
 
 ___
 
@@ -230,7 +243,7 @@ Assuming the user choses to register they are provided access to the remaining p
 Navigation between these pages is provided by a standard intuitive navbar, additional anchor links are provided on strategic pages to assist navigation. 
 
 ##### **Interface Design**
-The intention was to provide a relatively simple app which maintains a clean and consistent interface design, re-using elements and page styles wherever possible to benefit from the users learned behaviour. Button colours provide visual cues to their role.
+The intention was to provide a relatively simple app which maintains a clean and consistent interface design, re-using elements and page styles wherever possible to benefit from the users learned behaviour. 
  - The Recipes page and Manage Recipes page are virtually identical aside from the search and filter elements being removed for managing recipes.  
 
 ![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-1.jpg) 
@@ -301,70 +314,79 @@ The basic concept for the information design for W3Recipes is laid out in the fo
 #### Wireframes <a name="wireframes"></a>
 Wireframes for the original design concepts were created using Balsamiq.
 ##### Home Page
-The landing page explains the purpose of the site to new and returning users. Functionality is limited from this page. Users are only able to Sign-up with a new account or Log-In to an existing account.
-A Mini version of the Dashboard is shown to hopefully encourage users to find an empty country and to sign-up in order to provide a recipe for it.
-![Landing Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/home-page.png "Landing Page Wireframe")
+The landing page explains the purpose of the site to new and returning users. Functionality is limited from this page. Users are only able to Sign-up with a new account or Log-In to an existing account. Anonymous users are able to navigate to the Matches, Clubs and Teams pages but cannot go any further.
+
+![Landing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/home-page.png "Landing Page Wireframe")
 
 ##### Sign-Up Page
-Simple Sign-Up page enables the user to create unique log-in credentials based on an alphanumeric Username and alphanumeric Password. Back-end logic tests for duplicate entries. Redirects the user to the Recipes Page on successfully signing up.  
-![Sign-Up](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/Sign-up.png "Sign-Up Page Wireframe")
+A simple Sign-Up page provided by All Auth package enables the user to create unique log-in credentials based on an alphanumeric Username and alphanumeric Password. Back-end logic tests for duplicate entries. Redirects the user to the Recipes Page on successfully signing up.  
+![Sign-Up](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/sign-up.png "Sign-Up Page Wireframe")
 
 ##### Login Page
-For returning users there is a separate Log-In page to enable access to the full functionality of the site.  
-![Login](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/login-page.png "Log-In Page Wireframe")
+For returning users there is a separate All Auth Log-In page to grant access into the site.  
+![Login](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/sign-in.png "Log-In Page Wireframe")
 
-##### Main Recipe Page
-The Recipe page could be considered one of the key pages on the site. Uses READ functionality to display Recipes and provides the ability to filter Recipes by country or search by keywords. This page has pagination controls which are set to display a specific number of recipes to limit scrolling.
-Users can select any recipe to view the full details of that recipe in order to make it.
-![Recipes Display](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes-page.png "Recipes Page Wireframe")
+##### Matches Page
+The Matches page could be considered one of the key pages on the site as it is the entry point for each of the match detail pages which subsequently allow users to add their matches to the kit bag for payment. Uses READ functionality to display basic detail for each match. and provides the ability to filter matchesd by different categories. A seaarch box will allow users to  find specific teams. This page has pagination controls which are set to display a specific number of matches to limit scrolling.
+Registered Users can select any match to view the full details of that match.
+![Matches](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/matches.png "Matches Page Wireframe")
 
 
-##### Individual Recipe Page
-Provides users with the full recipe detail so they can check the ingredients and follow the steps to make it.
-![Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full-recipe.png "Full Recipe Wireframe")
+##### Match Detail Page
+Provides users with the full match details such as:
+ - Home and Away Team
+ - Home and Away Coaches
+ - Venue and Kick-off
+ - Match Officials
+ - Match officials fees
+ - Messages
+...and will permit home team coaches to pay match fees and also communicate with the referee.
+![Match Detail](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/match-detail.png "Match Detail Wireframe")
+##### Refs Page
 
-##### Add Recipe Page
-If the logged in user chooses to upload a recipe they can select "ADD RECIPE" from the navbar, which redirects the user to a page with various input fields where they can populate:
- - Recipe Name
- - An image representative of the recipe
- - Recipe Country
- - Recipe Category
- - Recipe Description
- - Servings
- - Vegetarian and Vegan selectors
- - Preparation and Cooking Time
- - Ingredients
- - Method
+![Ref's Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Ref's PAge Wireframe")
+> **In hindsight I decided not to build this page, but to instead allow the Ref and Home Team Coach to interact with the Match Detail page. From this page the Match Officials can add their travel expenses and communicate with the Home team coach.**
 
-Once complete the recipe is uploaded to the MongoDB Atlas Recipes collection.  
-![Add Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Add Recipe Wireframe") 
+##### Clubs
+Simple page displaying each team on a card, each one having a "Teams" button which takes the user to the list of teams for that Club.
+Admin / Superusers also have the functionality to Edit or Delete the club at this point.
+![Clubs](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Club Directory Wireframe")
 
-###### Manage Recipes Page
+##### Add Club
+A very simple form page where Admin/Superusers can add a new club to the directory
+![Add Clubs](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/add-clubs.png "Add Club Wireframe")
+
+##### Edit Club
+Almost a mirror image of the Add Club form page. The Edit Club page displays current club information and allows Admin/Superusers to edit the details as required.
+![Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Edit Club Wireframe")
+
+##### Teams
+A simple page listing each of the chosen Club's teams by age group and displaying the Manager/Coach for that Team.
+Admin / Superusers also have the functionality to Edit or Delete the Team at this point.
+![Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/teams.png "Teams Page Wireframe")
+
+##### Add Team Page
+A very simple form page where Admin/Superusers can add a new team to the directory.
+![Add Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Add Teams Wireframe")
+##### Edit Team
+Similat to the Edit teams page this page is a replica of the Add Team form page. The Edit Team page displays current Team information and allows Admin/Superusers to edit the details as required.
+![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Edit Team Wireframe")
+
+##### Kit Bag
 This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
 Edit redirects the user to a page similar to the Full Recipe page but with editing functionality.
 Selecting Delete will render a check modal to double check the deletion request before removing the recipe.  
-![Manage](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Manage Recipes Wireframe")  
+![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/clubs.png "Edit Team Wireframe")
 
-##### Edit Recipe Page
+##### Payment
 If the user selects EDIT on the Manage Recipes page, they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is an option to Cancel the edit.  
-![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Edit Recipe Wireframe")
+![Payment](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/payment.png "Payment Wireframe")
 
+##### Payment Success
 
 ##### Profile Page
 The profile page initially renders the basic profile information added on Sign-up. There is a button at the bottom of the profile card to enable the users to access the 'Edit Profile' page where they can customise their profile image and select whether or not to subscribe and provide an email address.  
-![Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)  
-
-
-##### Edit Profile Page
-Enables the user to add a photo or avatar to their profile, provide their location and subscribe to the website.
-I chose not to place the subscribe option on the landing page because until you log in you wouldn't necessarily know whether you wanted to subscribe to the website.
-Thus it made sense to me to add this to a profile page  
-
-![Edit Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-profile.png)  
-
-##### Dashboard Page  
-The dashboard page enables the users to track how many countries the site has recipes for and also see how they compare to other users in terms of total recipes uploaded.
-![Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipe-dashboard.png)  
+![Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/profile.png "Profile Wireframe")
 
 ___
 #### **Surface**
@@ -373,7 +395,7 @@ The aesthetics of RefereE-Pay was just as important to me as the functionality. 
 ##### **Colour Scheme**
 I typically find great inspiration for colour schemes on Pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image.  
   
-![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour-palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
+![Colour Scheme](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/profile.png "Colour Palette") 
 
 ##### **Typography**  
 Selecting the correct typography for this site wasn't as important as it had been for some of the other projects I have worked on. Since this app comprises an e-commerce platform my aim was to find complimentary fonts which were relatively simple yet easily. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
