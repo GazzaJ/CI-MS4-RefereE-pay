@@ -583,7 +583,22 @@ By forking the GitHub Repository you can make a copy of the original repository 
 
 Your stripe variables can be found on your [Stripe dashboard](https://www.stripe.com)
 
-Then migrate:
+- Migrate the Apps database models to set up the database.
+- Dry run the migrations to see if there are any issues. In the Terminal type:
+`python3 manage.py makemigrations --dry-run`
+- Run the migrations
+`python3 manage.py makemigrations`
+- You can check the list of queued migrations using:
+`python3 manage.py showmigrations`
+- Verify the planned migrations using:
+`python3 manage.py migrate --plan`
+- If all is well migrate
+`python3 manage.py migrate`
+- A superuser account is required to access the Admin Page of the database, and can be created as follows:
+`python3 manage.py createsuperuser`
+- Follow the prompts in the Terminal
+- Once complete the app can be run using:
+`python3 manage.py runserver`
 
 ### **Heroku app creation**
 As this is a full-stack website it has been deployed to Heroku.com using the following procedure:
@@ -855,10 +870,30 @@ class StaticStorage(S3Boto3Storage):
 class MediaStorage(S3Boto3Storage):
     location = settings.MEDIAFILES_LOCATION
 ```
+There is an optional setting which if included in settings.py can help to improve performance. It tells the browser to cach static files foir a long time; this is OK since they don't change very often.
+- In settings.py above the AWS Bucket Config settings add:
+```
+# Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'
+    }
+```
 - **Commit these changes and Push them to GitHub**
 This will trigger an automatic deployment to Heroku
 - Check the Heroku Build log to verify that STATIC files were transferred
 - Open S3 and verify that a /static folder has been created in your Bucket
+
+#### **Adding MEDIA files to AWS**
+1. Open S3 and navigate to the Bucket created earlier
+2. Click **"Create folder"**
+![Media Folder](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/s3-newfolder.jpg "Create a Media Folder")
+3. Name it **"media"** and **"Save"**
+4. Select this new folder
+5. Click the **"Upload"** button
+6. Select **"Add Files"** and select all of the images used for your project
+7. Click **"Next"** and allow **"Read Access"** under Public permissions
+8. Click **"Upload"**
 ______
 
 ## **Resources** <a name="resources"></a>
