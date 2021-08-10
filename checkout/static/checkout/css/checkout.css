@@ -171,3 +171,20 @@ select option[value=""] {
 
     100% {}
 }
+
+/* ---------- Media Queries ----------*/
+
+@media (max-width: 767.9px) {
+    
+    .container {
+        width: 95vw;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .border-green {
+        padding-right: 0;
+    }
+}
