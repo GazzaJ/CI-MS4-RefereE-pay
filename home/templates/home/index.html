@@ -30,7 +30,7 @@
                 </div>
             {% else %}
                 <div class="col-12 col-lg-4 text-center my-5">
-                    <a class="btn btn-lg btn-danger" href="{% url 'matches' %}">                   
+                    <a class="btn btn-lg red-btn" href="{% url 'matches' %}">                   
                         Let's Get Started!
                     </a>
                 </div>                
@@ -48,6 +48,9 @@
             });
             $(".blue-btn").hover(function() {
                 $(this).toggleClass("toggle-blu");
+            });
+            $(".red-btn").hover(function() {
+                $(this).toggleClass("toggle-red");
             });
         });
     </script>

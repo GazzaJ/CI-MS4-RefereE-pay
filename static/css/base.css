@@ -132,6 +132,11 @@ a {
     color: #fff;    
 }
 
+.red-btn {
+    background-color: #e1261c;
+    color: #fff;
+}
+
 .toggle-blu {
     background-color: #fff;
     color: #011e41 !important;
@@ -165,6 +170,17 @@ a {
     color: #ffc107 !important;
     border: 2px solid #ffc107 !important;
     font-weight: bold;
+}
+
+.toggle-red {
+    background-color: #fff !important;
+    color: #e1261c !important;
+    border: 2px solid #e1261c !important;
+    font-weight: bold;
+}
+
+.toggle-footer {    
+    color: #fff !important;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */

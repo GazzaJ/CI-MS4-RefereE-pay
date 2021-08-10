@@ -223,11 +223,11 @@
         <div class="row no-gutters mt-2">
             <div class="col-3 py-2 text-center">
                 <a class="social-link" href="https://github.com/GazzaJ" target="_blank">
-                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-github-square footer-item"></i>
                 </a>
             </div>
             <div class="col-6 text-center">
-                <a class="email" href="mailto:johnge71@gmail.com">johnge71@gmail.com</a>
+                <a class="email footer-item" href="mailto:johnge71@gmail.com">johnge71@gmail.com</a>
                 <p class="copyright text-info">
                     <i class="far fa-copyright"></i>
                     2021 | Gareth John
@@ -235,7 +235,7 @@
             </div>
             <div class="col-3 py-2 text-center">
                 <a class="social-link" href="https://www.linkedin.com/in/gareth-john-chelt/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin footer-item"></i>
                 </a>
             </div>
         </div>
@@ -244,6 +244,12 @@
     {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');
+            /*----- Footer Links Toggle ------*/            
+            $(document).ready(function() {
+                $(".footer-item").hover(function() {
+                    $(this).toggleClass("toggle-footer");
+                });                
+            });    
         </script>
     {% endblock %}
 
