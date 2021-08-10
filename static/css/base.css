@@ -13,6 +13,11 @@ html {
     width: auto;
 }
 
+.nav-link {
+    color: #011e41 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
 .grand-total {
     color: #e1261c !important;
     font-weight: bold !important;
@@ -260,7 +265,8 @@ a {
 /* ---------- Footer ---------- */
 
 .fa-logo {
-    height: 3rem;   
+    height: 3rem;
+    width: auto;   
 }
 
 .fa-link::before {

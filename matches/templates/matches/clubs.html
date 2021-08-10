@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-4 col-lg-3 text-center">                    
                     <div class="card mb-3">
                         {% if club.club_badge %}
-                            <a href="{{ club.website_url }}" target="_blank">
+                            <a href="{{ club.website_url }}" target="_blank" rel="noreferrer">
                                 <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="card-img-top card-img image-fluid" alt="{{ club.club_name }}">
                             </a>
                         {% else %}
@@ -38,8 +38,8 @@
                             </div>
                         {% if user.is_superuser %}
                             <div class="card-body">
-                                <a href="{% url 'edit_club' club.id %}" class="btn btn-primary">Edit</a>
-                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#club{{ club.id }}Modal">Delete</button>                                
+                                <a href="{% url 'edit_club' club.id %}" class="btn btn-warning">Edit</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#club{{ club.id }}Modal">Delete</button>                                
                             </div>
                         {% endif %}                    
                     </div>
