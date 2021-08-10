@@ -38,6 +38,8 @@ My aim is to achieved the above with a visually appealing, interactive yet intui
 
 ![Am I responsive images]( "Am I Responsive")
 
+**There is no difference between the developed version of RefereE-Pay and that deployed to Heroku**
+
 ## Table of contents
 An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section.  
 ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png)  
@@ -369,25 +371,26 @@ Admin / Superusers also have the functionality to Edit or Delete the Team at thi
 ##### Add Team Page
 A very simple form page where Admin/Superusers can add a new team to the directory.
 ![Add Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/add-team.png "Add Teams Wireframe")
+
 ##### Edit Team
 Similat to the Edit teams page this page is a replica of the Add Team form page. The Edit Team page displays current Team information and allows Admin/Superusers to edit the details as required.
 ![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/edit-team.png "Edit Team Wireframe")
 
 ##### Kit Bag
-This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
-Edit redirects the user to a page similar to the Full Recipe page but with editing functionality.
-Selecting Delete will render a check modal to double check the deletion request before removing the recipe.  
+A simple page which stores any matches the user has selected to place in the kit bag for payment. The matches remain in the kitbag for as long as the session cookie is active. 
 ![Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/order-detail.png "Kit Bag Wireframe")
 
 ##### Payment
-If the user selects EDIT on the Manage Recipes page, they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is an option to Cancel the edit.  
+The is the key page wher the user enters their billing address and card details in order to process the payment of the match officials fees. 
 ![Payment](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/payment.png "Payment Wireframe")
 
-##### Payment Success
+##### Checkout Success
+The Checkout success page is the final page in the payment process, summarising the matches paid for and confirming a successfull payment
+![Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/checkout-success.png "Profile Wireframe")
 
 ##### Profile Page
 The profile page initially renders the basic profile information added on Sign-up. There is a button at the bottom of the profile card to enable the users to access the 'Edit Profile' page where they can customise their profile image and select whether or not to subscribe and provide an email address.  
-![Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/profile.png "Profile Wireframe")
+![Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/profile-page.png "Profile Wireframe")
 
 ___
 #### **Surface**
@@ -692,16 +695,17 @@ Follow these steps to connect your app to AWS:
    - Follow all of the registration steps until you are back at the AWS Console view
 2. Create a new **"Bucket"** for your data.
    - Navigate to the S3 service of AWS, and under the buckets section select **Create bucket**
+ ![AWS Bucket Creation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/aws-bucket.jpg "AWS Bucket Creation")
    - Name the bucket (advisable to give it the same name as your website)
    - Select the Region nearest you.
-   - Uncheck the **Block Public Access** checkbox
+   - Uncheck the **Block Public Access** checkbox and acknowledge the bucket will be public
    - Scroll down and select **Create bucket**
 3. Select your newly created bucket from the Buskets window and then select the **Properties** Tab
    - Scroll down towards the botton and **Enable Static web hosting**
-   - in the Index and Error input boxes enter `index.html` and `error.html` respectively
+   - For the Index and Error values enter `index.html` and `error.html` respectively
    - Save the properties
-4. New select the Bucket **Permissions Tab**
-   - scroll to the bottom and type the following into the **Cross-origin resource sharing (CORS)** box
+4. Now select the Bucket **Permissions Tab**
+   - Scroll to the bottom and type the following into the **Cross-origin resource sharing (CORS)** box to set up the required access between our Heroku app and our S3 bucket.
    ```
    [
         {
@@ -718,8 +722,82 @@ Follow these steps to connect your app to AWS:
         }
     ]
    ```
- 
-**There is no difference between the developed version of W3Recipes and that deployed on Heroku**
+ 5. Next scroll up to the **"Bucket Policy"** section.
+ 6. Click on **"Generaget policy"** to create a security policy for our bucket.
+ 7. Select **"S3 Bucket Policy"** from the dropdown menu.
+ 8. Type * into the **"Principal"** field to allow all principals.
+ 9. Select **"GetObject"** from the actions dropdown menu.
+ 10. Paste in your Amazon Resource Name (ARN) into the ARN box
+ Your ARN is available on the Properties Tab
+11. Click **"Add Statement"**
+12. Then click **"Generate policy"**
+13. Copy the code from the Policy JSON Document window and paste into the Bucket policy editor
+14. To allow access to all resources in the bucket add a "/*" to the end of the Resource key
+` "Resource": "<your ARN>/*",`
+15. Click **"Save"**
+16. Scroll down to the **"Access control list"** and select the **"List"** checkbox for **"Everyone"**
+ ![Access Control](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/access-control.jpg "AWS Access Control")
+
+#### **Creating an AWS User Group**
+- Return to the AWS Console and under the services dropdown menu locate the **"IAM"** (Identity and Access Management) service.
+- Select **"User Groups"** from the Menu
+- Click **"Create group"**
+ ![IAM](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/iam-usergroup.jpg "IAM User Group")
+- Add a name which is linked to your project e.g. **manage-<your project name>**
+- Click **"Next"** through to the end and then **"Create group"**
+- Once done select **"Policies"** and click the **"Create policy button"**
+![IAM-Policy](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/iam-createpolicy.jpg "Create IAM policy")
+- Select the **"JSON"** Tab and click the **"Import managed policy link"**
+![IAM-Policy](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/iam-json.jpg "IAM import policy")
+- Search for **"S3"** in the "import managed policy" modal, and select the **"AmazonS3FullAccess"** policy.
+- Click **"Import"**
+
+Realistically we only want to allow full access to our Bucket and everything in it.
+
+- Retrieve your ARN from your Bucket - Policy tab in S3
+- Paste the ARN into the JSON
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "<your ARN>",
+                "<your ARN>/*"
+            ]
+        }
+    ]
+}
+```
+- Click **"Review policy"**
+- Name it something appropriate to your project e.g. **<Your Project name> policy**
+- Add a description
+- Click **"Create policy"**
+
+You should be returned to the Policies page with a notification that your policy has been created.
+
+- Return to the User Groups menu item
+- Select the user group you created earlier
+- Select the **"Permissions"** Tab, click **"Add permissions"** and select **"Add policy"** from the options
+![Add Policy](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/iam-json.jpg "Add Policy")
+- Locate the policy you just created and attach it.
+
+#### **Creating a User**
+Follow these steps to create a user in the User Group
+1. Back on the main IAM page select **"Users"** from the menu items
+![IAM User](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/create-user.jpg "Create a User")
+2. Select **"Add users"** and create a username relevant to your project e.g. **<your project name>-staticfiles-user**
+3. Allow programmatic access by selecting the appropriate checkbox
+4. Select **"Next: Permissions"**
+5. Select the User Group you created earlier to add the new User to the group
+6. Click **"Next"** all the way to the end and click **"Create user"**
+7. At the Final step, you are notified of successfull creation, below which there is a button to **"Download .csv"**.
+8. Click **"Download .csv"**
+
+**Ensure you download and save this file to a safe location as it contains the Users Access Key and Secret Key.
+You will need these to authenticate them from Django and you cannot download them again once you proceed beyond this page**.
 ______
 
 ## **Resources** <a name="resources"></a>
