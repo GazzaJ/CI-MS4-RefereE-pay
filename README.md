@@ -684,7 +684,7 @@ This will reveal a form for inputting the key and value pairs necessary to conne
 
  5. Copy your connection string
 
-### **Enabling Automatic Deployment**
+#### **Enabling Automatic Deployment**
  - Select the Heroku "Deploy" tab
  - In the "Automatic deploys" section select the branch you wish to use
 
@@ -785,7 +785,7 @@ You should be returned to the Policies page with a notification that your policy
 - Locate the policy you just created and attach it.
 
 #### **Creating a User**
-Follow these steps to create a user in the User Group
+These steps were followed to create a user in the User Group
 1. Back on the main IAM page select **"Users"** from the menu items
 ![IAM User](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/create-user.jpg "Create a User")
 2. Select **"Add users"** and create a username relevant to your project e.g. **<your project name>-staticfiles-user**
@@ -798,6 +798,67 @@ Follow these steps to create a user in the User Group
 
 **Ensure you download and save this file to a safe location as it contains the Users Access Key and Secret Key.
 You will need these to authenticate them from Django and you cannot download them again once you proceed beyond this page**.
+
+### **Connecting AWS to Django**
+The following steps are used to connect Amazon AWS to our Django project.
+- Two packages need to be installed to achieve this
+  - boto3
+  - django-storages
+`pip3 install boto3`
+`pip3 install django-storages`
+-  Add these two packages to our requirements.txt file
+`pip3 freeze > requirements.txt`
+-  Add storages to the INSTALLED_APPS section of the settings.py file
+
+- To connect S3 to Django some additional we have to tell it which bucket it should be communicating with. This is ONLY required for Heroku so create a new environment variable **"USE_AWS"** in an if statement as follows:
+
+```
+if 'USE_AWS' in os.environ:
+    
+    # AWS Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'ci-ms4-referee-pay'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and Media file storage settings
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URL's in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+- Next, open **Heroku** and navigate to the **CONFIG VARIABLES** (Settings - Reveal Config VARS)
+- Add the AWS Keys to the Heroku Config Vars
+`AWS_ACCESS_KEY_ID:` `insert your access key`
+`AWS_SECRET_ACCESS_KEY:` `insert your secret key` 
+- Add the USE_AWS key and set it to True so that the settings file knows to use AWS when deployed to Heroku
+`USE_AWS` `True`
+- Remove the DISABLE_COLLECTSTATIC key we set up at the beginning of the deployment process
+Django should now collect the static files and upload them to our S3 Bucket
+- Create a **"custom_storages.py"** file
+This will tell Django to use S3 to store our static files in Production whenever someone runs collectstatic.
+- Open custom_storages.py file and type the following:
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+- **Commit these changes and Push them to GitHub**
+This will trigger an automatic deployment to Heroku
+- Check the Heroku Build log to verify that STATIC files were transferred
+- Open S3 and verify that a /static folder has been created in your Bucket
 ______
 
 ## **Resources** <a name="resources"></a>
