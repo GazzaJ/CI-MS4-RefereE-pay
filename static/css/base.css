@@ -198,6 +198,13 @@ a {
     color: #fff !important;
 }
 
+/* ---------- Pagination ----------*/
+.page-link.active {
+    background-color: #011e41 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css/triangle/ */
 
 .arrow-up {
