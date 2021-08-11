@@ -436,26 +436,126 @@ ______
 
 ## **Database Schema** <a name="dbschema"></a>  
 This app was developed using a SQLite3 database, but was transferred over to a Postgres DB on Deployment.
-The ER diagram below illustrates the relationships between the each of the Models.
+The database schema below illustrates the relationships between the each of the Models.
 ![RefereE-Pay Schema](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/referee-pay-db-schema.jpeg "Database Schema")
 
-The schema contains four collections, with each collection containing multiple documents. 
- - **Users**
- Stores user data. Initially populated with username and password and a default profile image when users register on the app. Once logged in users can upload their own image URL, specify their town or city. If the user elects to subscribe to the site, they are then able to provide their email address.
-> **_I chose to do it this way so users are only required to provide some basic information and can register very easily. Once registered they can decide how much more they want to input at any subsequent point. I believe this simplifies the registration process_**
+The schema contains twelve database tables which can be divided into Three categories:
+1. User related data used to store individuals data like usernames, passwords, roles etc.
+2. Those required to build up the Game details and associated logic like match fees.
+3. Those required to process and store the match charges payment transactions.
 
- - **Countries**
- This collection was populated from JSON file of 254 countries using the MongoDB Compass app, which simplified the transfer of the data into individual documents within the collection. The JSON data was copied from (https://flagpedia.net/download/api) and uses the CDN link provided on the website to display the flags on the recipe cards and pages. The individual UK countries were subsequently added into the collection by myself, as they did not appear in the original JSON file.
- Each document contains two id fields; the Atlas provided id and that provided in the JSON data. It also contains the country name, an alpha2 field which is the ISO two letter country code and an alpha3 field which is the ISO three letter country code.  
- The alpha2 code is used to render the appropriate country flag.  
+ - **User**
+ Stores user data collected through the AllAuth registration process:
+    - Username
+    - email
+    - password
+Additional paramaters like First Name, Last Name and the users Admin/superuser status can be set in the Admin console.
 
- - **Recipe Category**
- The recipe_category collection contains short documents each defining the type of meal category each recipe might be identified by; such as Breakfast, Brunch, Lunch, Dinner, Desserts, Snacks, Appetisers and Sides. The recipe type documents were populated by myself and can be queried when a recipe is created or edited.
-> **_There are many different ways to categorise recipes, but the one selected seems the most appropriate for my application_**
+ - **Fee**
+    This table stores the Match Officials match fees by age group and role:
+    - Age e.g. U10 (Under 10)
+    - Referee (referees match fee £)
+    - Asst_referee (assistant referees match fee £)
+    - Milage rate (agreed value  per mile travelled in excess of 10 miles)
+    >I have included the milage rate for travel expenses in the event I change the logic, in future versions, to calculate the travel expenses by distance travellled rather than allowing match officials to input their expenses.
+
+ - **Venue**
+    The Venuw table stores the pitch location details, can be rendered to provide pitch location information to website users, who are Team Coaches, Match Officials or potentially supporters :
+    - Name (Playing field name)
+    - Short name (Convenient short name if required)
+    - Street Address
+    - Town or City
+    - County
+    - Postcode
+    - Country
+    - Map (Map showing park layout with actual pitch locations)
+    - Map_url (Link to Google maps)
+
+ - **Official**
+    This is a simple table storing the name of each match officials
+
+ - **Competition**
+    Another simple table to store the name of each competition. Enables games to be grouped into distinct competitions by ability for instance.
+
+ - **Club**
+    Stores a limited set of Club information, sufficient for proof of concept:
+    - Club Name
+    - Club Badge url
+    - Club Badge (Image file upload)
+    - Website url (Club website url)
+    > Arguably this could be expanded in the future to include details such as address, contact numbers and email address.
+
+ - **Team**
+    The Team table stores the basic critical information for each Team:
+    - Team Name
+    - Short Name (Convenient short name if required for smaller displays)
+    - Club Name contains a Foreign Key back to the "Clubs" table, associates each team to a Parent Club.
+    - Age contains a Foreign Key back to the Fees table and categorises each team into a particular age group. Ensures teams of similar age can be selected to play each other.
+    - Manager/Coach lists the Teams Manager or Coach contains a loose logical link back to the Users Table
+
+ - **Game**
+    This table is where much of the previous tables data is joined:
+    - Age - contains a Foreign Key back to the Fees table, enables each game to be categorised by age.
+    - Competition - contains a Foreign Key to the Competitions Table and allows each game to be grouped by it's competition.
+    - Home Team - Foreign Key to the Teams Table and sets the Home team for a game.
+    - Away Team - Foreign Key to the Teams Table and sets the Away team for a game.
+    - Date_Time - A datetime field which is associated with each Games kick off date and time.
+    Also important for calculating match fines (nonpayment fines), and limits when Match Officials can upload travel expenses, and when Coaches or Refs can communicate with each other.
+    - Venue - has a Foreign Key back to the Venue table so each game can be assigned a playing field/pitch
+    - Referee field - a Foreign Key back to the Match Officials table, enabling the assignment of a match referee
+    - Asst_Referee1 - a Foreign Key back to the Match Officials table, enabling the assignment of a match assistant referee. All Match officials are essentially qualified referees so there is no additional complexity of assigning specific roles to each match official.
+    - Asst_Referee2 - a Foreign Key back to the Match Officials table, enabling the assignment of a match assistant referee. All Match officials are essentially qualified referees so there is no additional complexity of assigning specific roles to each match official.
+    - Ref_trav - added to store the input from Match Officials as and when they update any travel expenses
+    - Asst1_trav - added to store the input from Match Officials as and when they update any travel expenses
+    - Asst2_trav - added to store the input from Match Officials as and when they update any travel expenses
+    - Ref_total - display the total fee for the referee combining match fee with any travel expenses
+    - Asst1_total - display the total fee for the assistant referee (if assigned) combining match fee with any travel expenses
+    - Asst2_total - display the total fee for the assistant referee (if assigned) combining match fee with any travel expenses
+
+ - **Chat**
+ Stores messages associated with an associated game, so the messages can be rendered by game and by authors role. This table is critical to allow in app communication between coach and ref.
+    - Match - is a Foreign Key back to the game_id, and allows storage of messages by game
+    - Author - a Foreign Key back to the User Table identifies the author of the message
+    - Body - The content of the message
+    - Image - Coaches and Refs are thus able to upload and save match related images, like the condition of the pitch, goals etc.
+    - date - a date time field with auto_now_add set to True, and provides a means to order the messages by, so they are displayed chronologically
+    - 
+ - **User Profile**
+    Primarily used to store Billing address information and a their role if applicable. Used to prefill the payment details for any subsequent orders.
+    - User - a one to one relationship back to the All Auth Users table.
+    - Role - Stores a users role e.g. Coach, Match Official or Admin. Is used to set permissions for certain functions by role. For example any superusers and match officials can add Travel expenses, and only Coaches and Superusers can add a match to the kit bag for payment.
+    - Profile_phone_number - stores the users phone number to the Billing information if they choose the save info option on the form field
+    - Profile_street_address1 - stores the first line of the users street address to the Billing information if they choose the save info option on the form field
+    - Profile_street_address2 - stores the second line of the users street address to the Billing information if they choose the save info option on the form field
+    - Profile_town_or_city - stores the users town or city of residence to the Billing information if they choose the save info option on the form field
+    - Profile_county - stores the users county/state to the Billing information if they choose the save info option on the form field
+    - Profile_postcode - stores the users postal code (if applicable) to the Billing information if they choose the save info option on the form field
+    - Profile_country - stores the users country of residence to the Billing information if they choose the save info option on the form field
+
+ - **Order**
+    Stores all of the information critical to processing a payment.
+    - Order_number - Stores the unique alphanumeric number generates for each transaction
+    - User_profile - a Foreign Key back to the Users UserProfile table
+    - Full_name - Records the users full name
+    - Email -  Records the users email address
+    - Phone_number -  Records the users phone number
+    - Street_address1 -  Records the first line of the users street address
+    - Street_address2 -  Records the second line of the users street address
+    - Town_or_city -  Records the users town or city of residence
+    - County_or_state -  Records the users county or state
+    - Postcode -  Records the users potal code
+    - Country -  Records the users country of residence
+    - Date - Stores the date of the transaction if successfully processed by Stripe
+    - Grand_total - Records and saves the Grand total of all matches in the kit bag
+    - Original_bag - Stores the id of games that have been successfully paid for. This is used to identify matches that have already been poaid for and to marck them as paid and remove the "Add to Bag" functionality.
+    - Stripe_pid - Records and saves the stripe pid for the transaction
  
- - **Recipes**
- The recipes collection is the largest in the database as it combines user text input with data retrieved from the other collections; all of the user supplied input with fields from the other collections. I have selected what I view as essential fields for a basic recipe app, though clearly many more could be added.
-Recipe Ingredients and preparation step data is formatted into an Array by splitting the data using each new line. When queried the data is formatted into a list for display.
+ - **Order Lineitem**
+    - Order - is a Foreign key back to the Order_id in the Order Table.
+    - Match - a Foreign Key back to the Game_id of the Game table, associates the lineitems with a specific game
+    - Payment_due_date - a datetime filed used to calculate whether a nonpayment/match fine is applicable. This is set to 24hrs after kick-off date and time. Gives the Coach 24hrs to pay the necessary fees or incur an automatic fine.
+    - Match Fines - Stores the nonpayment fine as an item. This is important to render in the kit bag so Coaches have a full breakdown of the charges they are paying for in each Match.
+    - Lineitem_total - Represents the total for each match and is a sumation of, officials fees, travel expenses and fines.
 
 ___
 ## **Features** <a name="features"></a>
