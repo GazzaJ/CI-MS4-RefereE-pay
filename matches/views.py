@@ -258,10 +258,19 @@ def all_clubs(request):
     """ This view will render all Clubs """
     clubs = Club.objects.all()
     
+    # Pagination comes Django Documentation
+    # https://docs.djangoproject.com/en/3.2/topics/pagination/
+    paginator = Paginator(clubs, 8)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
+
     template = 'matches/clubs.html'
 
     context = {        
         'clubs': clubs,
+        'page': page,
+        'page_obj': page_obj,
+        'paginator': paginator,
     }
 
     return render(request, template, context)
