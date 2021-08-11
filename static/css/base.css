@@ -129,17 +129,27 @@ a {
 
 .green-btn {
     background-color: #00813e;
-    color: #fff;    
+    color: #fff;
+    border: 2px solid #00813e;    
 }
 
 .blue-btn {
     background-color: #011e41;
-    color: #fff;    
+    color: #fff;
+    border: 2px solid #011e41;   
 }
 
 .red-btn {
     background-color: #e1261c;
     color: #fff;
+    border: 2px solid #e1261c;
+}
+
+.yellow-btn {
+    background-color: #ffc107;
+    color: #000;
+    border: 2px solid #ffc107;
+
 }
 
 .toggle-blu {
@@ -174,7 +184,7 @@ a {
     background-color: #fff !important;
     color: #ffc107 !important;
     border: 2px solid #ffc107 !important;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .toggle-red {

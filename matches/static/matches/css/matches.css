@@ -84,6 +84,10 @@ body {
     object-fit: contain;
 }
 
+.club-name {
+    max-height: 5.25rem;
+}
+
 /* ---------- Teams ---------- */
 
 .team-name {
