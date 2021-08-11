@@ -418,7 +418,7 @@ For these I was looking for a more relaxed, fun font with a slightly cursive sty
 
 ![Roboto Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/roboto-font.jpg "Roboto Font")  
 
->>**I had considered using a sport themed font for this app, but decided I want to overdo it, and certainly didn't want to detratct from the main purpose of the site.**
+>**I had considered using a sport themed font for this app, but decided I want to overdo it, and certainly didn't want to detratct from the main purpose of the site.**
 
 ##### **Imagery** 
 I had a very clear plan for the site images right from the very early planning stages. I wanted to find images showing amateur football in action including the referee or other match officials. I found a decent selection of good quality, licence free images on Pixabay. The full list of images and credits are in the Cedits section.
@@ -564,21 +564,46 @@ The following table lists the primary features provided by the W3Recipes app.
 ### **Existing Features**
 |Feature|Description| Image URL |
 |:-----:|-----|:----:|
-| 001   | Landing page to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/landing.jpg) |
-| 002   | Simple registration Process with dedicated sign-up page | [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
-| 003   | Dedicated Log-in screen for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
-| 004   | Paginated "Recipes Page" where all recipes are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
-| 005   | Recipe Filter function, filters recipes by country of origin. The image provided shows a search by the country "Wales". | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
-| 006   | Recipes text search function enables text based search on Title, recipe type, country, description and ingredients. The image provided illustrates a text search for all recipe Type "Sides" | [Recipe Text Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/search.jpg) |
-| 007   | A Full Recipe Page provides complete recipe details | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
-| 008   | A form which enables users to upload their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
-| 009   | Manage Recipes Page, from where users have the ability to Edit or Delete their own recipes | [Manage Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
-| 010   | Edit Recipe Form, enables users to modify all of the fields for any of the recipes they themseleves have uploaded. Original image is uploaded from the database, and the new image will be displayed below if the user decides to change the image file. |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
-| 011   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
-| 012   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
-| 013   | Delete function allows logged in users to delete any of their own recipes | [Delete Funtion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg) | 
-| 014   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
-| 015 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
+| 001   | **Landing page** to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/landing.jpg) |
+| 002   | AllAuth **Registration** process for new users to sign-up| [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
+| 003   | AllAuth powered **Log-in page** for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
+| 004   | Paginated **Matches** page where all matches are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
+| 005   | **Match Filter** function, filters matches by age or team, or both. | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
+| 006   | **Match text search** function enables users to narrow down the results to a single team | [Recipe Text Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/search.jpg) |
+| 007   | **Match Detail** page provides complete match details with interactive fields | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
+| 008   | **Club Directory** page displays a paginated list of the Clubs stored in tha database. Superusers can edit and delete Clubs from this view. | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
+| 009   | **Teams page** displays information for all teams associated with a particular Club. Superusers can edit and delete Teams from this view. | [Manage Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
+| 010   | **Kit Bag** displays all of the games the coach has added for subsequent payment, provides a summary of the game and all associated match fees and fines if applicable. |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
+| 011   | **Checkout Page** proceses the payment of the match fees |  |
+| 012   | A **Checkout Success** page to confirm successful processing of the match fees transaction | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
+|  013  | The **Profile page** displays user billing information, if saved, and a summary of all payments processed for that used. Profile information can be updated from this page |  | 
+|  014  | **Add Competition** form allows Admin/Superusers to add new competitions to the list |  |
+|  015  | The **Add Club** view allows Admin/Superusers to add new Clubs to the directory, populating club badge and club website  |  |
+|  016  | **Edit Club** |  |
+|  017  | **Delete Club** |  |
+|  018  | **Add Team** allows Admin/Superusers to add new teams to the selected Club and assign the Manager/Coach |  |
+|  019  | **Edit Team** |  |
+|  020  | **Delete Team** |  |
+|  021  | **Add Match** allows Admin/Superusers to add new matches to the app, populating all of the information required to renderf the details |  |
+|  022  | **Edit Match** |  |
+|  023  | **Delete Match** |  |
+|  024  | **Success Notification** |  |
+|  025  | **Warning Notificatio** |  |
+|  026  | **Error Notificatio** |  |
+|  027  | **Alert Notification** |  |
+|  028  | **Delete Confirmation Modal** |  |
+|  029  | **Logout Screen** |  |
+|  030  |  |  |
+|  031  |  |  |
+|  032  |  |  |
+|  033  |  |  |
+|  034  |  |  |
+|  035  |  |  |
+|  036  |  |  |
+|  037  |  |  |
+|  038  |  |  |
+|  039  |  |  |
+|  040  |  |  |
 
 
 
