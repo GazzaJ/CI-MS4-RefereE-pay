@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
+{% block content %}    
+    <div class="container home-container">
+        <div class="overlay"></div>
+        <div class="row justify-content-center align-items-center index-links">
+            <div id="home-header" class="col-12 col-lg-8">
+                <h1 class="text-white mb-5">Looks like the opposition just tackled our server!</h1>
+                <h2 class="text-white">500 - Internal server error!</h1>
+                <h3 class="text-white py-5">Please use the Navigation links to return to the app.</h3>
+            </div>
+            
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
+            });
+            $(".red-btn").hover(function() {
+                $(this).toggleClass("toggle-red");
+            });
+        });
+    </script>
+{% endblock %}
