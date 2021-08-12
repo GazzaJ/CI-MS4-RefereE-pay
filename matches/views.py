@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.paginator import Paginator
 
 from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
@@ -160,9 +160,9 @@ def match_detail(request, game_id):
     for order in orders:
         bag = order.original_bag
 
-        if str(game_id) in bag:            
+        if str(game_id) in bag:
             paid = True
-    
+
     context = {
         'match': match,
         'ref_fee': ref_fee,
@@ -181,7 +181,7 @@ def match_detail(request, game_id):
         'job': job,
         'coach': coach,
         'name': name,
-        'edit':edit,
+        'edit': edit,
     }
 
     return render(request, 'matches/match_detail.html', context)
@@ -236,7 +236,7 @@ def add_competition(request):
     if request.method == "POST":
         form = CompetitionForm(request.POST)
         if form.is_valid():
-            competition = form.save()
+            form.save()
             messages.success(request, 'You successfully added a new \
                              competition!')
             return redirect(reverse('matches'))
@@ -257,7 +257,7 @@ def add_competition(request):
 def all_clubs(request):
     """ This view will render all Clubs """
     clubs = Club.objects.all()
-    
+
     # Pagination comes Django Documentation
     # https://docs.djangoproject.com/en/3.2/topics/pagination/
     paginator = Paginator(clubs, 8)
@@ -266,7 +266,7 @@ def all_clubs(request):
 
     template = 'matches/clubs.html'
 
-    context = {        
+    context = {
         'clubs': clubs,
         'page': page,
         'page_obj': page_obj,
@@ -287,7 +287,7 @@ def add_club(request):
     if request.method == "POST":
         form = ClubForm(request.POST, request.FILES)
         if form.is_valid:
-            club = form.save()
+            form.save()
             messages.success(request, 'You successfully added a new club!')
             return redirect(reverse('matches'))
         else:
@@ -359,13 +359,13 @@ def club_teams(request, club_id):
     teams = Team.objects.filter(club_name=club_id).order_by('age')
 
     if 'age' in request.GET:
-                age_group = request.GET['age']
-                if not age_group:
-                    messages.error(request, "You didn't enter any search \
-                                   criteria")
-                    return redirect(reverse('teams'))            
-                qs = Q(team_name__contains=age_group)
-                teams = teams.filter(qs)
+        age_group = request.GET['age']
+        if not age_group:
+            messages.error(request, "You didn't enter any search \
+                            criteria")
+            return redirect(reverse('teams'))
+        qs = Q(team_name__contains=age_group)
+        teams = teams.filter(qs)
 
     template = 'matches/teams.html'
     context = {
@@ -421,7 +421,7 @@ def add_team(request):
     if request.method == "POST":
         form = TeamForm(request.POST)
         if form.is_valid:
-            team = form.save()
+            form.save()
             messages.success(request, 'You successfully added a new team!')
             return redirect(reverse('matches'))
         else:
@@ -489,7 +489,8 @@ def edit_match(request, game_id):
                         initial={
                             'date_time': match.date_time.strftime("%Y-%m-%dT%H:%M:%S")
                         })
-        messages.info(request, f'You are editting {match.home_team} vs {match.away_team}')
+        messages.info(request, f'You are editting {match.home_team} \
+            vs {match.away_team}')
 
     template = 'matches/edit_match.html'
     context = {
@@ -504,7 +505,8 @@ def edit_match(request, game_id):
 def delete_match(request, game_id):
     """ Deletes the selected match details """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have the permissions to delete a match!")
+        messages.error(request, "Sorry, you don't have the permissions\
+             to delete a match!")
         return redirect(reverse, 'home')
 
     match = get_object_or_404(Game, pk=game_id)
@@ -539,7 +541,7 @@ def match_chat(request, game_id):
 
 @login_required
 def add_chat(request, game_id):
-    """ This view enables the user to enter comments and images 
+    """ This view enables the user to enter comments and images
     which are rendered to the Matches Chat template
     """
     match = get_object_or_404(Game, pk=game_id)
@@ -551,7 +553,7 @@ def add_chat(request, game_id):
     if request.method == "POST":
         form = ChatForm(request.POST, request.FILES)
         if form.is_valid:
-            chat = form.save()
+            form.save()
             messages.success(request, 'You successfully added a new message!')
             return redirect(reverse('match_chat', args=[match.id]))
         else:

@@ -6,6 +6,11 @@
    "python.terminal.activateEnvironment": false,
    "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
    "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
+   "python.linting.pylintArgs": [
+      "--load-plugins=pylint_django",
+      "--load-plugins=pylint_django.checkers.migrations",
+      "--django-settings-module=referee_pay.settings",
+  ],
    "cornflakes.linter.executablePath": "/home/gitpod/.pyenv/shims/flake8",
    "files.exclude": {
       "**/.DS_Store": true,
@@ -13,7 +18,6 @@
       "**/.gitp*": true,
       "**/.hg": true,
       "**/.svn": true,
-      "**/.vscode": true,
       "**/core.Microsoft*": true,
       "**/core.mongo*": true,
       "**/core.python*": true,
