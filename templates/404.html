@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
+{% block content %}    
+    <div class="container home-container">
+        <div class="overlay"></div>
+        <div class="row justify-content-center align-items-center index-links">
+            <div id="home-header" class="col-12 col-lg-8">
+                <h1 class="text-white">The Page you were looking for cannot be found!</h1>
+                <h3 class="text-white py-5">Please use the Navigation links to return to the app.</h3>
+            </div>
+            {% if not user.is_authenticated %}
+                <div id="sign-in" class="col-10 col-lg-4 light-background my-5">
+                    <div class="row mt-5">
+                        <div class="col-12 text-center">
+                            <h5>Already have a RefereE-Pay Account?</h5>
+                            <a class="btn btn-lg green text-white rounded-3 mt-2 green-btn shadow" href="{% url 'account_login' %}" role="button">Sign-In</a>
+                        </div> 
+                    </div>                
+                    <div class="row">
+                        <div class="col-12 red py-5 mt-5 text-center">
+                            <h5 class="text-white">Don't have a RefereE-Pay account yet?</h5>
+                            <a class="text-white btn-lg btn blue-btn rounded-3 mt-2 blue-btn shadow" href="{% url 'account_signup' %}" role="button">Sign-Up</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-12 col-lg-4 text-center my-5">
+                    <a class="btn btn-lg red-btn" href="{% url 'matches' %}">                   
+                        Let's Get Started!
+                    </a>
+                </div>                
+            {% endif %}
+        </div>        
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });
+            $(".blue-btn").hover(function() {
+                $(this).toggleClass("toggle-blu");
+            });
+            $(".red-btn").hover(function() {
+                $(this).toggleClass("toggle-red");
+            });
+        });
+    </script>
+{% endblock %}
