@@ -39,62 +39,69 @@
                                 <p class="my-0 bag-match text-white">{{item.match}}</p>
                             </div>
                         </div>
+                        <div class="row bg-dark">
+                            <div class="col-12 text-right">
+                                <a class="remove-item" id="remove_{{ item.item_id }}" data-toggle="tooltip" data-placement="left" title="Remove from Bag">
+                                    <i class="fas fa-times-circle text-danger"></i>
+                                </a>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-12 text-center bg-dark">
                                 <div class="row">
                                     <div class="col-3 text-center">
-                                        <p class="text-white">Ref</p>
+                                        <p class="text-white bag-text my-1">Ref</p>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <p class="text-white">Asst 1</p>
+                                        <p class="text-white bag-text my-1">Asst 1</p>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <p class="text-white">Asst2</p>
+                                        <p class="text-white bag-text my-1">Asst2</p>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <p class="text-white">Subtotal</p>
+                                        <p class="text-white bag-text my-1">Subtotal</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="row">
+                                <div class="row mt-2">
                                     <div class="col-3 text-center">
-                                        <p class="my-0">{{ item.match.ref_total }}</p>
+                                        <p class="my-0 bag-text">{{ item.match.ref_total }}</p>
                                     </div>
                                     <div class="col-3 text-center">
                                     {% if item.match.asst_referee1 is not None %}
-                                        <p class="my-0">{{ item.match.asst1_total }}</p>
+                                        <p class="my-0 bag-text">{{ item.match.asst1_total }}</p>
                                         {% else %}
                                         <p class="text-center my-0">-</p>
                                         {% endif %}
                                     </div>
                                     <div class="col-3 text-center">
                                         {% if item.match.asst_referee2 is not None %}
-                                            <p class="my-0">{{ item.match.asst2_total }}</p>
+                                            <p class="my-0 bag-text">{{ item.match.asst2_total }}</p>
                                         {% else %}
                                             <p class="my-0">-</p>
                                         {% endif %}
                                     </div>
-                                    <div class="col-3 text-center">
-                                        <p>{{ item.match_sub_total }}</p>
+                                    <div class="col-3 text-center bag-text">
+                                        <p bag-text>{{ item.match_sub_total }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-9">
-                                <p class="text-right mr-2">Non-payment fine: </p>
+                        <div class="row">                            
+                            <div class="col-8 col-md-9">
+                                <p class="text-right mr-2 bag-text">Non-payment fine: </p>
                             </div>
-                            <div class="col-3">
-                                <p class="text-center text-danger"><strong>£ {{ item.match_fines |floatformat:2 }}</strong></p>
+                            <div class="col-4 col-md-3">
+                                <p class="text-center text-danger bag-text"><strong>£ {{ item.match_fines |floatformat:2 }}</strong></p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-9">
-                                <p class="text-right mr-2">Match Total: </p>
+                            <div class="col-8 col-md-9">
+                                <p class="text-right mr-2 bag-text">Match Total: </p>
                             </div>
-                            <div class="col-3">
-                                <p class="text-center"><strong>£ {{ item.match_total }}</strong></p>
+                            <div class="col-4 col-md-3">
+                                <p class="text-center bag-text"><strong>£ {{ item.match_total }}</strong></p>
                             </div>
                         </div>
                     {% endfor %}                                        
@@ -102,7 +109,7 @@
                             <div class="col-6 col-md-3 bg-warning">
                                 <p class="text-right mr-2 my-0 grand-total"><strong>Grand Total:</strong></p>
                             </div>
-                            <div class="col-3 col-md-3 bg-warning">
+                            <div class="col-4 col-md-3 bg-warning">
                                 <p class="text-center my-0 grand-total"><strong>£ {{ grand_total }}</strong></p>
                             </div>
                         </div>
@@ -127,7 +134,7 @@
 
 {% block postloadjs %}
 {{ block.super }}    
-    <script type="text/javascript">
+    <script>
         // Remove match from the kit bag and reload
         $('.remove-item').click(function(e){            
             var csrfToken = "{{ csrf_token }}";
@@ -140,7 +147,11 @@
                  location.reload();
              })
         })
-
+        //----- ToolTip -----
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        //----- Interactive buttons -----
         $(document).ready(function() {
             $(".blue-btn").hover(function() {
                 $(this).toggleClass("toggle-blu");

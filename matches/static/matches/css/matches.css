@@ -114,6 +114,10 @@ body {
     font-weight: bold;
 }
 
+.remove-item {
+    cursor: pointer;
+}
+
 /* ---------- Chat ----------*/
 
 .chat-venue {
@@ -222,5 +226,13 @@ https://codingislove.com/css-speech-bubbles/ -----*/
 
     .kit-checkout {
         margin-top: 0.5rem;
+    }
+
+    .bag-match {
+        font-size: 0.9rem;
+    }
+
+    .bag-text {
+        font-size: 0.9rem;
     }
 }
