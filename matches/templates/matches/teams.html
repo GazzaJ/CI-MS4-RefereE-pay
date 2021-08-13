@@ -24,13 +24,13 @@
     <div class="container">
         <div class="match-overlay"></div>
         <!-- Club Filtering -->
-        <form id="teams-filter" action="" method="GET">
+        <form id="teams-filter" action="{% url 'teams' club.id %}" method="GET">
             <div class="row justify-content-center">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="age">Age Group</label>
                         <select class="form-control" id="age" name="age">
-                            <option selected></option>
+                            <option selected label="Select an age group"></option>
                             {% for age in fees %}
                                 <option>{{ age }}</option>
                             {% endfor %}
@@ -152,7 +152,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
