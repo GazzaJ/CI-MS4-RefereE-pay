@@ -49,11 +49,11 @@
                     </div>
                 </div>
                 <!-- Delete Confirmation Modal -->    
-                <div class="modal fade" id="club{{ club.id }}Modal" tabindex="-1" aria-labelledby="clubModalLabel" aria-hidden="true">
+                <div class="modal fade" id="club{{ club.id }}Modal" tabindex="-1" aria-labelledby="clubModalLabel{{ club.id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="clubModalLabel">Confirm Deletion!</h5>
+                                <h5 class="modal-title" id="clubModalLabel{{ club.id }}">Confirm Deletion!</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span class="x-close" aria-hidden="true">
                                         <i class="fas fa-times-circle"></i>
@@ -91,11 +91,10 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
-
         $(document).ready(function() {
             $(".green-btn").hover(function() {
                 $(this).toggleClass("toggle-grn");
