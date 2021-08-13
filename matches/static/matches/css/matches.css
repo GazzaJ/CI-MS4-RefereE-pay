@@ -90,6 +90,11 @@ body {
 
 /* ---------- Teams ---------- */
 
+.teams-badge {
+    width: 10rem;
+    height: auto;
+}
+
 .team-name {
     color: #00813e;
     font-weight: 500;

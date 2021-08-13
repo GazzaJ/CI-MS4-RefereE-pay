@@ -11,9 +11,9 @@
     <div class="row">
         <div class="col-12 text-center">
             {% if club.club_badge %}        
-                <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="img-fluid" alt="{{ club.club_name }}">        
+                <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="img-fluid teams-badge" alt="{{ club.club_name }}">        
             {% else %}        
-                <img src="{{ club.club_badge_url }}" class="img-fluid" alt="{{ club.club_name }}">        
+                <img src="{{ club.club_badge_url }}" class="img-fluid teams-badge" alt="{{ club.club_name }}">        
             {% endif %}
             <h2 class="text-center mt-3">{{club.club_name}}</h2>
         </div>
