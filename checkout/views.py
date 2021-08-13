@@ -17,6 +17,9 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """ A view to cache checkout data when the
+    Checkout form is submitted
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -34,6 +37,7 @@ def cache_checkout_data(request):
 
 @login_required
 def checkout(request):
+    """  A view to render information on the Checkout Page """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -64,7 +68,7 @@ def checkout(request):
                     if isinstance(item_qty, int):
                         order_line_item = OrderLineItem(
                             order=order,
-                            match=match,                            
+                            match=match,
                         )
                         order_line_item.save()
                 except Game.DoesNotExist:
@@ -134,7 +138,7 @@ def checkout_success(request, order_number):
     """ A view for successful transactions """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-
+    short_order = order_number[0:11]
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach user profile to order
@@ -157,7 +161,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order succesfully processed! \
-        Your transaction number is {order_number}. A confirmation \
+        Your transaction number is {short_order}. A confirmation \
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:
@@ -166,6 +170,7 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'short_order': short_order,
     }
 
     return render(request, template, context)
