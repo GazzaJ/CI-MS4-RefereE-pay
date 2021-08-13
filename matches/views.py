@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.core.paginator import Paginator
 
-from .models import Club, Fee, Team, Game, Chat
 from checkout.models import Order
 from profiles.models import UserProfile
+from .models import Club, Fee, Team, Game, Chat
 from .forms import GameForm, CompetitionForm, ChatForm, FeesForm, ClubForm, TeamForm
 
 import datetime
@@ -16,7 +16,7 @@ def all_matches(request):
     """
     This view will render the matches
     including, sorting and searching
-    """   
+    """
 
     matches = Game.objects.all()
     teams = Team.objects.all()
@@ -28,7 +28,7 @@ def all_matches(request):
     search = None
 
     if request.GET:
-        if 'age' and 'team' in request.GET:            
+        if 'age' and 'team' in request.GET:
             q1 = request.GET['age']
             q2 = request.GET['team']
             qu1 = Q(home_team__team_name__contains=q1) | Q(
@@ -40,7 +40,7 @@ def all_matches(request):
             the_team = request.GET['team']
             if not the_team:
                 messages.error(request, "You didn't enter any search criteria")
-                return redirect(reverse('matches'))            
+                return redirect(reverse('matches'))
             query = Q(home_team__team_name=the_team) | Q(
                  away_team__team_name=the_team)
             matches = matches.filter(query)
@@ -51,14 +51,14 @@ def all_matches(request):
                 if not age_group:
                     messages.error(request, "You didn't enter any search \
                                    criteria")
-                    return redirect(reverse('matches'))            
+                    return redirect(reverse('matches'))
                 query1 = Q(home_team__team_name__contains=age_group) | Q(
                     away_team__team_name__contains=age_group)
                 matches = matches.filter(query1)
 
         # Filter results by search box query
         if 'q' in request.GET:
-            search = request.GET['q']            
+            search = request.GET['q']
             if not search:
                 messages.error(request, "You didn't enter any search criteria")
                 return redirect(reverse('matches'))
@@ -66,7 +66,8 @@ def all_matches(request):
                 away_team__team_name__icontains=search)
             matches = matches.filter(searches)
             if matches.count() == 0:
-                messages.info(request, 'Your team cannot be found in the database')
+                messages.info(request, 'Your team cannot be \
+                    found in the database')
                 return redirect(reverse('matches'))
 
     # Pagination comes Django Documentation
@@ -487,7 +488,8 @@ def edit_match(request, game_id):
     else:
         form = GameForm(instance=match,
                         initial={
-                            'date_time': match.date_time.strftime("%Y-%m-%dT%H:%M:%S")
+                            'date_time': match.date_time.strftime(
+                                "%Y-%m-%dT%H:%M:%S")
                         })
         messages.info(request, f'You are editting {match.home_team} \
             vs {match.away_team}')
