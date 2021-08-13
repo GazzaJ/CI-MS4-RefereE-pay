@@ -20,7 +20,7 @@ def add_to_bag(request, item_id):
 
     match = get_object_or_404(Game, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')    
+    redirect_url = request.POST.get('redirect_url')
 
     # Check if bag in session, create one if not
     bag = request.session.get('bag', {})
