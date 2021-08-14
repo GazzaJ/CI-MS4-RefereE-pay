@@ -23,11 +23,12 @@
             </div>
         </div>
         <div class="row">
+            {{ teams }}            
             <!-- Form to facilitate new Match creation -->
             <div class="col-12 col-md-6 match my-5 border-green rounded-3">
-                <form method="POST" action="{% url 'add_match' %}" class="form my-5 mx-3" enctype="multipart/form-data">
+                <form method="POST" id="matchForm" action="{% url 'add_match' %}" data-teams-url="{% url 'ajax_load_teams' %}" class="form my-5 mx-3">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {{ form | crispy }}                    
                     <div class="text-center">
                         <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
                         <button class="btn btn-success rounded-3" type="submit">Add Match</button>
@@ -42,7 +43,21 @@
 
 {% block postloadjs %}
 {{ block.super }}
-    <script type="text/javascript">
-        
+    <script>
+    $("#id_age").change(function () {
+        var url = $("#matchForm").attr("data-teams-url");
+        var ageId = $(this).val();               
+
+        $.ajax({
+            url: url,
+            data: {
+                'age': ageId
+            },            
+            success: function (data) {
+                $("#id_home_team").html(data);
+                $("#id_away_team").html(data);                
+            }
+        });
+    });
     </script>
 {% endblock %}

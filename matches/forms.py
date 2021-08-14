@@ -60,7 +60,18 @@ class GameForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['home_team'].queryset = Team.objects.none()
-        #self.fields['away_team'].queryset = Team.objects.none()
+        self.fields['away_team'].queryset = Team.objects.none()
+
+        if 'age' in self.data:
+            try:
+                age_id = int(self.data.get('age'))
+                self.fields['home_team'].queryset = Team.objects.filter(age_id=age_id).order_by('team_name')
+                self.fields['away_team'].queryset = Team.objects.filter(age_id=age_id).order_by('team_name')
+            except (ValueError, TypeError):
+                pass  # invalid input from the client; ignore and fallback to empty City queryset
+        elif self.instance.pk:
+            self.fields['home_team'].queryset = self.instance.age.team_name_set.order_by('team_name')
+            self.fields['away_team'].queryset = self.instance.age.team_name_set.order_by('team_name')
 
 
 class ChatForm(forms.ModelForm):

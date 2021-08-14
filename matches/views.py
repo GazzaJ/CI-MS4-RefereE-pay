@@ -457,7 +457,7 @@ def add_match(request):
             messages.error(request, 'Failed to create a new match. \
                 Please ensure the form has valid inputs')
     else:
-        form = GameForm()
+        form = GameForm()    
 
     template = 'matches/add_match.html'
     context = {
@@ -465,6 +465,12 @@ def add_match(request):
     }
 
     return render(request, template, context)
+
+
+def load_teams(request):
+    age_id = request.GET.get('age')
+    teams = Team.objects.filter(age_id=age_id).order_by('team_name')
+    return render(request, 'includes/teams_dropdown.html', {'teams': teams})
 
 
 @login_required
