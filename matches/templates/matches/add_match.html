@@ -43,6 +43,8 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<!-- Chained dropdown JS adapted from
+https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html -->
     <script>
     $("#id_age").change(function () {
         var url = $("#matchForm").attr("data-teams-url");

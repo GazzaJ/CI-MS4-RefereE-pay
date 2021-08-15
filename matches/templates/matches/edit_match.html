@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 checkout-match my-5 border-green rounded-3">
-                        <form method="POST" action="{% url 'edit_match' match.id %}" class="form my-5 mx-3" enctype="multipart/form-data">
+                        <form method="POST" id="matchForm" action="{% url 'edit_match' match.id %}" class="form my-5 mx-3"  data-teams-url="{% url 'ajax_load_teams' %}" >
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="text-center">
@@ -36,6 +36,7 @@
                                 <button class="btn btn-success rounded-3" type="submit">Update Match</button>
                             </div>
                         </form>
+                        {{ match.age.pk }}
                     </div>
                 </div>          
 
@@ -44,6 +45,29 @@
     </div>
     <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
     
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Chained dropdown JS adapted from
+https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html -->
+    <script>
+    $("#id_age").change(function () {
+        var url = $("#matchForm").attr("data-teams-url");
+        var ageId = $(this).val();               
+
+        $.ajax({
+            url: url,
+            data: {
+                'age': ageId
+            },            
+            success: function (data) {
+                $("#id_home_team").html(data);
+                $("#id_away_team").html(data);                
+            }
+        });
+    });
+    </script>
 {% endblock %}
 
 

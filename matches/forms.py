@@ -56,6 +56,9 @@ class GameForm(forms.ModelForm):
 
     date_time = forms.DateTimeField(label="KO Date & Time", required=True,
                                     widget=CustomDateTimeInput)
+    # chained dropdown elements adapted from
+    # https://simpleisbetterthancomplex.com/tutorial/2018/01/29/
+    # how-to-implement-dependent-or-chained-dropdown-list-with-django.html
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -70,8 +73,9 @@ class GameForm(forms.ModelForm):
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk:
-            self.fields['home_team'].queryset = self.instance.age.team_name_set.order_by('team_name')
-            self.fields['away_team'].queryset = self.instance.age.team_name_set.order_by('team_name')
+            age_id = self.instance.age.pk            
+            self.fields['home_team'].queryset = Team.objects.filter(team_name__contains=self.instance.age).order_by('team_name')            
+            self.fields['away_team'].queryset = Team.objects.filter(team_name__contains=self.instance.age).order_by('team_name')
 
 
 class ChatForm(forms.ModelForm):

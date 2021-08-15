@@ -468,6 +468,11 @@ def add_match(request):
 
 
 def load_teams(request):
+    """
+    A view to render a chained dropdown element, adapted from
+    https://simpleisbetterthancomplex.com/tutorial/2018/01/29/
+    how-to-implement-dependent-or-chained-dropdown-list-with-django.html
+    """
     age_id = request.GET.get('age')
     teams = Team.objects.filter(age_id=age_id).order_by('team_name')
     return render(request, 'includes/teams_dropdown.html', {'teams': teams})
@@ -481,7 +486,7 @@ def edit_match(request, game_id):
                        edit a match!")
         return redirect(reverse, 'home')
 
-    match = get_object_or_404(Game, pk=game_id)
+    match = get_object_or_404(Game, pk=game_id)    
     if request.method == "POST":
         form = GameForm(request.POST, instance=match)
         if form.is_valid:
