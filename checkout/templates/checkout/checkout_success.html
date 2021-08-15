@@ -177,13 +177,13 @@
         <div class="row no-gutters my-5">
             <div class="col-md-6 text-center">
             {% if from_profile %}
-                <a class="btn btn-success" href="{% url 'profile' %}">Back to Profile</a>
+                <a class="btn green-btn" href="{% url 'profile' %}">Back to Profile</a>
             {% else %}
-                <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
+                <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
             {% endif %}    
             </div>
             <div class="col-md-6 text-center">
-                <a class="btn btn-danger" href="{% url 'account_logout' %}">Log-out</a>
+                <a class="btn red-btn" href="{% url 'account_logout' %}">Log-out</a>
             </div>
         </div>
     </div>                        
