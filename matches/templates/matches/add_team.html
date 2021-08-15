@@ -38,17 +38,3 @@
     </div>   
     
 {% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script>
-        $(document).ready(function() {
-            $(".green-btn").hover(function() {
-                $(this).toggleClass("toggle-grn");
-            });
-            $(".red-btn").hover(function() {
-                $(this).toggleClass("toggle-red");
-            });
-        });
-    </script>
-{% endblock %}

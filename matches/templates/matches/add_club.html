@@ -51,18 +51,7 @@
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Image will be set to: ${file.name}`);
-        })
-        $(document).ready(function() {
-            $(".blue-btn").hover(function() {
-                $(this).toggleClass("toggle-blu");
-            });
-            $(".green-btn").hover(function() {
-                $(this).toggleClass("toggle-grn");
-            });        
-            $(".red-btn").hover(function() {
-                $(this).toggleClass("toggle-red");
-            });
-        });
+        })        
     </script>
 {% endblock %}
 

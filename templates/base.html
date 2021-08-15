@@ -248,8 +248,20 @@
             $(document).ready(function() {
                 $(".footer-item").hover(function() {
                     $(this).toggleClass("toggle-footer");
+                });
+                $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+                });
+                $(".blue-btn").hover(function() {
+                    $(this).toggleClass("toggle-blu");
+                });
+                $(".red-btn").hover(function() {
+                    $(this).toggleClass("toggle-red");
+                });
+                $(".yellow-btn").hover(function() {
+                $(this).toggleClass("toggle-warning");
                 });                
-            });    
+            });                
         </script>
     {% endblock %}
 

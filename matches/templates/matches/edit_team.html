@@ -32,8 +32,8 @@
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="text-center">
-                                <a class="btn btn-danger rounded-3 mr-3" href="{% url 'teams' club_id=team.club_name.id %}">Cancel</a>
-                                <button class="btn btn-success rounded-3" type="submit">Update Team</button>
+                                <a class="btn red-btn rounded-3 mr-3" href="{% url 'teams' club_id=team.club_name.id %}">Cancel</a>
+                                <button class="btn green-btn rounded-3" type="submit">Update Team</button>
                             </div>
                         </form>
                     </div>
