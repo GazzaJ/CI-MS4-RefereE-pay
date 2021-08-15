@@ -156,6 +156,12 @@ a {
 
 }
 
+.info-btn {
+    background-color: #17a2b8;
+    color: #fff;
+    border: 2px solid #17a2b8;
+}
+
 .toggle-blu {
     background-color: #fff;
     color: #011e41 !important;
