@@ -68,14 +68,18 @@ class GameForm(forms.ModelForm):
         if 'age' in self.data:
             try:
                 age_id = int(self.data.get('age'))
-                self.fields['home_team'].queryset = Team.objects.filter(age_id=age_id).order_by('team_name')
-                self.fields['away_team'].queryset = Team.objects.filter(age_id=age_id).order_by('team_name')
+                self.fields['home_team'].queryset = Team.objects.filter(
+                    age_id=age_id).order_by('team_name')
+                self.fields['away_team'].queryset = Team.objects.filter(
+                    age_id=age_id).order_by('team_name')
             except (ValueError, TypeError):
-                pass  # invalid input from the client; ignore and fallback to empty City queryset
+                pass
         elif self.instance.pk:
-            age_id = self.instance.age.pk            
-            self.fields['home_team'].queryset = Team.objects.filter(team_name__contains=self.instance.age).order_by('team_name')            
-            self.fields['away_team'].queryset = Team.objects.filter(team_name__contains=self.instance.age).order_by('team_name')
+            age_id = self.instance.age.pk
+            self.fields['home_team'].queryset = Team.objects.filter(
+                team_name__contains=self.instance.age).order_by('team_name')
+            self.fields['away_team'].queryset = Team.objects.filter(
+                team_name__contains=self.instance.age).order_by('team_name')
 
 
 class ChatForm(forms.ModelForm):
@@ -83,3 +87,6 @@ class ChatForm(forms.ModelForm):
     class Meta:
         model = Chat
         fields = '__all__'
+
+    image = forms.ImageField(label="Message Image", required=False,
+                             widget=CustomClearableFileInput)
