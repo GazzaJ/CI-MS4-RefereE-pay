@@ -30,8 +30,8 @@
                     {% csrf_token %}
                     {{ form | crispy }}                    
                     <div class="text-center">
-                        <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
-                        <button class="btn btn-success rounded-3" type="submit">Add Match</button>
+                        <a class="btn red-btn rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
+                        <button class="btn green-btn rounded-3" type="submit">Add Match</button>
                     </div>
                 </form>
             </div>
@@ -46,20 +46,29 @@
 <!-- Chained dropdown JS adapted from
 https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html -->
     <script>
-    $("#id_age").change(function () {
-        var url = $("#matchForm").attr("data-teams-url");
-        var ageId = $(this).val();               
+        $("#id_age").change(function () {
+            var url = $("#matchForm").attr("data-teams-url");
+            var ageId = $(this).val();               
 
-        $.ajax({
-            url: url,
-            data: {
-                'age': ageId
-            },            
-            success: function (data) {
-                $("#id_home_team").html(data);
-                $("#id_away_team").html(data);                
-            }
+            $.ajax({
+                url: url,
+                data: {
+                    'age': ageId
+                },            
+                success: function (data) {
+                    $("#id_home_team").html(data);
+                    $("#id_away_team").html(data);                
+                }
+            });
         });
-    });
+        // Interactive button toggler
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });        
+            $(".red-btn").hover(function() {
+                $(this).toggleClass("toggle-red");
+            });
+        });
     </script>
 {% endblock %}
