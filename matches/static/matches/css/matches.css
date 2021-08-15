@@ -121,6 +121,10 @@ body {
 
 .remove-item {
     cursor: pointer;
+    border: 1px solid #fff;
+    padding: 0.15rem 0.25rem;
+    border-radius: 1rem;
+    background-color: #fff;
 }
 
 /* ---------- Chat ----------*/
