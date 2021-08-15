@@ -29,12 +29,26 @@
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-center">
-                        <a class="btn btn-danger rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
-                        <button class="btn btn-success rounded-3" type="submit">Add Competition</button>
+                        <a class="btn red-btn rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
+                        <button class="btn green-btn rounded-3" type="submit">Add Competition</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>   
     
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+        $(document).ready(function() {
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });        
+            $(".red-btn").hover(function() {
+                $(this).toggleClass("toggle-red");
+            });
+        });
+    </script>
 {% endblock %}

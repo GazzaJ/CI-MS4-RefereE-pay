@@ -35,8 +35,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-center">
-                        <a class="btn btn-danger rounded-3 mr-3" href="{% url 'clubs' %}">Cancel</a>
-                        <button class="btn btn-success rounded-3" type="submit">Add Club</button>
+                        <a class="btn red-btn rounded-3 mr-3" href="{% url 'clubs' %}">Cancel</a>
+                        <button class="btn green-btn rounded-3" type="submit">Add Club</button>
                     </div>
                 </form>
             </div>
@@ -55,6 +55,12 @@
         $(document).ready(function() {
             $(".blue-btn").hover(function() {
                 $(this).toggleClass("toggle-blu");
+            });
+            $(".green-btn").hover(function() {
+                $(this).toggleClass("toggle-grn");
+            });        
+            $(".red-btn").hover(function() {
+                $(this).toggleClass("toggle-red");
             });
         });
     </script>
