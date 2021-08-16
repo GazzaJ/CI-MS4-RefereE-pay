@@ -572,39 +572,39 @@ The following table lists the primary features provided by the W3Recipes app.
 ### **Existing Features**
 |Feature|Description| Image URL |
 |:-----:|-----|:----:|
-| 001   | **Landing page** to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/landing.jpg) |
-| 002   | AllAuth **Registration** process for new users to sign-up| [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
-| 003   | AllAuth powered **Log-in page** for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
-| 004   | Paginated **Matches** page where all matches are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
-| 005   | **Match Filter** function, filters matches by age or team, or both. | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
-| 006   | **Match text search** function enables users to narrow down the results to a single team | [Recipe Text Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/search.jpg) |
-| 007   | **Match Detail** page provides complete match details with interactive fields | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
-| 008   | **Club Directory** page displays a paginated list of the Clubs stored in tha database. Superusers can edit and delete Clubs from this view. | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
-| 009   | **Teams page** displays information for all teams associated with a particular Club. Superusers can edit and delete Teams from this view. | [Manage Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
-| 010   | **Kit Bag** displays all of the games the coach has added for subsequent payment, provides a summary of the game and all associated match fees and fines if applicable. |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
-| 011   | **Checkout Page** proceses the payment of the match fees |  |
-| 012   | A **Checkout Success** page to confirm successful processing of the match fees transaction | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
-|  013  | The **Profile page** displays user billing information, if saved, and a summary of all payments processed for that used. Profile information can be updated from this page |  | 
-|  014  | **Add Competition** form allows Admin/Superusers to add new competitions to the list |  |
-|  015  | The **Add Club** view allows Admin/Superusers to add new Clubs to the directory, populating club badge and club website  |  |
-|  016  | **Edit Club** |  |
-|  017  | **Delete Club** |  |
-|  018  | **Add Team** allows Admin/Superusers to add new teams to the selected Club and assign the Manager/Coach |  |
-|  019  | **Edit Team** |  |
-|  020  | **Delete Team** |  |
-|  021  | **Add Match** allows Admin/Superusers to add new matches to the app, populating all of the information required to renderf the details |  |
-|  022  | **Edit Match** |  |
-|  023  | **Delete Match** |  |
-|  024  | **Success Notification** |  |
-|  025  | **Warning Notificatio** |  |
-|  026  | **Error Notificatio** |  |
-|  027  | **Alert Notification** |  |
-|  028  | **Delete Confirmation Modal** |  |
-|  029  | **Logout Screen** |  |
-|  030  |  |  |
-|  031  |  |  |
-|  032  |  |  |
-|  033  |  |  |
+| 001   | **Landing page** to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/home-page.jpg) |
+| 002   | AllAuth **Registration** process for new users to sign-up| [Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg) |
+| 003   | AllAuth powered **Log-in page** for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg) |
+| 004   | Paginated **Matches** page where all matches are displayed | [Matches](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/matches.jpg) |
+| 005   | **Match Filter** function, filters matches by age or team, or both. | [Match Filter ]() |
+| 006   | **Match text search** function enables users to narrow down the results to a single team | [Match Text Search]() |
+| 007   | **Match Detail** page provides complete match details with interactive fields | [Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg) |
+| 008   | **Club Directory** page displays a paginated list of the Clubs stored in tha database. Superusers can edit and delete Clubs from this view. | [Club Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/club-directory.jpg) |
+| 009   | **Teams page** displays information for all teams associated with a particular Club. Superusers can edit and delete Teams from this view. | [Teams Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/teams.jpg) |
+|  010  | A notification is displayed when the user clicks the **Add to Bag** button on the match detail page. This notification will display a summary of all matches in the kitbag for the duration of the users session. The list gets cleared if the user logs out | [Add to Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-to-bag.jpg) |
+| 011   | **Kit Bag** displays all of the games the coach has added for subsequent payment, provides a summary of the game and all associated match fees and fines if applicable. |  [Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/kit-bag.jpg) |
+| 012   | **Checkout Page** proceses the payment of the match fees | [Checkout Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout.jpg) |
+| 013   | A **Checkout Success** page to confirm successful processing of the match fees transaction | [Checkout Success Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout-success.jpg) |
+|  014  | The **Profile page** displays user billing information, if saved, and a summary of all payments processed for that used. Profile information can be updated from this page | [Profile Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/profile.jpg) | 
+|  015  | **Add Competition** form allows Admin/Superusers to add new competitions to the list | [Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-comp.jpg) |
+|  016  | The **Add Club** view allows Admin/Superusers to add new Clubs to the directory, populating club badge and club website  | [Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-club.jpg) |
+|  017  | The **Edit Club** page enables Admin users to edit the club name, club badge and the clubs website url. | [Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-club.jpg) |
+|  018  | **Delete Club** |  |  |
+|  019  | **Add Team** allows Admin/Superusers to add new teams to the selected Club and assign the Manager/Coach | [Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-team.jpg) |
+|  020  | Team details can be changed through the functionality of the **Edit Team** page, where Admin users can change the Team name, age club and manager. This initially populates with the existing information  | [Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit_team.jpg) |
+|  021  | **Delete Team** |  | []() |
+|  022  | **Add Match** allows Admin/Superusers to add new matches to the app, populating all of the information required to renderf the details | [Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-match.jpg) |
+|  023  | Any of the details of a particular match can be changed on the **Edit Match** page. This initially populates with the existing information | [Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg) |
+|  024  | **Delete Match** |  | []() |
+|  025  | Match Officials are able to add their travel expenses on the **Add Travel** page, which is accessfrom the match details page | [Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-travel.jpg) |
+|  026  | Any messages entered into the app for a match can be viewed on the **Messages** page | [Match Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/messages.jpg) |
+|  027  | Messages can be added to a match on the **Add Message** page, which is available from the Match Detail page | [Add Message](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-message.jpg) |
+|  028  | **Success Notification** |  | []() |
+|  029  | **Warning Notificatio** |  | []() |
+|  030  | **Error Notificatio** |  | []() |
+|  031  | **Alert Notification** |  | []() |
+|  032  | **Delete Confirmation Modal** |  | []() |
+|  033  | **Logout Screen** |  | []() |
 |  034  |  |  |
 |  035  |  |  |
 |  036  |  |  |
@@ -612,8 +612,6 @@ The following table lists the primary features provided by the W3Recipes app.
 |  038  |  |  |
 |  039  |  |  |
 |  040  |  |  |
-
-
 
 ____
 
@@ -648,7 +646,7 @@ This website has been built using the following core technologies:
 
 ##### Integrations
 
-- ![Django](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/django.jpg "Django") - The project uses the Django framework
+- ![Django](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/django.png "Django") - The project uses the Django framework
 - ![Bootstrap CSS](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/Bootstrap-logo.png "Bootstrap 4") - Bootstrap 4.6
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
@@ -656,7 +654,7 @@ This website has been built using the following core technologies:
 
 
 #### Database
-- ![SQLite3](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/sqlite.jpg "SQLit3") - SQLite3  
+- ![SQLite3](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/sqlite.png "SQLit3") - SQLite3  
 - ![Postgres](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/postgres.png "Postgres") - Postgres was used as the deployed DB  
 
 ##### Version Control, storage and hosting
@@ -1041,6 +1039,7 @@ I have attempted to work independently as much as possible while building this w
 - [StackOverFlow](https://stackoverflow.com/) – Web based coding tips
 - [W3Schools](https://www.w3schools.com/) – General coding resource
 - [Pexels](https://www.pexels.com/) – Licence free image repository
+- [Pixabay](https://www.pixabay.com/) – Licence free image repository
 - [BeFunky](https://www.befunky.com/create/resize-image/) – Online image resizer
 - [W3C Validator](https://validator.w3.org/) - HTML and CSS Validation tool
 - [JSHint](https://jshint.com/) - JavaScript code analysis tool
@@ -1083,7 +1082,7 @@ The photos used in this site, or in pre-populated recipes by the developer were 
 ____
 
 ### **Code Snippets** <a name="code"></a>
-Much of the structure of this site follows what was taught during the Backend Development - Task Manager walkthrough project provided by Code Institute, but has been heavily modified to suit a recipe database site with additional functionality not provided in the walkthrough.
+The basic shell of this site follows what was taught during the Full Stack Frameworks - Boutique Ado walkthrough project provided by Code Institute. However the premise and design of the remained of the RefereE-Pay app is entirely original.
 
  | Code Snippet | Description | Source |
  |:-------:|-------------|:------:|
