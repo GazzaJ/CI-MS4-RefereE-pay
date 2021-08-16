@@ -1,6 +1,6 @@
 ![RefereE-Pay](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/readme-title.jpg "RefereE-Pay")
 
-# [**RefereE-Pay**](https://ci-ms4-referee-pay.herokuapp.com/matches/clubs)
+# [**RefereE-Pay**](https://ci-ms4-referee-pay.herokuapp.com/)
 
 ## **Project Justification**
 The idea for this web app came about as a direct result of the ongoing COVID-19 pandemic. This crisis affected many aspects of our lives, not least of which were the consequences for grass-roots football. When the initial lockdowns eased and sports were once agaion allowed; the environment in which we participated was dramatically different, with a higher emphasis placed on reducing person to person contact.
@@ -265,37 +265,45 @@ Buttons colours are chosen to reflect their purpose, and anchor links have some 
 ##### **Interaction Design**
 User interactions on the W3Recipes app can be subdivided into three categories:
  - **Navigation**  
- I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
-  ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)  
+ I have used a conventional, mobile responsive navbar for this project, and this is one of the key elements which enables users to navigate the app.  
+  ![Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/navbar.jpg)  
 
-Navigating through the Recipes is achieved through familiar pagination controls.  
-![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
+Navigating through the Matches and Club Directory is achieved through familiar pagination controls.  
+![Pagination](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pagination.jpg)
 
-I have provided links on several pages to also assist user navigation; these are quick links to :
- - Sign-in
- - Add a Recipe
- - Manage Recipes
-
-These anchor links provide user feedback by either changing or reversing colours when hovered.
-![Strategic anchor links](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/anchors.jpg)
+I have placed anchor links on several pages to also assist user navigation either deeper into the site or back to a main page. Such as:
+ - Fixture list (main matches page)
+![]()
+ - Messages
+![]()
+ - Add Travel
+![]()
+All in app buttons have been designed to provide  user feedback by either changing or reversing colours when hovered.
+![]()
 
  - **Manipulation**  
  Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
-   - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)  
+   - Green ![Green Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/green-button.jpg)  
  Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
 
-   - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-button.png)  
- Used as a warning, or to indicate an action which will eventually result in data being changed.
+   - Orange ![Yellow](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/edit-button.jpg)  
+ Used as a warning, or to indicate an action which will eventually result in data being changed, such as editting a Club, Team or Match.
 
-   - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
- Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed or changed.
+
+   - Red ![Red Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/red-button.jpg)  
+ Red buttons on Referee pay are used on actions which copuld result in permanent changes such as Deleting recordsHighlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed or changed.
 
 ##### **Navigation Design**
 I have used a standard Bootstrap, mobile responsive navbar for RefereE-Pay.
-The menu items change depending on the user's status (logged-in or not).
- - New users only see: Home, Sign-up and Log-in
+The menu items change depending on the user's status (logged-in or not) and by role (superuser or not.
+ - Anonymous users only see: Home, Fixtures, Clubs and My Account.
+   - The only option under my account is to Log-In
+   ![My Account Log-in](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/ma-log-in.jpg)
+   - Anonymous users are able to navigate from the Club directory to the Teams page.
  - Once signed-up users are able to see the full menu list which enables them to interact with the whole app.
-
+![My Account Full](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/my-account.jpg)
+ - Superusers have a special menu dropdown for managing the creation of Competitions, Clubs, Teams, and Matches
+![Admin Menu](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/admin.jpg)
 Additional anchor links have been provided in strategic locations to assist user navigation and provide easy access to certain pages. These are consistently located at the bottom of the content above the footer.
  - Landing Page
  Contains two anchor links prompting the user to sign-up. One located within text of a call-to-action section in the middle of the page. The second is located at the bottom of the page above the footer
@@ -308,10 +316,10 @@ Additional anchor links have been provided in strategic locations to assist user
 
 There should be no requirement for the user to ever have to resort to the Browser BACK button.
  - Error Pages
-Each error page uses the template inheritance to provide the users the navbar seen throughout the site. should a user  encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
+Each error page uses extends the base template to provide the users with the navbar seen throughout the site. Thus should a user encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
 
 ##### **Information Design**
-The basic concept for the information design for W3Recipes is laid out in the following wireframes.
+The basic concept for the information design for RefereE-Pay is laid out in the following wireframes.
 
 #### Wireframes <a name="wireframes"></a>
 Wireframes for the original design concepts were created using Balsamiq.
@@ -1079,13 +1087,10 @@ Much of the structure of this site follows what was taught during the Backend De
 
  | Code Snippet | Description | Source |
  |:-------:|-------------|:------:|
- |Animated Arrows| Animated arrows in the Landing Page call to action | https://freefrontend.com/css-arrows/#animated-arrows|
- |Remove blank lines and spaces from text inputs | Ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
- | Country Flag CDN | Code snippet required to programmatically embed flags into the website | https://flagpedia.net/download/api |
- | Image URL display | Display the image when the URL is provided in a textbox | https://stackoverflow.com/questions/31398473/load-image-in-div-from-url-obtained-from-a-text-box/31398762|
- |Pagination| Splits the recipes collection and displays a maximum of 6 recipes/page|https://www.hacksparrow.com/databases/mongodb/pagination.html|
- | Materialize Select on iOS | Solves issues with select elements not displaying correctly on iOS devices | https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item/52851046#52851046 |
- | Form Validation | Add Recipe Form validation adapted from HTML form guide | https://html.form.guide/snippets/javascript-form-validation-using-regular-expression/ |
+ |Football Loader| Bouncing football loader | https://codepen.io/glafontaine/pen/geMYaJ |
+ | Chained Selects | Chained / dependent dropdown lists/select elements | https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html |
+ | Stripe integration | Code Institute Boutique Ado walkthrough project | - |
+
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
