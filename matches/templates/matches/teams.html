@@ -8,20 +8,21 @@
 {% block page_header %}
     <hr>
     <h1 class="text-center mt-5 mb-3">Team Directory</h1>
-    <div class="row">
-        <div class="col-12 text-center">
-            {% if club.club_badge %}        
-                <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="img-fluid teams-badge" alt="{{ club.club_name }}">        
-            {% else %}        
-                <img src="{{ club.club_badge_url }}" class="img-fluid teams-badge" alt="{{ club.club_name }}">        
-            {% endif %}
-            <h2 class="text-center mt-3">{{club.club_name}}</h2>
-        </div>
-    </div>
+    <hr>
 {% endblock %}
 
 {% block content %}
     <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                {% if club.club_badge %}        
+                    <img src="{{MEDIA_URL}}{{ club.club_badge }}" class="img-fluid teams-badge" alt="{{ club.club_name }}">        
+                {% else %}        
+                    <img src="{{ club.club_badge_url }}" class="img-fluid teams-badge" alt="{{ club.club_name }}">        
+                {% endif %}
+                <h2 class="text-center mt-3">{{club.club_name}}</h2>
+            </div>
+        </div>
         <div class="match-overlay"></div>
         <!-- Club Filtering -->
         <form id="teams-filter" action="{% url 'teams' club.id %}" method="GET">
