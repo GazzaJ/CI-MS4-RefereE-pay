@@ -34,7 +34,7 @@ def all_matches(request):
         print(set_team)
 
         if not set_age and not set_team:
-            messages.error(request, "You didn't select any search criteria!")
+            messages.error(request, "You didn't select any filter criteria!")
 
         print(set_age)
         query = Q(home_team__team_name__contains=set_age) | Q(

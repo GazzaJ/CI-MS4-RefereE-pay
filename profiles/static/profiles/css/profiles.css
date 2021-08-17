@@ -13,6 +13,11 @@ body {
     z-index: -9999;
 }
 
+.page-header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 #profile-update-form .form-control {
     color: #000;
 }
@@ -33,6 +38,7 @@ body {
 .order-history {
     max-height: 31rem;
     overflow-y: auto;
+    background-color: #fff;    
 }
 
 /* ----- Allauth form formatting ----- */
@@ -68,4 +74,16 @@ body {
     background-color: #011e41;
     font-weight: bold;
     color: #fff;
+}
+
+/* ---------- Media Queries ----------*/
+
+@media (max-width: 767.9px) {
+    .page-header {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        width: 95vw;
+    }
 }
