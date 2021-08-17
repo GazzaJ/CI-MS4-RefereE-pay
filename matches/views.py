@@ -27,26 +27,18 @@ def all_matches(request):
     query1 = None
     search = None
 
-    if request.GET:                
-        set_age = request.GET['age']
-        print(set_age)
-        set_team = request.GET['team']
-        print(set_team)
+    if request.GET:        
+        if 'age' in request.GET and request.GET['age'] != '':
+            set_age = request.GET['age']                           
+            query1 = Q(home_team__team_name__contains=set_age) | Q(
+                        away_team__team_name__contains=set_age)
+            matches = matches.filter(query1)
 
-        if not set_age and not set_team:
-            messages.error(request, "You didn't select any filter criteria!")
-
-        print(set_age)
-        query = Q(home_team__team_name__contains=set_age) | Q(
-            away_team__team_name__contains=set_age)
-        matches = matches.filter(query)        
-
-        print(set_team)
-        if set_team != '':         
-            query1 = Q(home_team__team_name=set_team) | Q(
-                away_team__team_name=set_team)
-            matches = matches.filter(query1)      
-
+        elif 'team' in request.GET and request.GET['team'] != '':
+            set_team = request.GET['team']
+            query = Q(home_team__team_name=set_team) | Q(
+                    away_team__team_name=set_team)
+            matches = matches.filter(query)
 
         # Filter results by search box query
         if 'q' in request.GET:
