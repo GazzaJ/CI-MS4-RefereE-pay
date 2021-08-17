@@ -23,7 +23,7 @@
                         <select class="form-control" id="age" name="age">
                             <option selected label="Select an age group"></option>
                             {% for age in fees %}
-                                <option>{{ age }}</option>
+                                <option value="{{ age }}">{{ age }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -34,7 +34,7 @@
                         <select class="form-control" id="team" name="team">
                             <option selected label="Select a Team"></option>
                             {% for team in teams %}
-                                <option>{{ team }}</option>
+                                <option value="{{ team }}">{{ team }}</option>
                             {% endfor %}
                         </select>
                     </div>

@@ -27,34 +27,26 @@ def all_matches(request):
     query1 = None
     search = None
 
-    if request.GET:
-        if 'age' and 'team' in request.GET:
-            q1 = request.GET['age']
-            q2 = request.GET['team']
-            qu1 = Q(home_team__team_name__contains=q1) | Q(
-                    away_team__team_name__contains=q1)
-            qu2 = Q(home_team__team_name=q2) | Q(away_team__team_name=q2)
-            matches = matches.filter(qu1, qu2)
+    if request.GET:                
+        set_age = request.GET['age']
+        print(set_age)
+        set_team = request.GET['team']
+        print(set_team)
 
-        if 'team' in request.GET:
-            the_team = request.GET['team']
-            if not the_team:
-                messages.error(request, "You didn't enter any search criteria")
-                return redirect(reverse('matches'))
-            query = Q(home_team__team_name=the_team) | Q(
-                 away_team__team_name=the_team)
-            matches = matches.filter(query)
+        if not set_age and not set_team:
+            messages.error(request, "You didn't select any search criteria!")
 
-        else:
-            if 'age' in request.GET:
-                age_group = request.GET['age']
-                if not age_group:
-                    messages.error(request, "You didn't enter any search \
-                                   criteria")
-                    return redirect(reverse('matches'))
-                query1 = Q(home_team__team_name__contains=age_group) | Q(
-                    away_team__team_name__contains=age_group)
-                matches = matches.filter(query1)
+        print(set_age)
+        query = Q(home_team__team_name__contains=set_age) | Q(
+            away_team__team_name__contains=set_age)
+        matches = matches.filter(query)        
+
+        print(set_team)
+        if set_team != '':         
+            query1 = Q(home_team__team_name=set_team) | Q(
+                away_team__team_name=set_team)
+            matches = matches.filter(query1)      
+
 
         # Filter results by search box query
         if 'q' in request.GET:
@@ -66,7 +58,7 @@ def all_matches(request):
                 away_team__team_name__icontains=search)
             matches = matches.filter(searches)
             if matches.count() == 0:
-                messages.info(request, 'Your team cannot be \
+                messages.warning(request, 'Your team cannot be \
                     found in the database')
                 return redirect(reverse('matches'))
 
@@ -359,8 +351,8 @@ def club_teams(request, club_id):
     fees = Fee.objects.all()
     teams = Team.objects.filter(club_name=club_id).order_by('age')
 
-    if 'age' in request.GET:
-        age_group = request.GET['age']
+    if 'team-age' in request.GET:
+        age_group = request.GET['team-age']
         if not age_group:
             messages.error(request, "You didn't enter any search \
                             criteria")
