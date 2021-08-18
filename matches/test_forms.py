@@ -103,10 +103,6 @@ class TestTeamForm(TestCase):
 
 class TestGameForm(TestCase):
 
-    def test_fields_are_excluded_from_form_metaclass(self):
-        form = GameForm()
-        self.assertEqual(form.Meta.exclude, ('ref_total', 'asst1_total', 'asst2_total', 'ref_trav', 'asst1_trav', 'asst2_trav'))
-
     def test_age_required(self):
         form = GameForm({'age': ''})
         self.assertFalse(form.is_valid())

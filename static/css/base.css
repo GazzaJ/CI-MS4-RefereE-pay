@@ -19,7 +19,7 @@ html {
 
 .nav-link {
     color: #011e41 !important;
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Roboto', sans-serif;
 }
 
 .grand-total {
