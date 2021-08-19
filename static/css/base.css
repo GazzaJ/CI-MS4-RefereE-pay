@@ -205,7 +205,7 @@ a {
 }
 
 .toggle-footer {    
-    color: #fff !important;
+    color: rgb(250, 108, 51) !important;
 }
 
 /* ---------- Pagination ----------*/
@@ -302,6 +302,11 @@ a {
 
 .border-right {
     border-right: 2px solid white;
+}
+
+.copyright {
+    color: #007bff;
+    font-weight: bold;
 }
 
 .social-link i {
