@@ -109,6 +109,10 @@ body {
     border: 2px solid #00813e;
 }
 
+.dark-blue {
+    color: #011e41;
+}
+
 /* ---------- Media Queries ----------*/
 
 @media (max-width: 767.9px) {
