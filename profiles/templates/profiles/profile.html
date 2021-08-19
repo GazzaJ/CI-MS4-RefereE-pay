@@ -6,21 +6,40 @@
 {% endblock %}
 
 {% block page_header %}
-    <h1 class="text-center page-header">{{ user.username }}'s Profile</h1>
+    <h1 class="text-center page-header">{{ user.get_full_name }}'s Profile</h1>
 {% endblock %}
 
 {% block content %}
     <div class="container">
     <div class="profile-overlay"></div>
-        <div class="row mb-5 mb-md-0">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-12 col-md-6">
+                <!-- User Club, Team and Role Information -->
+                <div class="row ">
+                    <div class="col-12 mt-2 text-center">
+                        {% if user.userprofile.team.club_name.club_badge %}        
+                            <img src="{{MEDIA_URL}}{{ user.userprofile.team.club_name.club_badge }}" class="img-fluid profile-badge" alt="{{ user.userprofile.team.club_name }}">   
+                        {% else %}        
+                            <img src="{{ user.userprofile.team.club_name.club_badge_url }}" class="img-fluid profile-badge" alt="{{ user.userprofile.team.club_name }}">
+                        {% endif %}                        
+                        <p class="profile-team mt-3 bg-white">{{ user.userprofile.team.team_name }}</p>
+                    </div>
+                    {% if user.userprofile.role %}
+                        <div class="col-12 mt-2 text-center">
+                            <p class="profile-role bg-white"> {{ user.userprofile.role }}</p>
+                        </div>
+                    {% endif %}                    
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
             <!-- Profile Information Form -->
             <div class="col-12 col-md-6">
                 <h5>Profile Information
                     <span class="ml-2">
                         <i class="fas fa-user-cog"></i>
                     </span>
-                </h5>
-                
+                </h5>                
                 <div class="row mt-3">
                     <div class="col-12 col-md-8 bg-white rounded-3 border-green">
                         <form action="{% url 'profile' %}" method="POST" id="profile-update-form" class="my-5 mx-3">
@@ -57,23 +76,23 @@
                                 <tbody>
                                     {% for order in orders %}
                                     <tr>
-                                        <td>
+                                        <td class="align-middle order-num text-center">
                                             <a href="{% url 'order_history' order.order_number %}" 
                                             title="{{ order.order_number }}">
                                                 {{ order.order_number|truncatechars:6 }}
                                             </a>
                                         </td>
-                                        <td>
+                                        <td class="align-middle order-date text-center">
                                             {{ order.date.date }}
                                         </td>
                                         <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}                                            
+                                            <ul class="list-unstyled games align-middle mb-0">
+                                                {% for item in order.lineitems.all %}                                                                                                
                                                     <li class="small">{{ item.match }}</li>                                            
                                                 {% endfor %}
                                             </ul>
                                         </td>
-                                        <td>
+                                        <td class="align-middle g-total text-center">
                                             £ {{ order.grand_total }}
                                         </td>
                                     </tr>

@@ -6,6 +6,7 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
         'role',
+        'team',
     )
 
 
