@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block page_header %}
-    <h1 class="text-center page-header">{{ user.get_full_name }}'s Profile</h1>
+    <h1 class="text-center page-header">{{ user.username }}'s Profile</h1>
 {% endblock %}
 
 {% block content %}
@@ -21,8 +21,10 @@
                             <img src="{{MEDIA_URL}}{{ user.userprofile.team.club_name.club_badge }}" class="img-fluid profile-badge" alt="{{ user.userprofile.team.club_name }}">   
                         {% else %}        
                             <img src="{{ user.userprofile.team.club_name.club_badge_url }}" class="img-fluid profile-badge" alt="{{ user.userprofile.team.club_name }}">
-                        {% endif %}                        
-                        <p class="profile-team mt-3 bg-white">{{ user.userprofile.team.team_name }}</p>
+                        {% endif %}
+                        {% if user.userprofile.team.team_name %}                       
+                            <p class="profile-team mt-3 bg-white">{{ user.userprofile.team.team_name }}</p>
+                        {% endif %}
                     </div>
                     {% if user.userprofile.role %}
                         <div class="col-12 mt-2 text-center">
