@@ -15,9 +15,14 @@
         <div class="row mb-5 mb-md-0">
             <!-- Profile Information Form -->
             <div class="col-12 col-md-6">
-                <h5>Profile Information</h5>
+                <h5>Profile Information
+                    <span class="ml-2">
+                        <i class="fas fa-user-cog"></i>
+                    </span>
+                </h5>
+                
                 <div class="row mt-3">
-                    <div class="col-12 bg-white rounded-3 border-green">
+                    <div class="col-12 col-md-8 bg-white rounded-3 border-green">
                         <form action="{% url 'profile' %}" method="POST" id="profile-update-form" class="my-5 mx-3">
                             {% csrf_token %}
                             {{ form|crispy }}
@@ -32,9 +37,13 @@
             </div>
             <!-- Order History Table -->
             <div class="col-12 col-lg-6 mt-5 mt-md-0">
-                <h5>Order History</h5>
-                <div class="row">
-                    <div class="col-12 mt-3 border-green rounded-3 bg-white">
+                <h5>Order History
+                    <span class="ml-2">
+                        <i class="far fa-list-alt"></i>
+                    </span>
+                </h5>
+                <div class="row mt-3 ">
+                    <div class="col-12 border-green rounded-3 bg-white">
                         <div class="order-history table-responsive mt-3">
                             <table class="table table-sm">
                                 <thead>
