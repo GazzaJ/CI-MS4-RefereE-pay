@@ -74,14 +74,14 @@
                             </div>
                             <div class="col-4 col-lg-2 text-center">
                                 {% if match.away_team.club_name.club_badge %}
-                                <img class="club-badge image-fluid w-100"
-                                    src="{{MEDIA_URL}}{{ match.away_team.club_name.club_badge }}"
-                                    alt="match.away_team.club_name">
-                            {% else %}                        
-                                <img class="club-badge image-fluid" 
-                                    src="{{ match.away_team.club_name.club_badge_url }}"
-                                    alt="match.away_team.club_name">
-                            {% endif %}
+                                    <img class="club-badge image-fluid w-100"
+                                        src="{{MEDIA_URL}}{{ match.away_team.club_name.club_badge }}"
+                                        alt="match.away_team.club_name">
+                                {% else %}                        
+                                    <img class="club-badge image-fluid" 
+                                        src="{{ match.away_team.club_name.club_badge_url }}"
+                                        alt="match.away_team.club_name">
+                                {% endif %}
                             </div>
                         </div>
                         <div class="row mt-3">
