@@ -87,6 +87,11 @@ a {
     font-family: "Roboto", sans-serif;
 }
 
+form label,
+form input {
+    font-family: "Roboto", sans-serif;
+}
+
 /* ---------- Toasts ---------- */
 
 .message-container {

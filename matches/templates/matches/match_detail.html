@@ -15,7 +15,7 @@
     <div class="container">
         <div class="match-overlay"></div>
         <!-- Match teams -->
-        <div class="row match mb-3 mx-1 align-items-center border-green">
+        <div class="row match mb-3 align-items-center border-green">
             <div class="col-12">
                 <div class="row">
                     <div class="col-4 col-lg-2 text-center">
@@ -53,7 +53,7 @@
             </div>
         </div>
         <!-- Venue and KO Time -->
-        <div class="row match mb-3 mx-1 align-items-center border-green">
+        <div class="row match mb-3 align-items-center border-green">
             <div class="col text-center">
                 <h3 class="mb-4">Venue and Kick-off Time</h3>
                 <p class="mb-4">{{ match.date_time }}</p>                
@@ -70,7 +70,7 @@
                             <img class="img-fluid venue-map" src="{{ MEDIA_URL }}{{match.venue.map}}" alt="{{ match.venue }}">
                         {% else %}
                             <div class="row justify-content-center">
-                                <div class="col-6">
+                                <div class="col-8 col-md-6">
                                     <a class="btn btn-info google-link" href="{{match.venue.map_url}}" target="_blank">Google Maps</a>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
             </div>
         </div>
         <!-- Match Officials -->
-        <div class="row match mb-3 mx-1 align-items-center border-green">
+        <div class="row match mb-3 align-items-center border-green">
             <div class="col-12 text-center">
                 <h3 class="mb-4">Match Officials</h3>
                 <div class="row">
@@ -254,14 +254,13 @@
         </div>
         <!-- Action Buttons/Links -->
         <div class="row no-gutters my-5">            
-            <!-- If the match is in the future then display Messages button -->
+            <!-- Display messages button and back to fixtures button -->
             {% if name == coach and job or name == ref and job or user.is_superuser %}                
-                    <div class="col-12 col-md-6 text-center">
+                    <div class="col-12 text-center">
                         <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
-                    </div>
-                    <div class="col-12 col-md-6 text-center mt-3 mt-md-0">
                         <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
-                    </div>                
+                    </div>
+                                    
             {% endif %}            
         </div>
     </div>
