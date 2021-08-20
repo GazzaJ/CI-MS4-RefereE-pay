@@ -369,7 +369,7 @@ def edit_team(request, team_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        edit this team!")
-        return redirect(reverse('teams', args=(club_id,)))
+        return redirect(reverse('clubs'))
 
     if request.method == "POST":
         form = TeamForm(request.POST, instance=team)
@@ -426,10 +426,11 @@ def delete_team(request, team_id):
     """ Deletes the selected team from the DB """
     team = get_object_or_404(Team, pk=team_id)
     club_id = team.club_name.id
+
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions \
                        to delete a team!")
-        return redirect(reverse('teams', args=(club_id,)))
+        return redirect(reverse('clubs'))
 
     team.delete()
     messages.success(request, f'You have successfully \
