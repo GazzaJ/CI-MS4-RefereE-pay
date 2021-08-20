@@ -187,4 +187,12 @@ select option[value=""] {
     .border-green {
         padding-right: 0;
     }
+
+    .cos {
+        font-size: 0.8rem;
+    }
+
+    .sub-header {
+        font-size: 1.5rem;
+    }
 }
