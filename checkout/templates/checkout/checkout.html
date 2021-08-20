@@ -83,17 +83,17 @@
                             </div>
                         </div>
                     </div>                    
-                    <div class="col-12 col-lg-6 mt-5 mb-1">
+                    <div class="col-12 col-lg-6 mt-5 mb-1 px-1 px-md-3 ">
                         <p><strong>Please fill in the form below to complete your payment</strong></p>
                         <form  action="{% url 'checkout' %}" method=POST id="payment-form">
                             {% csrf_token %}
-                            <fieldset class="rounded px-3 mb-5">
+                            <fieldset class="rounded px-1 px-md-3 mb-5">
                                 <legend class="fieldset-label px-2 py-2 w-auto">Details</legend>
                                 {{ order_form.full_name | as_crispy_field }}
                                 {{ order_form.email | as_crispy_field }}
                                 {{ order_form.phone_number | as_crispy_field }}
                             </fieldset>
-                            <fieldset class="rounded px-3 mb-5">
+                            <fieldset class="rounded px-1 px-md-3  mb-5">
                                 <legend>Billing Address</legend>
                                 {{ order_form.street_address1 | as_crispy_field }}
                                 {{ order_form.street_address2 | as_crispy_field }}
@@ -108,7 +108,7 @@
                                     {% endif %}
                                 </div>
                             </fieldset>
-                            <fieldset class="rounded px-3">
+                            <fieldset class="rounded px-1 px-md-3">
                                 <legend class="fieldset-label px-2 w-auto">Payment</legend>
                                 <!-- The Stripe card element goes here  -->
                                 <div class="mb-3" id="card-element"></div>
