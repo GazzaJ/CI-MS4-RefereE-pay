@@ -83,12 +83,8 @@ h1, h2, h3, h4, h5 {
 }
 
 p, .nav-link,
-a {
-    font-family: "Roboto", sans-serif;
-}
-
-form label,
-form input {
+a, form label,
+form input, span {
     font-family: "Roboto", sans-serif;
 }
 
