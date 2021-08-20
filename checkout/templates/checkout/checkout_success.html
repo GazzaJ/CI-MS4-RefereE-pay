@@ -55,12 +55,12 @@
                                 <div class="col-2 text-center">
                                     {% if item.match.home_team.club_name.club_badge %}
                                         <img class="checkout-badge image-fluid w-100"
-                                        src="{{MEDIA_URL}}{{ item.match.home_team.club_name.club_badge }}"
-                                        alt="item.match.home_team.club_name">
+                                            src="{{MEDIA_URL}}{{ item.match.home_team.club_name.club_badge }}"
+                                            alt="item.match.home_team.club_name">
                                     {% else %}
                                         <img class="checkout-badge image-fluid w-100"
-                                        src="{{ item.match.home_team.club_name.club_badge_url }}"  
-                                        alt="{{ item.match.home_team.club_name.club_name }}">
+                                            src="{{ item.match.home_team.club_name.club_badge_url }}"  
+                                            alt="{{ item.match.home_team.club_name.club_name }}">
                                     {% endif %}
                                 </div>
                                 <div class="col-3 text-center cos">

@@ -11,11 +11,10 @@
 
 {% block content %}
     <div class="container">
-        <div class="match-overlay"></div>
-        <!-- Filter Matches by Age or Team -->
-
+        <div class="match-overlay"></div>        
+        <!-- Page top pagination controls -->
         {% include 'includes/pagination.html' %}
-
+        <!-- Filter Matches by Age or Team -->
         <form id="filter" action="{% url 'matches' %}" method="GET">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
@@ -47,14 +46,22 @@
                     <a class="btn blue-btn" href="{% url 'matches' %}">Reset</a>
                 </div>
             </div>                       
-        </form>        
+        </form>
+        <!-- Matches / basic detail -->        
         {% for match in page_obj %}               
             <a class="match-text" href="{% url 'match_detail' match.id %}">
                 <div class="row match mb-3 align-items-center border-green">
                     <div class="col">
                         <div class="row">
                             <div class="col-4 col-lg-2 team text-center">
-                                <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}" alt="match.home_team.club_name">
+                                {% if match.home_team.club_name.club_badge %}
+                                    <img class="club-badge image-fluid w-100"
+                                        src="{{MEDIA_URL}}{{ match.home_team.club_name.club_badge }}"
+                                        alt="match.home_team.club_name">
+                                {% else %}
+                                    <img class="club-badge image-fluid" src="{{ match.home_team.club_name.club_badge_url }}"
+                                        alt="match.home_team.club_name">
+                                {% endif %}
                             </div>
                             <div class="col-8 col-lg-3 text-center my-auto">
                                 <p>{{ match.home_team }}</p>                         
@@ -66,7 +73,15 @@
                                 <p>{{ match.away_team }}</p>                        
                             </div>
                             <div class="col-4 col-lg-2 text-center">
-                                <img class="club-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}" alt="match.away_team.club_name">
+                                {% if match.away_team.club_name.club_badge %}
+                                <img class="club-badge image-fluid w-100"
+                                    src="{{MEDIA_URL}}{{ match.away_team.club_name.club_badge }}"
+                                    alt="match.away_team.club_name">
+                            {% else %}                        
+                                <img class="club-badge image-fluid" 
+                                    src="{{ match.away_team.club_name.club_badge_url }}"
+                                    alt="match.away_team.club_name">
+                            {% endif %}
                             </div>
                         </div>
                         <div class="row mt-3">
