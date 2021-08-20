@@ -27,9 +27,9 @@ def all_matches(request):
     query1 = None
     search = None
 
-    if request.GET:        
+    if request.GET:
         if 'age' in request.GET and request.GET['age'] != '':
-            set_age = request.GET['age']                           
+            set_age = request.GET['age']
             query1 = Q(home_team__team_name__contains=set_age) | Q(
                         away_team__team_name__contains=set_age)
             matches = matches.filter(query1)
@@ -192,8 +192,7 @@ def add_travel(request, game_id):
             return redirect(reverse('match_detail', args=[match.id]))
         else:
             messages.error(request, "Failed to update your expenses\
-                Please ensure the form is valis.")
-
+                Please ensure the form is valid.")
     else:
         form = FeesForm(instance=match)
 
@@ -267,7 +266,7 @@ def add_club(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a club!")
-        return redirect(reverse('home'))
+        return redirect(reverse('clubs'))
 
     if request.method == "POST":
         form = ClubForm(request.POST, request.FILES)
@@ -366,8 +365,7 @@ def club_teams(request, club_id):
 def edit_team(request, team_id):
     """ Edit the selected Team's details """
     team = get_object_or_404(Team, pk=team_id)
-    club_id = team.club_name.id
-    print(club_id)
+    club_id = team.club_name.id    
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        edit this team!")
@@ -424,6 +422,22 @@ def add_team(request):
 
 
 @login_required
+def delete_team(request, team_id):
+    """ Deletes the selected team from the DB """
+    team = get_object_or_404(Team, pk=team_id)
+    club_id = team.club_name.id
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have the permissions \
+                       to delete a team!")
+        return redirect(reverse('teams', args=(club_id,)))
+
+    team.delete()
+    messages.success(request, f'You have successfully \
+                     deleted {team.team_name}')
+    return redirect(reverse('teams', args=(club_id,)))
+
+
+@login_required
 def add_match(request):
     """ Add a new game to the app """
     if not request.user.is_superuser:
@@ -441,8 +455,7 @@ def add_match(request):
             messages.error(request, 'Failed to create a new match. \
                 Please ensure the form has valid inputs')
     else:
-        form = GameForm()    
-
+        form = GameForm()
     template = 'matches/add_match.html'
     context = {
         'form': form,
@@ -470,7 +483,7 @@ def edit_match(request, game_id):
                        edit a match!")
         return redirect(reverse('home'))
 
-    match = get_object_or_404(Game, pk=game_id)    
+    match = get_object_or_404(Game, pk=game_id)
     if request.method == "POST":
         form = GameForm(request.POST, instance=match)
         if form.is_valid:

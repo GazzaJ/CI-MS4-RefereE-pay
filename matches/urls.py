@@ -18,6 +18,7 @@ urlpatterns = [
     path('delete_club/<int:club_id>/', views.delete_club, name='delete_club'),
     path('teams/<int:club_id>/', views.club_teams, name='teams'),
     path('edit_team/<int:team_id>', views.edit_team, name='edit_team'),
+    path('delete_team/<int:team_id>', views.delete_team, name='delete_team'),
 
     path('ajax/load_teams', views.load_teams, name='ajax_load_teams'),
 ]
