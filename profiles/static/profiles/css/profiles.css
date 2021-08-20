@@ -13,11 +13,6 @@ body {
     z-index: -9999;
 }
 
-.page-header {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
 .profile-badge {
     max-height: 8rem;
     width: auto;

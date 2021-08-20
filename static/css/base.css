@@ -6,6 +6,11 @@ html {
     height: 100%;
 }
 
+.page-header {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
 /* ---------- Navbar ---------- */
 
 .navbar {
