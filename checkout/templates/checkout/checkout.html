@@ -23,13 +23,20 @@
                                 <hr>
                             </div>
                         </div>
+                        <!-- visual rendering of match  -->
                         {% for item in bag_items %}
                         <a href="{% url 'match_detail' item.match.id %}">
                             <div class="row">
                                 <div class="col-4 col-lg-2 team text-center">
-                                    <img class="checkout-badge image-fluid w-100"
-                                        src="{{ item.match.home_team.club_name.club_badge_url }}"
-                                        alt="item.match.home_team.club_name">
+                                    {% if item.match.home_team.club_name.club_badge %}
+                                        <img class="checkout-badge image-fluid w-100"
+                                            src="{{MEDIA_URL}}{{ item.match.home_team.club_name.club_badge }}"
+                                            alt="item.match.home_team.club_name">
+                                    {% else %}
+                                        <img class="checkout-badge image-fluid w-100"
+                                            src="{{ item.match.home_team.club_name.club_badge_url }}"  
+                                            alt="{{ item.match.home_team.club_name.club_name }}">
+                                    {% endif %}
                                 </div>
                                 <div class="col-8 col-lg-3 text-center">
                                     <p>{{ item.match.home_team.short_name }}</p>
@@ -41,10 +48,19 @@
                                     <p>{{ item.match.away_team.short_name }}</p>                        
                                 </div>
                                 <div class="col-4 col-lg-2 text-center">
-                                    <img class="checkout-badge image-fluid w-100" src="{{ item.match.away_team.club_name.club_badge_url }}" alt="item.match.away_team.club_name">
+                                    {% if item.match.away_team.club_name.club_badge %}
+                                        <img class="checkout-badge image-fluid w-100"
+                                        src="{{MEDIA_URL}}{{ item.match.away_team.club_name.club_badge }}"
+                                        alt="item.match.away_team.club_name">
+                                    {% else %}
+                                        <img class="checkout-badge image-fluid w-100"
+                                        src="{{ item.match.away_team.club_name.club_badge_url }}"  
+                                        alt="{{ item.match.away_team.club_name.club_name }}">
+                                    {% endif %}
                                 </div>
                             </div>
                         </a>
+                        <!-- Breakdown of match charges -->
                         <div class="row mt-2">
                             <div class="col-3">
                                 <p>Ref Total:</p>
@@ -82,7 +98,8 @@
                                 <hr>                        
                             </div>
                         </div>
-                    </div>                    
+                    </div>
+                    <!-- Checkout form -->                    
                     <div class="col-12 col-lg-6 mt-5 mb-1 px-1 px-md-3 ">
                         <p><strong>Please fill in the form below to complete your payment</strong></p>
                         <form  action="{% url 'checkout' %}" method=POST id="payment-form">
