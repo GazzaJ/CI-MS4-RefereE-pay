@@ -216,7 +216,7 @@ def add_competition(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a competition!")
-        return redirect(reverse, 'home')
+        return redirect(reverse('home'))
 
     if request.method == "POST":
         form = CompetitionForm(request.POST)
@@ -267,7 +267,7 @@ def add_club(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a club!")
-        return redirect(reverse, 'home')
+        return redirect(reverse('home'))
 
     if request.method == "POST":
         form = ClubForm(request.POST, request.FILES)
@@ -429,7 +429,7 @@ def add_match(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a match!")
-        return redirect(reverse, 'home')
+        return redirect(reverse('home'))
 
     if request.method == "POST":
         form = GameForm(request.POST)
@@ -468,7 +468,7 @@ def edit_match(request, game_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        edit a match!")
-        return redirect(reverse, 'home')
+        return redirect(reverse('home'))
 
     match = get_object_or_404(Game, pk=game_id)    
     if request.method == "POST":
@@ -504,7 +504,7 @@ def delete_match(request, game_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions\
              to delete a match!")
-        return redirect(reverse, 'home')
+        return redirect(reverse('home'))
 
     match = get_object_or_404(Game, pk=game_id)
     match.delete()
