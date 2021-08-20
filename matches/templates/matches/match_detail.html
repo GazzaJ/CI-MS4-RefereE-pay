@@ -290,11 +290,14 @@
         <div class="row no-gutters my-5">            
             <!-- Display messages button and back to fixtures button -->
             {% if name == coach and job or name == ref and job or user.is_superuser %}                
-                    <div class="col-12 text-center">
-                        <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
-                        <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
-                    </div>
-                                    
+                <div class="col-12 text-center">
+                    <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
+                    <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
+                </div>
+            {% else %}
+                <div class="col-12 text-center">
+                    <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
+                </div>
             {% endif %}            
         </div>
     </div>
