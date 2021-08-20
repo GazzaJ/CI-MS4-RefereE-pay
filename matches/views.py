@@ -400,7 +400,7 @@ def add_team(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a team!")
-        return redirect(reverse, 'home')
+        return redirect(reverse('matches'))
 
     if request.method == "POST":
         form = TeamForm(request.POST)
