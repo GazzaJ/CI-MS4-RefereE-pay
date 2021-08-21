@@ -215,10 +215,7 @@ Displays the users billing address, if they have elected to save it, and a summa
  - **Admin**
 A special menu option has been provided for Admin/Superusers to create new Competitions, Clubs, Teams and Matches. Each one redirects the superuser to a form page where they can input and save the relevant information.
 Match creation is currently simplistic choice based form. Future versions could use a more sophisticated 
-> I had opted to keep this as a superusers task because it didn't make sense to enable any user to log in and start creating new teams.
-
-
-
+> I have opted to keep this as a superusers task because it didn't make sense to enable any user to log in and start creating new teams etc; and to be honest this is the way the existing software options function. 
 
 ##### **Information Design**
 Information is provided to users on multiple pages; Matches, Match Detail, Clubs, Teams, Kit Bag and Profile.
@@ -254,7 +251,7 @@ The intention was to provide a relatively simple app which maintains a clean and
 
 ![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-2.jpg)
 
- - The Add Recipes and Edit recipes pages are also identical in their appearance and structure.
+ - The Add and Edit functions for Clubs, Teams and Matches have a consistant appearance and structure.
 
 ![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-3.jpg)
 
@@ -672,7 +669,7 @@ ______
 
 ## **Testing** <a name="testing"></a>
 All of the testing conducted on this app', as well as any bugs encountered and explanations of solutions are documented in the following file:-
-# [TESTING.md](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING.md) 
+# [TESTING.md](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/TESTING.md) 
 
 ______
 ## **Database Creation** <a name="database"></a>
