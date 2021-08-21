@@ -46,7 +46,7 @@ class TestHomePageViews(TestCase):
     def test_user_account_login(self):
         """ Tests account login for existing user """
 
-        user = User.objects.create_user(
+        User.objects.create_user(
             'testuser',
             'test@email.com',
             'testpass123'
@@ -65,12 +65,12 @@ class TestHomePageViews(TestCase):
         """ Test redirect to login if incorrect login detected """
 
         response = self.client.get('/accounts/login/', follow=True)
-        user = User.objects.create_user(
+        User.objects.create_user(
             'testuser',
             'test@email.com',
             'testpass123'
         )
-        
+
         self.client.login(
             username='TestUser1',
             password='testpass123'
@@ -82,7 +82,7 @@ class TestHomePageViews(TestCase):
     def test_get_logout_view(self):
         """ Tests the logout view for a logged in user """
 
-        user = User.objects.create_user(
+        User.objects.create_user(
             'testuser',
             'test@email.com',
             'testpass123'
