@@ -179,9 +179,22 @@ def add_travel(request, game_id):
     """
     match = get_object_or_404(Game, pk=game_id)
     user = request.user
-    ref = str(match.referee)
-    asst1 = str(match.asst_referee1)
-    asst2 = str(match.asst_referee2)
+    official = False
+    print(user.userprofile.role)
+    if user.userprofile.role == 'Referee':
+        official = True
+    if user.is_superuser:
+        official = True
+
+    if not official:
+        messages.error(request, "Sorry, you don't have the permissions to \
+                    add travel expenses!")
+        return redirect(reverse('home'))
+    
+    # if not request.user.is_superuser:
+    #     messages.error(request, "Sorry, you don't have the permissions to \
+    #                 add travel expenses!")
+    #     return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = FeesForm(request.POST, instance=match)
@@ -199,11 +212,9 @@ def add_travel(request, game_id):
     template = 'matches/add_travel.html'
     context = {
         'form': form,
-        'user': user,
-        'ref': ref,
-        'asst1': asst1,
-        'asst2': asst2,
+        'user': user,        
         'match': match,
+        'official': official,
     }
 
     return render(request, template, context)
