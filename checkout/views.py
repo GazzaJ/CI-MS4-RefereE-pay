@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -81,7 +83,9 @@ def checkout(request):
                     return redirect(reverse('review_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number])
+            )
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information')
@@ -93,7 +97,7 @@ def checkout(request):
             return redirect(reverse('matches'))
 
         current_bag = bag_contents(request)
-        total = current_bag['grand_total']        
+        total = current_bag['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(

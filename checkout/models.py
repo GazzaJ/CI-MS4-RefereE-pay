@@ -13,7 +13,7 @@ from profiles.models import UserProfile
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, null=True, blank=True,
-                                     related_name="orders", 
+                                     related_name="orders",
                                      on_delete=models.SET_NULL)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -23,12 +23,14 @@ class Order(models.Model):
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     county_or_state = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    country = CountryField(blank_label='Country *', null=True, blank=True)    
+    country = CountryField(blank_label='Country *', null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     grand_total = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
-    original_bag = models.CharField(max_length=200, null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    original_bag = models.CharField(max_length=200, null=False,
+                                    blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
 
     def _generate_order_number(self):
         """ Generate a unique order number using UUID """
@@ -38,7 +40,8 @@ class Order(models.Model):
         """
         Update grand total anytime a linitem is added
         """
-        self.grand_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.grand_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -58,24 +61,27 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
-    match = models.ForeignKey(Game, null=False, blank=False, on_delete=models.CASCADE)
-    payment_due_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    match = models.ForeignKey(Game, null=False, blank=False,
+                              on_delete=models.CASCADE)
+    payment_due_date = models.DateTimeField(auto_now=False, auto_now_add=False,
+                                            null=True, blank=True)
     match_fees = models.DecimalField(max_digits=6, decimal_places=2,
-                                      null=False, default=0)
+                                     null=False, default=0)
     match_fines = models.DecimalField(max_digits=6, decimal_places=2,
                                       null=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,
                                          editable=False)
 
-    
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem
         total and update the grand total
-        """        
+        """
         if self.payment_due_date is None:
-            self.payment_due_date = self.match.date_time + datetime.timedelta(days=1)
+            self.payment_due_date = (
+                self.match.date_time + datetime.timedelta(days=1)
+                )
             if self.order.date > self.payment_due_date:
                 self.match_fines = settings.NONPAYMENT_FINE
             else:
