@@ -1,3 +1,6 @@
+""" Handles all of the views for the Matches app """
+import datetime
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -7,9 +10,9 @@ from django.core.paginator import Paginator
 from checkout.models import Order
 from profiles.models import UserProfile
 from .models import Club, Fee, Team, Game, Chat
-from .forms import GameForm, CompetitionForm, ChatForm, FeesForm, ClubForm, TeamForm
-
-import datetime
+from .forms import (
+    GameForm, CompetitionForm, ChatForm, FeesForm, ClubForm, TeamForm
+)
 
 
 def all_matches(request):
@@ -180,7 +183,6 @@ def add_travel(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
     user = request.user
     official = False
-    print(user.userprofile.role)
     if user.userprofile.role == 'Referee':
         official = True
     if user.is_superuser:
@@ -190,11 +192,6 @@ def add_travel(request, game_id):
         messages.error(request, "Sorry, you don't have the permissions to \
                     add travel expenses!")
         return redirect(reverse('home'))
-    
-    # if not request.user.is_superuser:
-    #     messages.error(request, "Sorry, you don't have the permissions to \
-    #                 add travel expenses!")
-    #     return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = FeesForm(request.POST, instance=match)
@@ -212,7 +209,7 @@ def add_travel(request, game_id):
     template = 'matches/add_travel.html'
     context = {
         'form': form,
-        'user': user,        
+        'user': user,
         'match': match,
         'official': official,
     }

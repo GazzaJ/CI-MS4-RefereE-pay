@@ -42,14 +42,14 @@ class FeeAdmin(admin.ModelAdmin):
     list_display = (
         'age',
         'referee_fee',
-        'asst_referee',        
+        'asst_referee',
     )
 
     ordering = ('age',)
 
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = (        
+    list_display = (
         'home_team',
         'away_team',
         'venue',

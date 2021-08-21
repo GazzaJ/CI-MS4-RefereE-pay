@@ -79,12 +79,12 @@ class Game(models.Model):
     age = models.ForeignKey('Fee', null=True, blank=False,
                             related_name="age_group", on_delete=models.CASCADE)
     competition = models.ForeignKey('Competition', null=False, blank=False,
-                                    on_delete=models.CASCADE)     
+                                    on_delete=models.CASCADE)
     home_team = models.ForeignKey('Team', related_name='home_team', null=False,
                                   blank=False, on_delete=models.CASCADE)
     away_team = models.ForeignKey('Team', related_name='away_team', null=False,
                                   blank=False, on_delete=models.CASCADE)
-    date_time = models.DateTimeField(auto_now=False, auto_now_add=False)    
+    date_time = models.DateTimeField(auto_now=False, auto_now_add=False)
     venue = models.ForeignKey('Venue', null=True, blank=False,
                               on_delete=models.SET_NULL)
     referee = models.ForeignKey('Official', related_name='ref', null=True,
@@ -97,9 +97,9 @@ class Game(models.Model):
                                       on_delete=models.SET_NULL)
     ref_trav = models.DecimalField(max_digits=6, decimal_places=2, blank=True,
                                    null=True, default=0)
-    asst1_trav = models.DecimalField(max_digits=6, decimal_places=2, 
+    asst1_trav = models.DecimalField(max_digits=6, decimal_places=2,
                                      blank=True, null=True, default=0)
-    asst2_trav = models.DecimalField(max_digits=6, decimal_places=2, 
+    asst2_trav = models.DecimalField(max_digits=6, decimal_places=2,
                                      blank=True, null=True, default=0)
     ref_total = models.DecimalField(max_digits=6, decimal_places=2,
                                     null=False, default=0)
@@ -116,8 +116,10 @@ class Game(models.Model):
 
 
 class Chat(models.Model):
-    match = models.ForeignKey(Game, null=False, blank=False, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, max_length=100, blank=False, null=False, on_delete=models.CASCADE)
+    match = models.ForeignKey(Game, null=False, blank=False,
+                              on_delete=models.CASCADE)
+    author = models.ForeignKey(User, max_length=100, blank=False, null=False,
+                               on_delete=models.CASCADE)
     body = models.TextField()
     image = models.ImageField(null=True, blank=True)
     date = models.DateTimeField(auto_now=False, auto_now_add=True)

@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Fee, Venue, Official, Competition, Club, Team, Game, Chat
+from .models import Fee, Venue, Official, Competition, Club
 
 
 class TestModels(TestCase):
