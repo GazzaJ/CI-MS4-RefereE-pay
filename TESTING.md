@@ -389,17 +389,20 @@ This section contains the results and any warnings or errors reported during HTM
 |  Checkout       |       None      | **PASS** |
 | Checkout Success|       None      | **PASS** |
 | Profile         |       None      | **PASS** |
+| Sign-up         |       None      | **PASS** |
+| Sign-in         |       None      | **PASS** |
+| Log-out         |       None      | **PASS** |
 
 #### **CSS Validation**
 The following section contains the results and any warnings or errors reported during CSS validation using the WC3 validator.
 
-|      Page       | Error / Warning | Comment |
-|:---------------:|-----------------|---------|
-|     base.css    |          |            |
-|     home.css    |          |            |
-|   matches.css   |        |            |
-|  checkout.css   |          |            |
-|  profile.css    |          |            |
+|    CSS File     | Error / Warning |  Comment |
+|:---------------:|:---------------:|----------|
+|     base.css    |       None      | **PASS** |
+|     home.css    |       None      | **PASS** |
+|   matches.css   |       None      | **PASS** |
+|  checkout.css   |       None      | **PASS** |
+|  profile.css    |       None      | **PASS** |
 
 
 |Test|Process|Result| Comment |
