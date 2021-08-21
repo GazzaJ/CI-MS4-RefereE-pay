@@ -70,7 +70,7 @@ html {
 }
 
 .info {
-    background: #17a2b8 !important;
+    background: #011e41 !important;
     color: #fff !important;
 }
 
@@ -137,6 +137,10 @@ form input, span {
 
 .toast-body {
     background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.bg-blue {
+    background-color: #011e41;
 }
 
 /* ---------- Buttons ---------- */
@@ -240,10 +244,6 @@ form input, span {
 
 /* ----- Copied from CI Boutiuque Ado Project -----*/
 
-.arrow-primary {
-    border-bottom-color: #007bff !important;
-}
-
 .arrow-secondary {
     border-bottom-color: #6c757d !important;
 }
@@ -261,15 +261,7 @@ form input, span {
 }
 
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
-}
-
-.arrow-light {
-    border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40 !important;
+    border-bottom-color: #011e41 !important;
 }
 
 /* ---------- Edit / Add Club Badge ---------- */
