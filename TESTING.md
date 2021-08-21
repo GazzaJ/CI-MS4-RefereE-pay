@@ -1,4 +1,4 @@
-![W3 Recipes](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/readme-header_1.jpg "W3Recipes")
+![RefereE-Pay](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/readme-title.jpg "RefereE-Pay")
 # [**Testing & Bug Fixes**](https://ci-ms3-w3recipes.herokuapp.com/)
 This document records all of the manual testing conducted on the W3Recipes app', and also lists the bugs and fixes recorded during the development of the app'.
 The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
@@ -566,6 +566,8 @@ ______
 The following table explains the bugs and issues encountered while building this website.
 |  Issue #   |  Bug or Issue  |  Description  |  Solution  |
 |:----------:|:--------------:|---------------|------------|
-|  |  |  |  | 
+| 001 | AllAuth Error | Redirect to pages not functioning as desired, returning 404 | My definintion of the login redirect url was incorrect |
+| 002 | Add to bag |  After restuyling my kit bag summary table I was unable to add older matches prior to datetime_now to the bag | While editting the HTML I had inadvertently removed the { request.path } required for the redirect_url variable |
+| 003 | Chained Select | Error for Edit Match view using the code at https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html. Unable to process the filter statement. | After much trial and error, I referred to the django Queryset API reference regarding the filter() method and field lookups and combined the `self.instance.age` with a __contains lookup. `team_name__contains=self.instance.age` |
 
-**[Back to Github Repo](https//:github.com/GazzaJ/CI-MS3-W3Recipes/)**
+**[Back to Github Repo](https://github.com/GazzaJ/CI-MS4-RefereE-pay/)**
