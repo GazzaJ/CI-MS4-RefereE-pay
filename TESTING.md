@@ -1,6 +1,6 @@
 ![RefereE-Pay](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/readme-title.jpg "RefereE-Pay")
-# [**Testing & Bug Fixes**](https://ci-ms3-w3recipes.herokuapp.com/)
-This document records all of the manual testing conducted on the W3Recipes app', and also lists the bugs and fixes recorded during the development of the app'.
+# [**Testing & Bug Fixes**](https://ci-ms4-referee-pay.herokuapp.com/)
+This document records all of the automated and manual testing conducted on the RefereE-Pay app, and also lists the bugs and fixes recorded during the development of the app'.
 The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
 ______
 ## Table of contents
@@ -446,25 +446,25 @@ The table below contains lists the results of the Responsiveness testing and lin
 
 |  Test  | Page | Responsiveness Image Link | Result |
 |:------:|------|--------------------|--------|
-|   001  |Landing Page|          |            |
-|   002  | Matches    |          |            |
-|   003  | Match Detail |        |            |
-|   004  | Edit Match |          |            |
-|   005  | Add Match  |          |            |
-|   006  | Add Travel |          |            |
-|   007  | Messages   |          |            |
-|   008  | Add Message |         |            |
-|   009  | Clubs      |          |            |
-|   010  | Edit Club  |          |            |
-|   011  | Add Club   |          |            |
-|   012  | Teams      |          |            |
-|   013  | Edit Team  |          |            |
-|   014  | Add Team   |          |            | 
-|   015  | Add Competition |     |            |
-|   016  | Kit Bag    |          |            |
-|   017  | Checkout   |          |            |
-|   018  | Checkout Success |    |            |
-|   019  | Profile    |          |            |
+|   001  |Landing Page|![Home / Langing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/landing-page.png)| **PASS** |
+|   002  | Matches    | ![Fixtures Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/matches.png) | **PASS** |
+|   003  | Match Detail | ![Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-detail.png) | **PASS** |
+|   004  | Edit Match | ![Edit a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-match.png) | **PASS** |
+|   005  | Add Match  | ![Add a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-match.png) | **PASS** |
+|   006  | Add Travel | ![Add Match Officials travel expenses](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-travel.png) | **PASS** |
+|   007  | Messages   | ![Match Messages page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-messages.png) | **PASS** |
+|   008  | Add Message | ![https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-message.png](image.jpg) | **PASS** |
+|   009  | Clubs      | ![Clubs Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/clubs.png) | **PASS** |
+|   010  | Edit Club  | ![Edit a Clubs details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-club.png) | **PASS** |
+|   011  | Add Club   | ![Add a club to the DB](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-club.png) | **PASS** |
+|   012  | Teams      | ![Teams Directory by Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/teams.png) | **PASS** |
+|   013  | Edit Team  | ![Edit one of a Clubs teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-team.png) | **PASS** |
+|   014  | Add Team   | ![Add a new team to a club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-team.png) | **PASS** | 
+|   015  | Add Competition | ![Add a new Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-competition.png) | **PASS** |
+|   016  | Kit Bag    | ![Kit Bag view / Pending match payments](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/kit-bag.png) | **PASS** |
+|   017  | Checkout   | ![Checkout page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/checkout.png) | **PASS** |
+|   018  | Checkout Success | ![Successful Checkout confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/checkout-success.png) | **PASS** |
+|   019  | Profile    | ![User profile information page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/profile.png) | **PASS** |
 
 ____
 
