@@ -88,6 +88,13 @@ body {
     max-height: 5.25rem;
 }
 
+.edit-btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
 /* ---------- Teams ---------- */
 
 .teams-badge {

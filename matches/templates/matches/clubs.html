@@ -31,10 +31,10 @@
                             </div>
                             {% if user.is_superuser %}                            
                                 <div class="row no-gutters">
-                                    <div class="col-6">
-                                        <a href="{% url 'edit_club' club.id %}" class="btn btn-block yellow-btn rounded-0">Edit Club</a>
+                                    <div class="col-6 d-flex align-items-stretch px-auto">
+                                        <a href="{% url 'edit_club' club.id %}" class="btn btn-block yellow-btn rounded-0 edit-btn">Edit Club</a>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-6 d-flex align-items-stretch px-auto">
                                         <button type="button" class="btn btn-block red-btn rounded-0" data-toggle="modal" data-target="#club{{ club.id }}Modal">Delete Club</button>
                                     </div>
                                 </div>                            
