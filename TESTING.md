@@ -59,28 +59,39 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 05 |_As a _ **site user**, _I need to_ **have a personalised user profile**, _in order to_ **View my personal payment history and payment confirmations, and save my payment information**.| A profile page exists under the "My Account" tab. This page displays the users billing details **if saved** and also displays a list of any paymets the user has made.| PASS | 
+| 05 |_As a _ **site user**, _I need to_ **have a personalised user profile**, _in order to_ **View my personal payment history and payment confirmations, and save my payment information**.| A profile page exists under the "My Account" tab. This page displays the users billing details **if saved** and also displays a list of any paymets the user has made.| **PASS** |    
+
 ![User Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-5.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 06 |  |  |  |
+| 06 | _As a _ **Team Manager**, _I need to_ **easily find and view the database of matches**, _in order to_ **understand who I am playing and when**. | Anonymous and Registered users can find all of the games in the database on the fixtures page | **PASS** | 
+
+![Matches Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-6.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 07 |  |  |  |
+| 07 | _As a _ **Team Manager**, _I need to_ **sort all fixtures by age**, _in order to_ **easily identify all fixtures in an age group**. | Anonymous users and Registered users can use the Age dropdown menu to select an age group to filter the match list by | **PASS** | 
+
+![Sort by Age](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-7.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 08 |  |  |  |
+| 08 | _As a _ **Team Manager**, _I need to_ **sort fixtures by team**, _in order to_ **View my personal payment history and payment confirmations, and save my payment information**. | Anonymous users and Registered users can use the Team dropdown menu to select a Team name to filter the match list by | **PASS** | 
+
+![Sort by Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-8.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 09 |  |  |  |
+| 09 | _As a _ **Team Manager**, _I need to_ **be able to quickly navigate through the list of fixtures**, _in order to_ **find different fixtures**. | The matches list is displayed over sevral pages navigated via the pagination controls. There is also a back to top button to take the user from the bottom of a page back to the top | **PASS** | 
+
+![Paginated Matches Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-9.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 10 |  |  |  |
+| 10 | _As a _ **Team Manager**, _I need to_ **search for fixtures by team name**, _in order to_ **find a specific fixture I'd like to pay the match official fees for**. | The search box located in the navbar facilitates easy searching of teams by name. | **PASS** | 
+
+![Search by Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-10.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
