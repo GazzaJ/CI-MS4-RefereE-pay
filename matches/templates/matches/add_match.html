@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 mt-5">
-                <h3 class="text-center">Create a New Match
+                <h3 class="text-center sub-heading">Create a New Match
                     <span class="ml-3">
                         <i class="fas fa-futbol"></i>
                     </span>
@@ -25,7 +25,7 @@
         <div class="row">
             {{ teams }}            
             <!-- Form to facilitate new Match creation -->
-            <div class="col-12 col-md-6 match my-5 border-green rounded-3">
+            <div class="col-12 col-md-8 col-lg-6 match my-5 border-green rounded-3">
                 <form method="POST" id="matchForm" action="{% url 'add_match' %}" data-teams-url="{% url 'ajax_load_teams' %}" class="form my-5 mx-3">
                     {% csrf_token %}
                     {{ form | crispy }}                    
