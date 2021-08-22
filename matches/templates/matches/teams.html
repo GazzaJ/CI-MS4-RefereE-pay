@@ -46,7 +46,7 @@
         </form>
         <!-- Teams DIV -->        
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-10 match teams border-green">
+            <div class="col-12 col-md-12 match teams border-green">
                 <!-- Additional column with action buttons for superuser -->
                 {% if user.is_superuser %}
                     <div class="row mb-2">
@@ -60,8 +60,7 @@
                             <h5><i class="fas fa-user-edit mr-2"></i>Actions</h5>
                         </div>
                     </div>
-                    {% for team in teams %}
-                                        
+                    {% for team in teams %}                                        
                         <div class="row mb-3">
                             <div class="col-12 col-md-4 text-center">
                                 <p class="team-name">{{ team.team_name }}</p>
