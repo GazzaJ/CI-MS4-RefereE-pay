@@ -28,58 +28,119 @@ ______
 ### **User Story Testing** <a name="user-story-testing"></a>
 The following testing has been carried out to validate how the website addresses each of the user stories:
 |User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 1 |_As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**|The landing page explains the purpose of the site in both text and imagery. instances of a recipe card and the world map from the dashboard have also been included |  
 
-![User Story 1](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-1.jpg)
-![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-2.jpg)
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 01 |_As a_ **site user**, _I need to_ **easily register for an account**, _in order to_ **have a personal account and be able to view my profile**| There is the clear and obvious link on the home page, which redirects the user to the registration page. This link correctly opens the registration page to begin the registration process | **PASS** | 
 
-
-|User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 2 |_As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**| There are three links on the Landing page from which any first time user can access the registration page. The registration process is very simple and only requires a username and password |  
-
-![User Story 2](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-2.jpg)
-![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-1.jpg)
+![Home Sign-up](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-1.png)
 
 
-|User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 3 |_As a_ **first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user can easily navigate to the main recipes page, using the navbar, where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail.|  
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 02 |_As a_ **site user**, _I need_ **easily log-in and log-out of the site**, _in order to_ **access the matche details and my personal information**| There are two ways to log into RefereE-Pay. The first is the clear and obvious link on the home page. There is also an additional link in the Navbar under the "My Account" tab. | **PASS** |
 
-![User Story 3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-3.jpg)
+![Home Page Log-in](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-2.png)
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 03 |_As a_ **site user**, _I need to_ **easily recover or rested my password in case I forget it** _in order to_ **recover access to my account**| A "Forgot Password" link exists on the log-in page which redirects the user to the Reset password page | **PASS** |
+
+![Password Reset](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-3.png)
 
 
-|User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 4 |_As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**| An **"Add Recipe"** page has been provided and is clearly indicated on the navbar. This redirects the user to an intuitive form where they can input pre-defined recipe criteria like ingredients and preparation steps |  
 
-![User Story 4](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-4.jpg)  
-
-
-|User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 5 |_As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**| Returning users can use the Manage Recipes page to either edit or delete previously uploaded recipes. Access is restricted to their own recipes |
-
-![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5a.jpg)  
-![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5b.jpg)
-![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5c.jpg)
-
-|User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 6 |_As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a URL from a Full Recipe view to an Edit Recipe view|
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 04 |_As a _ **site user**, _I need to_ **receive an email confirmimg registration**, _in order to_ **verify that my account creation was successful**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a URL from a Full Recipe view to an Edit Recipe view| **PASS** |
 
 ![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6a.jpg)  
-![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6b.jpg)  
 
 
-|User Story|Description|Testing|
-|:--------:|-----------|-------|
-| 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as possible. The maps are displayed on the Landing page and in a Dashboard Page| 
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 05 |_As a _ **site user**, _I need to_ **have a personalised user profile**, _in order to_ **View my personal payment history and payment confirmations, and save my payment information**.| A profile page exists under the "My Account" tab. This page displays the users billing details **if saved** and also displays a list of any paymets the user has made.| PASS | 
+![User Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-5.png)
 
-![User Story 7](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-7.jpg)
-![Dashboard feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg)
-  
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 06 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 07 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 08 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 09 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 10 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 11 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 12 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 13 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 14 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 15 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 16 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 17 |  |  |  |  
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 18 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 19 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 20 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 21 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 22 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 23 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 24 |  |  |  |
+
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
+| 25 |  |  |  |
 ______
 
 ### **Functionality Testing** <a name="functionality"></a>
@@ -98,6 +159,17 @@ Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various an
 |   006  | Log-in Link on Sign-up Page |Correctly navigates to Log-in Page | Redirects user to Log-in page | **PASS**  | **PASS** |
 |   007  | Home Link on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
 |   008  | Brand Logo on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
+|   009  |  |  |  |  |
+|   010  |  |  |  |  |
+|   011  |  |  |  |  |
+|   012  |  |  |  |  |
+|   013  |  |  |  |  |
+|   014  |  |  |  |  |
+|   015  |  |  |  |  |
+|   016  |  |  |  |  |
+|   017  |  |  |  |  |
+|   018  |  |  |  |  |
+|   019  |  |  |  |  |
 
 ___
 
