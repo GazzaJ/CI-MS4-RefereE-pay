@@ -54,8 +54,7 @@ The following testing has been carried out to validate how the website addresses
 |:--------:|-----------|-------|--------|
 | 04 |_As a _ **site user**, _I need to_ **receive an email confirmimg registration**, _in order to_ **verify that my account creation was successful**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a URL from a Full Recipe view to an Edit Recipe view| **PASS** |
 
-![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6a.jpg)  
-
+![Registration confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-4.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
@@ -95,43 +94,63 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 11 |  |  |  |
+| 11 | _As a _ **Team Manager**, _I need to_ **communicate with the Referee**, _in order to_ **confirm match status and alert them of any issues with the condition of the pitch**. | The matches - messages page provides a simple method for the Home team manager and coach to communicate with each other. Messages are stored and displayed per match and a simple add message form facilitates message creation | **PASS** |
+
+![Messages App](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-11.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 12 |  |  |  |
+| 12 | _As a _ **Team Manager**, _I need to_ **post/send pictures to the Referee**, _in order to_ **illustrate the condition of the pitch ahead of any match**. | Images can be uploaded and stored with the message for each match. A simple Add message form facilitates image upload | **PASS** | 
+ 
+![Add Image](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-12.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 13 |  |  |  |
+| 13 | _As a _ **Referee**, _I need to_ **communicate with the Home team manager**, _in order to_ **reply to any issues or ceoncerns raised ahead of the game**. | The matches - messages page provides a simple method for the Home team manager and coach to communicate with each other. Messages are stored and displayed per match and a simple add message form facilitates message creation | **PASS** |
+
+![Messages App](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-13.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 14 |  |  |  |
+| 14 | _As a _ **Team Manager**, _I need to_ **easily select a fixture**, _in order to_ **discover the full details of that match **. | Clicking on any one of the fixtures opens up the full fixture detail. From here the user can discover the venue , date and time of KO, match officials and their fees. Several other links are provided to return users to the fixtures page  | **PASS** |
+
+![Select and View Fixture](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-14.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 15 |  |  |  |
+| 15 | _As a _ **Team Manager**, _I need to_ **have a simple and quick payment method**, _in order to_ **pay the assigned match officials their match fees**. | The checkout process is completed in 3 easy steps. Matches can be added to the kit bag from the Match detail page. A confirmation pop-up appears showing the match has been added. users can click the bag icon or the "Secure Checkout" link on the popup to view the bag contents. Clicking "Secure Chechout" from the bag redirects the user to the Checkout page where they complete their details (if not saved) and add their card details. | **PASS** |
+
+![Payment Process](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-15.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 16 |  |  |  |
+| 16 | _As a _ **Team Manager**, _I need to_ **view any pending payments in my kit bag**, _in order to_ **identify the total cost of match fees for each game and the grand total**. | The shopping bag or "Kit bag" displays all matches that the user has selected for payment. These matches will be stored in the session memory for as long as the user is loged in. | **PASS** |
+
+![Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-16.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 17 |  |  |  |  
+| 17 | _As a _ **Team Manager**, _I need to_ **easily enter my payment information**, _in order to_ **complate my payment quickly and efficiently**. | There is a very simple and intuitive payment form which takes litteraly seconds to complete. | **PASS** |
+
+![Payments](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-17.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 18 |  |  |  |
+| 18 | _As a _ **Team Manager**, _I need to_ **feel my personal and payment information is secure and safe**, _in order to_ **feel confident in providing required information to complete a payment**. | Payment process is provided and managed through the Stripe Payments API | **PASS** |
+
+![alt text](image.jpg)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 19 |  |  |  |
+| 19 | _As a _ **Team Manager**, _I need to_ **view a payment confirmation after checkout**, _in order to_ **verifay that I have successfully paid my match fees**. | Following successful payment processing the user is redirected to a Payment Success page which displays their order #, billing details and a summary of their payments | **Pass** |
+
+![Payment Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-19.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 20 |  |  |  |
+| 20 | _As a _ **Team Manager**, _I need to_ **receive an email confirmation after checkout**, _in order to_ **have recorded confirmation of each payment**. |  | **FAIL** |
+
+![alt text](image.jpg)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
