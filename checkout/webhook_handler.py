@@ -53,6 +53,20 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount/100, 2)
 
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.profile_phone_number = billing_details.phone
+                profile.profile_country = billing_details.address.country                
+                profile.profile_town_or_city = billing_details.address.city
+                profile.profile_street_address1 = billing_details.address.line1
+                profile.profile_street_address2 = billing_details.address.line2
+                profile.profile_county = billing_details.address.state
+                profile.save()
+
         order_exists = False
         attempt = 1
         while attempt <= 5:
