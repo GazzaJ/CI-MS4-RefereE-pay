@@ -154,23 +154,27 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 21 |  |  |  |
+| 21 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Matches**, _in order to_ **keep pace with league fixtures and provide a long term solution**. | Separate views exist to create a new match, edit and existing match and delete an existing match from the database. A Delete confirmation modal has been provided to ensure a level of security before the match is irreversably deleted | **PASS** |
+
+![Matches CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-21.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 22 |  |  |  |
+| 22 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Clubs**, _in order to_ **keep track of league clubs and those using the site**. | Separate views exist to create a new Club, edit and existing Club and delete an existing Club from the database. A Delete confirmation modal has been provided to ensure a level of security before the Club is irreversably deleted | **PASS** |
+
+![Clubs CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-22.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 23 |  |  |  |
+| 23 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Teams**, _in order to_ **keep track of all clubs teams**. | Separate views exist to create a new Team, edit and existing Team and delete an existing Team from the database. A Delete confirmation modal has been provided to ensure a level of security before the Team is irreversably deleted | **PASS** |
 
-|User Story|Description|Testing| Result |
-|:--------:|-----------|-------|--------|
-| 24 |  |  |  |
+![Teams CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-23.png)
 
-|User Story|Description|Testing| Result |
-|:--------:|-----------|-------|--------|
-| 25 |  |  |  |
+
+| 24 | _As a _ **Referee**, _I need to_ **add my travel expenses**, _in order to_ **ensure I get paid the full amount for my services**. | Match Officials are able to add their travel expenses to any future, and unpaid match. A link exists on the Match Detail page for them to do this, and is only visibly to match officials and superusers. This takes them to a form where they can update their travel expenses. | **PASS** |
+
+![Match Officials travel fees](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-24.png)
+
 ______
 
 ### **Functionality Testing** <a name="functionality"></a>
