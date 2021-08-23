@@ -413,55 +413,36 @@ The recipe exists in the MongoDB Atlas database prior to deletion.
 
 ![Recipe in Database](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-collection.jpg)
 
-1. Delete the "**** Soup" from the Manage Recipes page
-   - This recipe used document fields from other collections
-     - User = Adminuser
-     - Country = Canada
-     - Recipe Category = Appetisers  
-
- If the deletion process works as desired each of these fields should remain post deletion.  
- 
-2. Delete confirmation modal appears to check Deletion - **PASS**
-
-![Delete Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/confirm-delete.jpg)
-
-3. Once confirmed the user is redirected to the Manage Recipes page - **PASS**
-4. A Flash message appears at the top of the Manage Recipes page confirming deletion - **PASS**
-5. The recipe no longer appears on the Manage Recipes page - **PASS**
-
-![](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/deleted.jpg)
-
-6. The Recipe has been deleted from the database - **PASS**
-
-![](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-removed.jpg)
-
-7. The integrity of the other collections has not been affected. - **PASS**
-
-##### User Collection
-![User Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-collection.jpg)
-
-##### Country Collection
-![Country Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-coll.jpg)
-
-#####Recipe Collection
-![Recipe Category Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-category.jpg)
 
 ______
 ### **Appearance Testing** <a name="appearance"></a>
 This web app was primarily developed on a Google Chrome browser, on a Windows Laptop. The app has been regularly tested on Firefox to check functionality. This section tests for any changes in appearance between the different browsers.  
 
-|     Page     |  Desired Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------------:|----------------|-----------------------|-------------------------|
-| Landing Page | Minimal visible difference | No visible difference | No visible difference |
-| Sign-up Page | Minimal visible difference | No visible difference | No visible difference |
-| Log-in Page  | Minimal visible difference | No visible difference | No visible difference |
-| Recipes Page | Minimal visible difference | No visible difference | No visible difference |
-| Add Recipe | Minimal visible difference | Dropdown list items slightly less sharp than Firefox | Some of the bold text does not appear as bold as in Chrome. Placeholder colour is lighter than Chrome |
-| Manage Recipes | Minimal visible difference | No visible difference | No visible difference |
-| Edit Recipe | Minimal visible difference | Dropdown list items slightly less sharp than Firefox | Minimal visible differences |
-| Profile Page | Minimal visible difference | Profile image is less clear and less sharp | Profile image appears to have better contrast and sharpness |
-| Edit Profile | Minimal visible difference | No visible difference | No visible difference |
-| Dashboard Page | Minimal visible difference | No visible difference | No visible difference  |
+|       Page      |  Desired Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:---------------:|-----------------|-----------------------|-------------------------|
+|  Landing Page   | Minimal visible difference | No visible difference | No visible difference |
+|  Matches        | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  Match Detail   | Minimal visible difference | No visible difference | Match officials totals show up and down arrows |
+|  Edit Match     | Minimal visible difference | No visible difference | Dropdown appearance slightly different. Date/Time picker does not function as desired |
+|  Add Match      | Minimal visible difference | No visible difference | Dropdown appearance slightly different. Date/Time picker does not function as desired |
+|  Add Travel     | Minimal visible difference | No visible difference | Match officials travel show up and down arrows |
+|  Messages       | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  Add Message    | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  Clubs          | Minimal visible difference | No visible difference | No visible difference  |
+|  Edit Club      | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  Add Club       | Minimal visible difference | No visible difference | No visible difference  |
+|  Teams          | Minimal visible difference | No visible difference | No visible difference  |
+|  Edit Team      | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  Add Team       | Minimal visible difference | No visible difference | Dropdown appearance slightly different | 
+| Add Competition | Minimal visible difference | No visible difference | No visible difference  |
+|  Kit Bag        | Minimal visible difference | No visible difference | No visible difference  |
+|  Checkout       | Minimal visible difference | No visible difference | No visible difference  |
+| Checkout Success| Minimal visible difference | No visible difference | No visible difference  |
+| Profile         | Minimal visible difference | No visible difference | No visible difference  |
+| Sign-up         | Minimal visible difference | No visible difference | No visible difference  |
+| Sign-in         | Minimal visible difference | No visible difference | No visible difference  |
+| Log-out         | Minimal visible difference | No visible difference | No visible difference  |
+
 ______
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
