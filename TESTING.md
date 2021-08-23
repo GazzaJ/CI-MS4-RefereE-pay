@@ -150,7 +150,7 @@ The following testing has been carried out to validate how the website addresses
 |:--------:|-----------|-------|--------|
 | 20 | _As a _ **Team Manager**, _I need to_ **receive an email confirmation after checkout**, _in order to_ **have recorded confirmation of each payment**. |  | **FAIL** |
 
-![alt text](image.jpg)
+![Payment confirmation email](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-20.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
@@ -178,32 +178,26 @@ The following testing has been carried out to validate how the website addresses
 ______
 
 ### **Functionality Testing** <a name="functionality"></a>
-The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1500), and have not conducted any backward compatibility testing in older browser versions.  
+The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1556), and have not conducted any backward compatibility testing in older browser versions.  
 
 #### **First Time Navigation Testing** <a name="first-navigation"></a>
-Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various anchor links provided to assist users navigating between pages.
+Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ and various anchor links provided to assist users navigating between pages.
 
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|   001  | Sign-up Link on Navbar |Correctly navigate to sign-up page | Opens Sign up/registration page | **PASS** | **PASS** |
-|   002  | Sign-up Link on Log-in Page |Correctly navigate to sign-up page| Opens Sign up/registration Page  | **PASS**  | **PASS** |
-|   003  | Sign-up Link on Landing Page |Correctly navigate to sign-up page| Opens up the Sign-up Page | **PASS** | **PASS** |
-|   004  | Sign-up anchor link on the base of the landing page |Correctly navigate to sign-up page| Opens the Sign-up Page | **PASS** | **PASS** |
-|   005  | Log-in Link on Navbar |Correctly navigate to Log-in Page | Redirects user to Log-in Page | **PASS** | **PASS** |
-|   006  | Log-in Link on Sign-up Page |Correctly navigates to Log-in Page | Redirects user to Log-in page | **PASS**  | **PASS** |
-|   007  | Home Link on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
-|   008  | Brand Logo on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
-|   009  |  |  |  |  |
-|   010  |  |  |  |  |
-|   011  |  |  |  |  |
-|   012  |  |  |  |  |
-|   013  |  |  |  |  |
-|   014  |  |  |  |  |
-|   015  |  |  |  |  |
-|   016  |  |  |  |  |
-|   017  |  |  |  |  |
-|   018  |  |  |  |  |
-|   019  |  |  |  |  |
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | **Sign-up Link** on Homepage |Take users to the registration page | Opens Sign up/registration page | **PASS** | **PASS** |
+|   002  | **Sign-in Link** on Homepage |Take users to the to Log-in page| Redirects users to the login page as expected | **PASS**  | **PASS** |
+|   003  | **Navbar - My account** login link | Correctly redirects users to the login page | Log-in Link under "My Account in the Navbar" opens log-in page as expected | **PASS** | **PASS** |
+|   004  | **Fixtures** navbar link | Opens up the fixture list | Correctly navigates to the fixtures page | **PASS** | **PASS** |
+|   005  | **Age Dropdown**  | Should filter the list of matches bu the teams age group when filter is clicked | The age dropdown correctly fiters the matches by age group; provided games of that age group exist | **PASS** | **PASS** |
+|   006  | **Team Dropdown** | This should filter the list of matches by the team selected when the filter button is clicked | Correctly filters the list of games by the selcted team | **PASS** | **PASS** |
+|  007   | **Reset Button** | Reset the list of matches to display all fixtures | Correctly resets the list | **PASS** | **PASS** |
+|   008  | **Clubs** navbar link | Redirects users to the club directory Page | Selcting the link takes users to Club directory page | **PASS** | **PASS** |
+|   009  | **Search Box** on homepage |Redirects users to the Fixtures page with a list of games filtered by the team. Else displays warning message. | Correctly filters the fixture list if the team exists in the DB else displays toast message  | **PASS**  | **PASS** |
+|   010  | **App logo** |Redirects users to the homepage | Correctly takes users to the homepage as desired | **PASS** | **PASS** |
+|   011  | **Selecting a fixture** from the fixture list | Redirect un-authorised and un-logged in users to the login page | Redirects as expected | **PASS** | **PASS** |
+|   012  | Selecting the **"View the Teams"** link in the Club Directory | Redirects users to the Team directory for the Club the selcted | Correctly takes users to the team directory for the club they selected | **PASS** | **PASS** |
+|   013  | **Back to Clubs** link | Redirects users back to the Club directory from team they had selected | Users are taken back to the Club Directory page as expected | **PASS** | **PASS** |
 
 ___
 
