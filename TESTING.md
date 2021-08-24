@@ -321,13 +321,14 @@ Tests to determine how the Add Competition, Club, Team, Match, Travel and Messag
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
-|   002  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   003  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   004  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
-|   005  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
-|   005  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
-|   006  | Cancel Button | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
+|   001  | Add Competition | Function only accessible by superusers | Access to the Add Competition Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
+|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
+|   006  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
+|   007  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
+|   008  | Cancel Button | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
 
 ![Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-comp.png)
 
@@ -335,14 +336,15 @@ Tests to determine how the Add Competition, Club, Team, Match, Travel and Messag
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Club link | Add Competition form displayed | The  form displays as desired | **PASS** | **PASS** |
-|   002  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   003  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   004  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
-|   005  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
-|   006  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
-|   007  | DB Updates | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
-|   008  | Cancel Button | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
+|   001  | Add Club | Function only accessible by superusers | Access to the Add Club Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Add Club link | Add Competition form displayed | The  form displays as desired | **PASS** | **PASS** |
+|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
+|   006  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
+|   007  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
+|   008  | DB Updates | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
+|   009  | Cancel Button | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
 
 ![Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-club.png)
 
@@ -350,17 +352,46 @@ Tests to determine how the Add Competition, Club, Team, Match, Travel and Messag
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
-|   002  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   003  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   004  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
-|   005  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
-|   005  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
-|   006  | Success Message | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
-|   007  | DB Updates | Ensure the new Team is written to the DB correctly | The Team name and details name are added to the database as intended | **PASS** | **PASS** |
-|   008  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   001  | Add Team | Function only accessible by superusers | Access to the Add Team Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
+|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
+|   006  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
+|   007  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
+|   008  | Success Message | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
+|   009  | DB Updates | Ensure the new Team is written to the DB correctly | The Team name and details are added to the database as intended | **PASS** | **PASS** |
+|   010  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-team.png)
+
+##### Add Team  
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | Add Match | Function only accessible by superusers | Access to the Add Match Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Add Match link | Add Match form displays and is empty | The form displays as desired | **PASS** | **PASS** |
+|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Age Select | Ensure the dropdown is populated with the age groups | The dropdown functions as desired | **PASS** | **PASS** |
+|   006  | Competition Select | Ensure the select element is populated with the competitions and saves as desired | The competition select element functions as desired | **PASS** | **PASS** | 
+|   007  | Home Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
+|   008  | Away Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
+|   009  | Venue Select | Display a list of the venues and save when selected | The Venue select element functions as desired | **PASS** | **PASS** |
+|   010  | KO Date & Time | Ensure users can select the date and time of kickoff | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
+> After reading the documentation I discovered I am using the correct version of the DateTime Input element. However, to date not all browsers have been modified to accept this element.
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   011  | Referee Select | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   012  | Asst1 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   013  | Asst2 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   014  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
+|   015  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
+|   016  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   017  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+
+![Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-match.png)
 
 _____
 
