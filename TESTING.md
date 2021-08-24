@@ -258,12 +258,35 @@ ____
 #### **Kit Bag** <a name="kitbag"></a>
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  |  |
-____
+|   001  | Access Kitbag | Gain access to the kitbag from the Success Toast message by clicking "Secure Checkout" | Users are redirected to the current kitbag when they click the Secure Checkout button on the Success message. | **PASS** | **PASS** |
+|   002  | Access the Kitbag | Gain access to the kitbag by clicking on the shopping bag icon and grandtotal in the navbar | Users are redirected to the kitbag when the icon/grand total is selected | **PASS** | **PASS** |
+|   003  | Number of items in Bag | Display the number of matches currently in the kit bag | The number of matches currently in the kitbag is displayed directly above the list of matches | **PASS** | **PASS** |
+|   004  | Summary of Charges | The kit bag displays the match and a summary of fees by match Official | The fees for each match are correctly displayed based on the Fees Model in the DB | **PASS** | **PASS** |
 
+	![Summary of Charges](image.jpg)
+	
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   005  | Travel Expenses | Any travel expenses added to a Match officials fee are rolled into the total for that official | Match officials Total is correctly displayed as Match fees + Travel Expenses | **PASS** | **PASS** |
+|   006  | Match Fines | A Match fine is added to the match charges if the payment date  = Kick off date/time + 24 hrs | The non-payment fine is calculated and rendered correctly | **PASS** | **PASS** |
+|   007  | Remove Match | Matches can be easily removed from the kitbag by the user | Each match header has a red and white "X" marked with a Tooltip which indicates "Remove from Bag". Matches are removed from the kitbag when clicked.| **PASS** | **PASS** |
+
+	![Remove from Bag](image.jpg)
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   008  | Update total | Update the Grant total when games are added or deleted from teh bag | The Grand Total updates as matches are added or removed to the kitbag | **PASS** | **PASS** |
+|   009  | Back to Fixtures | Redirects users to the Fixtures page | The link takes users back to the Fixtures page as desired | **PASS** | **PASS** |
+|   010  | Secure Checkout | Directs users to the Checkout page | The link takes the user to the Checkout page | **PASS** | **PASS** |
+____
+ 
 #### **Checkout & Checkout Success** <a name="kitbag"></a>
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | Summary of Charges | Checkout page renders a summary of the charges for each game |  |  |  |
+|   002  | Billing Information |
+|   003  | Save information |
+|   004  | 
 ____
 
 #### **Adding New Data** <a name="add-records"></a> 
