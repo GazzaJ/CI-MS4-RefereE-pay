@@ -181,7 +181,7 @@ ______
 The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1556), and have not conducted any backward compatibility testing in older browser versions.  
 
 #### **First Time Navigation Testing** <a name="first-navigation"></a>
-Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ and various anchor links provided to assist users navigating between pages.
+Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ for anonymous users, and various anchor links provided to assist users navigating between pages.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
@@ -202,10 +202,10 @@ Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ a
 ___
 
 #### **Registration/Log-in Testing** <a name="registration"></a>
-Testing the registration process required to Sign-in and create a new account; as well as for returning users to Log-in to their existing account. The app should provide feedback to the user in cases where incorrect inputs are provided. 
+This section covers some basic testing of the Registration Log-in functionality. This functionality has been provided by the AllAuth package and will have been independently validated. My intention is to simply ensure that I have not introduced any unwanted issues while customising the templates. 
 
-|   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
-|:--------:|-----------------|----------------|---------------|:------:|:-------:|
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001    |Username - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   002    |Password - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   003    |Minimum Character limit (5) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
@@ -214,16 +214,16 @@ Testing the registration process required to Sign-in and create a new account; a
 
 ![Username taken](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/username-taken.jpg)
 
-|   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
-|:--------:|-----------------|----------------|---------------|:------:|:-------:|
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   006    | Username or password too short | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   007    | Incorrect Username  | Inform user of issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
 |   008    | Incorrect Password  | Inform user of Issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
 
 ![Incorrect Log-in](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/incorrect-login.jpg)
 
-|   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
-|:--------:|-----------------|----------------|---------------|:------:|:-------:|
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   009    | Successful Sign-up  | User redirected into web-app with Success message displayed | User is taken to Profile page with Welcome message displayed | **PASS** | **PASS** |
 |   010    | Successful Log-in  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |  
 
@@ -232,38 +232,45 @@ Testing the registration process required to Sign-in and create a new account; a
 ____
 
 
-#### **Recipe Search & View (READ)** <a name="recipes"></a>
-This section documents the testing performed to validate the ability of the user to view the recipe collection, filter by country and perform a text search. Clicking the Floating Action Button on each recipe should also reveal the full recipe details.
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   | Navigate to Recipe Page| Recipes ;ink on Navbar correctly redirects users to Recipes Page| Navbar link functions correctly and redirects users to the Recipes Page| **PASS** | **PASS**|
-|  002   |  Latest First  | Display recipes in reverse chronological order | Recipes are sorted, newest to oldest | **PASS** | **PASS** |
-|  003   |  Recipe Filter  | Returns results based on user selected country | Correctly filters recipes and only returns matching recipes | **PASS** | **PASS** |
-|  004   |  Recipe Filter  | Filter options available after initial search | The Filter function can be used again and again based on different countries | **PASS** | **PASS** |  
+#### **Matches & Match Detail (Searching and Viewing)** <a name="matches"></a>
+This section documents the testing performed to validate the ability of the user to search for and view the match list, filtering it by age and team, as well as viewing individual games. This testing is aimed at the functionality for logged in Coaches and Referees
 
-![Country Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-filter.jpg)  
-![Filter Results](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/filtered-results.jpg)
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|  001   | Navigate to matches| Clicking the fixtures tab redirects users to the match list | Users are redirected correctly | **PASS** | **PASS**|
+|  002   |  Matches listed in date order  | Matches should be listed in Chronological order | The matches are listed in the correct order | **PASS** | **PASS** |
+|  003   |  Age Filter  | Reduces the match list to games for a specific age group | Match list is correctly filtered and remain in chronological order | **PASS** | **PASS** |
+|  004   | Team Filter  | Reduces the match list to display only the games where the selcted team features, as either the home or the away team | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
+|  005   | Search Box filter | Functions like the Team filter, reducing the match list to those games featuring the searched team else a warning message displayed | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
+|  006   | Match Select | Selecting one of the games opens the full match detail for that fixture | Match detail appears as desired | **PASS** | **PASS** |
+|  007   | Match Detail | Provides sufficient information without further interaction (Teams, Venue, Times, Match Officials) | All of the critical basic information is displayed as desired | **PASS** | **PASS** |
+|  008  | Match Venue | Display Date/time and venue address, and the pitch location map (if available) once the "Map for the Venue" button is clicked, else opens up a Google maps window displaying pitch location | Match location and time details display correctly, Accordion feature works as desired. Link to Google maps works as desired | **PASS** | **PASS** |
+|  009   | Match Officials | displays match officials names, and expands to render match fees when "Review Match Fees" selected | Match officials are displayed correctly and the accordion feature expands to show fees by each official | **PASS** | **PASS** |
+|  010   | Match PAID | Indicates when a match has been paid for by the Coach | A "PAID" indicator displays once a game has been processed trough the system and exists in the orders database | **PASS** | **PASS** |
+|  011   | Add to Bag | Available to Coaches and superusers. Adds that match to the kit bag for subsequent payment. | Correctly adds the selected match to the kit bag. Appends it to existing matches if others exist in the kit bag. | **PASS** | **PASS** |
+|  012   | Add to Bag notification | Toast success displayed confirming match has been added to the kit bag | The Success Toast appears correctly and displays a summary of the match and fees | **PASS** | **PASS** |
+|  013   | Add Travel | Only available for referees and superusers. Redirects them to the Add travel form | Where applicable the Add travel button takes Referees or superusers to the Add Travel page and form to add travel expenses | **PASS** | **PASS** |
+|  014   | Add Travel | The Add Travel button should not display after the game date and kick-off time | The button only displays for future matches and doesn't display for historical matches | **PASS** | **PASS** |
+|  014   | Messages Button | Redirects users to the Match Messages Page | The "Messages" button functions as desired, taking users to the Match Messages page | **PASS** | **PASS** |
 
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  005   | Recipe Search   | Returns results based on user text input | Recipes displayed based on matching text | **PASS** | **PASS** |
-
-![Recipe Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/search-results.jpg)
-> **The recipe country filter and text search are not able to be used together in this first release of the app.**
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  006   | Recipe Display   | Correctly display the selected recipe in full | Full recipe displayed for respective recipe cards | **PASS** | **PASS** |
-|  007   | Pagination | Limits display to 6 recipes | Six recipes displayed per page (where applicable) | **PASS** | **PASS** |
-|  008   | Pagination | Next and Previous Page arrows assist navigation through pages | Next and Previous page arrows work as desired | **PASS** | **PASS** |
-|  009   | Pagination | Page numbers link to respective recipe page | Pagination page links correctly redirect users to the appropriate page of results | **PASS** | **PASS** |
-|  010   | Return to main Recipes Page   | No requirement to use the back button | Users can navigate away from the full recipe page using navbar or "Back to Recipes" button at the bottom of the page | **PASS** | **PASS** |
 ____
-   
-#### **Add Recipe (CREATE)** <a name="add-recipe"></a> 
-Tests to check the users ability to upload a new recipe to the collection, and validate process robustness.
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+
+#### **Kit Bag** <a name="kitbag"></a>
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  |  |
+____
+
+#### **Checkout & Checkout Success** <a name="kitbag"></a>
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+____
+
+#### **Adding New Data** <a name="add-records"></a> 
+Tests to determine how the Add Competition, Club, Team, Match, Travel and Message pages function.
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |  001   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
 |  002   | Manage Recipe link   | Link provided on Manage Recipes page results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
 |  003   | Country Select   | Displays the list of countries in alphabetic order | List is displayed in the correct order. Users can scroll, or type the first letter of the country to navigate the list | **PASS** | **PASS** |
@@ -285,10 +292,11 @@ Tests to check the users ability to upload a new recipe to the collection, and v
 
 _____
 
-#### **Manage Recipes** <a name="manage"></a>
+#### **Edit Existing Data** <a name="edit-records"></a>
 This sections defines the testing performed on the Manage Recipes page, from which users can edit and delete their recipes. If the user has Admin rights they are able to view and interact with all recipes.
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |  001   | Navigation to Manage Recipes | Navbar should redirect users to the Manage Recipes page | The Navbar link functions correctly and redirects users to the Manage Recipes Page. | **PASS** | **PASS** |
 |  002   | Profile Page Link | If user has uploaded recipes a link redirects users to the Manage Recipes Page | Link correctly redirects users to the Manage Recipes page IF they have previously uploaded at least one recipe | **PASS** | **PASS** |
 |  003   | Recipe Quantity |Correct number of recipes displayed by user profile | The web app displays 6 recipes per page where appropriate | **PASS** | **PASS** |
@@ -305,8 +313,8 @@ _____
 #### **Edit Recipe (UPDATE)** <a name="edit-recipe"></a>
 The Edit Recipe page enables users to retrieve a previously uploaded recipe from the database and edit any of the data previously supplied. This section validates the functionality of this page.  
 
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |  001   | Edit Recipe Form | Edit Recipe form displays correctly | The form displays and is almost identical to the Add Recipe form | **PASS** | **PASS** |
 |  002   | Existing Data renders| Display existing recipe data from the database on the form | All of the existing data is rendered from the database into the form fields | **PASS** | **PASS** |
 |  003   | Country of Origin | Country of Origin is populated and selectable | Country of origin dropdown functions and is selectable | **PASS** | **PASS** |
