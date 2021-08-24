@@ -194,6 +194,11 @@ Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ f
 |  007   | **Reset Button** | Reset the list of matches to display all fixtures | Correctly resets the list | **PASS** | **PASS** |
 |   008  | **Clubs** navbar link | Redirects users to the club directory Page | Selcting the link takes users to Club directory page | **PASS** | **PASS** |
 |   009  | **Search Box** on homepage |Redirects users to the Fixtures page with a list of games filtered by the team. Else displays warning message. | Correctly filters the fixture list if the team exists in the DB else displays toast message  | **PASS**  | **PASS** |
+
+![No Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/no-team.jpg)
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   010  | **App logo** |Redirects users to the homepage | Correctly takes users to the homepage as desired | **PASS** | **PASS** |
 |   011  | **Selecting a fixture** from the fixture list | Redirect un-authorised and un-logged in users to the login page | Redirects as expected | **PASS** | **PASS** |
 |   012  | Selecting the **"View the Teams"** link in the Club Directory | Redirects users to the Team directory for the Club the selcted | Correctly takes users to the team directory for the club they selected | **PASS** | **PASS** |
@@ -237,56 +242,76 @@ This section documents the testing performed to validate the ability of the user
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|  001   | Navigate to matches| Clicking the fixtures tab redirects users to the match list | Users are redirected correctly | **PASS** | **PASS**|
-|  002   |  Matches listed in date order  | Matches should be listed in Chronological order | The matches are listed in the correct order | **PASS** | **PASS** |
-|  003   |  Age Filter  | Reduces the match list to games for a specific age group | Match list is correctly filtered and remain in chronological order | **PASS** | **PASS** |
-|  004   | Team Filter  | Reduces the match list to display only the games where the selcted team features, as either the home or the away team | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
-|  005   | Search Box filter | Functions like the Team filter, reducing the match list to those games featuring the searched team else a warning message displayed | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
-|  006   | Match Select | Selecting one of the games opens the full match detail for that fixture | Match detail appears as desired | **PASS** | **PASS** |
-|  007   | Match Detail | Provides sufficient information without further interaction (Teams, Venue, Times, Match Officials) | All of the critical basic information is displayed as desired | **PASS** | **PASS** |
-|  008  | Match Venue | Display Date/time and venue address, and the pitch location map (if available) once the "Map for the Venue" button is clicked, else opens up a Google maps window displaying pitch location | Match location and time details display correctly, Accordion feature works as desired. Link to Google maps works as desired | **PASS** | **PASS** |
-|  009   | Match Officials | displays match officials names, and expands to render match fees when "Review Match Fees" selected | Match officials are displayed correctly and the accordion feature expands to show fees by each official | **PASS** | **PASS** |
-|  010   | Match PAID | Indicates when a match has been paid for by the Coach | A "PAID" indicator displays once a game has been processed trough the system and exists in the orders database | **PASS** | **PASS** |
-|  011   | Add to Bag | Available to Coaches and superusers. Adds that match to the kit bag for subsequent payment. | Correctly adds the selected match to the kit bag. Appends it to existing matches if others exist in the kit bag. | **PASS** | **PASS** |
-|  012   | Add to Bag notification | Toast success displayed confirming match has been added to the kit bag | The Success Toast appears correctly and displays a summary of the match and fees | **PASS** | **PASS** |
-|  013   | Add Travel | Only available for referees and superusers. Redirects them to the Add travel form | Where applicable the Add travel button takes Referees or superusers to the Add Travel page and form to add travel expenses | **PASS** | **PASS** |
-|  014   | Add Travel | The Add Travel button should not display after the game date and kick-off time | The button only displays for future matches and doesn't display for historical matches | **PASS** | **PASS** |
-|  014   | Messages Button | Redirects users to the Match Messages Page | The "Messages" button functions as desired, taking users to the Match Messages page | **PASS** | **PASS** |
+|  001   | **Navigate to matches**| Clicking the fixtures tab redirects users to the match list | Users are redirected correctly | **PASS** | **PASS**|
+|  002   |  **Matches listed in date order**  | Matches should be listed in Chronological order | The matches are listed in the correct order | **PASS** | **PASS** |
+|  003   |  **Age Filter**  | Reduces the match list to games for a specific age group | Match list is correctly filtered and remain in chronological order | **PASS** | **PASS** |
+|  004   | **Team Filter**  | Reduces the match list to display only the games where the selcted team features, as either the home or the away team | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
+|  005   | **Search Box filter** | Functions like the Team filter, reducing the match list to those games featuring the searched team else a warning message displayed | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
+|  006   | **Match Select** | Selecting one of the games opens the full match detail for that fixture | Match detail appears as desired | **PASS** | **PASS** |
+|  007   | **Match Detail** | Provides sufficient information without further interaction (Teams, Venue, Times, Match Officials) | All of the critical basic information is displayed as desired | **PASS** | **PASS** |
+|  008  | **Match Venue** | Display Date/time and venue address, and the pitch location map (if available) once the "Map for the Venue" button is clicked, else opens up a Google maps window displaying pitch location | Match location and time details display correctly, Accordion feature works as desired. Link to Google maps works as desired | **PASS** | **PASS** |
+|  009   | **Match Officials** | displays match officials names, and expands to render match fees when "Review Match Fees" selected | Match officials are displayed correctly and the accordion feature expands to show fees by each official | **PASS** | **PASS** |
+|  010   | **Match PAID** | Indicates when a match has been paid for by the Coach | A "PAID" indicator displays once a game has been processed trough the system and exists in the orders database | **PASS** | **PASS** |
+|  011   | **Add to Bag** | Available to Coaches and superusers. Adds that match to the kit bag for subsequent payment. | Correctly adds the selected match to the kit bag. Appends it to existing matches if others exist in the kit bag. | **PASS** | **PASS** |
+|  012   | **Add to Bag notification** | Toast success displayed confirming match has been added to the kit bag | The Success Toast appears correctly and displays a summary of the match and fees | **PASS** | **PASS** |
+|  013   | **Add Travel** | Only available for referees and superusers. Redirects them to the Add travel form | Where applicable the Add travel button takes Referees or superusers to the Add Travel page and form to add travel expenses | **PASS** | **PASS** |
+|  014   | **Add Travel** | The Add Travel button should not display after the game date and kick-off time | The button only displays for future matches and doesn't display for historical matches | **PASS** | **PASS** |
+|  015   | **Messages Button** | Redirects users to the Match Messages Page | The "Messages" button functions as desired, taking users to the Match Messages page | **PASS** | **PASS** |
 
 ____
 
 #### **Kit Bag** <a name="kitbag"></a>
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Access Kitbag | Gain access to the kitbag from the Success Toast message by clicking "Secure Checkout" | Users are redirected to the current kitbag when they click the Secure Checkout button on the Success message. | **PASS** | **PASS** |
-|   002  | Access the Kitbag | Gain access to the kitbag by clicking on the shopping bag icon and grandtotal in the navbar | Users are redirected to the kitbag when the icon/grand total is selected | **PASS** | **PASS** |
-|   003  | Number of items in Bag | Display the number of matches currently in the kit bag | The number of matches currently in the kitbag is displayed directly above the list of matches | **PASS** | **PASS** |
-|   004  | Summary of Charges | The kit bag displays the match and a summary of fees by match Official | The fees for each match are correctly displayed based on the Fees Model in the DB | **PASS** | **PASS** |
+|   001  | **Access Kitbag** | Gain access to the kitbag from the Success Toast message by clicking "Secure Checkout" | Users are redirected to the current kitbag when they click the Secure Checkout button on the Success message. | **PASS** | **PASS** |
+|   002  | **Access the Kitbag** | Gain access to the kitbag by clicking on the shopping bag icon and grandtotal in the navbar | Users are redirected to the kitbag when the icon/grand total is selected | **PASS** | **PASS** |
+|   003  | **Number of items in Bag** | Display the number of matches currently in the kit bag | The number of matches currently in the kitbag is displayed directly above the list of matches | **PASS** | **PASS** |
+|   004  | **Summary of Charges** | The kit bag displays the match and a summary of fees by match Official | The fees for each match are correctly displayed based on the Fees Model in the DB | **PASS** | **PASS** |
 
-	![Summary of Charges](image.jpg)
+![Summary of Charges](image.jpg)
 	
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   005  | Travel Expenses | Any travel expenses added to a Match officials fee are rolled into the total for that official | Match officials Total is correctly displayed as Match fees + Travel Expenses | **PASS** | **PASS** |
-|   006  | Match Fines | A Match fine is added to the match charges if the payment date  = Kick off date/time + 24 hrs | The non-payment fine is calculated and rendered correctly | **PASS** | **PASS** |
-|   007  | Remove Match | Matches can be easily removed from the kitbag by the user | Each match header has a red and white "X" marked with a Tooltip which indicates "Remove from Bag". Matches are removed from the kitbag when clicked.| **PASS** | **PASS** |
+|   005  | **Travel Expenses** | Any travel expenses added to a Match officials fee are rolled into the total for that official |Match officials Total is correctly displayed as Match fees + Travel Expenses | **PASS** | **PASS** |
+|   006  | **Match Fines** | A Match fine is added to the match charges if the payment date  = Kick off date/time + 24 hrs | The non-payment fine is calculated and rendered correctly | **PASS** | **PASS** |
+|   007  | **Remove Match** | Matches can be easily removed from the kitbag by the user | Each match header has a red and white "X" marked with a Tooltip which indicates "Remove from Bag". Matches are removed from the kitbag when clicked.| **PASS** | **PASS** |
 
-	![Remove from Bag](image.jpg)
-
+![Remove from Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/remove-from-bag.jpg) 
+	
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   008  | Update total | Update the Grant total when games are added or deleted from teh bag | The Grand Total updates as matches are added or removed to the kitbag | **PASS** | **PASS** |
-|   009  | Back to Fixtures | Redirects users to the Fixtures page | The link takes users back to the Fixtures page as desired | **PASS** | **PASS** |
-|   010  | Secure Checkout | Directs users to the Checkout page | The link takes the user to the Checkout page | **PASS** | **PASS** |
+|   008  | **Update total** | Update the Grant total when games are added or deleted from teh bag | The Grand Total updates as matches are added or removed to the kitbag | **PASS** | **PASS** |
+|   009  | **Back to Fixtures** | Redirects users to the Fixtures page | The link takes users back to the Fixtures page as desired | **PASS** | **PASS** |
+|   010  | **Secure Checkout** | Directs users to the Checkout page | The link takes the user to the Checkout page | **PASS** | **PASS** |
 ____
  
 #### **Checkout & Checkout Success** <a name="kitbag"></a>
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Summary of Charges | Checkout page renders a summary of the charges for each game |  |  |  |
-|   002  | Billing Information |
-|   003  | Save information |
-|   004  | 
+|   001  | **Summary of Charges** | Checkout page renders a summary of the charges for each game | Checkout Page displays match officials total, Fines and grand total | **PASS** | **PASS** |
+|   002  | **Billing Information** | Checkout page has a form where users can populate their billing information |  |
+|   003  | **Required Fields** | Indicate to the uder which of the Billing Info fields are required | Fields are indicates and a message lets users know to fill in each required field | **PASS** | **PASS** |
+
+![Required Fields](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/checkout-required.jpg)
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   004  | **Save information** | The Checkout page has the option for users to save their billing information | A "save info" checkbox has been provided so users can save their billing information to save them filling it in future | **PASS** | **PASS** |
+|   005  | **Card Details** | A secure card details field is provided for the user | An empty, secure Card details field has been provided for users to enter their card details | **PASS** | **PASS** |
+|   006  | **No Card Details** | Warn user that card detail have not been entered | The payment will not proceed without card details. If tried a warning message is displayed | **PASS** | **PASS** |
+
+![Save Info](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/checkout-save-info.jpg)
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   007  | **Card Charge confirmation** | Indicate to the user how much their card is going to be charged for the match/matches in their kit bag | The Grand Total in the Navbar and a message at the bottom of the page indicates how much the users card will be charged | **PASS** | **PASS** |
+|   008  | **Checkout Button** | A button to confirm payment and to proceed with the payment process | A "Complete Payment" button has been provided for users to confirm the payment | **PASS** | **PASS** |
+|   009  | **Buffering Loaading screen** | Display a buffering/Loading screen while the card payment processes | A Football themed loading screen has been provided | **PASS** | **PASS** |
+|   010  | **Checkout Success** | Display the Checkout Success page on successful completion of the payment | The checkout success page is displayed on successfull processing of payment | **PASS** | **PASS** |
+|   011  | **Success Message** | Display a success message telling the user their payment went through successfully | A message gets dispolayed whe redirected to the Checkout Success page | **PASS** | **PASS** |
+|   012  | **Confirmation Email** | The paying user should receive a confirmation email on completion of successful payment | A confirmation email is sent to the email address of the logged in user on successful completion of the payment |  | **PASS** | **PASS** |
+|   013  | **Zero Total** | Ensure the Kitbag contents are cleared and the grand total cleared once the payment process has completed successfully | The total is correctly zeroed on completion of the payment | **PASS** | **PASS** |
+
 ____
 
 #### **Adding New Data** <a name="add-records"></a> 
