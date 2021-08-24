@@ -94,6 +94,7 @@
                     <!-- Checkout form -->                    
                     <div class="col-12 col-lg-6 mt-5 mb-1 px-1 px-md-3 ">
                         <p><strong>Please fill in the form below to complete your payment</strong></p>
+                        <p class="text-danger">Fields marked with * are required</p>
                         <form  action="{% url 'checkout' %}" method=POST id="payment-form">
                             {% csrf_token %}
                             <fieldset class="rounded px-1 px-md-3 mb-5">
