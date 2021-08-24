@@ -314,29 +314,53 @@ ____
 
 ____
 
-#### **Adding New Data** <a name="add-records"></a> 
+#### **Adding New Data** <a name="add-data"></a> 
 Tests to determine how the Add Competition, Club, Team, Match, Travel and Message pages function.
+
+##### Add Competition 
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|  001   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  002   | Manage Recipe link   | Link provided on Manage Recipes page results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  003   | Country Select   | Displays the list of countries in alphabetic order | List is displayed in the correct order. Users can scroll, or type the first letter of the country to navigate the list | **PASS** | **PASS** |
-|  004   | Recipe Name   | Textbox functions as desired | Users can input a name. Feedback is provided if the name is <5 characters | **PASS** | **PASS** |
-|  005   | Regex pattern matching on Recipe Name | No special characters or continuous spaces| Field highlights red and message displays on hover [BAD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-name-bad.jpg) / [GOOD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-name-good.jpg) | **PASS** | **PASS** |
-|  006   | Recipe Category Select  | Displays the list of recipe categories | List displays and users can select the category appropriate for their recipe | **PASS** | **PASS** |
-|  007   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
-|  008   | Recipe Servings  | Displays a list of numbers from 1 - 30 | Correctly displays the list and is selectable | **PASS** | **PASS** |
-|  009   | Recipe Image   | Adding a valid image URL results in image displaying below input field| Image displays if a valid URL [Good URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/good-recipe-url.jpg) | **PASS** | **PASS** |
-|  010   | URL Regex pattern matching | Image URL must start with https//: | Input field turns red and message displayed on hover [Bad URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
-|  011   | Prep & Cooking Time   | Tooltip displays format | Tooltip provides suggested format to use |  **PASS** | **PASS** |
-|  012   | Prep & Cooking Time Regex pattern matching | Does the input field highlight when the input is incorrect| Input field changes to red & message displays on hover. [BAD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-time-match.jpg) | **PASS** | **PASS** | MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
-|  013   | Recipe Description   | Users are able to add a description, but the input cannot be whitespace or special characters. | Description renders correctly, and does not allow special characters | **PASS** | **PASS** |
-|  014   | Recipe Ingredient Input   | Users are able to add ingredients on new lines | Users are able to add as many ingredients as necessary. Tooltip advises users to enter each ingredient on a new lines | **PASS** | **PASS** |
-|  015   | Recipe Method Input   | Users are able to add each new preparation step on a new line | Method input works as desired | **PASS** | **PASS** |
-|  016   | Data Written to MongoDB   | Confirm new recipe data is written to MongoDB | New recipes appear as a new Recipes document within Mongo DB. All fields are populated if completed | **PASS** | **PASS** |
-|  017   | Profanity Check  | Replace profanities in user input with ***  | Profanities are correctly replaced with *** | **PASS** | **PASS** |
-|  018   | Full Recipe Page | The information renders correctly on the Full recipe Page | The selected fields render as intended on the Full Recipe page | **PASS** | **PASS** |
+|   001  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
+|   002  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   003  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   004  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
+|   005  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
+|   005  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
+|   006  | Cancel Button | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
+
+![Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-comp.png)
+
+##### Add Club  
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | Add Club link | Add Competition form displayed | The  form displays as desired | **PASS** | **PASS** |
+|   002  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   003  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   004  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
+|   005  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
+|   006  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
+|   007  | DB Updates | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
+|   008  | Cancel Button | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
+
+![Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-club.png)
+
+##### Add Team  
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
+|   002  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   003  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   004  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
+|   005  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
+|   005  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
+|   006  | Success Message | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
+|   007  | DB Updates | Ensure the new Team is written to the DB correctly | The Team name and details name are added to the database as intended | **PASS** | **PASS** |
+|   008  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+
+![Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-team.png)
 
 _____
 
