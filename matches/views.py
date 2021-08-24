@@ -408,14 +408,14 @@ def add_team(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a team!")
-        return redirect(reverse('matches'))
+        return redirect(reverse('clubs'))
 
     if request.method == "POST":
         form = TeamForm(request.POST)
         if form.is_valid:
             form.save()
             messages.success(request, 'You successfully added a new team!')
-            return redirect(reverse('matches'))
+            return redirect(reverse('clubs'))
         else:
             messages.error(request, 'Failed to create a new team. \
                 Please ensure the form has valid inputs')
