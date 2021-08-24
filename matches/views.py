@@ -281,7 +281,7 @@ def add_club(request):
         if form.is_valid:
             form.save()
             messages.success(request, 'You successfully added a new club!')
-            return redirect(reverse('matches'))
+            return redirect(reverse('clubs'))
         else:
             messages.error(request, 'Failed to create a new club. \
                 Please ensure the form has valid inputs')
