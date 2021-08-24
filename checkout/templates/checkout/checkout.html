@@ -25,69 +25,61 @@
                         </div>
                         <!-- visual rendering of match  -->
                         {% for item in bag_items %}
-                        <a href="{% url 'match_detail' item.match.id %}">
-                            <div class="row">
-                                <div class="col-4 col-lg-2 team text-center">
-                                    {% if item.match.home_team.club_name.club_badge %}
-                                        <img class="checkout-badge image-fluid w-100"
-                                            src="{{MEDIA_URL}}{{ item.match.home_team.club_name.club_badge }}"
-                                            alt="item.match.home_team.club_name">
+                            <a href="{% url 'match_detail' item.match.id %}">
+                                <div class="row">
+                                    <div class="col-4 col-lg-2 team text-center">
+                                        {% if item.match.home_team.club_name.club_badge %}
+                                            <img class="checkout-badge image-fluid w-100"
+                                                src="{{MEDIA_URL}}{{ item.match.home_team.club_name.club_badge }}"
+                                                alt="item.match.home_team.club_name">
+                                        {% else %}
+                                            <img class="checkout-badge image-fluid w-100"
+                                                src="{{ item.match.home_team.club_name.club_badge_url }}"  
+                                                alt="{{ item.match.home_team.club_name.club_name }}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-8 col-lg-3 text-center">
+                                        <p>{{ item.match.home_team.short_name }}</p>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-2 text-center">
+                                        <p><strong>VS</strong></p>
+                                    </div>
+                                    <div class="col-8 col-lg-3 text-center">
+                                        <p>{{ item.match.away_team.short_name }}</p>                        
+                                    </div>
+                                    <div class="col-4 col-lg-2 text-center">
+                                        {% if item.match.away_team.club_name.club_badge %}
+                                            <img class="checkout-badge image-fluid w-100"
+                                            src="{{MEDIA_URL}}{{ item.match.away_team.club_name.club_badge }}"
+                                            alt="item.match.away_team.club_name">
+                                        {% else %}
+                                            <img class="checkout-badge image-fluid w-100"
+                                            src="{{ item.match.away_team.club_name.club_badge_url }}"  
+                                            alt="{{ item.match.away_team.club_name.club_name }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Breakdown of match charges -->
+                            <div class="row mt-2">
+                                <div class="col-4 text-center">
+                                    <p>Officials Total:</p>
+                                    <p><strong>£ {{ item.match_sub_total }}</strong></p>                        
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Match Fines :</p>
+                                    {% if item.match_fines is not None %}
+                                    <p class="text-danger checkout-item"><strong>£ {{ item.match_fines | floatformat:2 }}</strong></p>
                                     {% else %}
-                                        <img class="checkout-badge image-fluid w-100"
-                                            src="{{ item.match.home_team.club_name.club_badge_url }}"  
-                                            alt="{{ item.match.home_team.club_name.club_name }}">
+                                        <p class="text-center my-0">-</p>
                                     {% endif %}
-                                </div>
-                                <div class="col-8 col-lg-3 text-center">
-                                    <p>{{ item.match.home_team.short_name }}</p>
-                                </div>
-                                <div class="col-sm-12 col-lg-2 text-center">
-                                    <p><strong>VS</strong></p>
-                                </div>
-                                <div class="col-8 col-lg-3 text-center">
-                                    <p>{{ item.match.away_team.short_name }}</p>                        
-                                </div>
-                                <div class="col-4 col-lg-2 text-center">
-                                    {% if item.match.away_team.club_name.club_badge %}
-                                        <img class="checkout-badge image-fluid w-100"
-                                        src="{{MEDIA_URL}}{{ item.match.away_team.club_name.club_badge }}"
-                                        alt="item.match.away_team.club_name">
-                                    {% else %}
-                                        <img class="checkout-badge image-fluid w-100"
-                                        src="{{ item.match.away_team.club_name.club_badge_url }}"  
-                                        alt="{{ item.match.away_team.club_name.club_name }}">
-                                    {% endif %}
+                                </div>                                
+                                <div class="col-4 text-center">
+                                    <p>Match Total:</p>
+                                    <p class="text-success text-center checkout-item"><strong>£ {{ item.match_total }}</strong></p>
                                 </div>
                             </div>
-                        </a>
-                        <!-- Breakdown of match charges -->
-                        <div class="row mt-2">
-                            <div class="col-3">
-                                <p>Ref Total:</p>
-                                <p><strong>£ {{ item.match.ref_total }}</strong></p>                        
-                            </div>
-                            <div class="col-3">
-                                <p>Asst 1 Total:</p>
-                                {% if item.match.asst_referee1 is not None %}
-                                <p><strong>£ {{ item.match.asst1_total }}</strong></p>
-                                {% else %}
-                                    <p class="text-center my-0">-</p>
-                                {% endif %}
-                            </div>
-                            <div class="col-3">
-                                <p>Asst 2 Total:</p>
-                                {% if item.match.asst_referee2 is not None %}
-                                    <p><strong>£ {{ item.match.asst2_total }}</strong></p>
-                                {% else %}
-                                    <p class="text-center my-0">-</p>
-                                {% endif %}
-                            </div>
-                            <div class="col-3">
-                                <p>Match Total:</p>
-                                <p class="text-success text-center"><strong>£ {{ item.match_total }}</strong></p>
-                            </div>
-                        </div>
-                        <hr>
+                            <hr>                            
                         {% endfor %}
                         <div class="row justify-content-end ml-2">
                             <div class="col-6 col-md-4 bg-warning">
@@ -97,7 +89,7 @@
                                 <p class="text-danger text-right"><strong>£ {{ grand_total }}</strong></p>
                                 <hr>                        
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                     <!-- Checkout form -->                    
                     <div class="col-12 col-lg-6 mt-5 mb-1 px-1 px-md-3 ">

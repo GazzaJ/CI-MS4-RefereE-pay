@@ -26,6 +26,7 @@ body {
 .checkout-match {
     background-color: #fff;
 }
+
 /* ---------- Checkout Success ---------- */
 
 .success-heading {
@@ -194,5 +195,9 @@ select option[value=""] {
 
     .sub-header {
         font-size: 1.5rem;
+    }
+
+    .checkout-item {
+        padding-top: 1.25rem;
     }
 }
