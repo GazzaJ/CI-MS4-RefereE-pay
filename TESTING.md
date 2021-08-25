@@ -418,12 +418,21 @@ The Add Travel page enables Match Officials and Superusers to add Match official
 
 ![Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-travel.png)
 
-##### Add Travel
+##### Add Message
 The Add Travel page enables Match Officials and Superusers to add Match officials travel expenses so that they get added to the matchg fees. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-
+|   001  | **Add a Message** | Function only accessible by superusers | Access to the Add Chat function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to add a message to a match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Add Message link** | Redirects Coaches, Match Officials and Superusers to the Add Message Form | The Add Message form displays as desired | **PASS** | **PASS** |
+|   004  | **Pre-populated Data** | Make sure the form come prepopulated with the match and Author/users usernam | The form is rendered with the data for the match and author populated | **PASS** | **PASS** |
+|   004  | **Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix and a tooltip appears if the user attempts to submit with an empty required field. | **PASS** | **PASS** |
+|   005  | **Image Upload** | Make sure the image upload feature functions correctly | Images are uploaded correctly | **PASS** | **PASS** |
+|   007  | **Add Message** | Ensure DB updates and users are redirected to the Match Messages page | The new Message gets created and users are redirected as desired | **PASS** | **PASS** |
+|   008  | **Success Message** | Display a message when a new Message has been created | Message displays as desired | **PASS** | **PASS** |
+|   009  | **DB Updates** | Ensure the new Message is written to the DB correctly | The Message is added to the database as intended | **PASS** | **PASS** |
+|   010  | **Cancel Button** | Redirect users to the match detail page | Users are redirected back to the match detail page as desired | **PASS** | **PASS** |
 
 ![Ad Chat](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-chat.png)
 
@@ -484,9 +493,56 @@ The Edit Match page enables superusers to retrieve a previously uploaded match f
 
 ![Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-match.png)
 > The DateTime input field will not rfender correctly in some browsers as they have not yet been updated to accept this input element.
+
 _____
-#### **Delete Existing Data** <a name="edit-data"></a>
-This sections defines the testing performed on the Superuser function which enable them to edit existing database records for Clubs, Teams and Matches. This allows superusers to change any field as required.
+#### **Delete Existing Data** <a name="delete-data"></a>
+This sections defines the testing performed on the Superuser function which enable them to delete existing database records for Clubs, Teams and Matches. This allows superusers to change any field as required.
+
+##### Delete Club
+The Delete Club function enables superusers to permanently remove a previously uploaded Club from the database. This section validates the functionality of this page.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|   001  | **Delete Club** | Function only accessible by superusers | Access to the Delete Club Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Display Error | Display an Error if non-authorised user attempts to Delete a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Delete Club link** | Should generate a Delete confirmation modal. The Club should not be deleted yet!! | The Delete Club button directs users to the delete confirmation modal. The `delete_club` function isn't called yet  | **PASS** | **PASS** |
+|   004  | **Club Name** | The modal should clearly indicate which Club has been selected for deletion | The Club name is clearly displayed in the confirmation message | **PASS** | **PASS** |
+|   005  | **Cancel Delete** | There should be an option to cancel the deletion before any data is lost | The cancel takes the user right back to the Clubs page without deleting the record | **PASS** | **PASS** |
+|   006  | **Delete Club** | Ensure the Delete Club function is only called once the Delete Club button on the delete confirmation modal is clicked | Selecting the Delete Club button correctly deletes the selected club | **PASS** | **PASS** |
+|   007  | DB Update | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys |  | **PASS** | **PASS** |
+> Deleting a Club obviously has a downstream effect on any matches and Teams associated with that club. Thus the clubs teams and matches featuring the deleted Club/Teams are also removed from the database. This is as intended.
+No Errors occured during testing.
+
+![Delete Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/delete-club.png)
+
+##### Delete Team
+The Delete Team function enables superusers to permanently remove a previously uploaded Team from the database. This section validates the functionality of this page.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|   001  | **Delete Team** | Function only accessible by superusers | Access to the Delete Team Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to Delete a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Delete Team link** | Should generate a Delete confirmation modal. The Team should not be deleted yet!! | The Delete Team button directs users to the delete confirmation modal. The `delete_team-` function isn't called yet  | **PASS** | **PASS** |
+|   004  | **Team Name** | The modal should clearly indicate which Team has been selected for deletion | The Team name is clearly displayed in the confirmation message | **PASS** | **PASS** |
+|   005  | **Cancel Delete** | There should be an option to cancel the deletion before any data is lost | The cancel takes the user right back to the Clubs page without deleting the record | **PASS** | **PASS** |
+|   006  | **Delete Team** | Ensure the Delete Team function is only called once the Delete Team button on the delete confirmation modal is clicked | Selecting the Delete Team button correctly deletes the selected club | **PASS** | **PASS** |
+|   007  | DB Update | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys |  | **PASS** | **PASS** |
+> Deleting a Team obviously has a downstream effect on any matches featuring that team. Thus matches featuring the deleted team are also removed from the database. This is as intended.
+No Errors occured during testing.
+
+![Delete Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/delete-team.png)
+
+##### Delete Match
+The Delete Match function enables superusers to permanently remove a previously uploaded Match from the database. This section validates the functionality of this page.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|   001  | **Delete Match** | Function only accessible by superusers | Access to the Delete Match Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to Delete a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Delete Match link** | Should generate a Delete confirmation modal. The Match should not be deleted yet!! | The Delete Match button directs users to the delete confirmation modal. The `delete_match` function isn't called yet  | **PASS** | **PASS** |
+|   004  | **Match Name** | The modal should clearly indicate which Match has been selected for deletion | The Match name is clearly displayed in the confirmation message | **PASS** | **PASS** |
+|   005  | **Cancel Delete** | There should be an option to cancel the deletion before any data is lost | The cancel takes the user right back to the Clubs page without deleting the record | **PASS** | **PASS** |
+|   006  | **Delete Match** | Ensure the Delete Match function is only called once the Delete Match button on the delete confirmation modal is clicked | Selecting the Delete Match button correctly deletes the selected club | **PASS** | **PASS** |
+|   007  | **DB Update** | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys | DB records are updated as design in the DB Schema | **PASS** | **PASS** |
+
+![Delete Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/delete-match.png)
 _____
 
 #### **User Profile (READ)** <a name="user-profile"></a>
@@ -494,6 +550,7 @@ _____
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 
+> I have intentionally not included a Delete Profile function for this section of the app. Due to the nature of the app and the way it functions I didn't want users to have this ability and inadvertently affect downstream processes.
 
 ![User Profile]()
 
@@ -715,10 +772,9 @@ These tests ensure that there are appropriate levels of access to the various pa
 | Delete Club | `matches/delete_club/club.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
 | Delete Team | `matches/delete_team/team.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
 | Delete Match | `matches/delete/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Messages | `matches/chat/game.id` |  |  | Redirected to login | **PASS** |
-| Add Message | `matches/add_chat/game.id` |  |  | Redirected to login | **PASS** |
-| Kit bag | `bag/` |  |  | Redirected to login | **PASS** |
-| Checkout | `checkout/` |  |  | Redirected to login | **PASS** |
+| Add Message | `matches/add_chat/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| Kit bag | `bag/` | N/A | N/A | Redirected to login | **PASS** |
+| Checkout | `checkout/` | N/A | N/A | Redirected to login | **PASS** |
 | Profile | `profile/` | N/A | N/A | Redirected to login | **PASS** |
   
 
