@@ -333,7 +333,7 @@ def delete_club(request, club_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions \
                        to delete a club!")
-        return redirect(reverse('clubs'))
+        return redirect(reverse('home'))
 
     club = get_object_or_404(Club, pk=club_id)
     club.delete()
@@ -436,7 +436,7 @@ def delete_team(request, team_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions \
                        to delete a team!")
-        return redirect(reverse('matches'))
+        return redirect(reverse('home'))
 
     team = get_object_or_404(Team, pk=team_id)
     club_id = team.club_name.id
