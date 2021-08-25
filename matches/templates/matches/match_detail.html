@@ -30,15 +30,15 @@
                         {% endif %}
                     </div>
                     <div class="col-8 col-lg-3 text-center">
-                        <p class="coach mb-3">{{ match.home_team }}</p>
-                        <p>Coach: {{ match.home_team.manager_coach }}</p>
+                        <p class="match-detail text-success mb-3">{{ match.home_team }}</p>
+                        <p>Coach: <strong class="blue-text">{{ match.home_team.manager_coach }}</strong></p>
                     </div>
                     <div class="col-sm-12 col-lg-2 text-center my-3">
                         <h3>VS</h3>
                     </div>
                     <div class="col-8 col-lg-3 text-center">
-                        <p class="coach mb-3">{{ match.away_team }}</p>
-                        <p>Coach: {{ match.away_team.manager_coach }}</p>
+                        <p class="match-detail text-success mb-3">{{ match.away_team }}</p>
+                        <p>Coach: <strong class="blue-text">{{ match.away_team.manager_coach }}</strong></p>
                     </div>
                     <div class="col-4 col-lg-2 text-center">
                         {% if match.away_team.club_name.club_badge %}
@@ -71,7 +71,7 @@
         <div class="row match mb-3 align-items-center border-green">
             <div class="col text-center">
                 <h3 class="mb-4">Venue and Kick-off Time</h3>
-                <p class="mb-4">{{ match.date_time }}</p> 
+                <p class="mb-4 text-success"><strong>{{ match.date_time }}</strong></p> 
                 <div class="row">
                     <div class="col-12">
                         <p><strong>{{match.venue.short_name}}</strong></p>
@@ -119,15 +119,15 @@
                 <h3 class="mb-4">Match Officials</h3>
                 <div class="row">
                     <div class="col text-center mb-3">
-                        <p>Referee: {{ match.referee }}</p>                        
+                        <p>Referee: <strong class="text-success">{{ match.referee }}</strong></p>                        
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 text-center mb-3">
-                        <p>Asst Referee: {{ match.asst_referee1 }}</p>
+                        <p>Asst Referee: <strong class="text-success">{{ match.asst_referee1 }}</strong></p>
                     </div>
                     <div class="col-12 col-md-6 text-center">
-                        <p>Asst Referee: {{ match.asst_referee2 }}</p>
+                        <p>Asst Referee: <strong class="text-success">{{ match.asst_referee2 }}</strong></p>
                     </div>
                 </div>
                 <div class="row mt-2">

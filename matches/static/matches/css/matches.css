@@ -28,6 +28,15 @@ body {
     color: black;
 }
 
+.match-detail {
+    font-size: 1.15rem;    
+    font-weight: bolder;
+}
+
+.blue-text {
+    color: #011e41;
+}
+
 .match p {
     margin-bottom: 0;
 }
@@ -234,6 +243,10 @@ https://codingislove.com/css-speech-bubbles/ -----*/
         height: 5rem;
         width: 5rem;
         object-fit: contain;
+    }
+
+    .match-detail {
+        font-size: 1rem;
     }
 
     .fee-btn {
