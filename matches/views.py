@@ -274,7 +274,7 @@ def add_club(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a club!")
-        return redirect(reverse('clubs'))
+        return redirect(reverse('home'))
 
     if request.method == "POST":
         form = ClubForm(request.POST, request.FILES)
@@ -408,7 +408,7 @@ def add_team(request):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        add a team!")
-        return redirect(reverse('clubs'))
+        return redirect(reverse('home'))
 
     if request.method == "POST":
         form = TeamForm(request.POST)
