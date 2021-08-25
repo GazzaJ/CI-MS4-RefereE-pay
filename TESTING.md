@@ -549,10 +549,19 @@ _____
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|   001  |  **User Profile Link** | My Account - Profile link should direct users to their Profile page |  | **PASS** | **PASS** |
+|   002  | **Username** | The users username should render at the top of the page | Username renders as desired | **PASS** | **PASS** |
+|   003  | **Team Displayed** | If the user is a registered coach, their team badge and team name should be displayed below their username | The Club badge and team name are displayed for appropriate users | **PASS** | **PASS** |
+|   004  | **Role Displayed** | If the user is a registered Coach, Referee or Superuser their role should be displayed along with the other information | The role is displayed for logged in Superusers, Coaches and Ref's | **PASS** | **PASS** |
+|   005  | **Personal Details Displayed** | The users personal details will be rendered if they have completed and purches and selected the save info field, of have updated their profile from this page | Personal details are pre-populated where appropriate | **PASS** | **PASS** |
+|   006  | **Previous Orderes Displayed** | Any previous payments made by the user should be displayed on this screen | Previous payments are correctly displayed | **PASS** | **PASS** |
+|   007  | **Order Link** | The order number should take the user to a checkout success page showing payment details | The order link functions correctly | **PASS** | **PASS** |
+|   008  | **Back to Profile Link** | The back to profile link on the Payment Summary should redirect users back to the Profile page | The link works as it should | **PASS** | **PASS** |
+|   009  | Update Profile | Profile data in the DB is updated if the user changes any of the form fields and selects update | The profile data is written to the database correctly if the user adds a new profile or changes an existing profile | **PASS** | **PASS** |
 
 > I have intentionally not included a Delete Profile function for this section of the app. Due to the nature of the app and the way it functions I didn't want users to have this ability and inadvertently affect downstream processes.
 
-![User Profile]()
+![User Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/profile.png)
 
 ______
 
@@ -649,18 +658,11 @@ The following section contains the results and any warnings or errors reported d
 ____
 
 ### **Usability Testing** <a name="usability"></a>
-I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
+I requested Club Officials and the Referees Coach for the Cheltenham Youth Football League to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
 |   User   | Feedback |
 |:---------:|----------|
-|  K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-1.jpg) |
-|  K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-2.jpg) |
-| K. Tanaka | ![Toto Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg) |
-| E.Carroll | Verbal feedback - Nice concept, like the idea of sharing the recipes.
-| E.Carroll | Verbal feedback - I think the map is a great feature, would be great to click on the map and see recipes for that country |
-| E.Carroll | Verbal feedback - It was easy to upload a recipe. It would be better if you could upload you own recipe photo. I think most people are used to this |
-| A.Sheward | First indicated the potential issue with the Materialize Select elements on iOS devices |
-  
-> **The vulnerability pointed out by Toto has been addressed and users are no longer able to delete a recipe by manipulating the web app URL.**
+|  Dave Pitts - Club Secretary LRFC | Very professional looking website and a great idea. Simple enough to navigate and pay match officials Fees |
+
 ____
 
 ### **Responsiveness Testing** <a name="responsiveness"></a>
