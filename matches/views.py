@@ -566,6 +566,19 @@ def add_chat(request, game_id):
     """
     match = get_object_or_404(Game, pk=game_id)
     user = request.user
+    official = False
+    if user.userprofile.role == 'Referee':
+        official = True
+    if user.userprofile.role == 'Coach':
+        official = True
+    if user.is_superuser:
+        official = True
+
+    if not official:
+        messages.error(request, "Sorry, you don't have the permissions to \
+                    add a message for this match!")
+        return redirect(reverse('home'))
+
     data = {
         'match': match,
         'author': user,
@@ -581,6 +594,8 @@ def add_chat(request, game_id):
                 Please ensure the form has valid inputs')
     else:
         form = ChatForm(initial=data)
+        messages.info(request, f'You are adding a message to {match.home_team} \
+            vs {match.away_team}')
 
     template = 'matches/add_chat.html'
     context = {
