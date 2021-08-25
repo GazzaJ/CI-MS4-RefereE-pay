@@ -309,7 +309,7 @@ ____
 |   009  | **Buffering Loaading screen** | Display a buffering/Loading screen while the card payment processes | A Football themed loading screen has been provided | **PASS** | **PASS** |
 |   010  | **Checkout Success** | Display the Checkout Success page on successful completion of the payment | The checkout success page is displayed on successfull processing of payment | **PASS** | **PASS** |
 |   011  | **Success Message** | Display a success message telling the user their payment went through successfully | A message gets dispolayed whe redirected to the Checkout Success page | **PASS** | **PASS** |
-|   012  | **Confirmation Email** | The paying user should receive a confirmation email on completion of successful payment | A confirmation email is sent to the email address of the logged in user on successful completion of the payment |  | **PASS** | **PASS** |
+|   012  | **Confirmation Email** | The paying user should receive a confirmation email on completion of successful payment | A confirmation email is sent to the email address of the logged in user on successful completion of the payment | **PASS** | **PASS** |
 |   013  | **Zero Total** | Ensure the Kitbag contents are cleared and the grand total cleared once the payment process has completed successfully | The total is correctly zeroed on completion of the payment | **PASS** | **PASS** |
 
 ____
@@ -318,210 +318,192 @@ ____
 Tests to determine how the Add Competition, Club, Team, Match, Travel and Message pages function.
 
 ##### Add Competition 
+The Add Competition page enables superusers to add a new Competition to the database. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | Add Competition | Function only accessible by superusers | Access to the Add Competition Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
-|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   005  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
-|   006  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
-|   007  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
-|   008  | Cancel Button | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to add a Competition. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
+|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   006  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
+|   007  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
+|   008  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
+|   009  | Cancel Button | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
 
 ![Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-comp.png)
 
 ##### Add Club  
-
+The Add Club page enables superusers to add a new Club to the database. This section validates the functionality of this page.
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | Add Club | Function only accessible by superusers | Access to the Add Club Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Add Club link | Add Competition form displayed | The  form displays as desired | **PASS** | **PASS** |
-|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   005  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
-|   006  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
-|   007  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
-|   008  | DB Updates | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
-|   009  | Cancel Button | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to add a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | Add Club link | Add Club form displayed | The  form displays as desired | **PASS** | **PASS** |
+|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   006  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
+|   007  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
+|   008  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
+|   009  | DB Updates | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
+|   010  | Cancel Button | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
 
 ![Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-club.png)
 
 ##### Add Team  
+The Add Team page enables superusers to add a new Team to the database. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | Add Team | Function only accessible by superusers | Access to the Add Team Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
-|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   005  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
-|   006  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
-|   007  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
-|   008  | Success Message | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
-|   009  | DB Updates | Ensure the new Team is written to the DB correctly | The Team name and details are added to the database as intended | **PASS** | **PASS** |
-|   010  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to add a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
+|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   006  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
+|   007  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
+|   008  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
+|   009  | Success Message | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
+|   010  | DB Updates | Ensure the new Team is written to the DB correctly | The Team name and details are added to the database as intended | **PASS** | **PASS** |
+|   011  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-team.png)
 
-##### Add Team  
+##### Add Match  
+The Add Match page enables superusers to add a new match to the database. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | Add Match | Function only accessible by superusers | Access to the Add Match Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Add Match link | Add Match form displays and is empty | The form displays as desired | **PASS** | **PASS** |
-|   003  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   004  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
-|   005  | Age Select | Ensure the dropdown is populated with the age groups | The dropdown functions as desired | **PASS** | **PASS** |
-|   006  | Competition Select | Ensure the select element is populated with the competitions and saves as desired | The competition select element functions as desired | **PASS** | **PASS** | 
-|   007  | Home Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
-|   008  | Away Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
-|   009  | Venue Select | Display a list of the venues and save when selected | The Venue select element functions as desired | **PASS** | **PASS** |
-|   010  | KO Date & Time | Ensure users can select the date and time of kickoff | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to add a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | Add Match link | Add Match form displays and is empty | The form displays as desired | **PASS** | **PASS** |
+|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   006  | Age Select | Ensure the dropdown is populated with the age groups | The dropdown functions as desired | **PASS** | **PASS** |
+|   007  | Competition Select | Ensure the select element is populated with the competitions and saves as desired | The competition select element functions as desired | **PASS** | **PASS** | 
+|   008  | Home Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
+|   009  | Away Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
+|   010  | Venue Select | Display a list of the venues and save when selected | The Venue select element functions as desired | **PASS** | **PASS** |
+|   011  | KO Date & Time | Ensure users can select the date and time of kickoff | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
 > After reading the documentation I discovered I am using the correct version of the DateTime Input element. However, to date not all browsers have been modified to accept this element.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   011  | Referee Select | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
-|   012  | Asst1 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
-|   013  | Asst2 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
-|   014  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
-|   015  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
-|   016  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
-|   017  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   012  | Referee Select | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   013  | Asst1 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   014  | Asst2 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   015  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
+|   016  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
+|   017  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   018  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-match.png)
 
-_____
-
-#### **Edit Existing Data** <a name="edit-records"></a>
-This sections defines the testing performed on the Manage Recipes page, from which users can edit and delete their recipes. If the user has Admin rights they are able to view and interact with all recipes.
+##### Add Travel
+The Add Travel page enables Match Officials and Superusers to add Match officials travel expenses so that they get added to the matchg fees. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|  001   | Navigation to Manage Recipes | Navbar should redirect users to the Manage Recipes page | The Navbar link functions correctly and redirects users to the Manage Recipes Page. | **PASS** | **PASS** |
-|  002   | Profile Page Link | If user has uploaded recipes a link redirects users to the Manage Recipes Page | Link correctly redirects users to the Manage Recipes page IF they have previously uploaded at least one recipe | **PASS** | **PASS** |
-|  003   | Recipe Quantity |Correct number of recipes displayed by user profile | The web app displays 6 recipes per page where appropriate | **PASS** | **PASS** |
-|  004   | Pagination | Pagination limits to 6 recipes/page | This is probably more appropriate to the Admin view as I don't anticipate many users having more than 6 recipes initially. Functions correctly | **PASS** | **PASS** |
-|  005   | Pagination | Previous and Next Pagination links work as desired | These buttons function as desired | **PASS** | **PASS** |
-|  006   | Pagination | Page number links redirect users to the appropriate page | The page numbers correctly link to the appropriate page and redirect the user as desired | **PASS** | **PASS** |
-|  007   | Recipe Cards | Recipe cards display correct information and are properly formatted | The recipe cards render the information as desired and are consistent with the main Recipe page for consistency | **PASS** | **PASS** |
-|  008   | Recipe Edit Button | Recipe Edit Button redirects user to Edit Recipe Page | The Recipe edit button reveals when the FAB is hovered. It redirects users to the Edit Recipe page | **PASS** | **PASS** |
-|  009   | Recipe Delete Button | Recipe Delete Button initiates the Deletion Process (see below for more detail) | The recipe Delete button reveals with the Edit Button when the FAB is hovered. It correctly initiates the delete process but does not directly delete the recipe | **PASS** | **PASS** |
-|  010   | Add Recipe Link | Add Recipe link takes users to the Add Recipe Page | The link does take the user to the Add Recipe page | **PASS** | **PASS** |
+|   001  | **Add Travel** | Function only accessible by superusers | Access to the Add Travel Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to add travel Expenses. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Add Travel link** | Redirects Match Officials and Superusers to the Add Travel Form | The Add Travel form displays as desired | **PASS** | **PASS** |
+|   004  | Match Summary | Display a brief match summary so users know which match they are adding expenses for | A Match summary is rendered as desired | **PASS** | **PASS** |
+|   005  | Error Validation | Ensure a warning is provided if the wrong input is given | A tooltip indicates to the user that the form required the number format | **PASS** | **PASS** |
+|   006  | Error Validation | Ensure the travel expenses are input in the correct number format | The application displays a tooltip indicating the correct format | **PASS** | **PASS** |
+|   007  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
+|   008  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
+|   009  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   010  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
-_____
+![Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-travel.png)
 
-#### **Edit Recipe (UPDATE)** <a name="edit-recipe"></a>
-The Edit Recipe page enables users to retrieve a previously uploaded recipe from the database and edit any of the data previously supplied. This section validates the functionality of this page.  
+##### Add Travel
+The Add Travel page enables Match Officials and Superusers to add Match officials travel expenses so that they get added to the matchg fees. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|  001   | Edit Recipe Form | Edit Recipe form displays correctly | The form displays and is almost identical to the Add Recipe form | **PASS** | **PASS** |
-|  002   | Existing Data renders| Display existing recipe data from the database on the form | All of the existing data is rendered from the database into the form fields | **PASS** | **PASS** |
-|  003   | Country of Origin | Country of Origin is populated and selectable | Country of origin dropdown functions and is selectable | **PASS** | **PASS** |
-|  004   | Recipe Categories | Recipe Categories are populated and selectable | Category dropdown functions and is selectable | **PASS** | **PASS** |
-|  005   | Recipe title is editable | User can change the recipe title | The user can edit and delete the recipe title  | **PASS** | **PASS** |
-|  006   | Servings| Servings is populated and selectable  | Servings dropdown functions and is selectable | **PASS** | **PASS** |
-|  007   | Vegan & Vegetarian switches | Function and become highlighted on Recipe card if selected | Switches function render correctly if changed | **PASS** | **PASS** |
-|  008   | Recipe Image | Current recipe image displays from the start | The recipe image is visible when the page renders | **PASS** | **PASS** |
-|  009   | New Recipe Image | Renders if a valid URL is supplied | The new image displays below the old image. New image saves to DB | **PASS** | **PASS** |
-|  010   | Recipe Description | Description is editable and saves correctly | Users are able to edit part of, or completely delete the description and start again | **PASS** | **PASS** |
-|  011   | Recipe Ingredients | Ingredients are editable and save correctly | Recipe ingredient lines are editable as required and changes save to DB | **PASS** | **PASS** |
-|  012   | Recipe Method | Preparation steps are editable and save correctly | Recipe prep' steps are editable and changes save to DB | **PASS** | **PASS** |
-|  013   | Confirmation of Upload | Provide confirmation of upload and redirect the user away from the Edit Recipe form | User is redirected to the manage Recipes page and a confirmation message  is flashed to the screen | **PASS** | **PASS** |
 
-___
+
+![Ad Chat](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-chat.png)
+
+_____
+
+#### **Edit Existing Data** <a name="edit-data"></a>
+This sections defines the testing performed on the Superuser function which enable them to edit existing database records for Clubs, Teams and Matches. This allows superusers to change any field as required.
+
+##### Edit Club
+The Edit Club page enables superusers to retrieve a previously uploaded club from the database and edit any of the data previously supplied. This section validates the functionality of this page.
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | **Edit Club** | Function only accessible by superusers | Access to the Edit Club Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to edit a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Edit Club link** | Redirects superusers to the Edit Club Form | The Edit Club form displays as desired | **PASS** | **PASS** |
+|   004  | **Load Data** | Populate the Edit Club form with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
+|   005  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
+|   006  | Update Club | Ensure DB updates and users are redirected to the Club Directory page | The users are redirected as desired and the new Club details are rendered correctly  | **PASS** | **PASS** |
+|   007  | Success Message | Display a message when the Club has been editted | Message displays as desired | **PASS** | **PASS** |
+|   008  | DB Updates | Ensure the new Club Details are written to the DB correctly | The Club details are added to the database as intended | **PASS** | **PASS** |
+|   009  | Cancel Button | Redirect users to the Club directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+
+![Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-club.png)
+_____
+
+##### Edit Team
+The Edit Team page enables superusers to retrieve a previously uploaded team from the database and edit any of the data previously supplied. This section validates the functionality of this page.  
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | **Edit Team** | Function only accessible by superusers | Access to the Edit Team Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to edit a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Edit Team link** | Redirects superusers to the Edit Team Form | The Edit Team form displays as desired | **PASS** | **PASS** |
+|   004  | **Load Data** | Populate the Edit Team form with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
+|   005  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
+|   006  | Update Team | Ensure DB updates and users are redirected to the Team Directory page | The users are redirected as desired and the new Team details are rendered correctly  | **PASS** | **PASS** |
+|   007  | Success Message | Display a message when the Team has been editted | Message displays as desired | **PASS** | **PASS** |
+|   008  | DB Updates | Ensure the new Team Details are written to the DB correctly | The Team details are added to the database as intended | **PASS** | **PASS** |
+|   009  | Cancel Button | Redirect users to the Team directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+
+![Edit Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-team.png)
+
+##### Edit Match
+The Edit Match page enables superusers to retrieve a previously uploaded match from the database and edit any of the data previously supplied. This section validates the functionality of this page. 
+
+|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
+|   001  | **Edit Match** | Function only accessible by superusers | Access to the Edit Match Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | Display Error | Display a Error if non-authorised user attempts to Edit a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Edit Match link** | Redirects superusers to the Edit Match Form | The Edit Match form displays as desired | **PASS** | **PASS** |
+|   004  | **Load Data** | Edit Match form is populated with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
+|   005  | Select Elements | Ensure all select elements and conditional lists function as desired | The select elements are rendered pre-populated and function as desired. The age/team conditional lists function as desired | **PASS** | **PASS** |
+|   006  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
+|   007  | Update Match | Ensure DB updates and users are redirected to the Match Directory page | The users are redirected as desired and the new Match details are rendered correctly  | **PASS** | **PASS** |
+|   008  | Success Message | Display a message when the Match has been editted | Message displays as desired | **PASS** | **PASS** |
+|   009  | DB Updates | Ensure the new Match Details are written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   010  | Cancel Button | Redirect users to the Match directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+
+![Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-match.png)
+> The DateTime input field will not rfender correctly in some browsers as they have not yet been updated to accept this input element.
+_____
+#### **Delete Existing Data** <a name="edit-data"></a>
+This sections defines the testing performed on the Superuser function which enable them to edit existing database records for Clubs, Teams and Matches. This allows superusers to change any field as required.
+_____
 
 #### **User Profile (READ)** <a name="user-profile"></a>
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   | Navbar Link     | Profile link on navbar takes users to their profile page | The link in the navbar functions as desired the user profile page is rendered correctly with information stored in the DB | **PASS** | **PASS** |
-|  002   | Render Information correctly | Display the information for the user stored in the DB | Basic information displayed for users who haven't edit their profile.  | **PASS** | **PASS** |
 
-![Basic Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/basic-profile.jpg)
 
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  003   | Display email | Correctly displays email address if user chooses to subscribe | Email address is rendered below Town / City  | **PASS** | **PASS** |
-|  004   | Display city | City name displays correctly if user chooses to supply it | City displays below profile image | **PASS** | **PASS** |
-|  005   | Display image | Display default image until updated image is supplied. Display in Centre of form | Image displays correctly in the centre of the Profile form | **PASS** | **PASS** |
+![User Profile]()
 
-![Full Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/full-profile.jpg)
+______
 
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  006   | Remove Email | Remove email if user unsubscribes | The email is no longer rendered on the Profile page and is cleared from database | **PASS** | **PASS** |
+### **Automated Testing** <a name="automated-testing"></a>
+Automated testing was carried out on the app's of RefereE-Pay which contain Models, Forms and . The results of the testing have been captured in a copverage report, which is illustrated in the image below.
 
-![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/unsubscribed.jpg)
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  007   | Edit Profile Button| Redirect the user to the Edit profile page | Users are correctly redirected to the Edit Profile page| **PASS** | **PASS** |
-|  008   | Delete Profile Button | Opens up a Confirmation Modal - no deletion yet | Modal appears, Delete function not yet triggered | **PASS** | **PASS** |
-
-![Profile Delete Modal](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/delete-profile.jpg)
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  009   | Escape Route    | "Go Back" button cancels the delete process and returns the user to the Profile page | The button functions as desired, redirecting the user away from the delete process and back to safety on the Profile page | **PASS** | **PASS** |
-|  010   | Confirm Deletion | Delete function executes and deletes the profile from the database. User is provided with confirmation | If the user choses to delete their profile their data is deleted and they are redirected to the home page | **PASS** | **PASS** |
-
-![Profile Deleted](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/prof-del-good.jpg)
-___
-
-#### **Edit Profile** <a name="edit-profile"></a>
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   | Edit Profile Button | The Edit profile button on the Profile page directs the user to the edit profile page | The button does redirect the users to the appropriate profile page | **PASS** | **PASS** |
-|  002   | Edit Profile image | Profile image updates correctly when new URL supplied |  | **PASS** | **PASS** |
-|  003   | New Profile Image | New profile image displays if valid URL supplied | The new image displays below the old if a valid URL is supplied | **PASS** | **PASS** |
-|  004   | City update | Users city is uploaded to database when supplied and new data rendered into profile| Information saves and renders correctly | **PASS** | **PASS** |
-|  005   | Subscribed switch functionality | Switch status changes when selecting on and opens email entry input field | Switch functions correctly and email input field appears | **PASS** | **PASS** |
-
-![Subscribed Off](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-off.jpg)
-![Subscribed On](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-on.jpg)
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  006   | Write to DB | The updated profile info saves to the DB | New or edited profile information correctly saves to the DB | **PASS** | **PASS** |  
-
-___
-
-#### **Delete Recipe (DELETE)** <a name="delete-recipe"></a>  
-Testing to confirm correct functionality of the Delete function. Aspects of this testing are critical as I don't want to delete the incorrect recipes.
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 001    | Navigate to Delete option | Delete button initiates recipe deletion | Clicking Delete correctly initiates the deletion process | **PASS** | **PASS** |
-
-![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-step1.jpg)
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 002    | Prevent unauthorised Deletion | Delete function should only be available to ADMIN and the uploading user | The only recipes shown for users are those they have uploaded themselves | **PASS** | **PASS** |
-| 003    | Check with user before deleting recipe | Deletion modal should appear, to confirm deletion | Modal appears with confirmation message and Recipe name displayed | **PASS** | **PASS** |
-
-![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-step2.jpg)
-
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 004    | Provide escape route | Button provides way back to Manage Recipes | A "Go Back" button has been provided as an alternative to the Confirm Deletion option. redirects user to Manage recipes | **PASS** | **PASS** |
-| 005    | Delete Correct Recipe | Ensure the correct recipe is deleted |Each recipe is linked by it's unique id, which is used when selecting or deleting recipes. Confirmation message includes the recipe name. **Checked in MongoDB** | **PASS** | **PASS** |
-| 006    | Provide Confirmation of Deletion | Flash message should appear when user is redirected to Manage Recipes page | User is redirected and message is displayed | **PASS** | **PASS** |
-
-![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-confirmation.jpg)
-|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 007 | Only delete the selected recipe document when performing deletions | Confirm only recipe data is removed from the database on deletion. Ensure no other collections are affected by the Delete function. | Only selected document is deleted. No downstream effect; no other collections or documents affected| **PASS** | **PASS** |
-
-To confirm the integrity of the deletion process I chose to deleted a recipe created to validate the profanity filter
-The recipe exists in the MongoDB Atlas database prior to deletion.
-
-![Recipe in Database](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-collection.jpg)
-
+![Automated Testing Report]()
+>I would have liked to have conducted more automated testing, but struggled with creating tests for individual matches, clubs, teams etc. With more time and more background reading I am confident I can increase the amount of code tested in this way.
 
 ______
 ### **Appearance Testing** <a name="appearance"></a>
@@ -757,9 +739,10 @@ ______
 ## **Bugs, Issues and Fixes** <a name="bugs"></a>
 The following table explains the bugs and issues encountered while building this website.
 |  Issue #   |  Bug or Issue  |  Description  |  Solution  |
-|:----------:|:--------------:|---------------|------------|
-| 001 | AllAuth Error | Redirect to pages not functioning as desired, returning 404 | My definintion of the login redirect url was incorrect |
-| 002 | Add to bag |  After restuyling my kit bag summary table I was unable to add older matches prior to datetime_now to the bag | While editting the HTML I had inadvertently removed the { request.path } required for the redirect_url variable |
-| 003 | Chained Select | Error for Edit Match view using the code at https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html. Unable to process the filter statement. | After much trial and error, I referred to the django Queryset API reference regarding the filter() method and field lookups and combined the `self.instance.age` with a __contains lookup. `team_name__contains=self.instance.age` |
+|:----------:|----------------|---------------|------------|
+| 001 | **AllAuth Error** | Redirect to pages not functioning as desired, returning 404 | My definintion of the login redirect url was incorrect |
+| 002 | **Add to bag** |  After restuyling my kit bag summary table I was unable to add older matches prior to datetime_now to the bag | While editting the HTML I had inadvertently removed the { request.path } required for the redirect_url variable |
+| 003 | **Chained Select** | Error for Edit Match view using the code at https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html. Unable to process the filter statement. | After much trial and error, I referred to the django Queryset API reference regarding the filter() method and field lookups and combined the `self.instance.age` with a __contains lookup. `team_name__contains=self.instance.age` |
+| 004 | **DateTime Input** | Despite using the correct and current DateTime input element, some browsers have not yet been updated to this version and thus the handy date time input feature doesn't display. Users then have to enter the date and time in a particular text format. This has limited impact in this application as it would only affect Admin/Superusers creating or editting Matches. | A potential solution would be to change my Models, Forms and Templates to use seperate Date input and Time input fields. |
 
 **[Back to Github Repo](https://github.com/GazzaJ/CI-MS4-RefereE-pay/)**
