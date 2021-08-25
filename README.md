@@ -402,9 +402,14 @@ ___
 The aesthetics of RefereE-Pay was just as important to me as the functionality. Despite not using a lot of imagery for the app, what I have selected needs to be impactful, yet relaxed and fun to match the overall objective.
 
 ##### **Colour Scheme**
-I typically find great inspiration for colour schemes on Pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image.  
+I typically find great inspiration for colour schemes on Pinterest. For this project I am looking for very simple bold colurs which enable good contrast. I have used:
+ - A green respresenting the grass of playing fields
+ - Red for the Red cards wielded by Referees
+ - Yellow representing the Yellow cards wielded by Referees
+ - A dark blue whicg provides good contract for buttons and text
+ - A Lighter blue (Bootstrap info blue) for a few button and my footer text. 
   
-![Colour Scheme](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/profile.png "Colour Palette") 
+![Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/colour-scheme.jpg) 
 
 ##### **Typography**  
 Selecting the correct typography for this site wasn't as important as it had been for some of the other projects I have worked on. Since this app comprises an e-commerce platform my aim was to find complimentary fonts which were relatively simple yet easily. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
@@ -430,13 +435,13 @@ I had a very clear plan for the site images right from the very early planning s
 
 I also wanted to add some fun to the messages rendered by the app by adding footbal icons matching the level of message, such as:
  - Error = Red Card
-
+    ![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-error.jpg) )
  - Warning = Yellow Card
-
+    ![Yellow Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-warning.jpg) )
  - Alert = Tactics Board
-
+    ![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg) )
  - Success = Goal
-
+    ![GOAL!](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-success.jpg) )
 ______
 
 ## **Database Schema** <a name="dbschema"></a>  
