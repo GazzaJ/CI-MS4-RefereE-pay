@@ -48,15 +48,15 @@ class TeamForm(forms.ModelForm):
 
     team_name = forms.CharField(validators=[RegexValidator(
                                 r'^[a-zA-Z]+( \w+)*$',
-                                message="Club name must contain \
+                                message="Team name must contain \
                                     words and numbers")])
     short_name = forms.CharField(validators=[RegexValidator(
                                 r'^[a-zA-Z]+( \w+)*$',
-                                message="Club name must contain \
+                                message="Team short name must contain \
                                     words and numbers")])
     manager_coach = forms.CharField(validators=[RegexValidator(
                                 r'^[a-zA-Z]+( \w+)*$',
-                                message="Club name must contain \
+                                message="Manager/Coach name must contain \
                                     words and numbers")])
 
 
