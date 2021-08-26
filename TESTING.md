@@ -24,7 +24,21 @@ ______
 9. [Bugs & Issues](#bugs)  
 
 ______
+## **Login Credentials** 
 
+I have pre-loaded a number of user profiles for a selection of Coaches and Referees to facilitate testing of this web-apps features. Some of the web-apps' functionality is dependent on which Role selected.
+| Profile |      Username     |   Password   |    Role   |    Team    |
+|:-------:|:-----------------:|:------------:|:---------:|:----------:|
+|   001   |      CI_Admin     |   C!_4dm1n   | Superuser |      -     |
+|   002   |  Richard_Spencer  |  G)_d3v1l5   |   Coach   | LRFC U12 Devils |
+|   003   |    Mark_Hawkins   | WH$dd0n_utd  | Coach | Whaddon United U12 |
+|   004   |     Alex_Hunt     |  FC14k3s1d3  | Coach | FC Lakeside U11 Reds |
+|   005   | Pierluigi_Collina |  "Y£LC=1r3dc | Referee | - |
+|   006   |   Damir_Skomina   | D4m1r5k0m1n4 | Referee | - |
+|   007   |   Bjorn_Kuipers   | BJ0rnku1p3r5 | Referee | - |
+|   008   |    Felix_Blych    | F£l1x8lych | Referee | - |
+> It may be necessary to change a Coaches email address during testing in order to receive a payment confirmation email.
+______
 ### **User Story Testing** <a name="user-story-testing"></a>
 The following testing has been carried out to validate how the website addresses each of the user stories:
 |User Story|Description|Testing|
@@ -207,35 +221,22 @@ Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ f
 ___
 
 #### **Registration/Log-in Testing** <a name="registration"></a>
-This section covers some basic testing of the Registration Log-in functionality. This functionality has been provided by the AllAuth package and will have been independently validated. My intention is to simply ensure that I have not introduced any unwanted issues while customising the templates. 
+This section covers some basic testing of the Registration Log-in functionality. Account authorisation is provided by the AllAuth package and will have been independently validated. My intention is to simply ensure that I have not introduced any unwanted issues while customising the templates. 
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001    |Username - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
-|   002    |Password - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
-|   003    |Minimum Character limit (5) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
-|   004    | Max character limit (15) | Indicate requirements not met | User input is limited to 15 characters | **PASS** | **PASS** |
-|   005    |  Username already taken | Let user know username it's taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** | 
+|   001  | **Sign-up Link** | Should direct users to the Registration form  | The Sign-up link works as desired | **PASS** | **PASS** |
+|   002  | **Email Reuse** | Should prevent the re-use of an email by more than one user | Form does not submit and error message displayed as desired | **PASS** | **PASS** |
+|   003  | **Username reuse** | Should prevent the re-use of an username by more than one user | Form does not submit and error message displayed as desired | **PASS** | **PASS** |
+|   004    | **Email Validation Email** | App should send email to users email address with instructions to validate email address | The email validation message is sent | **PASS** | **PASS** |
+|   005    |  **Custom Validation email** | The content of the email is specific to RefereE-Pay and the user | The email refers to RefereE-Pay and mentions the Users Username | **PASS** | **PASS** | 
+|   006    | **Registration Success** | Successful registration is confirmed with a message on the website | On siccessful signup users are directyed to the Log-in page and a success message is displayed | **PASS** | **PASS** |
+|   007    | **Use of Correct Templates and Styles**  | The pages should use the RefereE-Pay background images and styles | The webpage styles are correct for the application | **PASS** | **PASS** |
+|   008    | **Navbar Functionality**  | Maintain navbar functionality throughout the process | The navbar remains functional throughout this process | **PASS** | **PASS** |
 
-![Username taken](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/username-taken.jpg)
-
-|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   006    | Username or password too short | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
-|   007    | Incorrect Username  | Inform user of issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
-|   008    | Incorrect Password  | Inform user of Issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
-
-![Incorrect Log-in](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/incorrect-login.jpg)
-
-|   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
-|:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   009    | Successful Sign-up  | User redirected into web-app with Success message displayed | User is taken to Profile page with Welcome message displayed | **PASS** | **PASS** |
-|   010    | Successful Log-in  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |  
-
-![Sign-up Success](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/success-login.jpg)
+![Account Sign-up](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/account-sign-up.png)
 
 ____
-
 
 #### **Matches & Match Detail (Searching and Viewing)** <a name="matches"></a>
 This section documents the testing performed to validate the ability of the user to search for and view the match list, filtering it by age and team, as well as viewing individual games. This testing is aimed at the functionality for logged in Coaches and Referees
@@ -545,7 +546,7 @@ The Delete Match function enables superusers to permanently remove a previously 
 ![Delete Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/delete-match.png)
 _____
 
-#### **User Profile (READ)** <a name="user-profile"></a>
+#### **User Profile** <a name="user-profile"></a>
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -568,7 +569,7 @@ ______
 ### **Automated Testing** <a name="automated-testing"></a>
 Automated testing was carried out on the app's of RefereE-Pay which contain Models, Forms and . The results of the testing have been captured in a copverage report, which is illustrated in the image below.
 
-![Automated Testing Report]()
+![Automated Testing Report](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/coverage-report.png)
 >I would have liked to have conducted more automated testing, but struggled with creating tests for individual matches, clubs, teams etc. With more time and more background reading I am confident I can increase the amount of code tested in this way.
 
 ______
@@ -779,16 +780,33 @@ These tests ensure that there are appropriate levels of access to the various pa
 | Checkout | `checkout/` | N/A | N/A | Redirected to login | **PASS** |
 | Profile | `profile/` | N/A | N/A | Redirected to login | **PASS** |
   
+#### **Secure Usage**
+The functionality of RefereE-Pay is deliberately compartmentalised by a users role and the permissions granted to those roles. This section describes the testing which has been performed to validate this compartemtalisation.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | **Regular Users** | Registered users limited to viewing the Match Details their Profile page | Registered users access is limited by design. The app is intended for a specific audience |  **PASS** | **PASS** |
+|  001   | **Regular Users** | Are NOT authorised to proceed beyond basic functionality of viewing Fixtures, Clubs, Teams and Profile | The regular user without an assigned role has no access beyond viewing fixtures, clubs, and their profile |  **PASS** | **PASS** |
+
+##### Coaches
+Aside from Superusers, coaches have one of the more prominent roles and are the primary audience for this app.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | **Assigned Role** | Users need to be assigned the role of Coach and be assigned their team by a Superuser | Users are not able to edit or update this part of their user profile |  **PASS** | **PASS** |
+|  001   | **Match Details** | All authorised coaches can view Match Details | Functions as designed |  **PASS** | **PASS** |
+|  001   | **Add to Bag** | Home Team coaches can add matches to the kit bag | Coaches are able to add a match to their kit bag |  **PASS** | **PASS** |
+|  001   | **Add To Bag** | The should be no way to add another teams match to your bag | Access to Add to bag function is role and user specific |  **PASS** | **PASS** |
+|  001   | **Coaches** | Matches that have been paid for are indicated and "Add to bag button is removed" | A "Paid" stamp appears in the Review Match Fees section and Add to bag button is removed |  **PASS** | **PASS** |
+|  001   | **Add Messages** | Able to add messages to the Match | Coaches can add messages to the match | Coaches are able to add messages | **PASS** | **PASS** |
+|  001   | **Time Limit** | Add Message button should no longer render after kick-off date/time | The Add message does not render for matches whose kick off date has passed | **PASS** | **PASS** |
+|  001   | **Coaches** | Messages are tagged by Author | The messages are coloured by Coach or Referee, and the username is added in the message field |  **PASS** | **PASS** |
+|  001   | **Coaches** | Can view their kitbag contents |  |  **PASS** | **PASS** |
+|  001   | **Coaches** | Able to proceed to Checkout |  |  **PASS** | **PASS** |
+|  001   | **Coaches** | Authorised to pay for  |  |  **PASS** | **PASS** |
+
+![Coaches]()
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   | Username Reuse  | No username duplication allowed | Sign-up does not allow duplicate usernames. A warning message is flashed onscreen and the user redirected to Sign-in again | **PASS** | **PASS** |
-|  002   | Password Security  | Passwords are hashed and salted  | Each user passwords is converted into a unique string of characters | **PASS** | **PASS** |
-|  003   | Only superusers can edit a match | Users can only view their own uploads when selecting the Manage Recipes page | The Manage Recipes view is limited to those recipes the user has uploaded |  **PASS** | **PASS** |
-|  004   | Prevent unauthorised recipe edits | Prevent users from editing a Full_Recipe URL such as ("https://ci-ms3-w3recipes.herokuapp.com/full_recipe/604105c97084e9c04df5e2e7") and changing full recipe to  edit_recipe. | Users are redirected back to the Manage Recipes page. Warning message flashed to screen. | **PASS** | **PASS** |
-|  005   | Prevent unauthorised recipe deletion | Prevent users from editing a Full_Recipe URL such as ("https://ci-ms3-w3recipes.herokuapp.com/full_recipe/604105c97084e9c04df5e2e7") and changing full recipe to delete_recipe.| Users are redirected back to the Manage Recipes page. Warning message flashed to screen. | **PASS** | **PASS** |
-|  006   | Prevent web app URL copy and paste | Error page if a user copies a logged-in page url into a new browser, without logging in | Results in a 500 Internal server error as there is no session cookie with the required username| **PASS** | **PASS** |
-
 
 
 
