@@ -23,8 +23,8 @@ class CompetitionForm(forms.ModelForm):
 
     comp = forms.CharField(label='Competition name',
                            validators=[RegexValidator(
-                            r'^[a-zA-Z]+( \w+)*$', message="Competition name \
-                                must contain words and numbers")])
+                            r'^[a-zA-Z]+( \w+)*$', message="Competition \
+                                name must contain words and numbers")])
 
 
 class ClubForm(forms.ModelForm):
