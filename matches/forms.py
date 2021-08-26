@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import RegexValidator
 from .widgets import CustomClearableFileInput, CustomDateTimeInput
 from .models import Game, Competition, Chat, Club, Team
 
@@ -20,6 +21,10 @@ class CompetitionForm(forms.ModelForm):
         model = Competition
         fields = ('comp',)
 
+    comp = forms.CharField(validators=[RegexValidator(r'^[a-zA-Z]+( \w+)*$',
+                           message="Competition name must contain \
+                               words and numbers")])
+
 
 class ClubForm(forms.ModelForm):
     """ A form to allow superusers to add and edit clubs """
@@ -27,6 +32,10 @@ class ClubForm(forms.ModelForm):
         model = Club
         fields = '__all__'
 
+    club_name = forms.CharField(validators=[RegexValidator(
+                                r'^[a-zA-Z]+( \w+)*$',
+                                message="Club name must contain \
+                                    words and numbers")])
     club_badge = forms.ImageField(label="Club Badge", required=False,
                                   widget=CustomClearableFileInput)
 
@@ -36,6 +45,19 @@ class TeamForm(forms.ModelForm):
     class Meta:
         model = Team
         fields = '__all__'
+
+    team_name = forms.CharField(validators=[RegexValidator(
+                                r'^[a-zA-Z]+( \w+)*$',
+                                message="Club name must contain \
+                                    words and numbers")])
+    short_name = forms.CharField(validators=[RegexValidator(
+                                r'^[a-zA-Z]+( \w+)*$',
+                                message="Club name must contain \
+                                    words and numbers")])
+    manager_coach = forms.CharField(validators=[RegexValidator(
+                                r'^[a-zA-Z]+( \w+)*$',
+                                message="Club name must contain \
+                                    words and numbers")])
 
 
 class GameForm(forms.ModelForm):
