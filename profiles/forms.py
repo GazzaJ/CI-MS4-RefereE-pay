@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import RegexValidator
 from .models import UserProfile
 
 
@@ -31,7 +32,7 @@ class UserProfileForm(forms.ModelForm):
         for field in self.fields:
             if field != 'profile_country':
                 if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
+                    placeholder = f'{placeholders[field]}'
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder

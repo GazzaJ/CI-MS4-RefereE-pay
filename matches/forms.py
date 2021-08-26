@@ -42,7 +42,7 @@ class ClubForm(forms.ModelForm):
 
 
 class TeamForm(forms.ModelForm):
-    """ A form to allow superusers to add and editteams """
+    """ A form to allow superusers to add and edit teams """
     class Meta:
         model = Team
         fields = '__all__'
