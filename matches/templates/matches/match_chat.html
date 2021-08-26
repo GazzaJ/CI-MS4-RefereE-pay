@@ -25,15 +25,15 @@
                                     alt="match.home_team.club_name">
                             </div>
                             <div class="col-8 col-lg-3 text-center">
-                                <p class="coach mb-3">{{ match.home_team }}</p>
-                                <p>Coach: {{ match.home_team.manager_coach }}</p>
+                                <p class="match-detail text-success mb-3">{{ match.home_team }}</p>
+                                <p>Coach: <strong class="blue-text">{{ match.home_team.manager_coach }}</strong></p>
                             </div>
                             <div class="col-sm-12 col-lg-2 text-center">
                                 <h3>VS</h3>
                             </div>
                             <div class="col-8 col-lg-3 text-center">
-                                <p class="coach mb-3">{{ match.away_team }}</p>
-                                <p>Coach: {{ match.away_team.manager_coach }}</p>
+                                <p class="match-detail text-success mb-3">{{ match.away_team }}</p>
+                                <p>Coach: <strong class="blue-text">{{ match.away_team.manager_coach }}</strong></p>
                             </div>
                             <div class="col-4 col-lg-2 text-center">
                                 <img class="match-badge image-fluid" src="{{ match.away_team.club_name.club_badge_url }}"
@@ -42,20 +42,20 @@
                         </div>
                         <div class="row my-3 mx-1 align-items-center">
                             <div class="col text-center">                                
-                                <p class="chat-venue"><strong>{{ match.venue }} on {{ match.date_time }}</strong></p>                                
+                                <p class="text-success"><strong>{{ match.venue }} on {{ match.date_time }}</strong></p>                                
                             </div>
                         </div>
                         <div class="row mb-3 mx-1 align-items-center">
                             <div class="col-12 text-center">                                
                                 <div class="row">
                                     <div class="col-12 col-md-4 text-center mb-3">
-                                        <p>Referee: {{ match.referee }}</p>                        
+                                        <p>Referee: <strong class="text-success">{{ match.referee }}</strong></p>                        
                                     </div>
                                     <div class="col-12 col-md-4 text-center">
-                                        <p>Asst Referee: {{ match.asst_referee1 }}</p>
+                                        <p>Asst Referee: <strong class="text-success">{{ match.asst_referee1 }}</strong></p>
                                     </div>
                                     <div class="col-12 col-md-4 text-center">
-                                        <p>Asst Referee: {{ match.asst_referee2 }}</p>
+                                        <p>Asst Referee: <strong class="text-success">{{ match.asst_referee2 }}</strong></p>
                                     </div>
                                 </div>                                                                
                             </div>
@@ -132,15 +132,4 @@
         {% endif %}
     </div>
 
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">		
-        $(document).ready(function() {
-            $(".green-btn").hover(function() {
-                $(this).toggleClass("toggle-grn");
-            });
-        });            
-	</script>
 {% endblock %}
