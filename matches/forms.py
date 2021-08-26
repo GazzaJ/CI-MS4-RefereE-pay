@@ -21,9 +21,10 @@ class CompetitionForm(forms.ModelForm):
         model = Competition
         fields = ('comp',)
 
-    comp = forms.CharField(validators=[RegexValidator(r'^[a-zA-Z]+( \w+)*$',
-                           message="Competition name must contain \
-                               words and numbers")])
+    comp = forms.CharField(label='Competition name',
+                           validators=[RegexValidator(
+                            r'^[a-zA-Z]+( \w+)*$', message="Competition name \
+                                must contain words and numbers")])
 
 
 class ClubForm(forms.ModelForm):
