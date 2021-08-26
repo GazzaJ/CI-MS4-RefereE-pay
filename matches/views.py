@@ -195,7 +195,7 @@ def add_travel(request, game_id):
 
     if request.method == 'POST':
         form = FeesForm(request.POST, instance=match)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully updated your travel \
                              expenses!')
@@ -278,7 +278,7 @@ def add_club(request):
 
     if request.method == "POST":
         form = ClubForm(request.POST, request.FILES)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully added a new club!')
             return redirect(reverse('clubs'))
@@ -307,7 +307,7 @@ def edit_club(request, club_id):
     club = get_object_or_404(Club, pk=club_id)
     if request.method == "POST":
         form = ClubForm(request.POST, request.FILES, instance=club)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully updated the Club!')
             return redirect(reverse('clubs'))
@@ -382,7 +382,7 @@ def edit_team(request, team_id):
 
     if request.method == "POST":
         form = TeamForm(request.POST, instance=team)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully updated the Team!')
             return redirect(reverse('teams', args=(club_id,)))
@@ -412,7 +412,7 @@ def add_team(request):
 
     if request.method == "POST":
         form = TeamForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully added a new team!')
             return redirect(reverse('clubs'))
@@ -457,7 +457,7 @@ def add_match(request):
 
     if request.method == "POST":
         form = GameForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             match = form.save()
             messages.success(request, 'You successfully added a new match!')
             return redirect(reverse('match_detail', args=[match.id]))
@@ -496,7 +496,7 @@ def edit_match(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
     if request.method == "POST":
         form = GameForm(request.POST, instance=match)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully updated the match!')
             return redirect(reverse('match_detail', args=[match.id]))
@@ -585,7 +585,7 @@ def add_chat(request, game_id):
         }
     if request.method == "POST":
         form = ChatForm(request.POST, request.FILES)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, 'You successfully added a new message!')
             return redirect(reverse('match_chat', args=[match.id]))
