@@ -36,13 +36,11 @@ My aim is to achieved the above with a visually appealing, interactive yet intui
 
 [The live website can be viewed here!](https://ci-ms4-referee-pay.herokuapp.com/matches/clubs)
 
-![Am I responsive images]( "Am I Responsive")
+![Am I responsive images](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/am-i-responsive.jpg "Am I Responsive")
 
 **There is no difference between the developed version of RefereE-Pay and that deployed to Heroku**
 
 ## Table of contents
-An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section.  
-![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png)  
 
 1. [User Experience](#user-experience)
    - [User Stories](#stories)
@@ -71,45 +69,46 @@ The following user stories were developed during the planning stages for this si
 | User Story |  As a  | I need to | In order to |
 |:----------:|-------|-----------|-------------|
 |  1  | Site User  | Easily register for an account | Have a personal account and be able to view my profile |
-|  2  | Site User  | Easily login or logout | Access my personal account information |
-|  3  | Site User  | Easily recover my password in case I forget it | Recover access to my account |
+|  2  | Site User  | Easily login or logout | Access the match details and my personal account information |
+|  3  | Site User  | Easily recover or reset my password in case I forget it | Recover access to my account |
 |  4  | Site User  | Receive an email confirmation after registering | Verify that my account registration was successful |
 |  5  | Site User  | Have a personalised user profile | View my personal payment history and payment confirmations, and save my payment information |
 
 #### **Searching and Filtering**
 | User Story |  As a  | I need to | In order to |
 |:----------:|-------|-----------|-------------|
-|  6  |  Team Manager  | Easily identify all of my teams matches | understand who I am playing and when |
-|  7  |  Team Manager  | Sort all fixtures | Easily identify my teams fixtures |
-|  8  |  Team Manager  | Sort a specific category of matches |  |
-|  9  |  Team Manager  | Sort multiple categories of products simultaneously |  |
+|  6  |  Team Manager  | Easily find and view the database of matches | understand who I am playing and when |
+|  7  |  Team Manager  | Sort all fixtures by age | Easily identify all fixtures by age group |
+|  8  |  Team Manager  | Sort fixtures by team | Easily find different fixtures by team name |
+|  9  |  Team Manager  | Be able to quickly navigate through the list of fixtures, | find different fixtures. |
 | 10  |  Team Manager  | Search for fixtures by team name | Find a specific fixture I'd like to pay the match official fees for |
 
 #### **Communication**
 | User Story |  As a  | I need to | In order to |
 |:----------:|-------|-----------|-------------|
-| 11  |  Team Manager  | Communicate with the ref | Confirm status and alert on any pitch team issues |
-| 12  |  Team Manager  | Post Pictures | Illustrate pitch conditions ahead of any game |
-| 13  |  Referee  | Communicate with the teams | Reply to any concerns or issues raised |
+| 11  |  Team Manager  | Communicate with the referee | Confirm match status and alert them of any issues with the condition of the pitch. |
+| 12  |  Team Manager  | Post/send pictures to the Referee | Illustrate pitch conditions ahead of any game |
+| 13  |  Referee  | Communicate with the Home team manager | Reply to any concerns or issues raised ahead of the game |
 
 #### **Selection and Checkout**
 
 | User Story |  As a  | I need to | In order to |
 |:----------:|-------|-----------|-------------|
-| 14  |  Team Manager  | Easily select the fixture | Ensure ability to exit fixture if incorrect one selected |
-| 15  |  Team Manager  | A simple cashless method to pay the referee | Pay the assigned referee |
-| 16  |  Team Manager  | View payments in my cart | Identify the total cost of payments and what I'm paying for |
-| 17  |  Team Manager  | Easily enter my payment infoirmation | Check out quickly without complications |
-| 18  |  Team Manager  | Feel my personal and payment information is secure and safe | Confidently provide the needed information to make a purchase |
-| 19  |  Team Manager  | View on order confirmation after checkout | Verify that I haven't made any mistakes |
-| 20  |  Team Manager  | Receive an email confirmation after checkout | Keep the confirmation of what paid for my records and claiming from Club |
+| 14  |  Team Manager  | Easily select the fixture | Discover the full details of that match |
+| 15  |  Team Manager  | Have a simple cashless method to pay the referee | Pay the assigned match officials their match fees |
+| 16  |  Team Manager  | View any pending payments in my kit bag | Identify the total cost of match fees for each game and the grand total |
+| 17  |  Team Manager  | Easily enter my payment infoirmation | Complate my payment quickly and efficiently |
+| 18  |  Team Manager  | Feel my personal and payment information is secure and safe | Feel confident in providing required information to complete a payment |
+| 19  |  Team Manager  | View a payment confirmation after checkoutt | Verify that I have successfully paid my match fees |
+| 20  |  Team Manager  | Receive an email confirmation after checkout | Have recorded confirmation of each payment |
 
 #### **Admin and Management**
 | User Story |  As a  | I need to | In order to |
 |:----------:|-------|-----------|-------------|
-| 21  |  Site Admin  | Create a new Fixture | Add new team fixtures  |
-| 22  |  Site Admin  | Edit / Update an existing Fixture | Change fixture dates, venues, images, times and Referee |
-| 23  |  Site Admin  | Delete a Fixture | Remove a fixture if necessary |
+| 21  |  Site Admin  | Add, edit and delete Matches | Keep pace with league fixtures and provide a long term solution  |
+| 22  |  Site Admin  | Add, edit and delete Clubs | Keep track of league clubs and those using the site |
+| 23  |  Site Admin  | Add, edit and delete Teams | Keep track of all clubs teams |
+| 24  |  Referee  | Add my travel expenses | ensure I get paid the full amount for my services |
 
 ___
 
@@ -435,13 +434,20 @@ I had a very clear plan for the site images right from the very early planning s
 
 I also wanted to add some fun to the messages rendered by the app by adding footbal icons matching the level of message, such as:
  - Error = Red Card
-    ![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-error.jpg) )
+ 
+![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-error.jpg) )
+
  - Warning = Yellow Card
-    ![Yellow Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-warning.jpg) )
+ 
+![Yellow Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-warning.jpg) )
+
  - Alert = Tactics Board
-    ![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg) )
+
+![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg) )
+
  - Success = Goal
-    ![GOAL!](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-success.jpg) )
+
+![GOAL!](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-success.jpg) )
 ______
 
 ## **Database Schema** <a name="dbschema"></a>  
@@ -677,10 +683,6 @@ All of the testing conducted on this app', as well as any bugs encountered and e
 # [TESTING.md](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/TESTING.md) 
 
 ______
-## **Database Creation** <a name="database"></a>
-
-
-
 
 ## **Deployment** <a name="deployment"></a>
 All of the files necessary to run this website have been stored in the GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
