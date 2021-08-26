@@ -781,34 +781,62 @@ These tests ensure that there are appropriate levels of access to the various pa
 | Profile | `profile/` | N/A | N/A | Redirected to login | **PASS** |
   
 #### **Secure Usage**
-The functionality of RefereE-Pay is deliberately compartmentalised by a users role and the permissions granted to those roles. This section describes the testing which has been performed to validate this compartemtalisation.
+The functionality of RefereE-Pay is deliberately compartmentalised by a users role and the permissions granted to those roles restrict what each role can achieve. This section describes the testing which has been performed to validate this compartemtalisation.
+
+##### **General users**
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  001   | **Regular Users** | Registered users limited to viewing the Match Details their Profile page | Registered users access is limited by design. The app is intended for a specific audience |  **PASS** | **PASS** |
-|  001   | **Regular Users** | Are NOT authorised to proceed beyond basic functionality of viewing Fixtures, Clubs, Teams and Profile | The regular user without an assigned role has no access beyond viewing fixtures, clubs, and their profile |  **PASS** | **PASS** |
+|  002   | **Regular Users** | Are NOT authorised to proceed beyond basic functionality of viewing Fixtures, Clubs, Teams and Profile | The regular user without an assigned role has no access beyond viewing fixtures, clubs, and their profile |  **PASS** | **PASS** |
 
 ##### Coaches
 Aside from Superusers, coaches have one of the more prominent roles and are the primary audience for this app.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  001   | **Assigned Role** | Users need to be assigned the role of Coach and be assigned their team by a Superuser | Users are not able to edit or update this part of their user profile |  **PASS** | **PASS** |
-|  001   | **Match Details** | All authorised coaches can view Match Details | Functions as designed |  **PASS** | **PASS** |
-|  001   | **Add to Bag** | Home Team coaches can add matches to the kit bag | Coaches are able to add a match to their kit bag |  **PASS** | **PASS** |
-|  001   | **Add To Bag** | The should be no way to add another teams match to your bag | Access to Add to bag function is role and user specific |  **PASS** | **PASS** |
-|  001   | **Coaches** | Matches that have been paid for are indicated and "Add to bag button is removed" | A "Paid" stamp appears in the Review Match Fees section and Add to bag button is removed |  **PASS** | **PASS** |
-|  001   | **Add Messages** | Able to add messages to the Match | Coaches can add messages to the match | Coaches are able to add messages | **PASS** | **PASS** |
-|  001   | **Time Limit** | Add Message button should no longer render after kick-off date/time | The Add message does not render for matches whose kick off date has passed | **PASS** | **PASS** |
-|  001   | **Coaches** | Messages are tagged by Author | The messages are coloured by Coach or Referee, and the username is added in the message field |  **PASS** | **PASS** |
-|  001   | **Coaches** | Can view their kitbag contents |  |  **PASS** | **PASS** |
-|  001   | **Coaches** | Able to proceed to Checkout |  |  **PASS** | **PASS** |
-|  001   | **Coaches** | Authorised to pay for  |  |  **PASS** | **PASS** |
+|  002   | **Match Details** | All authorised coaches can view Match Details | Functions as designed |  **PASS** | **PASS** |
+|  003   | **Add to Bag** | Home Team coaches can add matches to the kit bag | Coaches are able to add a match to their kit bag |  **PASS** | **PASS** |
+|  004   | **Add To Bag** | The should be no way to add another teams match to your bag | Access to Add to bag function is role and user specific |  **PASS** | **PASS** |
+|  005   | **PAID** | Matches that have been paid for are indicated and "Add to bag button is removed" | A "Paid" stamp appears in the Review Match Fees section and Add to bag button is removed |  **PASS** | **PASS** |
+|  006   | **View Messages** | A registered coach can access the Match Messages page and view any messages posted there | Access to the Match messages is as desired and is not time limited. | **PASS** | **PASS** |
+|  007   | **Add Messages** | Able to add messages to the Match | Coaches can add messages to the match  | **PASS** | **PASS** |
+|  008   | **Time Limit** | Add Message button should no longer render after kick-off date/time | The Add message does not render for matches whose kick off date has passed | **PASS** | **PASS** |
+|  009   | **Message tags** | Messages are tagged by Author | The messages are coloured by Coach or Referee, and the username is added in the message field |  **PASS** | **PASS** |
+|  010   | **Kit Bag** | Coaches can access the kit bag from their Account in the Navbar or the Grandtotal icon on the navbar | This is an important function which enables the coach user to check pending payments. This access works as desired |  **PASS** | **PASS** |
+|  011   | **Checkout** | Once in the Kit bag Coaches can proceed to Checkout as long as there are items in their bag | This functions correctly. If no items exist in the bag a message is displayed and there is no option to proceed to checkout. |  **PASS** | **PASS** |
+|  012   | **Payment** | Authorised to make payments  | Registered Coaches can proceed through the payment process and pay their match fees |  **PASS** | **PASS** |
 
 ![Coaches]()
 
+##### **Referees**
+Referees have similar access rights to Coaches with the exception that they have no requirement to make payments into the system, and thus don't need access to the kit bag or checout apps.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | **Assigned Role** | Users need to be assigned the role of Referee by a Superuser | Users are not able to edit or update this part of their user profile |  **PASS** | **PASS** |
+|  002   | **Match Details** | All authorised referees can view Match Details | Functions as designed and data renders as desired | **PASS** | **PASS** |
+|  003   | **Add Travel** | Have the ability to modify travel expenses up to Kick-off day and time | Match officials can add and update any travel expenses using the add travel function as desired | **PASS** | **PASS** |
+|  004   | **Add travel** | Access to add travel button is removed after kickoff | The Add Travel button no longer displays after kick-off date and time | **PASS** | **PASS** |
+|  005   | **Add Travel** | Access to Add travel is reserved to refs and superusers. Cannot manipulate URLS to add travel | Access works correctly. An error message is displayed if an unauthorised user attempts to manipulate a URL to add travel | **PASS** | **PASS** |
+|  006   | **View Messages** | A registered referee can access the Match Messages page and view any messages posted there | Access to the Match messages is as desired and is not time limited. | **PASS** | **PASS** |
+|  007   | **Add Messages** | Able to add messages to the Match | Referees can also add messages to the match in reply to coaches | **PASS** | **PASS** |
+|  008   | **Time Limit** | Add Message button should no longer render after kick-off date/time | The Add message does not render for matches whose kick off date has passed | **PASS** | **PASS** |
 
+##### **Superusers**
+Superusers of the RefereE-Pay web-app have the access rights of Coaches and Referees, and are able to act on their behalf, with the additional access to Club, Team and Match Admin.
 
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | **Admin Menu**  | Should be able to access the Game admin menu on the navbar | Access to the Admin menu works as desired for super users |
+|  002   | **Add Competition** | Have the ability to add a new competition name | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Add Club** | Have the ability to add a new Club to the database | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Add Team** | Have the ability to add a new Team to a Club | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Add Match** | Have the ability to create a new match and assigns teams, venues and match officials | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Edit Club** | Have the ability to edit or update an existing Club | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Edit Team** | Have the ability to edit an existe Club's team data | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Edit Match** | Have the ability to edit and update the details of any future match. Cannot edit past matches | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Delete Club** | Should be able to permanently delete a Club from the database. Confirmation Modal should appear | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Delete Team** | Should be able to permanently delete a Team from the associated Club and the database. Confirmation Modal should appear | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Delete Match** | Should be able to permanently delete a Match from the database. Confirmation Modal should appear | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
 
 ______
 
