@@ -50,14 +50,16 @@ class TeamForm(forms.ModelForm):
                                 r'^[a-zA-Z]+( \w+)*$',
                                 message="Team name must contain \
                                     words and numbers")])
-    short_name = forms.CharField(validators=[RegexValidator(
-                                r'^[a-zA-Z]+( \w+)*$',
-                                message="Team short name must contain \
+    short_name = forms.CharField(label='Short Team name',
+                                 validators=[RegexValidator(
+                                    r'^[a-zA-Z]+( \w+)*$',
+                                    message="Team short name must contain \
                                     words and numbers")])
-    manager_coach = forms.CharField(validators=[RegexValidator(
-                                r'^[a-zA-Z]+( \w+)*$',
-                                message="Manager/Coach name must contain \
-                                    words and numbers")])
+    manager_coach = forms.CharField(label='Manager/Coach',
+                                    validators=[RegexValidator(
+                                        r'^[a-zA-Z]+( \w+)*$',
+                                        message="Manager/Coach name must contain \
+                                            words and numbers")])
 
 
 class GameForm(forms.ModelForm):
