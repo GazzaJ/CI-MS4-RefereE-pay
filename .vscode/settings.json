@@ -7,9 +7,10 @@
    "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
    "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
    "python.linting.pylintArgs": [
-      "--load-plugins=pylint_django",
+      "--load-plugins pylint_django",
       "--load-plugins=pylint_django.checkers.migrations",
       "--django-settings-module=referee_pay.settings",
+      "--errors-only",
   ],
    "cornflakes.linter.executablePath": "/home/gitpod/.pyenv/shims/flake8",
    "files.exclude": {
