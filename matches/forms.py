@@ -56,6 +56,7 @@ class GameForm(forms.ModelForm):
 
     date_time = forms.DateTimeField(label="KO Date & Time", required=True,
                                     widget=CustomDateTimeInput)
+
     # chained dropdown elements adapted from
     # https://simpleisbetterthancomplex.com/tutorial/2018/01/29/
     # how-to-implement-dependent-or-chained-dropdown-list-with-django.html
