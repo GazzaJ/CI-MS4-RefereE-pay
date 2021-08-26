@@ -193,6 +193,15 @@ def add_travel(request, game_id):
                     add travel expenses!")
         return redirect(reverse('home'))
 
+    trav = True
+    today = datetime.datetime.now()
+    if match.date_time.replace(tzinfo=None) < today:
+        trav = False
+    if not trav:
+        messages.error(request, "That match has already been played!\
+            It's now too late to add travel expenses to that match")
+        return redirect(reverse('match_detail', args=[match.id]))
+
     if request.method == 'POST':
         form = FeesForm(request.POST, instance=match)
         if form.is_valid():
@@ -573,13 +582,14 @@ def add_chat(request, game_id):
         official = True
     if user.is_superuser:
         official = True
-    
+
     msg = True
     today = datetime.datetime.now()
     if match.date_time.replace(tzinfo=None) < today:
         msg = False
     if not msg:
-        messages.error(request, 'It is to late to add a message to that match')
+        messages.error(request, "That match has already been played!\
+            It's now too late to add a message to that match")
         return redirect(reverse('match_detail', args=[match.id]))
 
     if not official:
