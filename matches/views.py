@@ -104,6 +104,9 @@ def match_detail(request, game_id):
     ref = str(match.referee)
     coach = match.home_team.manager_coach
 
+    # Determine the number of messages by match
+    count = Chat.objects.filter(match=match).count()
+
     # Determine whether the match is in the future or past
     # Only allow edits if match in the future
     edit = False
@@ -170,6 +173,7 @@ def match_detail(request, game_id):
         'coach': coach,
         'name': name,
         'edit': edit,
+        'count': count,
     }
 
     return render(request, 'matches/match_detail.html', context)

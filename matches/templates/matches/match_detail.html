@@ -293,6 +293,9 @@
                 <div class="col-12 text-center">
                     <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
                     <a class="btn blue-btn" href="{% url 'match_chat' match.id %}">Messages</a>
+                    {% if count > 0 %}
+                        <span class="badge badge-danger">{{ count }}</span>
+                    {% endif %}
                 </div>
             {% else %}
                 <div class="col-12 text-center">
