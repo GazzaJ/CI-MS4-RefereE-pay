@@ -92,17 +92,19 @@
                             </a>
                         {% endif %}                        
                         {% if request.user.is_authenticated %}
-                            <div class="dropdown-divider"></div>  
-                            <a class="dropdown-item" href="{% url 'review_bag' %}">Kit Bag
-                                <span class="float-right">
-                                    <i class="fas fa-shopping-bag"></i>
-                                </span>
-                            </a>
-                            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
-                                <span class="float-right">
-                                    <i class="fas fa-cash-register"></i>
-                                </span>
-                            </a>
+                            {% if not request.user.userprofile.role == 'Referee' or not 'None' %}                                                            
+                                <div class="dropdown-divider"></div>  
+                                <a class="dropdown-item" href="{% url 'review_bag' %}">Kit Bag
+                                    <span class="float-right">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </span>
+                                </a>
+                                <a class="dropdown-item" href="{% url 'checkout' %}">Checkout
+                                    <span class="float-right">
+                                        <i class="fas fa-cash-register"></i>
+                                    </span>
+                                </a>                                
+                            {% endif %}
                             <a class="dropdown-item" href="{% url 'profile' %}">Profile
                                 <span class="float-right">
                                     <i class="fas fa-user"></i>
@@ -113,7 +115,7 @@
                                 <span class="float-right text-danger">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </span>
-                            </a>
+                            </a>                            
                         {% endif %}
                     </div>
                 </li>
@@ -153,16 +155,18 @@
                     </li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if grand_total > 0 %}grand-total{% else %}zero-total{% endif %}" href="{% url 'review_bag' %}">
-                            <i class="fas fa-shopping-bag"></i>
-                            {% if grand_total %}
-                                £ {{ grand_total|floatformat:2 }}
-                            {% else %}
-                                £0.00
-                            {% endif %}
-                        </a>
-                    </li>
+                    {% if not request.user.userprofile.role == 'Referee' or not 'None' %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if grand_total > 0 %}grand-total{% else %}zero-total{% endif %}" href="{% url 'review_bag' %}">
+                                <i class="fas fa-shopping-bag"></i>
+                                {% if grand_total %}
+                                    £ {{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    £0.00
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
                 {% endif %}        
             </ul>            
             <form method="GET" action="{% url 'matches' %}" class="form-inline my-2 my-lg-0">
