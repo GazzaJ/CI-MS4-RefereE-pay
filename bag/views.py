@@ -10,13 +10,13 @@ def review_bag(request):
     """ This view will render the contents of our bag
     e.g. the matches we are trying to pay for
     """
-    
+
     return render(request, 'bag/bag.html')
 
 
 @login_required
 def add_to_bag(request, item_id):
-    """ Add the match fees to the shopping bag """    
+    """ Add the match fees to the shopping bag """
 
     match = get_object_or_404(Game, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -30,7 +30,8 @@ def add_to_bag(request, item_id):
     else:
         # Add the Product ID and Quantity to the bag
         bag[item_id] = quantity
-        messages.success(request, f'Added {match.home_team} vs { match.away_team } to your kit bag!')
+        messages.success(request, f'Added {match.home_team} vs\
+             { match.away_team } to your kit bag!')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -44,10 +45,11 @@ def remove_from_bag(request, item_id):
         match = get_object_or_404(Game, pk=item_id)
         bag = request.session.get('bag', {})
         bag.pop(item_id)
-        messages.success(request, f'Removed {match.home_team} vs {match.away_team} from your kit bag!')
+        messages.success(request, f'Removed {match.home_team} vs\
+             {match.away_team} from your kit bag!')
 
         request.session['bag'] = bag
-        return HttpResponse(status=200)               
+        return HttpResponse(status=200)
 
     except Exception as e:
         messages.error(request, f'Error removing match {e}')
