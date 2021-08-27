@@ -1,5 +1,4 @@
 from django import forms
-from django.core.validators import RegexValidator
 from .models import UserProfile
 
 
@@ -36,6 +35,6 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0\
-                 profile-form-input'
+            self.fields[field].widget.attrs['class'] = 'blue-border \
+                profile-form-input'
             self.fields[field].label = False

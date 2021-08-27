@@ -139,6 +139,10 @@ form input, span {
     background-color: #011e41;
 }
 
+.blue-border {
+    border-color: #011e41;
+}
+
 /* ---------- Buttons ---------- */
 
 .green-btn {
