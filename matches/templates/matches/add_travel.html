@@ -28,7 +28,7 @@
             <div class="col-12 col-md-8 col-lg-6">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 match my-5 border-green rounded-3">
-                        <form method="POST" action="{% url 'add_travel' match.id %}" class="form my-5 mx-3">
+                        <form method="POST" name="trav-exp" action="{% url 'add_travel' match.id %}" class="form my-5 mx-3">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="text-center">
