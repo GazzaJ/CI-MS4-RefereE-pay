@@ -573,6 +573,8 @@ def match_chat(request, game_id):
     context = {
         'match': match,
         'chats': chats,
+        'ref': ref,
+        'coach': coach,
         'poster': poster,
         'post': post,
     }

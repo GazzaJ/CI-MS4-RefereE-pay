@@ -70,7 +70,7 @@
                 <h3 class="mb-4">Messages</h3>
                 {% for chat in chats %}
                     {% if chat.match.id == match.id %}                    
-                        {% if chat.author.get_full_name == match.home_team.manager_coach %}
+                        {% if chat.author.get_full_name == coach %}
                         <!-- Coach's Messages -->                            
                             <div class="row">
                                 <div class="col-10 col-md-8 coach-chat bubble1 text-left">
