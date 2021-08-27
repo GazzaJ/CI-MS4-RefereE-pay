@@ -554,6 +554,13 @@ def match_chat(request, game_id):
     match = get_object_or_404(Game, pk=game_id)
     chats = Chat.objects.all()
     ref = str(match.referee)
+    coach = str(match.home_team.manager_coach)
+    user = str(request.user.get_full_name())
+    poster = False
+    if user == ref:
+        poster = True
+    elif user == coach:
+        poster = True
 
     # Determine whether the match is in the future or past
     # Only allow new messages if match in the future
@@ -561,11 +568,12 @@ def match_chat(request, game_id):
     today = datetime.datetime.now()
     if match.date_time.replace(tzinfo=None) > today:
         post = True
+    print(post, poster)
 
     context = {
         'match': match,
         'chats': chats,
-        'ref': ref,
+        'poster': poster,
         'post': post,
     }
 

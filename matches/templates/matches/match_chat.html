@@ -89,7 +89,6 @@
                                 </div>                                                           
                             </div>                            
                         {% endif %}
-
                         {% if chat.author.get_full_name == ref %}
                         <!-- Referee's Messages -->                            
                             <div class="row">                                
@@ -112,14 +111,11 @@
                     {% endif %}
                 {% endfor %}
             </div>
-        </div>
-        {% if post %}       
+        </div>        
+        {% if poster and post %}       
             <div class="row no-gutters my-5">
-                <div class="col-12 col-md-6 text-center">
-                    <a class="btn btn-success" href="{% url 'matches' %}">Back to Fixtures</a>
-                </div>
-                
-                <div class="col-12 col-md-6 text-center">
+                <div class="col-12 text-center">
+                    <a class="btn green-btn" href="{% url 'match_detail' match.id %}">Back to Match</a>
                     <a class="btn blue-btn" href="{% url 'add_chat' match.id %}">Add Message</a>
                 </div>
             </div>
@@ -127,9 +123,10 @@
             <div class="row no-gutters my-5">
                 <div class="col-12 text-center">
                     <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
+                    <a class="btn blue-btn" href="{% url 'match_detail' match.id %}">Back to Match</a>
                 </div>
             </div>
-        {% endif %}
+        {% endif %}        
     </div>
 
 {% endblock %}
