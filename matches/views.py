@@ -589,12 +589,13 @@ def add_chat(request, game_id):
     """
     match = get_object_or_404(Game, pk=game_id)
     user = request.user
+    ref = str(match.referee)
+    coach = str(match.home_team.manager_coach)
+    user = str(request.user.get_full_name())
     official = False
-    if user.userprofile.role == 'Referee':
+    if user == ref:
         official = True
-    if user.userprofile.role == 'Coach':
-        official = True
-    if user.is_superuser:
+    elif user == coach:
         official = True
 
     msg = True
