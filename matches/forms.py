@@ -14,6 +14,16 @@ class FeesForm(forms.ModelForm):
             'asst2_trav',
         )
 
+    def __init__(self, *args, **kwargs):
+        """
+        Add classes and set autofocus on first field
+        """
+        super(FeesForm, self).__init__(*args, **kwargs)
+        self.fields['ref_trav'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'blue-border \
+                profile-form-input'
+
 
 class CompetitionForm(forms.ModelForm):
     """ A form to allow superusers to add competitions """
@@ -25,6 +35,15 @@ class CompetitionForm(forms.ModelForm):
                            validators=[RegexValidator(
                             r'^[a-zA-Z]+( \w+)*$', message="Competition \
                                 name must contain words and numbers")])
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add classes and set autofocus on first field
+        """
+        super(CompetitionForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'blue-border \
+                profile-form-input'
 
 
 class ClubForm(forms.ModelForm):
@@ -39,6 +58,16 @@ class ClubForm(forms.ModelForm):
                                     words and numbers")])
     club_badge = forms.ImageField(label="Club Badge", required=False,
                                   widget=CustomClearableFileInput)
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add classes and set autofocus on first field
+        """
+        super(ClubForm, self).__init__(*args, **kwargs)
+        self.fields['club_name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'blue-border \
+                profile-form-input'
 
 
 class TeamForm(forms.ModelForm):
@@ -61,6 +90,16 @@ class TeamForm(forms.ModelForm):
                                         r'^[a-zA-Z]+( \w+)*$',
                                         message="Manager/Coach name must contain \
                                             words and numbers")])
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add classes and set autofocus on first field
+        """
+        super(TeamForm, self).__init__(*args, **kwargs)
+        self.fields['team_name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'blue-border \
+                profile-form-input'
 
 
 class GameForm(forms.ModelForm):
@@ -106,6 +145,12 @@ class GameForm(forms.ModelForm):
                 team_name__contains=self.instance.age).order_by('team_name')
             self.fields['away_team'].queryset = Team.objects.filter(
                 team_name__contains=self.instance.age).order_by('team_name')
+        
+        super(GameForm, self).__init__(*args, **kwargs)
+        self.fields['home_team'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'blue-border \
+                profile-form-input'
 
 
 class ChatForm(forms.ModelForm):

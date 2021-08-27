@@ -75,6 +75,10 @@ body {
     padding: 0.25rem 0.5rem;
    }
 
+   #date_time.form-control {
+       border-color: #011e41;
+   }
+
 /* ---------- Buttons ----------*/
 
 
@@ -227,12 +231,6 @@ https://codingislove.com/css-speech-bubbles/ -----*/
 
 .game-summary {
     max-height: 10rem;
-}
-
-#id_ref_trav.numberinput.form-control,
-#id_asst1_trav.numberinput.form-control,
-#id_asst2_trav.numberinput.form-control {
-    border-color: #011e41;
 }
 
 /* ---------- Delete Confirmation Modal ---------- */

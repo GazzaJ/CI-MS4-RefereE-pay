@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-8 col-lg-6 match my-5 border-green rounded-3">
-                <form method="POST" action="{% url 'add_team' %}" class="form my-5 mx-3" enctype="multipart/form-data">
+                <form method="POST" id="new-team" action="{% url 'add_team' %}" class="form my-5 mx-3" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-center">
