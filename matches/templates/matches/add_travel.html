@@ -24,6 +24,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- Form to allow match officials to add travel expenses -->
             <div class="col-12 col-md-8 col-lg-6">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 match my-5 border-green rounded-3">
@@ -32,13 +33,12 @@
                             {{ form | crispy }}
                             <div class="text-center">
                                 <a class="btn red-btn rounded-3 mr-3" href="{% url 'matches' %}">Cancel</a>
-                                <button class="btn green-btn rounded-3" type="submit">Add Expense</button>
+                                <button class="btn green-btn rounded-3" type="submit">Add Expense</button>                                
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>                    
-            <!-- Form to allow match officials to add travel expenses -->                
+                    </div>                    
+                </div>                
+            </div>        
             <!-- Visual Summary of the teams and date -->
             <div class="col-12 col-md-4 col-lg-6">
                 <div class="row match mb-3 align-items-center border-green mt-md-5">
@@ -83,6 +83,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
+                    <a class="btn blue-btn" href="{% url 'match_detail' match.id %}">Back to Match</a>
         </div>
     </div>
     

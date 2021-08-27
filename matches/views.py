@@ -568,7 +568,6 @@ def match_chat(request, game_id):
     today = datetime.datetime.now()
     if match.date_time.replace(tzinfo=None) > today:
         post = True
-    print(post, poster)
 
     context = {
         'match': match,
