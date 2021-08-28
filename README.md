@@ -599,65 +599,100 @@ The following table lists the primary features provided by the W3Recipes app.
 ### **Existing Features**
 
  1. A **[Landing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/home-page.jpg)** to convey the purpose of the website to new and returning users.
- 2. An AllAuth powered **[Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg)** for new users to sign-up.
- 3. An AllAuth powered **[Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg)** for returning registered users.
+ 
+ 2. A **[Footer](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/footer.jpg)** is visible on each page and contains some basic information for UK & Ireland FA's and the developers contact info.
+   a. Each **FA Icon** for each of the UK and Irish Football Associations contains a link to their respective websites.
+   b. A link to the developers **GitHub Repo**
+   c. A link to the developers **LinkedIn Profile**
+   d. An **Email link** to quickly contact the deleoper
+
+ 3. A Mobile Responsive **[Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/navbar.jpg)** tops each page and provides conditional menues based on a users role.
+   a. The **[Referees Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/ref-nav.jpg)** doesn't require the Grand Total or access to Kitbag and Checkout so has limited options suitable for Referee users.
+   b. The **[Coaches Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/my-account.jpg)** provides much of the functionality they need in one place. The my account select menu provides access to the bit bag and checkout. The Grand Total also contains a link to the Kit Bag.
+   c. The superusers **[Admin Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/admin.jpg)** is very similar to that for Coaches other than they have the additional Admin select menu.
+
  4. A Paginated **[Fixtures](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/matches.jpg)** page where all matches are displayed.
- 5. **[Age & Team filter ]()** functions, filters matches by age or team, or both.
- 6. **[Match Text Search]()** function enables users to narrow down the results to a single team |  |
- 7. **[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
-   a. Interactive **[Match Venue](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-2.jpg)** accordion renders a map of the venue, or provides a link to Google Maps if no map exists.
-   b. Interactive **[Match Fees](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-3.jpg)** accordion, opens up to display Match Officials and their fees and any travel expenses
-   c. **[Add to Bag]()** button enables Home team coaches to add their matches to the kit bag for payment
-   d. **[Add Travel]()** button exclusive to referees, to enable them to add their match day travel expenses.
-   e. **[PAID Stamp]()** is rendered once a match has been paid for and replaces the "Add to Bag" and "Add Travel" buttons.
-   f. **[Messages]()** button which takes users to the Match Messages Page. Displays the current number of messages if greater than 0.
- 8. **[Match Messages]()** page displays a summary of the game and also any messages posted by either Home team Coach of Match Referee.
-   a. Each of the **[Messages]()** is coloured according to user role (ref or coach) and tagged with that users name. Images uploaded also display below the message.
+   a.**[Age & Team filter ](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/filters.jpg)** functions, filters matches by age or team, or both.
+   b.**[Match Text Search](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/navbar.jpg)** function located in the main navbar enables users to narrow down the results to a single team.
+   c. **[Pagination Controls](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/pagination.jpg)** at the top and bottom of the page to aid navigation.
+   d. **[Back to Top](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/btt-button.jpg)** button to return users to the top of the page without having to scroll all the way back.
 
- 9. **[Add Message]()** button takes authorised users to the Add Message page.
- 10. **[Add Message]()** page displays and allows authorised usres to post a new message for a particular match. Images can also be uploaded using the same form.
- 11. 
-| 008   | **Club Directory** page displays a paginated list of the Clubs stored in tha database. Superusers can edit and delete Clubs from this view. | [Club Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/club-directory.jpg) |
-| 009   | **Teams page** displays information for all teams associated with a particular Club. Superusers can edit and delete Teams from this view. | [Teams Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/teams.jpg) |
-|  010  | A notification is displayed when the user clicks the **Add to Bag** button on the match detail page. This notification will display a summary of all matches in the kitbag for the duration of the users session. The list gets cleared if the user logs out | [Add to Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-to-bag.jpg) |
-| 011   | **Kit Bag** displays all of the games the coach has added for subsequent payment, provides a summary of the game and all associated match fees and fines if applicable. |  [Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/kit-bag.jpg) |
-| 012   | **Checkout Page** proceses the payment of the match fees | [Checkout Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout.jpg) |
-| 013   | A **Checkout Success** page to confirm successful processing of the match fees transaction | [Checkout Success Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout-success.jpg) |
-|  014  | The **Profile page** displays user billing information, if saved, and a summary of all payments processed for that used. Profile information can be updated from this page | [Profile Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/profile.jpg) | 
-|  015  | **Add Competition** form allows Admin/Superusers to add new competitions to the list | [Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-comp.jpg) |
-|  016  | The **Add Club** view allows Admin/Superusers to add new Clubs to the directory, populating club badge and club website  | [Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-club.jpg) |
-|  017  | The **Edit Club** page enables Admin users to edit the club name, club badge and the clubs website url. | [Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-club.jpg) |
-|  018  | **Delete Club** |  |  |
-|  019  | **Add Team** allows Admin/Superusers to add new teams to the selected Club and assign the Manager/Coach | [Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-team.jpg) |
-|  020  | Team details can be changed through the functionality of the **Edit Team** page, where Admin users can change the Team name, age club and manager. This initially populates with the existing information  | [Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit_team.jpg) |
-|  021  | **Delete Team** |  | []() |
-|  022  | **Add Match** allows Admin/Superusers to add new matches to the app, populating all of the information required to renderf the details | [Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-match.jpg) |
-|  023  | Any of the details of a particular match can be changed on the **Edit Match** page. This initially populates with the existing information | [Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg) |
-|  024  | **Delete Match** |  | []() |
-|  025  | Match Officials are able to add their travel expenses on the **Add Travel** page, which is accessfrom the match details page | [Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-travel.jpg) |
-|  026  | Any messages entered into the app for a match can be viewed on the **Messages** page | [Match Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/messages.jpg) |
-|  027  | Messages can be added to a match on the **Add Message** page, which is available from the Match Detail page | [Add Message](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-message.jpg) |
-|  028  | **Success Notification** |  | []() |
-|  029  | **Warning Notificatio** |  | []() |
-|  030  | **Error Notificatio** |  | []() |
-|  031  | **Alert Notification** |  | []() |
-|  032  | **Delete Confirmation Modal** |  | []() |
-|  033  | **Logout Screen** |  | []() |
-|  034  |  |  |
-|  035  |  |  |
-|  036  |  |  |
-|  037  |  |  |
-|  038  |  |  |
-|  039  |  |  |
-|  040  |  |  |
+ 5. The**[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
+   a. The **[Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button which is exclusive to superusers takes them to the Edit Match page.
+   b. The **[Edit Match page]([Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg)** provides the functionality to edit and update all of the match detail in one place.
+   c. The **[Home and Away Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/cond-select.jp)** choices function as conditional dropdown mewnus linked to the age selection field
+   d. The **[Delete Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button initiates the Match deletion process by opening a delete confirmation modal.
+   e. The **[Delete Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/match-conf.jpg)** modal warns the superuser they are about to delete a particular Match and checks that is the intention.
+   f. Interactive **[Match Venue](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-2.jpg)** accordion renders a map of the venue, or provides a link to Google Maps if no map exists.
+   g. Interactive **[Match Fees](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-3.jpg)** accordion, opens up to display Match Officials and their fees and any travel expenses
+   h. **[Add to Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-bag.jpg)** button is exclusive to coaches and superusers and enables Home team coaches to add their matches to the kit bag for payment.
+   i. **[Add to Bag - Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-cuccess.jpg)** A notification is displayed when the user clicks the "Add to Bag" button on the match detail page. This notification will display a summary of all matches in the kitbag for the duration of the users session but gets cleared if the user logs out.
+   j. **[Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-travel.png)** button is exclusive to referees and superusers, to enable them to add their match day travel expenses.
+   k. **[PAID Stamp](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/paid.jpg)** is rendered once a match has been paid for and replaces the "Add to Bag" and "Add Travel" buttons.
+   l. **[Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/messages-btn.jpg)** button which takes users to the Match Messages Page. Displays the current number of messages if greater than 0.
 
-____
+ 6. **[Match Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-messages.jpg)** page displays a summary of the game and also any messages posted by either Home team Coach of Match Referee.
+   a. Each of the **[Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/messages.jpg)** is coloured according to user role (ref or coach) and tagged with that users name. Images uploaded also display below the message.
+
+ 7. **[Add Message](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-msg-btn.jpg)** button takes authorised users to the Add Message page.
+ 
+ 8. **[Add Message](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-message.jpg)** page displays and allows authorised usres to post a new message for a particular match. Images can also be uploaded using the same form.
+ 
+ 9. **[Club Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/club-directory.jpg)** page displays a paginated list of the Clubs stored in tha database. Superusers can edit and delete Clubs from this view.
+   a. **Club Badge** acts as a link to the Club's website.
+   b. ** [View Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/club-teams.jpg)** takes users to the Teams directory for that particular Club.
+   c. **[Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/club-super.jpg)** button is available only to Superusers, and takes them to the "Edit Club page"
+   d. The **[Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-club.jpg)** page enables Admin users to edit the club name, club badge and the clubs website url. 
+   e. **[Delete Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/club-super.jpg)** button initiates the Club deletion process by opening a delete confirmation modal.
+   f. **[Delete Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/del-conf.jpg)** modal warns the superuser they are about to delete a particular Club and checks that is the intention.
+
+ 10. **[Teams Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/teams.jpg)** displays basic information for all teams associated with a particular Club. Superusers can edit and delete Teams from this view.
+   a. **[Team - Age Filter](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/team-filter.jpg)** allows users to filter the clubs teams by age group. Handy if the Club has a long list of teams.   
+   b. **[Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/teams-super.jpg)** function takes Superusers to the Edit Teams page.
+   c. Team details can be changed through the functionality of the **[Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit_team.jpg)** page. This page initially populates with the existing information and is where Admin users can change the Team name, age club and manager.
+   d. **[Delete Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/teams-super.jpg)** button initiates the Club deletion process by opening a delete confirmation modal.
+   e. **[Delete Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/del-team.jpg)** modal warns the superuser they are about to delete a particular Team and checks that is the intention.
+
+ 11. The **[Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/kit-bag.jpg)** page displays a summary of all of the active user's matches they have added to the kit bag and summarises the fees.
+   a. The kitbag displays a **[Fees Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/fee-summary.jpg)** section for each game so the active user can see the breakdown of fees, and understand what they are paying for.
+   b. A **[Remove from Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-remove.jpg)** icon sits on the middle right of the maych name, and enables the user to remove that match from their kit bag.
+   c. The **[Secure Checkout]()** button takes the active user to the "Checkout" page where they have the ability to pay for their match fees.
+
+ 12. The **[Checkout Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout.jpg)** proceses the payments of any matches in the kitbag.
+   a. The Checkout page has a **[Fees Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/checkout-summary.jpg)** section on the top right with a basic breakdown of fees.
+   b. The bulk of the page is taken up by the **[Billing Details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/billing.jpg)** form, where users enter their billing address.
+   c. Users can select to have their information saved automatically by selecting the **[Save info](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/billing.jpg)** checkbox below the billing information form.
+   d. The **[Card Details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** window is a Stripe element connected to the Stipe payments API and allows users to enter their card details.
+   e. The **[Secure Checkout](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** button completes the payment process, sends the information to Stripe and generates an order.
+ 
+ 13. A **[Checkout Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout-success.jpg)** page to confirm successful processing of the match fees transactionappears on successful payment.
+   a. A **Success message** appears as the Checkout Success page loads
+   b. Users receive an **[Email Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/success-email.jpg)** of the success of their payment. The email confirm order # payment date and Grand Total
+
+ 14. Each registered user has a personalised **[Profile Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/profile.jpg)** displaying the users role and team if appropriate as well as billing information, if saved, and a summary of any payments processed for that user. Profile information can also be updated from this page.
+   a. Each order in the **[Order Summary]()** contains a link to the confirmation page summary for that order.
+
+ 15. Superusers are provided with a unique navbar **[Admin Menu](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/admin.jpg)** which enables them to Access the Admin functions of the app.
+   a. **[Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-comp.jpg)** form allows Admin/Superusers to add new competitions to the list.
+   b. The **[Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-club.jpg)** view allows Admin/Superusers to add new Clubs to the directory, populating club badge and club website.
+   c. **[Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-team.jpg)** allows Admin/Superusers to add new teams to the selected Club and assign the Manager/Coach.
+   d. The **[Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-match.jpg)** page allows Admin/Superusers to add new matches to the app, populating all of the information required to renderf the details.
+
+ 16.  A football inspired **[Success Notification]()** messages appears through out the site whenever a positive outcome is achieved.
+ 17.  The is also a football themed **[Warning Notificatio]()** message used when appropriate.
+ 18.  All of the site's **[Error Notification]()** messages are suitably football inspired and appear whenever something doesn't function or if the user attempts something they don't have permission for.
+ 19.  To complete the set, each information **[Alert Notification]()** is also football themed.
+ 20.  | A football themed **[Loading screen]()** is used while the match payments are being processed by Stripe.
+ 
+_____
 
 ### **Security Features**
 Despite not being explicitly required for this build I have chosen to implement certain security features to provide some protection against unauthorised access to other users data.
 
  1. User Login
-
+ 2. 2. An AllAuth powered **[Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg)** for new users to sign-up.
+ 3. An AllAuth powered **[Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg)** for returning registered users.
+|  033  | **Logout Screen** |  | []() |
 
 
 
