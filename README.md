@@ -117,42 +117,44 @@ I refer to the five planes of UX to provide a framework for discussing the finer
 
 #### **Strategy**  
 The purpose of RefereE-Pay web app is to provide grassroots football coaches and managers with an electronic means of communicating with and paying match officials fees. The aim is to try and provide a visual dashboard of each fixture, containing all of the relevant information needed by either the home or away coach. or the ref, in a single location.
- - As the site owner and grassroots team coach I get to create a potential solution for the grassroots game
+ - As the site owner and grassroots team coach myself I get to create a potential solution for the grassroots game.
  - Users get access to all of the fixtures in the data base; are able to filter and search to narrow down to a specific team, 
  - On selecting one of their fixtures the home team coach can add the match to the kit bag and subsequently pay the match fees.
- - The home team coach can also communicate with the referee through the app so that the coms are associated with the match
+ - The home team coach can also communicate with the referee through the app so that the messages are associated with the match
  - Referees are able to update their travel expenses, if they have any.
  - The Referee can also communicate with the home team coach with respect to a particular match/fixture.
- - Admin Users can add and edit Clubs, Teams and Matches, as well as act as a proxy for the user and perform the tasks of either coach or ref.
+ - Admin Users can add, edit and delete Clubs, Teams and Matches, as well as act as a proxy for the user and perform the tasks of either coach or ref.
  
-> **The ultimate intention is to provide a more hollistic and cashless solution to matchday payments and communication.**
+> **The ultimate intention is to provide a more hollistic and cashless solution for matchday payments and communication.**
 
 #### **Scope**
 This app is intended to address **two** key needs not currently solved by existing commercial apps, namely:
 - **Paying Match Officials match fees electronically.**
 - **In app communication with the ref; with messages linked and viewed by individual match.** 
 
-The scope could easily extend to try and include sophisticated league and match creation algorithms, or seek to track and display results. This app is a MVP; a concept of what could be provided to address the above needs in the time available to complete the project. The additional features could certainly be developed and added in the future, which could eventually produce a single hollistic app for all league, match, payment and communication needs.
+The scope could easily extend to try and include sophisticated league and match creation algorithms, or seek to track and display results. This app is intended as a MVP; a concept of what could be provided to address the above needs in the time available to complete the project. The additional features could certainly be developed and added in the future, which could eventually produce a single hollistic app for all league, match, payment and communication needs.
 
 I have grouped the key features required for this app to function as intended into their associated CRUD category for thoroughess:
- - **Create** Competitions, Clubs, Teams and Matches by specific age group. 
+ - **Create** Competitions, Clubs, Teams and Matches by specific age group and allow match officials to add travel expenses into the fixture information. Enable Coaches and Referees to communicate with each other by adding in app messages.
+Let coaches pay for their match fees and add an order to the database.
  - **Read**, or view all of the Clubs, Teams or Matches stored in the database.
-    - Display all relevant match detail in one convenient dashboard
-    - Filter those matches by age group, or Team name
-    - Search for a team and display that teams games
- - **Update** Enable Admin users to edit Clubs, Teams and Matches as required, and also allow the Match Officials to input any travel expenses they have into the fixture information.
- Enable Coaches and Referees to communicate with each other through a simple in app message app.
- - **Delete** function for Site Admins, who can remove Clubs, Teams and fixtures as required
+    - Display all relevant match detail in one convenient dashboard.
+    - Filter those matches by age group, or Team name.
+    - Search for a team and display that teams games.
+ - **Update** Enable Admin users to edit and update Clubs, Teams and Matches as required, and also allow the Match Officials to update their travel expenses.
+ - **Delete** function for Site Admins, who can remove Clubs, Teams and fixtures as required.
 
 The final but most critical part of this app is the requirement for site security, which serves three purpooses:
 1. Mimic existing commercial app security
-It may come as a surprise but existing app provided by Regional FA's have tight security limiting access to registered club and match officials 
-2. Provide security for the e-commerce platform so users feel their transactions are secure (User Story #)
+It may come as a surprise but existing app's provided by Regional FA's have tight security, limiting access to key features to registered club and match officials.
+> This app is intentionally not designed for the anonymous user.
+2. Provide security for the e-commerce platform so users feel their transactions are secure (User Story #18)
 3. Prevent unwanted and unauthorised editing or deletions of records, 
 
 ##### Functional Requirements
 App functionality is provided through a typical intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing what they can view and achieve.
-Additional interactive anchor links are provided throughout to provide users with multiple ways of navigating around the app.
+Each match on the Fixtures page is a link to that matches dashboard.
+Additional interactive anchor links are provided throughout to provide users with multiple ways of navigating around the app to achieve tasks or navigate back to where they had come from.
 
 ##### Content Requirements
 Much of the content in this app revolves around the Matches Model, which contains lists of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality
@@ -161,14 +163,14 @@ I have deliberately included just enough content for this app to function as def
 ___
 
 #### **Structure**  
-The structure of RefereE-Pay is user dependent with user roles dictating what each group can achieve:
-  - **Anonymous Users** can view the fixture list, Clubs and Teams only. They do not have access to the match details, nor can they access the payment system.
-  - **Registered Users** have the functionality as anonymous users with the addition of viewing match details, but cannot access the kit bag or complete any transactions.
-  - **Registered Coaches** are able to view the Fixtures, Clubs and Teams as well as the individual Match Details. They have the ability to add their teams HOME games to the kit bag and to complete payment. Home team coaches are also able to add messages to the fixture to communicate with the Match Official
-  - **Match Officials** - have the same viewing capabilities as Coaches but obviously cannot pay the required match fees. They can add their travel expenses and send in app messages to the Home team Coach
-  - **SuperUsers** - have full and unrestricted access to all functionality
+The structure of RefereE-Pay is consistent irrespective of user, however functionality is compartmentalised with user roles dictating what each group can achieve:
+  - **Anonymous Users** can view the Fixture list, Clubs and Teams only. They do not have access to the match details, nor can they access the payment system.
+  - **Registered Users** have the same functionality as anonymous users with the addition of being able to view match details, but they cannot communicate with match officials access the kit bag or complete any transactions.
+  - **Registered Coaches** are able to view the Fixtures, Clubs and Teams as well as the individual Match Details. They have the ability to add their team's HOME games to the kit bag and to complete payments. Home team coaches are also able to add messages to the fixture to communicate with the Match Official.
+  - **Match Officials** - have the same viewing capabilities as Coaches but obviously cannot pay any match fees. They can add their travel expenses and send in-app messages to the Home team Coach.
+  - **SuperUsers** - have full and unrestricted access to all functionality, and can if required act as a proxy for a Coach or Match Official. Superusers also have tha ability to Create, edit and Delete Clubs, Matches and Teams. Crucially they are the ones who assign the **full name**, the **role** and where applicable the **team** to registered users to allow them to act as Coach or Referee. 
 
-The app is constructed from **19** distinct pages which are accessed through the main and mobile navbars. 
+This functionality is achieved via **19** distinct pages which are accessed through the main and mobile navbars. 
 
 The workflow for RefereE-Pay is quite complex, but I have attempted to capture it below:
 ![Workflow](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/referee-pay-flow.jpg "Website workflow")
@@ -177,23 +179,34 @@ The workflow for RefereE-Pay is quite complex, but I have attempted to capture i
 Interaction with each page is achieved through the main navbar, or through the use of stratcgically placed anchor links where appropriate.
 Aside from this each page is self contained:
  - **Matches**
- Initially displays a paginated list of ALL matches. This list can be filtered based on user selections, to focus on a specific age group, and team of choice. The search box also enables the user to narrow down to a particular team 
+ Initially displays a paginated list of ALL matches, each of which is an active link to that match's details. This list can be filtered based on user selections, to focus on a specific age group, and team of choice. The search box also enables the user to narrow down to a particular team.
+   - Filter controls always appear at the top of a page.
+   - Pagination controls always appear at the top and the bottom of the page.
+
+![Fixture List](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/matches.jpg)
+
  - **Match Detail**
- Selecting any of the displayed matches enables the user to drill down into the match detail and discover:
-    - Home and Away Teams
-    - Home and Away team Coaches
-    - The venue and Kick Off time
-    - Interactive dropdown showing the Venue Map (where provided)
-    - Match Officials
-    - Interactive dropdown of Match officials Fees
-    - Message the 
+ Selecting any of the displayed matches enables the user to drill down into the match detail.
+
+![Match Detail](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)
+
+Interactive elements for Match venue and Match Fees open up accorion features which further increase the amount of information available.
+Tn the case of the Match fees accordion this also contains links to perform actions like adding a match to the kit bag
+
+![Match Detail](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-3.jpg)   
     
-   From this page, Coaches can add a particular match to their kit bag for checkout at their convenience. To avoid confusion, any match they have already paid for is marked with a "PAID" label and the the "Add to Bag" button is removed.
+Registered Coaches and Refs can also navigate from here to the Match Messages page
+    
+From this page, Coaches can add a particular match to their kit bag for checkout at their convenience. To avoid confusion, any match they have already paid for is marked with a "PAID" label and the the "Add to Bag" button is removed.Controls to navigate away from this page are either placed in the relevant information DIV or are placed at the bottom of the page.
+
  - **Clubs**
  The clubs page displays all of the clubs saved in the database as a card displaying club badge and club name. Clicking the club badge redirects the user to the club website. Below the badge and name sits a **"Teams"** button which takes the user to a separate page which displays all of the teams saved in the database, for that club.
 Admin / Superusers also have Edit and delete buttons to select from.
    - Edit - redirects to a form displaying club information where the superuser can change the club name, badge or website URL.
    - Delete  - does as it says once the superuser has confirmed the deletion
+
+![]()
+
  - **Teams**
  The Teams page displays all of the teams for the selected CLub by age group and shows team name and the Manager/coach for that team. There is limited data in the team menu, as designed, however this could be increased in the future to include contact details for the Manager/Coach. 
 Admin / Superusers have the ability to Edit and Delete the teams:
@@ -220,6 +233,12 @@ Match creation is currently simplistic choice based form. Future versions could 
 Information is provided to users on multiple pages; Matches, Match Detail, Clubs, Teams, Kit Bag and Profile.
 Despite rendering slightly different information the structure of each page has been designed to provide a similar layout and theme.
 
+- Home and Away Teams
+    - Home and Away team Coaches
+    - The venue and Kick Off time
+    - Interactive dropdown showing the Venue Map (where provided)
+    - Match Officials
+    - Interactive dropdown of Match officials Fees
 ___
 
 #### **Skeleton** 
@@ -578,15 +597,26 @@ ___
 The following table lists the primary features provided by the W3Recipes app.
 
 ### **Existing Features**
-|Feature|Description| Image URL |
-|:-----:|-----|:----:|
-| 001   | **Landing page** to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/home-page.jpg) |
-| 002   | AllAuth **Registration** process for new users to sign-up| [Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg) |
-| 003   | AllAuth powered **Log-in page** for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg) |
-| 004   | Paginated **Matches** page where all matches are displayed | [Matches](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/matches.jpg) |
-| 005   | **Match Filter** function, filters matches by age or team, or both. | [Match Filter ]() |
-| 006   | **Match text search** function enables users to narrow down the results to a single team | [Match Text Search]() |
-| 007   | **Match Detail** page provides complete match details with interactive fields | [Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg) |
+
+ 1. A **[Landing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/home-page.jpg)** to convey the purpose of the website to new and returning users.
+ 2. An AllAuth powered **[Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg)** for new users to sign-up.
+ 3. An AllAuth powered **[Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg)** for returning registered users.
+ 4. A Paginated **[Fixtures](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/matches.jpg)** page where all matches are displayed.
+ 5. **[Age & Team filter ]()** functions, filters matches by age or team, or both.
+ 6. **[Match Text Search]()** function enables users to narrow down the results to a single team |  |
+ 7. **[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
+   a. Interactive **[Match Venue](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-2.jpg)** accordion renders a map of the venue, or provides a link to Google Maps if no map exists.
+   b. Interactive **[Match Fees](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-3.jpg)** accordion, opens up to display Match Officials and their fees and any travel expenses
+   c. **[Add to Bag]()** button enables Home team coaches to add their matches to the kit bag for payment
+   d. **[Add Travel]()** button exclusive to referees, to enable them to add their match day travel expenses.
+   e. **[PAID Stamp]()** is rendered once a match has been paid for and replaces the "Add to Bag" and "Add Travel" buttons.
+   f. **[Messages]()** button which takes users to the Match Messages Page. Displays the current number of messages if greater than 0.
+ 8. **[Match Messages]()** page displays a summary of the game and also any messages posted by either Home team Coach of Match Referee.
+   a. Each of the **[Messages]()** is coloured according to user role (ref or coach) and tagged with that users name. Images uploaded also display below the message.
+
+ 9. **[Add Message]()** button takes authorised users to the Add Message page.
+ 10. **[Add Message]()** page displays and allows authorised usres to post a new message for a particular match. Images can also be uploaded using the same form.
+ 11. 
 | 008   | **Club Directory** page displays a paginated list of the Clubs stored in tha database. Superusers can edit and delete Clubs from this view. | [Club Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/club-directory.jpg) |
 | 009   | **Teams page** displays information for all teams associated with a particular Club. Superusers can edit and delete Teams from this view. | [Teams Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/teams.jpg) |
 |  010  | A notification is displayed when the user clicks the **Add to Bag** button on the match detail page. This notification will display a summary of all matches in the kitbag for the duration of the users session. The list gets cleared if the user logs out | [Add to Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-to-bag.jpg) |
@@ -635,7 +665,7 @@ Despite not being explicitly required for this build I have chosen to implement 
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate in the future:
 |   Feature     |     Description      |
 |---------------|----------------------|
-| Conditional dropdown and seach | To reduce the number of search boxes on the Recipes page. Render either countries or recipe categories in the dropdown based on what the users selects|
+| Conditional dropdown on fixtures | To reduce the number options in the teams filter box by conditionally filtering the options by age. |
 | Algorythm based match creation| To create a more sophisticated means of creating multiple games at once rather than manually creating each game|
 |Person to Person Payment| The ability to pay the Match officials directly rather than paying the app as it currently stands|
 ______
