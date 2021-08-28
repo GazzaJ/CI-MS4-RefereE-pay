@@ -150,9 +150,9 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 18 | _As a _ **Team Manager**, _I need to_ **feel my personal and payment information is secure and safe**, _in order to_ **feel confident in providing required information to complete a payment**. | Payment process is provided and managed through the Stripe Payments API | **PASS** |
+| 18 | _As a _ **Team Manager**, _I need to_ **feel my personal and payment information is secure and safe**, _in order to_ **feel confident in providing required information to complete a payment**. | Payment process is provided and managed through the Stripe Payments API. Stripe is the favoured e-commerce payment platform for many household names. | **PASS** |
 
-![alt text](image.jpg)
+![Stripe](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/stripe.jpg)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
