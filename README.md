@@ -157,8 +157,9 @@ Each match on the Fixtures page is a link to that matches dashboard.
 Additional interactive anchor links are provided throughout to provide users with multiple ways of navigating around the app to achieve tasks or navigate back to where they had come from.
 
 ##### Content Requirements
-Much of the content in this app revolves around the Matches Model, which contains lists of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality
-I have deliberately included just enough content for this app to function as defined in the Scope, and no more. This has been a conscious decision to prevent unnecessary scope creep.
+Much of the content in this app revolves around the Matches Model, which contains lists of Venues, Clubs, Teams, Match Officials and Games I have uploaded through fixture files. Additional data has subsequently been added using the app's CRUD functionality. Club and Team information has come from the [Cheltenham Youth Football League](https://www.cheltenhamyouthleague.co.uk/) website. The images used have been taken from Pixabay, while other graphics were copied from the nounproject website.
+
+I have attempted to maintain a consistant design and theme for each of the apps pages and have deliberately included just enough content for this app to function as defined in the Scope, and no more. This has been a conscious decision to prevent unnecessary scope creep.
  
 ___
 
@@ -168,170 +169,101 @@ The structure of RefereE-Pay is consistent irrespective of user, however functio
   - **Registered Users** have the same functionality as anonymous users with the addition of being able to view match details, but they cannot communicate with match officials access the kit bag or complete any transactions.
   - **Registered Coaches** are able to view the Fixtures, Clubs and Teams as well as the individual Match Details. They have the ability to add their team's HOME games to the kit bag and to complete payments. Home team coaches are also able to add messages to the fixture to communicate with the Match Official.
   - **Match Officials** - have the same viewing capabilities as Coaches but obviously cannot pay any match fees. They can add their travel expenses and send in-app messages to the Home team Coach.
-  - **SuperUsers** - have full and unrestricted access to all functionality, and can if required act as a proxy for a Coach or Match Official. Superusers also have tha ability to Create, edit and Delete Clubs, Matches and Teams. Crucially they are the ones who assign the **full name**, the **role** and where applicable the **team** to registered users to allow them to act as Coach or Referee. 
-
-This functionality is achieved via **19** distinct pages which are accessed through the main and mobile navbars. 
+  - **SuperUsers** - have full and unrestricted access to all functionality, and can if required act as a proxy for a Coach or Match Official. Superusers also have tha ability to Create, edit and Delete Clubs, Matches and Teams. Crucially they are the ones who assign the **full name**, the **role** and where applicable the **team** to registered users to allow them to act as Coach or Referee.
 
 The workflow for RefereE-Pay is quite complex, but I have attempted to capture it below:
 ![Workflow](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/referee-pay-flow.jpg "Website workflow")
 
 ##### **Interaction Design**
-Interaction with each page is achieved through the main navbar, or through the use of stratcgically placed anchor links where appropriate.
-Aside from this each page is self contained:
- - **Matches**
- Initially displays a paginated list of ALL matches, each of which is an active link to that match's details. This list can be filtered based on user selections, to focus on a specific age group, and team of choice. The search box also enables the user to narrow down to a particular team.
-   - Filter controls always appear at the top of a page.
-   - Pagination controls always appear at the top and the bottom of the page.
+User interaction with the RefereE-Pay website falls into a number categories:
 
-![Fixture List](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/matches.jpg)
+ - **Navigation**
+Navigating between the 19 distinct pages is achieved through a conventional mobile responsive navbar placed at the very top of each page. 
 
- - **Match Detail**
- Selecting any of the displayed matches enables the user to drill down into the match detail.
+![Main Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/navbar.jpg) 
 
-![Match Detail](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)
+Additionally, and where appropriate in page links have been provided to assist users navigate back to previous pages or to redirect them to another page where they are able further interact with the site.
 
-Interactive elements for Match venue and Match Fees open up accorion features which further increase the amount of information available.
-Tn the case of the Match fees accordion this also contains links to perform actions like adding a match to the kit bag
+![In page navigation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/inpage-nav.png)
 
-![Match Detail](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-3.jpg)   
-    
-Registered Coaches and Refs can also navigate from here to the Match Messages page
-    
-From this page, Coaches can add a particular match to their kit bag for checkout at their convenience. To avoid confusion, any match they have already paid for is marked with a "PAID" label and the the "Add to Bag" button is removed.Controls to navigate away from this page are either placed in the relevant information DIV or are placed at the bottom of the page.
+ - **Manipulation**
+Pages rendering large amount of data have been paginated for convenience and navigation through this data is achieved through the standard Bootstrap Pagination controls.
 
- - **Clubs**
- The clubs page displays all of the clubs saved in the database as a card displaying club badge and club name. Clicking the club badge redirects the user to the club website. Below the badge and name sits a **"Teams"** button which takes the user to a separate page which displays all of the teams saved in the database, for that club.
-Admin / Superusers also have Edit and delete buttons to select from.
-   - Edit - redirects to a form displaying club information where the superuser can change the club name, badge or website URL.
-   - Delete  - does as it says once the superuser has confirmed the deletion
+    ![Pagination](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/pagination.jpg)
 
-![]()
+    Data can also be manipulated via the Filter and search function provided.
 
- - **Teams**
- The Teams page displays all of the teams for the selected CLub by age group and shows team name and the Manager/coach for that team. There is limited data in the team menu, as designed, however this could be increased in the future to include contact details for the Manager/Coach. 
-Admin / Superusers have the ability to Edit and Delete the teams:
-   - Edit - redirects the superuser to a form page where the team detail can be adjusted
-   - Delete  - does as it says once the superuser has confirmed the deletion
- - **Kit Bag**
- This section of the app stores (for the duration of the session) any of the matches a user has selected for payment, and provides the user with a useful summary of the:
-   - Match Fees
-   - Match Fines
-   - Match Total
-   - Grand Total 
-  
-- **Checkout**
-This page enables users to pay the match officials fees for any games they have in their kit bag.  
+    ![Data Filters](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/filters.jpg)
 
- - **User Profile**
-Displays the users billing address, if they have elected to save it, and a summary of the matches they have paid for.
- - **Admin**
-A special menu option has been provided for Admin/Superusers to create new Competitions, Clubs, Teams and Matches. Each one redirects the superuser to a form page where they can input and save the relevant information.
-Match creation is currently simplistic choice based form. Future versions could use a more sophisticated 
-> I have opted to keep this as a superusers task because it didn't make sense to enable any user to log in and start creating new teams etc; and to be honest this is the way the existing software options function. 
+ - **Data Input**
+Date is input into the app's Postgres database via a series of Model Forms each linked to it's respective DB model. Form layout is similar across the platorm, and forms are relatively simple and straightforward to use. The structure of the data was designed to enable users to, wherever possible, make choices rather than have to input data manually.
+   - New Data can be added by Superusers and Registered users (limited to their Profile)
+   
+   ![Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-team.jpg)
+
+   - The existing data can be editted by superusers and registered users (limited to their Profile)
+   
+   ![Edit Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/teams-super.jpg)
+
 
 ##### **Information Design**
-Information is provided to users on multiple pages; Matches, Match Detail, Clubs, Teams, Kit Bag and Profile.
-Despite rendering slightly different information the structure of each page has been designed to provide a similar layout and theme.
+Information is provided to users on a number of key pages; Matches, Match Detail, Match Messages, Clubs, Teams, Kit Bag and Profile. Despite rendering slightly different information the structure of each page has been designed to provide a similar layout and theme. The game summary elements are the key pieces which tie the different pages together.
 
-- Home and Away Teams
-    - Home and Away team Coaches
-    - The venue and Kick Off time
-    - Interactive dropdown showing the Venue Map (where provided)
-    - Match Officials
-    - Interactive dropdown of Match officials Fees
+![Information Design](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/information-design.png)
+
 ___
 
 #### **Skeleton** 
-The RefereE-Pay website initially comprises three main pages:
- - Landing Page
- - Registration Page for first time visitors to gain access to the content
- - Log-in Page for returning visitors
-
-Assuming the user choses to register they are provided access to the remaining pages
- - Recipe's page displays 6 recipe cards per page
-   - Filter and search options provided to reduce the number of recipes displayed
- - Individual Recipe pages provide the full recipe detail
- - An "Add Recipe" page enables users to upload their own recipe information
- - A page for the users to manage (Update or Delete) their recipes
-   - Echoes the functionality provided by the Recipes and Add Recipe pages
- - A Profile page, leads onto an Edit Profile page where users can add a profile picture and subscribe by providing their email address.
- - A dashboard to track where recipes are uploaded for
-
-Navigation between these pages is provided by a standard intuitive navbar, additional anchor links are provided on strategic pages to assist navigation. 
+RefereE-Pay has been deliberately designed to optimise the placement of elements such as images, buttons  and data. Key elements on each page are located in the same place so users are confident in how they interact with the app
 
 ##### **Interface Design**
-The intention was to provide a relatively simple app which maintains a clean and consistent interface design, re-using elements and page styles wherever possible to benefit from the users learned behaviour. 
- - The Recipes page and Manage Recipes page are virtually identical aside from the search and filter elements being removed for managing recipes.  
+The intention was to provide an app which maintains a clean, intuitive and consistent interface design, re-using elements and page styles wherever possible to benefit from the users learned behaviour.
 
-![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-1.jpg) 
+###### **Navigation**
+Consistenty located at the top of the page, and providing a consistent set of choices, depending on the users role/access rights.
 
- - Recipe cards have a consistent layout between the Recipes and Manage recipes pages. Each has a Floating Action Button which when clicked takes the user to the next level.
+![Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/navbar.jpg)
 
-![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-2.jpg)
+- Grand Total
+Links users to their Kit Bag while providing a running total of matches in the kitbag (for the duration of the session).
 
- - The Add and Edit functions for Clubs, Teams and Matches have a consistant appearance and structure.
+- Search box
+Located in the very top right of the navbar and ever present. Allows users to search for a team's matches irrespective of which page they are currently on.
 
-![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-3.jpg)
+###### **Filters**
+Data select dropdowns used to filter the page information are always located towards the top of the page below the Page header.
 
-Flashed messages are displayed at the top of the screen below the navbar
+![](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/skel-filter.jpg)
 
-Buttons colours are chosen to reflect their purpose, and anchor links have some interactive response when hovered.
+###### **Pagination**
+Pagination controls are located below the filters and also at the bottom of the page below the data, and can be used to navigate the filtered data.
 
-##### **Interaction Design**
-User interactions on the W3Recipes app can be subdivided into three categories:
- - **Navigation**  
- I have used a conventional, mobile responsive navbar for this project, and this is one of the key elements which enables users to navigate the app.  
-  ![Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/navbar.jpg)  
+![](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/skel-pag.jpg)
 
-Navigating through the Matches and Club Directory is achieved through familiar pagination controls.  
-![Pagination](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pagination.jpg)
+###### **Information**
+As is to be expected , information provided by this site takes up the bulk of the center of the pages.
 
-I have placed anchor links on several pages to also assist user navigation either deeper into the site or back to a main page. Such as:
- - Fixture list (main matches page)
-![]()
- - Messages
-![]()
- - Add Travel
-![]()
-All in app buttons have been designed to provide  user feedback by either changing or reversing colours when hovered.
-![]()
+##### **Forms**
+Forms are located on the lefthand side of pages on laptop or large monitors. Any additional information provided with that form is located on the right hand side.
 
- - **Manipulation**  
- Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
-   - Green ![Green Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/green-button.jpg)  
- Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
+![Forms](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-travel.png)
 
-   - Orange ![Yellow](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/edit-button.jpg)  
- Used as a warning, or to indicate an action which will eventually result in data being changed, such as editting a Club, Team or Match.
+###### **In App Navigation**
+Navigating back to the Fixtures page or back to a previous page is achieved through buttons consistently located at the base of each page. Button titles should be self explanatory.
 
+![Forms](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bot-nav.jpg)
+ 
+###### **Messages**
+All messages are displayed at the top right of the page just below the search box and are designed to heklp convey the class of message, whether Error, Warning, Info or Success.
 
-   - Red ![Red Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/red-button.jpg)  
- Red buttons on Referee pay are used on actions which copuld result in permanent changes such as Deleting recordsHighlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed or changed.
+![Message Location](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/message-loc.jpg)
 
-##### **Navigation Design**
-I have used a standard Bootstrap, mobile responsive navbar for RefereE-Pay.
-The menu items change depending on the user's status (logged-in or not) and by role (superuser or not.
- - Anonymous users only see: Home, Fixtures, Clubs and My Account.
-   - The only option under my account is to Log-In
-   ![My Account Log-in](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/ma-log-in.jpg)
-   - Anonymous users are able to navigate from the Club directory to the Teams page.
- - Once signed-up users are able to see the full menu list which enables them to interact with the whole app.
-![My Account Full](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/my-account.jpg)
- - Superusers have a special menu dropdown for managing the creation of Competitions, Clubs, Teams, and Matches
-![Admin Menu](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/admin.jpg)
-Additional anchor links have been provided in strategic locations to assist user navigation and provide easy access to certain pages. These are consistently located at the bottom of the content above the footer.
- - Landing Page
- Contains two anchor links prompting the user to sign-up. One located within text of a call-to-action section in the middle of the page. The second is located at the bottom of the page above the footer
+###### **Error Pages**
+Each error page extends the base template to provide the users with a design consistent with the remainder of the site, and a navbar theu are already familiar with. Thus should a user encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
 
- - Recipes page and Manage Recipes page
- Both have a link to the Add Recipes page, where the user is able to upload a new recipe
+![Error Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/404error-page.jpg)
 
- - Profile Page
- Contains a link to the Manage Recipes page where they are able to Edit and Delete the recipes they have previously uploaded.
-
-There should be no requirement for the user to ever have to resort to the Browser BACK button.
- - Error Pages
-Each error page uses extends the base template to provide the users with the navbar seen throughout the site. Thus should a user encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
+> There should be no requirement for the user to ever have to resort to the Browser BACK button.
 
 ##### **Information Design**
 The basic concept for the information design for RefereE-Pay is laid out in the following wireframes.
@@ -462,7 +394,7 @@ I also wanted to add some fun to the messages rendered by the app by adding foot
 
  - Alert = Tactics Board
 
-![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg) )
+![Tactics](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg) )
 
  - Success = Goal
 
@@ -619,7 +551,7 @@ The following table lists the primary features provided by the W3Recipes app.
 
  5. The**[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
    a. The **[Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button which is exclusive to superusers takes them to the Edit Match page.
-   b. The **[Edit Match page]([Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg)** provides the functionality to edit and update all of the match detail in one place.
+   b. The **[Edit Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg)** provides the functionality to edit and update all of the match detail in one place.
    c. The **[Home and Away Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/cond-select.jp)** choices function as conditional dropdown mewnus linked to the age selection field
    d. The **[Delete Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button initiates the Match deletion process by opening a delete confirmation modal.
    e. The **[Delete Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/match-conf.jpg)** modal warns the superuser they are about to delete a particular Match and checks that is the intention.
