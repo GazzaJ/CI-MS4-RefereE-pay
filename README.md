@@ -380,7 +380,7 @@ Button colours have been chosen for to provide a good level of contrast, but als
 
 ![Dark Blue Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/darkblue-button.jpg)
 
-- **Light Bluel/Teal Button** was selected to provide another colour of button which stands out.
+- **Light Blue/Teal Button** was selected to provide another colour of button which stands out.
 
 ![Light Blue Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/lightblue-button.jpg)
 
@@ -638,23 +638,26 @@ The following table lists the primary features provided by the W3Recipes app.
     - **[Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-team.jpg)** allows Admin/Superusers to add new teams to the selected Club and assign the Manager/Coach.
     - The **[Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-match.jpg)** page allows Admin/Superusers to add new matches to the app, populating all of the information required to render the details.
 
- 16.  A football inspired **[Success Notification]()** messages appears through out the site whenever a positive outcome is achieved.
- 17.  The is also a football themed **[Warning Notification]()** message used when appropriate.
- 18.  All of the site's **[Error Notification]()** messages are suitably football inspired and appear whenever something doesn't function or if the user attempts something they don't have permission for.
- 19.  To complete the set, each information **[Alert Notification]()** is also football themed.
- 20.  A football themed **[Loading screen]()** is used while the match payments are being processed by Stripe.
+ 16.  A football inspired **[Success Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-success.jpg)** messages appears through out the site whenever a positive outcome is achieved.
+ 17.  The is also a football themed **[Warning Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-warning.jpg)** message used when appropriate.
+ 18.  All of the site's **[Error Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-error.jpg)** messages are suitably football inspired and appear whenever something doesn't function or if the user attempts something they don't have permission for.
+ 19.  To complete the set, each information **[Alert Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg)** is also football themed.
+ 20.  A football themed **[Loading screen](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/footy-loader.jpg)** is used while the match payments are being processed by Stripe.
  
 _____
 
 ### **Security Features**
-Despite not being explicitly required for this build I have chosen to implement certain security features to provide some protection against unauthorised access to other users data.
+I have discussed the security aspects of this app in some detail in the TESTING.md document, but will highlight some of the built-in features below for good measure:
 
- 1. User Login
- 2. 2. An AllAuth powered **[Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg)** for new users to sign-up.
- 3. An AllAuth powered **[Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg)** for returning registered users.
-|  033  | **Logout Screen** |  | []() |
+1. User **[Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg)** powered by the AllAuth package provides a comprehensive registration process for new users.
+2. User **[Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg)** for returning registered users, is also provided as part of the AllAuth package
+3. The **`@login_required`** decorator is used on pages that have been selected for registered users only. Users who attempt to access any such page are redirected to the login page to sign-in.
+4. Certain Features has been given **[Compartmentalised Access](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/compartment.png)** by role. For example only superusers and referees can add travel expenses. 
+5. Access to some functions is also **[Time Limited](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/time-limit.jpg)**, such as adding Travel expenses or adding messages to a match. Both of these can only be accomplished prior to kick-off.
+6. Logic to prevent **[URL Manipulation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/safe-logic.jpg)** has been included in the various `views.py` files. This augments the @login required decorator by specifying  whether a particular users role is appropriate for accessing a particular feature/function.
+7. The **[PAID Stamp](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/paid-stamp.jpg)** helps to prevent users from accidentally paying for a match more than once.
 
-
+_____
 
 ### **Potential New Features for the Future**
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate in the future:
