@@ -1,30 +1,33 @@
 ![RefereE-Pay](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/readme-title.jpg "RefereE-Pay")
-# [**Testing & Bug Fixes**](https://ci-ms4-referee-pay.herokuapp.com/)
+# [**Testing & Bug Descriptions**](https://ci-ms4-referee-pay.herokuapp.com/)
 This document records all of the automated and manual testing conducted on the RefereE-Pay app, and also lists the bugs and fixes recorded during the development of the app'.
 The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
 ______
 ## Table of contents
-1. [User Story Testing](#user-story-testing)
-2. [Functionality Testing](#functionality)
+1. [Login Credentials](#login)
+2. [User Story Testing](#user-story-testing)
+3. [Functionality Testing](#functionality)
    - [Navigation Testing](#first-navigation)
    - [Registration / Log-in](#registration)
-   - [Recipe Search & View](#recipes)
-   - [Adding a Recipe](#add-recipe)
-   - [Manage Recipes](#manage)
-   - [Edit a Recipe](#edit-recipe)
-   - [User Profile](#user-profile)
-   - [Edit Profile](#edit-profile)
+   - [Matches & Match Detail](#matches)
+   - [Kit Bag](#kitbag)
+   - [Checkout & Checkout Success](#checkout)
+   - [Adding New Data](#add-data)
+   - [Editing Existing Data](#edit-data)
+   - [Deleting Existing Data](#delete-data)
    - [Delete a Recipe](#delete-recipe)
-3. [Appearance Testing](#appearance)
-4. [Code Quality & Validation](#code-validation)
-5. [Usability Testing](#usability)
-6. [Responsiveness Testing](#responsiveness)
-7. [Performance Testing](#performance)
-8. [Security Testing](#security)
-9. [Bugs & Issues](#bugs)  
+   - [User Profile](#user-profile)
+4. [Automated Testing](#automated-testing)
+5. [Appearance Testing](#appearance)
+5. [Code Quality & Validation](#code-validation)
+6. [Usability Testing](#usability)
+7. [Responsiveness Testing](#responsiveness)
+8. [Performance Testing](#performance)
+9. [Security Testing](#security)
+10. [Bugs & Issues](#bugs)  
 
 ______
-## **Login Credentials** 
+## **Login Credentials** <a name="login"></a>
 
 I have pre-loaded a number of user profiles for a selection of Coaches and Referees to facilitate testing of this web-apps features. Some of the web-apps' functionality is dependent on which Role selected.
 | Profile |      Username     |   Password   |    Role   |    Team    |
@@ -39,6 +42,7 @@ I have pre-loaded a number of user profiles for a selection of Coaches and Refer
 |   008   |    Felix_Blych    | F£l1x8lych | Referee | - |
 > It may be necessary to change a Coaches email address during testing in order to receive a payment confirmation email.
 ______
+
 ### **User Story Testing** <a name="user-story-testing"></a>
 The following testing has been carried out to validate how the website addresses each of the user stories:
 |User Story|Description|Testing|
@@ -184,7 +188,8 @@ The following testing has been carried out to validate how the website addresses
 
 ![Teams CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-23.png)
 
-
+|User Story|Description|Testing| Result |
+|:--------:|-----------|-------|--------|
 | 24 | _As a _ **Referee**, _I need to_ **add my travel expenses**, _in order to_ **ensure I get paid the full amount for my services**. | Match Officials are able to add their travel expenses to any future, and unpaid match. A link exists on the Match Detail page for them to do this, and is only visibly to match officials and superusers. This takes them to a form where they can update their travel expenses. | **PASS** |
 
 ![Match Officials travel fees](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-24.png)
@@ -234,7 +239,7 @@ This section covers some basic testing of the Registration Log-in functionality.
 |   007    | **Use of Correct Templates and Styles**  | The pages should use the RefereE-Pay background images and styles | The webpage styles are correct for the application | **PASS** | **PASS** |
 |   008    | **Navbar Functionality**  | Maintain navbar functionality throughout the process | The navbar remains functional throughout this process | **PASS** | **PASS** |
 
-![Account Sign-up](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/account-sign-up.png)
+![Account Sign-up](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/account-signup.png)
 
 ____
 
@@ -269,7 +274,7 @@ ____
 |   003  | **Number of items in Bag** | Display the number of matches currently in the kit bag | The number of matches currently in the kitbag is displayed directly above the list of matches | **PASS** | **PASS** |
 |   004  | **Summary of Charges** | The kit bag displays the match and a summary of fees by match Official | The fees for each match are correctly displayed based on the Fees Model in the DB | **PASS** | **PASS** |
 
-![Summary of Charges](image.jpg)
+![Summary of Charges](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/kit-bag.jpg)
 	
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
@@ -286,7 +291,7 @@ ____
 |   010  | **Secure Checkout** | Directs users to the Checkout page | The link takes the user to the Checkout page | **PASS** | **PASS** |
 ____
  
-#### **Checkout & Checkout Success** <a name="kitbag"></a>
+#### **Checkout & Checkout Success** <a name="checkout"></a>
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Summary of Charges** | Checkout page renders a summary of the charges for each game | Checkout Page displays match officials total, Fines and grand total | **PASS** | **PASS** |
@@ -301,7 +306,7 @@ ____
 |   005  | **Card Details** | A secure card details field is provided for the user | An empty, secure Card details field has been provided for users to enter their card details | **PASS** | **PASS** |
 |   006  | **No Card Details** | Warn user that card detail have not been entered | The payment will not proceed without card details. If tried a warning message is displayed | **PASS** | **PASS** |
 
-![Save Info](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/checkout-save-info.jpg)
+![Save Info](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/card-required.jpg)
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
@@ -435,7 +440,7 @@ The Add Message page enables Match Officials and Superusers to add a message to 
 |   009  | **DB Updates** | Ensure the new Message is written to the DB correctly | The Message is added to the database as intended | **PASS** | **PASS** |
 |   010  | **Cancel Button** | Redirect users to the match detail page | Users are redirected back to the match detail page as desired | **PASS** | **PASS** |
 
-![Ad Chat](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-chat.png)
+![Add Chat](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-chat.png)
 
 _____
 
@@ -669,13 +674,16 @@ ____
 ### **Responsiveness Testing** <a name="responsiveness"></a>
 I have conducted continuous responsiveness testing, right up to the final submission, to ensure the website functions on different devices and in both portrait and landscape orientation, using Google Devtools and Responsinator.com.
 This project has been deployed using Heroku and the website has been continuously reviewed on several real devices:
-  - Samsung Galaxy S9
-  - Samsung Tab A
+  - Samsung Galaxy S9 (360 x 740) and (740 x 360)
+  - Samsung Tab A (768 x 1024) and (1024 x 768)
   - HP Laptop with attached monitor
 
 This helped me make changes and apply appropriate media queries to maintain responsiveness.
 
-The table below contains lists the results of the Responsiveness testing and links to images compiled from Google Devtools. The Responsinator.com app was also used to test the web app.
+The table below contains lists the results of the Responsiveness testing and links to images compiled from Google Devtools using the following Devices:
+- iPhone 5/SE (320 x 568) and (568 x 320)
+- iPhone 6/7/8 (375 x 667) and (667 x 375)
+- iPad (768 x 1024) and (1024 x 768)
  
 
 |  Test  | Page | Responsiveness Image Link | Result |
@@ -707,7 +715,6 @@ The website has been performance testing using the following tools:
  - Google Lighthouse (Desktop)
 > Testing was performed in incognito mode as Google extensions can affect the results of the lighthouse testing.
 
-![Landing Page Lighthouse](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/landing-lighthouse.jpg)
 
 |    Page    | Performance | Accessibility | Best Practices | SEO  |
 |:----------:|:-----------:|:-------------:|:--------------:|:----:|
