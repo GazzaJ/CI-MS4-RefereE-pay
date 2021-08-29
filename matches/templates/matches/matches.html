@@ -11,11 +11,9 @@
 
 {% block content %}
     <div class="container">
-        <div class="match-overlay"></div>        
-        <!-- Page top pagination controls -->
-        {% include 'includes/pagination.html' %}
+        <div class="match-overlay"></div>
         <!-- Filter Matches by Age or Team -->
-        <form id="filter" action="{% url 'matches' %}" method="GET">
+        <form id="filter" action="{% url 'matches' %}" method="GET" class="mb-5">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
@@ -47,6 +45,8 @@
                 </div>
             </div>                       
         </form>
+        <!-- Page top pagination controls -->
+        {% include 'includes/pagination.html' %}
         <!-- Matches / basic detail -->        
         {% for match in page_obj %}               
             <a class="match-text" href="{% url 'match_detail' match.id %}">
