@@ -233,12 +233,12 @@ Located in the very top right of the navbar and ever present. Allows users to se
 ###### **Filters**
 Data select dropdowns used to filter the page information are always located towards the top of the page below the Page header.
 
-![](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/skel-filter.jpg)
+![Filters](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/skel-filter.jpg)
 
 ###### **Pagination**
 Pagination controls are located below the filters and also at the bottom of the page below the data, and can be used to navigate the filtered data.
 
-![](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/skel-pag.jpg)
+![Pagination](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/skel-pag.jpg)
 
 ###### **Information**
 As is to be expected , information provided by this site takes up the bulk of the centre of the pages.
@@ -246,12 +246,12 @@ As is to be expected , information provided by this site takes up the bulk of th
 ##### **Forms**
 Forms are located on the left-hand side of pages on laptop or large monitors. Any additional information provided with that form is located on the right hand side.
 
-![Forms](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-travel.png)
+![Forms](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-travel.jpg)
 
 ###### **In App Navigation**
 Navigating back to the Fixtures page or back to a previous page is achieved through buttons consistently located at the base of each page. Button titles should be self-explanatory.
 
-![Forms](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bot-nav.jpg)
+![In Page Navigation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bot-nav.jpg)
  
 ###### **Messages**
 All messages are displayed at the top right of the page just below the search box and are designed to help convey the class of message, whether Error, Warning, Info or Success.
@@ -261,7 +261,7 @@ All messages are displayed at the top right of the page just below the search bo
 ###### **Error Pages**
 Each error page extends the base template to provide the users with a design consistent with the remainder of the site, and a navbar they are already familiar with. Thus should a user encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
 
-![Error Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/404error-page.jpg)
+![Error Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/404error-page.jpg)
 
 > There should be no requirement for the user to ever have to resort to the Browser BACK button.
 
