@@ -51,14 +51,13 @@ My aim is to achieved the above with a visually appealing, interactive yet intui
    - [Security Features](#security-features)
 4. [Technologies Used](#technologies)
 5. [Testing](#testing)
-6. [Database Creation](#database)
-7. [Deployment](#deployment)
-8. [Resources](#resources)
-9. [Credits](#credits)
+6. [Deployment](#deployment)
+7. [Resources](#resources)
+8. [Credits](#credits)
     - [Media](#media)
     - [Code Snippets](#code)
     - [Acknowledgements](#acknowledgements)
-10. [Technical Support](#technical)
+9. [Technical Support](#technical)
 ______
 
 ## **User Experience (UX)** <a name="user-experience"></a>
@@ -581,15 +580,15 @@ The following table lists the primary features provided by the W3Recipes app.
  5. The **[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
     - The **[Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button which is exclusive to superusers takes them to the Edit Match page.
     - The **[Edit Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg)** provides the functionality to edit and update all of the match detail in one place.
-    - The **[Home and Away Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/cond-select.jp)** choices function as conditional dropdown menus linked to the age selection field
+    - The **[Home and Away Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/cond-select.jpg)** choices function as conditional dropdown menus linked to the age selection field
     - The **[Delete Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button initiates the Match deletion process by opening a delete confirmation modal.
     - The **[Delete Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/match-conf.jpg)** modal warns the superuser they are about to delete a particular Match and checks that is the intention.
     - Interactive **[Match Venue](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-2.jpg)** accordion renders a map of the venue, or provides a link to Google Maps if no map exists.
     - Interactive **[Match Fees](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-3.jpg)** accordion, opens up to display Match Officials and their fees and any travel expenses
-    - **[Add to Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-bag.jpg)** button is exclusive to coaches and superusers and enables Home team coaches to add their matches to the kit bag for payment.
-    - **[Add to Bag - Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-cuccess.jpg)** A notification is displayed when the user clicks the "Add to Bag" button on the match detail page. This notification will display a summary of all matches in the kitbag for the duration of the users session but gets cleared if the user logs out.
+    - **[Add to Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-bag.png)** button is exclusive to coaches and superusers and enables Home team coaches to add their matches to the kit bag for payment.
+    - **[Add to Bag - Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-success.jpg)** A notification is displayed when the user clicks the "Add to Bag" button on the match detail page. This notification will display a summary of all matches in the kitbag for the duration of the users session but gets cleared if the user logs out.
     - **[Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/add-travel.png)** button is exclusive to referees and superusers, to enable them to add their match day travel expenses.
-    - **[PAID Stamp](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/paid.jpg)** is rendered once a match has been paid for and replaces the "Add to Bag" and "Add Travel" buttons.
+    - **[PAID Stamp](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/paid-stamp.jpg)** is rendered once a match has been paid for and replaces the "Add to Bag" and "Add Travel" buttons.
     - **[Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/messages-btn.jpg)** button which takes users to the Match Messages Page. Displays the current number of messages if greater than 0.
 
  6. **[Match Messages](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-messages.jpg)** page displays a summary of the game and also any messages posted by either Home team Coach of Match Referee.
@@ -617,21 +616,21 @@ The following table lists the primary features provided by the W3Recipes app.
 11. The **[Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/kit-bag.jpg)** page displays a summary of all of the active user's matches they have added to the kit bag and summarises the fees.
     - The kitbag displays a **[Fees Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/fee-summary.jpg)** section for each game so the active user can see the breakdown of fees, and understand what they are paying for.
     - A **[Remove from Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-remove.jpg)** icon sits on the middle right of the maych name, and enables the user to remove that match from their kit bag.
-    - The **[Secure Checkout]()** button takes the active user to the "Checkout" page where they have the ability to pay for their match fees.
+    - The **[Secure Checkout](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/secure-checkout.jpg)** button takes the active user to the "Checkout" page where they have the ability to pay for their match fees.
 
 12. The **[Checkout Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout.jpg)** processes the payments of any matches in the kitbag.
     - The Checkout page has a **[Fees Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/checkout-summary.jpg)** section on the top right with a basic breakdown of fees.
     - The bulk of the page is taken up by the **[Billing Details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/billing.jpg)** form, where users enter their billing address.
     - Users can select to have their information saved automatically by selecting the **[Save info](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/billing.jpg)** checkbox below the billing information form.
     - The **[Card Details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** window is a Stripe element connected to the Stipe payments API and allows users to enter their card details.
-    - The **[Secure Checkout](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** button completes the payment process, sends the information to Stripe and generates an order.
+    - The **[Complete Payment](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** button completes the payment process, sends the information to Stripe and generates an order.
  
-13. A **[Checkout Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/checkout-success.jpg)** page to confirm successful processing of the match fees transaction appears on successful payment.
+13. A **[Checkout Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout-success.jpg)** page to confirm successful processing of the match fees transaction appears on successful payment.
     - A **Success message** appears as the Checkout Success page loads
     - Users receive an **[Email Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/success-email.jpg)** of the success of their payment. The email confirms the order number, payment date and Grand Total
 
 14. Each registered user has a personalised **[Profile Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/profile.jpg)** displaying the users role and team if appropriate as well as billing information, if saved, and a summary of any payments processed for that user. Profile information can also be updated from this page.
-    - Each order in the **[Order Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-remove.jpg)** contains a link to the confirmation page summary for that order.
+    - Each order in the **[Order Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/order-summary.jpg)** contains a link to the confirmation page summary for that order.
 
 15. Superusers are provided with a unique navbar **[Admin Menu](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/admin.jpg)** which enables them to Access the Admin functions of the app.
     - **[Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-comp.jpg)** form allows Admin/Superusers to add new competitions to the list.
@@ -643,7 +642,7 @@ The following table lists the primary features provided by the W3Recipes app.
  17.  The is also a football themed **[Warning Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-warning.jpg)** message used when appropriate.
  18.  All of the site's **[Error Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-error.jpg)** messages are suitably football inspired and appear whenever something doesn't function or if the user attempts something they don't have permission for.
  19.  To complete the set, each information **[Alert Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-alert.jpg)** is also football themed.
- 20.  A football themed **[Loading screen](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/footy-loader.jpg)** is used while the match payments are being processed by Stripe.
+ 20.  A football themed **[Loading screen](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/footy-loader.jpg)** is used while the match payments are being processed by Stripe.
  
 _____
 
