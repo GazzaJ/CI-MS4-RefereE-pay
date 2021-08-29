@@ -361,6 +361,29 @@ I typically find great inspiration for colour schemes on Pinterest. For this pro
   
 ![Navbar](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/colour-scheme.jpg) 
 
+##### **Button Colours**
+Button colours have been chosen for to provide a good level of contrast, but also to convey a message about the buttons purpose.
+
+- **Red Button** - Used to convey a message of potential danger and used for Deletion functions to highlight that using this button will result in a permanent change.
+
+![Red Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/red-button.jpg)
+
+- **Yellow Button** - The purpose of the yellow button is to convey a warning, that should the user continue the data could be changed permanently
+
+![Yellow Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-button.jpg)
+
+- **Green Button** - Conveys a positive message; it's OK to proceed by using this button. Used to help the users achieve their goals in the app.
+
+![Green Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/green-button.jpg)
+
+- **Dark Blue Button** - has been used for a good contrast level as is used to direct users to different parts of the app.
+
+![Dark Blue Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/darkblue-button.jpg)
+
+- **Light Bluel/Teal Button** was selected to provide another colour of button which stands out.
+
+![Light Blue Button](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/lightblue-button.jpg)
+
 ##### **Typography**  
 Selecting the correct typography for this site wasn't as important as it had been for some of the other projects I have worked on. Since this app comprises an e-commerce platform my aim was to find complimentary fonts which were relatively simple yet easily. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
  - Simplicity
@@ -373,17 +396,22 @@ It was important to have a font which was clear and readable. I was also looking
 
 ![Exo Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/exo-font.jpg "Exo Font")  
 
- - Page headings (Galada)  
+ - Page headings (Roboto)  
 For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.  
 
 ![Roboto Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/roboto-font.jpg "Roboto Font")  
+
+ - PAID Stamp (Saira Stencil One)
+Used for the very limited PAID stamp which appears in the "Review Match Fees" section of the Match detail page whenever a match has been paid for.
+
+![Saira Stencil One Font](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/saira-font.jpg "Saira Stencil One Font")
 
 >**I had considered using a sport themed font for this app, but decided I want to overdo it, and certainly didn't want to detract from the main purpose of the site.**
 
 ##### **Imagery** 
 I had a very clear plan for the site images right from the very early planning stages. I wanted to find images showing amateur football in action including the referee or other match officials. I found a decent selection of good quality, licence free images on Pixabay. The full list of images and credits are in the Credits section.
 
-I also wanted to add some fun to the messages rendered by the app by adding football icons matching the level of message, such as:
+I also wanted to inject an element of fun to the messages rendered by the app by adding football icons matching the level of message, such as:
  - Error = Red Card
  
 ![Red Card](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/message-error.jpg) )
@@ -549,7 +577,7 @@ The following table lists the primary features provided by the W3Recipes app.
     - **[Pagination Controls](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/pagination.jpg)** at the top and bottom of the page to aid navigation.
     - **[Back to Top](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/btt-button.jpg)** button to return users to the top of the page without having to scroll all the way back.
 
- 5. The**[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
+ 5. The **[Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/match-detail-1.jpg)** page provides a dashboard of all match details with interactive elements.
     - The **[Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/edit-match-btn.jpg)** button which is exclusive to superusers takes them to the Edit Match page.
     - The **[Edit Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/edit-match.jpg)** provides the functionality to edit and update all of the match detail in one place.
     - The **[Home and Away Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/cond-select.jp)** choices function as conditional dropdown menus linked to the age selection field
@@ -597,7 +625,7 @@ The following table lists the primary features provided by the W3Recipes app.
     - The **[Card Details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** window is a Stripe element connected to the Stipe payments API and allows users to enter their card details.
     - The **[Secure Checkout](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/card-secure.jpg)** button completes the payment process, sends the information to Stripe and generates an order.
  
-13. A **[Checkout Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/checkout-success.jpg)** page to confirm successful processing of the match fees transaction appears on successful payment.
+13. A **[Checkout Success](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/checkout-success.jpg)** page to confirm successful processing of the match fees transaction appears on successful payment.
     - A **Success message** appears as the Checkout Success page loads
     - Users receive an **[Email Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/success-email.jpg)** of the success of their payment. The email confirms the order number, payment date and Grand Total
 
@@ -614,7 +642,7 @@ The following table lists the primary features provided by the W3Recipes app.
  17.  The is also a football themed **[Warning Notification]()** message used when appropriate.
  18.  All of the site's **[Error Notification]()** messages are suitably football inspired and appear whenever something doesn't function or if the user attempts something they don't have permission for.
  19.  To complete the set, each information **[Alert Notification]()** is also football themed.
- 20.  | A football themed **[Loading screen]()** is used while the match payments are being processed by Stripe.
+ 20.  A football themed **[Loading screen]()** is used while the match payments are being processed by Stripe.
  
 _____
 
@@ -628,12 +656,12 @@ Despite not being explicitly required for this build I have chosen to implement 
 
 
 
-### **Features Left to implement**
+### **Potential New Features for the Future**
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate in the future:
 |   Feature     |     Description      |
 |---------------|----------------------|
-| Conditional dropdown on fixtures | To reduce the number options in the teams filter box by conditionally filtering the options by age. |
-| Algorhythm based match creation| To create a more sophisticated means of creating multiple games at once rather than manually creating each game|
+| Conditional dropdown on fixtures menu | To reduce the number options in the teams filter box by conditionally filtering the options by age. |
+| Algorithm based match creation | To create a more sophisticated means of creating multiple games at once rather than manually creating each game|
 |Person to Person Payment| The ability to pay the Match officials directly rather than paying the app as it currently stands|
 ______
 
@@ -1039,9 +1067,7 @@ I have attempted to work independently as much as possible while building this w
 - Google Lighthouse - Website performance testing
 - [StackOverFlow](https://stackoverflow.com/) – Web based coding tips
 - [W3Schools](https://www.w3schools.com/) – General coding resource
-- [Pexels](https://www.pexels.com/) – Licence free image repository
 - [Pixabay](https://www.pixabay.com/) – Licence free image repository
-- [BeFunky](https://www.befunky.com/create/resize-image/) – Online image resizer
 - [W3C Validator](https://validator.w3.org/) - HTML and CSS Validation tool
 - [JSHint](https://jshint.com/) - JavaScript code analysis tool
 - [JSLint](https://jslint.com/) - JavaScript code quality analysis tool
@@ -1050,8 +1076,6 @@ I have attempted to work independently as much as possible while building this w
 - [SEO Site Checkup](https://seositecheckup.com/tools/custom-404-error-page-test) - Checks to see if you have a custom 404 page
 - [Online JavaScript Beautifier](https://codebeautify.org/jsviewer) - Useful tool for indenting JS code
 - [Am I responsive?](http://ami.responsivedesign.is/) - Provides a simple view of a websites responsiveness.
-- [Responsinator](https://www.responsinator.com/) - Fairly comprehensive responsiveness testing
-- [Regex Generator](https://regex-generator.olafneumann.org/) - Helps compile Regular expressions
 - [Regex 101](https://regex101.com/) - Useful Regex tester
 
 ______
@@ -1087,17 +1111,19 @@ The basic shell of this site follows what was taught during the Full Stack Frame
 
  | Code Snippet | Description | Source |
  |:-------:|-------------|:------:|
- |Football Loader| Bouncing football loader | https://codepen.io/glafontaine/pen/geMYaJ |
- | Chained Selects | Chained / dependent dropdown lists/select elements | https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html |
- | Stripe integration | Code Institute Boutique Ado walkthrough project | - |
+ |**Football Loader**| Bouncing football loader | https://codepen.io/glafontaine/pen/geMYaJ |
+ | **Chained Selects** | Chained / dependent dropdown lists/select elements | https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html |
+ | **Message appearance** | Make each messaage appear in a coloured speech bubble | https://codingislove.com/css-speech-bubbles/ |
+ | **Pagination** | Method for applying Bootstrap pagination to a Django App. This tutorial was adapted and modified from the following site. | https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html |
+ | **Stripe integration** | Code Institute Boutique Ado walkthrough project | - |
 
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
  - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Django and Automated testing in Python and some of the different databases structures. Chris Zielinski's Walkthrough projects were extremely helpful and enjoyable.
  - Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
- - My mentor Precious Ijege for his support and advice throughout this final project. Thank you also for providing such a thorough review of the finished project helping ensure it was fit for submission.
- - My appreciation to all the users who took time to test the web app:
+ - My mentor Precious Ijege for all of his enthusiastic help, support and advice throughout this final project. Thank you also for providing such a thorough review of the finished project helping ensure it was fit for submission.
+ - My appreciation to the users who took time to test the web app
 ______
 ### **Technical Support** <a name="technical"></a>
 If you encounter any issues with this website, or require any support please email the developer [johnge71@gmail.com](mailto:johnge71@gmail.com)
