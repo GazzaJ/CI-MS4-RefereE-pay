@@ -52,7 +52,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 02 |_As a_ **site user**, _I need_ **easily log-in and log-out of the site**, _in order to_ **access the matche details and my personal information**| There are two ways to log into RefereE-Pay. The first is the clear and obvious link on the home page. There is also an additional link in the Navbar under the "My Account" tab. | **PASS** |
+| 02 |_As a_ **site user**, _I need_ **easily log-in and log-out of the site**, _in order to_ **access the match details and my personal information**| There are two ways to log into RefereE-Pay. The first is the clear and obvious link on the home page. There is also an additional link in the Navbar under the "My Account" tab. | **PASS** |
 
 ![Home Page Log-in](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-2.png)
 
@@ -66,13 +66,13 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 04 |_As a _ **site user**, _I need to_ **receive an email confirmimg registration**, _in order to_ **verify that my account creation was successful**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a URL from a Full Recipe view to an Edit Recipe view| **PASS** |
+| 04 |_As a _ **site user**, _I need to_ **receive an email confirming registration**, _in order to_ **verify that my account creation was successful**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a URL from a Full Recipe view to an Edit Recipe view| **PASS** |
 
 ![Registration confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-4.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 05 |_As a _ **site user**, _I need to_ **have a personalised user profile**, _in order to_ **View my personal payment history and payment confirmations, and save my payment information**.| A profile page exists under the "My Account" tab. This page displays the users billing details **if saved** and also displays a list of any paymets the user has made.| **PASS** |    
+| 05 |_As a _ **site user**, _I need to_ **have a personalised user profile**, _in order to_ **View my personal payment history and payment confirmations, and save my payment information**.| A profile page exists under the "My Account" tab. This page displays the users billing details **if saved** and also displays a list of any payments the user has made.| **PASS** |    
 
 ![User Profile](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-5.png)
 
@@ -96,7 +96,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 09 | _As a _ **Team Manager**, _I need to_ **be able to quickly navigate through the list of fixtures**, _in order to_ **find different fixtures**. | The matches list is displayed over sevral pages navigated via the pagination controls. There is also a back to top button to take the user from the bottom of a page back to the top | **PASS** | 
+| 09 | _As a _ **Team Manager**, _I need to_ **be able to quickly navigate through the list of fixtures**, _in order to_ **find different fixtures**. | The matches list is displayed over several pages navigated via the pagination controls. There is also a back to top button to take the user from the bottom of a page back to the top | **PASS** | 
 
 ![Paginated Matches Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-9.png)
 
@@ -120,7 +120,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 13 | _As a _ **Referee**, _I need to_ **communicate with the Home team manager**, _in order to_ **reply to any issues or ceoncerns raised ahead of the game**. | The matches - messages page provides a simple method for the Home team manager and coach to communicate with each other. Messages are stored and displayed per match and a simple add message form facilitates message creation | **PASS** |
+| 13 | _As a _ **Referee**, _I need to_ **communicate with the Home team manager**, _in order to_ **reply to any issues or concerns raised ahead of the game**. | The matches - messages page provides a simple method for the Home team manager and coach to communicate with each other. Messages are stored and displayed per match and a simple add message form facilitates message creation | **PASS** |
 
 ![Messages App](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-13.png)
 
@@ -132,19 +132,19 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 15 | _As a _ **Team Manager**, _I need to_ **have a simple and quick payment method**, _in order to_ **pay the assigned match officials their match fees**. | The checkout process is completed in 3 easy steps. Matches can be added to the kit bag from the Match detail page. A confirmation pop-up appears showing the match has been added. users can click the bag icon or the "Secure Checkout" link on the popup to view the bag contents. Clicking "Secure Chechout" from the bag redirects the user to the Checkout page where they complete their details (if not saved) and add their card details. | **PASS** |
+| 15 | _As a _ **Team Manager**, _I need to_ **have a simple and quick payment method**, _in order to_ **pay the assigned match officials their match fees**. | The checkout process is completed in 3 easy steps. Matches can be added to the kit bag from the Match detail page. A confirmation pop-up appears showing the match has been added. users can click the bag icon or the "Secure Checkout" link on the popup to view the bag contents. Clicking "Secure Checkout" from the bag redirects the user to the Checkout page where they complete their details (if not saved) and add their card details. | **PASS** |
 
 ![Payment Process](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-15.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 16 | _As a _ **Team Manager**, _I need to_ **view any pending payments in my kit bag**, _in order to_ **identify the total cost of match fees for each game and the grand total**. | The shopping bag or "Kit bag" displays all matches that the user has selected for payment. These matches will be stored in the session memory for as long as the user is loged in. | **PASS** |
+| 16 | _As a _ **Team Manager**, _I need to_ **view any pending payments in my kit bag**, _in order to_ **identify the total cost of match fees for each game and the grand total**. | The shopping bag or "Kit bag" displays all matches that the user has selected for payment. These matches will be stored in the session memory for as long as the user is logged in. | **PASS** |
 
 ![Kit Bag](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-16.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 17 | _As a _ **Team Manager**, _I need to_ **easily enter my payment information**, _in order to_ **complate my payment quickly and efficiently**. | There is a very simple and intuitive payment form which takes litteraly seconds to complete. | **PASS** |
+| 17 | _As a _ **Team Manager**, _I need to_ **easily enter my payment information**, _in order to_ **complete my payment quickly and efficiently**. | There is a very simple and intuitive payment form which takes literally seconds to complete. | **PASS** |
 
 ![Payments](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-17.png)
 
@@ -156,7 +156,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 19 | _As a _ **Team Manager**, _I need to_ **view a payment confirmation after checkout**, _in order to_ **verifay that I have successfully paid my match fees**. | Following successful payment processing the user is redirected to a Payment Success page which displays their order #, billing details and a summary of their payments | **Pass** |
+| 19 | _As a _ **Team Manager**, _I need to_ **view a payment confirmation after checkout**, _in order to_ **verify that I have successfully paid my match fees**. | Following successful payment processing the user is redirected to a Payment Success page which displays their order #, billing details and a summary of their payments | **Pass** |
 
 ![Payment Confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-19.png)
 
@@ -168,19 +168,19 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 21 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Matches**, _in order to_ **keep pace with league fixtures and provide a long term solution**. | Separate views exist to create a new match, edit and existing match and delete an existing match from the database. A Delete confirmation modal has been provided to ensure a level of security before the match is irreversably deleted | **PASS** |
+| 21 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Matches**, _in order to_ **keep pace with league fixtures and provide a long term solution**. | Separate views exist to create a new match, edit and existing match and delete an existing match from the database. A Delete confirmation modal has been provided to ensure a level of security before the match is irreversibly deleted | **PASS** |
 
 ![Matches CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-21.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 22 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Clubs**, _in order to_ **keep track of league clubs and those using the site**. | Separate views exist to create a new Club, edit and existing Club and delete an existing Club from the database. A Delete confirmation modal has been provided to ensure a level of security before the Club is irreversably deleted | **PASS** |
+| 22 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Clubs**, _in order to_ **keep track of league clubs and those using the site**. | Separate views exist to create a new Club, edit and existing Club and delete an existing Club from the database. A Delete confirmation modal has been provided to ensure a level of security before the Club is irreversibly deleted | **PASS** |
 
 ![Clubs CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-22.png)
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 23 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Teams**, _in order to_ **keep track of all clubs teams**. | Separate views exist to create a new Team, edit and existing Team and delete an existing Team from the database. A Delete confirmation modal has been provided to ensure a level of security before the Team is irreversably deleted | **PASS** |
+| 23 | _As a _ **Site Admin**, _I need to_ **add, edit and delete Teams**, _in order to_ **keep track of all clubs teams**. | Separate views exist to create a new Team, edit and existing Team and delete an existing Team from the database. A Delete confirmation modal has been provided to ensure a level of security before the Team is irreversibly deleted | **PASS** |
 
 ![Teams CRUD](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-23.png)
 
@@ -203,10 +203,10 @@ Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ f
 |   002  | **Sign-in Link** on Homepage |Take users to the to Log-in page| Redirects users to the login page as expected | **PASS**  | **PASS** |
 |   003  | **Navbar - My account** login link | Correctly redirects users to the login page | Log-in Link under "My Account in the Navbar" opens log-in page as expected | **PASS** | **PASS** |
 |   004  | **Fixtures** navbar link | Opens up the fixture list | Correctly navigates to the fixtures page | **PASS** | **PASS** |
-|   005  | **Age Dropdown**  | Should filter the list of matches bu the teams age group when filter is clicked | The age dropdown correctly fiters the matches by age group; provided games of that age group exist | **PASS** | **PASS** |
-|   006  | **Team Dropdown** | This should filter the list of matches by the team selected when the filter button is clicked | Correctly filters the list of games by the selcted team | **PASS** | **PASS** |
+|   005  | **Age Dropdown**  | Should filter the list of matches by the teams age group when filter is clicked | The age dropdown correctly filters the matches by age group; provided games of that age group exist | **PASS** | **PASS** |
+|   006  | **Team Dropdown** | This should filter the list of matches by the team selected when the filter button is clicked | Correctly filters the list of games by the selected team | **PASS** | **PASS** |
 |  007   | **Reset Button** | Reset the list of matches to display all fixtures | Correctly resets the list | **PASS** | **PASS** |
-|   008  | **Clubs** navbar link | Redirects users to the club directory Page | Selcting the link takes users to Club directory page | **PASS** | **PASS** |
+|   008  | **Clubs** navbar link | Redirects users to the club directory Page | Selecting the link takes users to Club directory page | **PASS** | **PASS** |
 |   009  | **Search Box** on homepage |Redirects users to the Fixtures page with a list of games filtered by the team. Else displays warning message. | Correctly filters the fixture list if the team exists in the DB else displays toast message  | **PASS**  | **PASS** |
 
 ![No Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/no-team.jpg)
@@ -215,7 +215,7 @@ Tests the initial navbar selections _( Home | Fixtures | Clubs | My Account )_ f
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   010  | **App logo** |Redirects users to the homepage | Correctly takes users to the homepage as desired | **PASS** | **PASS** |
 |   011  | **Selecting a fixture** from the fixture list | Redirect un-authorised and un-logged in users to the login page | Redirects as expected | **PASS** | **PASS** |
-|   012  | Selecting the **"View the Teams"** link in the Club Directory | Redirects users to the Team directory for the Club the selcted | Correctly takes users to the team directory for the club they selected | **PASS** | **PASS** |
+|   012  | Selecting the **"View the Teams"** link in the Club Directory | Redirects users to the Team directory for the Club the selected | Correctly takes users to the team directory for the club they selected | **PASS** | **PASS** |
 |   013  | **Back to Clubs** link | Redirects users back to the Club directory from team they had selected | Users are taken back to the Club Directory page as expected | **PASS** | **PASS** |
 
 ___
@@ -230,7 +230,7 @@ This section covers some basic testing of the Registration Log-in functionality.
 |   003  | **Username reuse** | Should prevent the re-use of an username by more than one user | Form does not submit and error message displayed as desired | **PASS** | **PASS** |
 |   004    | **Email Validation Email** | App should send email to users email address with instructions to validate email address | The email validation message is sent | **PASS** | **PASS** |
 |   005    |  **Custom Validation email** | The content of the email is specific to RefereE-Pay and the user | The email refers to RefereE-Pay and mentions the Users Username | **PASS** | **PASS** | 
-|   006    | **Registration Success** | Successful registration is confirmed with a message on the website | On siccessful signup users are directyed to the Log-in page and a success message is displayed | **PASS** | **PASS** |
+|   006    | **Registration Success** | Successful registration is confirmed with a message on the website | On successful signup users are directed to the Log-in page and a success message is displayed | **PASS** | **PASS** |
 |   007    | **Use of Correct Templates and Styles**  | The pages should use the RefereE-Pay background images and styles | The webpage styles are correct for the application | **PASS** | **PASS** |
 |   008    | **Navbar Functionality**  | Maintain navbar functionality throughout the process | The navbar remains functional throughout this process | **PASS** | **PASS** |
 
@@ -246,7 +246,7 @@ This section documents the testing performed to validate the ability of the user
 |  001   | **Navigate to matches**| Clicking the fixtures tab redirects users to the match list | Users are redirected correctly | **PASS** | **PASS**|
 |  002   |  **Matches listed in date order**  | Matches should be listed in Chronological order | The matches are listed in the correct order | **PASS** | **PASS** |
 |  003   |  **Age Filter**  | Reduces the match list to games for a specific age group | Match list is correctly filtered and remain in chronological order | **PASS** | **PASS** |
-|  004   | **Team Filter**  | Reduces the match list to display only the games where the selcted team features, as either the home or the away team | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
+|  004   | **Team Filter**  | Reduces the match list to display only the games where the selected team features, as either the home or the away team | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
 |  005   | **Search Box filter** | Functions like the Team filter, reducing the match list to those games featuring the searched team else a warning message displayed | The match list is correctly filtered by Team name and remains in chronological order | **PASS** | **PASS** |
 |  006   | **Match Select** | Selecting one of the games opens the full match detail for that fixture | Match detail appears as desired | **PASS** | **PASS** |
 |  007   | **Match Detail** | Provides sufficient information without further interaction (Teams, Venue, Times, Match Officials) | All of the critical basic information is displayed as desired | **PASS** | **PASS** |
@@ -265,7 +265,7 @@ ____
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Access Kitbag** | Gain access to the kitbag from the Success Toast message by clicking "Secure Checkout" | Users are redirected to the current kitbag when they click the Secure Checkout button on the Success message. | **PASS** | **PASS** |
-|   002  | **Access the Kitbag** | Gain access to the kitbag by clicking on the shopping bag icon and grandtotal in the navbar | Users are redirected to the kitbag when the icon/grand total is selected | **PASS** | **PASS** |
+|   002  | **Access the Kitbag** | Gain access to the kitbag by clicking on the shopping bag icon and grand total in the navbar | Users are redirected to the kitbag when the icon/grand total is selected | **PASS** | **PASS** |
 |   003  | **Number of items in Bag** | Display the number of matches currently in the kit bag | The number of matches currently in the kitbag is displayed directly above the list of matches | **PASS** | **PASS** |
 |   004  | **Summary of Charges** | The kit bag displays the match and a summary of fees by match Official | The fees for each match are correctly displayed based on the Fees Model in the DB | **PASS** | **PASS** |
 
@@ -291,7 +291,7 @@ ____
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Summary of Charges** | Checkout page renders a summary of the charges for each game | Checkout Page displays match officials total, Fines and grand total | **PASS** | **PASS** |
 |   002  | **Billing Information** | Checkout page has a form where users can populate their billing information |  |
-|   003  | **Required Fields** | Indicate to the uder which of the Billing Info fields are required | Fields are indicates and a message lets users know to fill in each required field | **PASS** | **PASS** |
+|   003  | **Required Fields** | Indicate to the user which of the Billing Info fields are required | Fields are indicates and a message lets users know to fill in each required field | **PASS** | **PASS** |
 
 ![Required Fields](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/checkout-required.jpg)
 
@@ -307,9 +307,9 @@ ____
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   007  | **Card Charge confirmation** | Indicate to the user how much their card is going to be charged for the match/matches in their kit bag | The Grand Total in the Navbar and a message at the bottom of the page indicates how much the users card will be charged | **PASS** | **PASS** |
 |   008  | **Checkout Button** | A button to confirm payment and to proceed with the payment process | A "Complete Payment" button has been provided for users to confirm the payment | **PASS** | **PASS** |
-|   009  | **Buffering Loaading screen** | Display a buffering/Loading screen while the card payment processes | A Football themed loading screen has been provided | **PASS** | **PASS** |
-|   010  | **Checkout Success** | Display the Checkout Success page on successful completion of the payment | The checkout success page is displayed on successfull processing of payment | **PASS** | **PASS** |
-|   011  | **Success Message** | Display a success message telling the user their payment went through successfully | A message gets dispolayed whe redirected to the Checkout Success page | **PASS** | **PASS** |
+|   009  | **Buffering Loading screen** | Display a buffering/Loading screen while the card payment processes | A Football themed loading screen has been provided | **PASS** | **PASS** |
+|   010  | **Checkout Success** | Display the Checkout Success page on successful completion of the payment | The checkout success page is displayed on successful processing of payment | **PASS** | **PASS** |
+|   011  | **Success Message** | Display a success message telling the user their payment went through successfully | A message gets displayed when redirected to the Checkout Success page | **PASS** | **PASS** |
 |   012  | **Confirmation Email** | The paying user should receive a confirmation email on completion of successful payment | A confirmation email is sent to the email address of the logged in user on successful completion of the payment | **PASS** | **PASS** |
 |   013  | **Zero Total** | Ensure the Kitbag contents are cleared and the grand total cleared once the payment process has completed successfully | The total is correctly zeroed on completion of the payment | **PASS** | **PASS** |
 
@@ -327,7 +327,7 @@ The Add Competition page enables superusers to add a new Competition to the data
 |   002  | Display Error | Display a Error if non-authorised user attempts to add a Competition. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
 |   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
 |   006  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
 |   007  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
 |   008  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
@@ -343,7 +343,7 @@ The Add Club page enables superusers to add a new Club to the database. This sec
 |   002  | Display Error | Display a Error if non-authorised user attempts to add a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | Add Club link | Add Club form displayed | The  form displays as desired | **PASS** | **PASS** |
 |   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
 |   006  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
 |   007  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
 |   008  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
@@ -361,7 +361,7 @@ The Add Team page enables superusers to add a new Team to the database. This sec
 |   002  | Display Error | Display a Error if non-authorised user attempts to add a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
 |   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
 |   006  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
 |   007  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
 |   008  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
@@ -380,20 +380,20 @@ The Add Match page enables superusers to add a new match to the database. This s
 |   002  | Display Error | Display a Error if non-authorised user attempts to add a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | Add Match link | Add Match form displays and is empty | The form displays as desired | **PASS** | **PASS** |
 |   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required firlds are indicated | **PASS** | **PASS** |
+|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
 |   006  | Age Select | Ensure the dropdown is populated with the age groups | The dropdown functions as desired | **PASS** | **PASS** |
 |   007  | Competition Select | Ensure the select element is populated with the competitions and saves as desired | The competition select element functions as desired | **PASS** | **PASS** | 
 |   008  | Home Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
 |   009  | Away Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
 |   010  | Venue Select | Display a list of the venues and save when selected | The Venue select element functions as desired | **PASS** | **PASS** |
-|   011  | KO Date & Time | Ensure users can select the date and time of kickoff | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
+|   011  | KO Date & Time | Ensure users can select the date and time of kick-off | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
 > After reading the documentation I discovered I am using the correct version of the DateTime Input element. However, to date not all browsers have been modified to accept this element.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   012  | Referee Select | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
-|   013  | Asst1 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
-|   014  | Asst2 Referee Select  | Ensure the select element is populated with the various referee namescan be selected | The dropdown functions as desired and match offocials can be selected | **PASS** | **PASS** |
+|   012  | Referee Select | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
+|   013  | Asst1 Referee Select  | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
+|   014  | Asst2 Referee Select  | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
 |   015  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
 |   016  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
 |   017  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
@@ -402,7 +402,7 @@ The Add Match page enables superusers to add a new match to the database. This s
 ![Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-match.png)
 
 ##### Add Travel
-The Add Travel page enables Match Officials and Superusers to add Match officials travel expenses so that they get added to the matchg fees. This section validates the functionality of this page.
+The Add Travel page enables Match Officials and Superusers to add Match officials travel expenses so that they get added to the match fees. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
@@ -420,16 +420,16 @@ The Add Travel page enables Match Officials and Superusers to add Match official
 ![Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-travel.png)
 
 ##### Add Message
-The Add Travel page enables Match Officials and Superusers to add Match officials travel expenses so that they get added to the matchg fees. This section validates the functionality of this page.
+The Add Message page enables Match Officials and Superusers to add a message to that match. This section validates the functionality of this page.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Add a Message** | Function only accessible by superusers | Access to the Add Chat function is only accessible by a superuser | **PASS** | **PASS** |
 |   002  | **Display Error** | Display a Error if non-authorised user attempts to add a message to a match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | **Add Message link** | Redirects Coaches, Match Officials and Superusers to the Add Message Form | The Add Message form displays as desired | **PASS** | **PASS** |
-|   004  | **Pre-populated Data** | Make sure the form come prepopulated with the match and Author/users usernam | The form is rendered with the data for the match and author populated | **PASS** | **PASS** |
-|   004  | **Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix and a tooltip appears if the user attempts to submit with an empty required field. | **PASS** | **PASS** |
-|   005  | **Image Upload** | Make sure the image upload feature functions correctly | Images are uploaded correctly | **PASS** | **PASS** |
+|   004  | **Pre-populated Data** | Make sure the form come prepopulated with the match and Author/users username | The form is rendered with the data for the match and author populated | **PASS** | **PASS** |
+|   005  | **Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix and a tooltip appears if the user attempts to submit with an empty required field. | **PASS** | **PASS** |
+|   006  | **Image Upload** | Make sure the image upload feature functions correctly | Images are uploaded correctly | **PASS** | **PASS** |
 |   007  | **Add Message** | Ensure DB updates and users are redirected to the Match Messages page | The new Message gets created and users are redirected as desired | **PASS** | **PASS** |
 |   008  | **Success Message** | Display a message when a new Message has been created | Message displays as desired | **PASS** | **PASS** |
 |   009  | **DB Updates** | Ensure the new Message is written to the DB correctly | The Message is added to the database as intended | **PASS** | **PASS** |
@@ -452,7 +452,7 @@ The Edit Club page enables superusers to retrieve a previously uploaded club fro
 |   004  | **Load Data** | Populate the Edit Club form with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
 |   005  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
 |   006  | Update Club | Ensure DB updates and users are redirected to the Club Directory page | The users are redirected as desired and the new Club details are rendered correctly  | **PASS** | **PASS** |
-|   007  | Success Message | Display a message when the Club has been editted | Message displays as desired | **PASS** | **PASS** |
+|   007  | Success Message | Display a message when the Club has been edited | Message displays as desired | **PASS** | **PASS** |
 |   008  | DB Updates | Ensure the new Club Details are written to the DB correctly | The Club details are added to the database as intended | **PASS** | **PASS** |
 |   009  | Cancel Button | Redirect users to the Club directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
@@ -470,7 +470,7 @@ The Edit Team page enables superusers to retrieve a previously uploaded team fro
 |   004  | **Load Data** | Populate the Edit Team form with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
 |   005  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
 |   006  | Update Team | Ensure DB updates and users are redirected to the Team Directory page | The users are redirected as desired and the new Team details are rendered correctly  | **PASS** | **PASS** |
-|   007  | Success Message | Display a message when the Team has been editted | Message displays as desired | **PASS** | **PASS** |
+|   007  | Success Message | Display a message when the Team has been edited | Message displays as desired | **PASS** | **PASS** |
 |   008  | DB Updates | Ensure the new Team Details are written to the DB correctly | The Team details are added to the database as intended | **PASS** | **PASS** |
 |   009  | Cancel Button | Redirect users to the Team directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
@@ -488,12 +488,12 @@ The Edit Match page enables superusers to retrieve a previously uploaded match f
 |   005  | Select Elements | Ensure all select elements and conditional lists function as desired | The select elements are rendered pre-populated and function as desired. The age/team conditional lists function as desired | **PASS** | **PASS** |
 |   006  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
 |   007  | Update Match | Ensure DB updates and users are redirected to the Match Directory page | The users are redirected as desired and the new Match details are rendered correctly  | **PASS** | **PASS** |
-|   008  | Success Message | Display a message when the Match has been editted | Message displays as desired | **PASS** | **PASS** |
+|   008  | Success Message | Display a message when the Match has been edited | Message displays as desired | **PASS** | **PASS** |
 |   009  | DB Updates | Ensure the new Match Details are written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
 |   010  | Cancel Button | Redirect users to the Match directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-match.png)
-> The DateTime input field will not rfender correctly in some browsers as they have not yet been updated to accept this input element.
+> The DateTime input field will not render correctly in some browsers as they have not yet been updated to accept this input element.
 
 _____
 #### **Delete Existing Data** <a name="delete-data"></a>
@@ -511,7 +511,7 @@ The Delete Club function enables superusers to permanently remove a previously u
 |   006  | **Delete Club** | Ensure the Delete Club function is only called once the Delete Club button on the delete confirmation modal is clicked | Selecting the Delete Club button correctly deletes the selected club | **PASS** | **PASS** |
 |   007  | DB Update | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys |  | **PASS** | **PASS** |
 > Deleting a Club obviously has a downstream effect on any matches and Teams associated with that club. Thus the clubs teams and matches featuring the deleted Club/Teams are also removed from the database. This is as intended.
-No Errors occured during testing.
+No Errors occurred during testing.
 
 ![Delete Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/delete-club.png)
 
@@ -527,7 +527,7 @@ The Delete Team function enables superusers to permanently remove a previously u
 |   006  | **Delete Team** | Ensure the Delete Team function is only called once the Delete Team button on the delete confirmation modal is clicked | Selecting the Delete Team button correctly deletes the selected club | **PASS** | **PASS** |
 |   007  | DB Update | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys |  | **PASS** | **PASS** |
 > Deleting a Team obviously has a downstream effect on any matches featuring that team. Thus matches featuring the deleted team are also removed from the database. This is as intended.
-No Errors occured during testing.
+No Errors occurred during testing.
 
 ![Delete Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/delete-team.png)
 
@@ -554,8 +554,8 @@ _____
 |   002  | **Username** | The users username should render at the top of the page | Username renders as desired | **PASS** | **PASS** |
 |   003  | **Team Displayed** | If the user is a registered coach, their team badge and team name should be displayed below their username | The Club badge and team name are displayed for appropriate users | **PASS** | **PASS** |
 |   004  | **Role Displayed** | If the user is a registered Coach, Referee or Superuser their role should be displayed along with the other information | The role is displayed for logged in Superusers, Coaches and Ref's | **PASS** | **PASS** |
-|   005  | **Personal Details Displayed** | The users personal details will be rendered if they have completed and purches and selected the save info field, of have updated their profile from this page | Personal details are pre-populated where appropriate | **PASS** | **PASS** |
-|   006  | **Previous Orderes Displayed** | Any previous payments made by the user should be displayed on this screen | Previous payments are correctly displayed | **PASS** | **PASS** |
+|   005  | **Personal Details Displayed** | The users personal details will be rendered if they have completed and purchaces and selected the save info field, of have updated their profile from this page | Personal details are pre-populated where appropriate | **PASS** | **PASS** |
+|   006  | **Previous Orders Displayed** | Any previous payments made by the user should be displayed on this screen | Previous payments are correctly displayed | **PASS** | **PASS** |
 |   007  | **Order Link** | The order number should take the user to a checkout success page showing payment details | The order link functions correctly | **PASS** | **PASS** |
 |   008  | **Back to Profile Link** | The back to profile link on the Payment Summary should redirect users back to the Profile page | The link works as it should | **PASS** | **PASS** |
 |   009  | Update Profile | Profile data in the DB is updated if the user changes any of the form fields and selects update | The profile data is written to the database correctly if the user adds a new profile or changes an existing profile | **PASS** | **PASS** |
@@ -567,7 +567,7 @@ _____
 ______
 
 ### **Automated Testing** <a name="automated-testing"></a>
-Automated testing was carried out on the app's of RefereE-Pay which contain Models, Forms and . The results of the testing have been captured in a copverage report, which is illustrated in the image below.
+Automated testing was carried out on the app's of RefereE-Pay which contain Models, Forms and . The results of the testing have been captured in a coverage report, which is illustrated in the image below.
 
 ![Automated Testing Report](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/coverage-report.png)
 >I would have liked to have conducted more automated testing, but struggled with creating tests for individual matches, clubs, teams etc. With more time and more background reading I am confident I can increase the amount of code tested in this way.
@@ -621,7 +621,7 @@ This section contains the results and any warnings or errors reported during HTM
 |  Add Message    |       None      | **PASS** |
 |  Clubs          |       None      | **PASS** |
 |  Edit Club      |       None      | **PASS** |
-|  Add Club       |       Nonne     | **PASS** |
+|  Add Club       |       None     | **PASS** |
 |  Teams          |       None      | **PASS** |
 |  Edit Team      |       None      | **PASS** |
 |  Add Team       |       None      | **PASS** | 
@@ -680,7 +680,7 @@ The table below contains lists the results of the Responsiveness testing and lin
 
 |  Test  | Page | Responsiveness Image Link | Result |
 |:------:|------|--------------------|--------|
-|   001  |Landing Page|![Home / Langing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/landing-page.png)| **PASS** |
+|   001  |Landing Page|![Home / Landing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/landing-page.png)| **PASS** |
 |   002  | Matches    | ![Fixtures Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/matches.png) | **PASS** |
 |   003  | Match Detail | ![Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-detail.png) | **PASS** |
 |   004  | Edit Match | ![Edit a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-match.png) | **PASS** |
@@ -760,7 +760,7 @@ ____
 ### **Security Testing** <a name="security"></a>
 The following tests have been performed on the security features implemented on this site, and are documented in the table below:
 #### **URL Manipulation**
-These tests ensure that there are appropriate levels of access to the various pages in the web app, and that annonymous users cannot access content requiring login, or that registered users are only able to access content equal to their access rights:
+These tests ensure that there are appropriate levels of access to the various pages in the web app, and that anonymous users cannot access content requiring login, or that registered users are only able to access content equal to their access rights:
 
 | Page | URL | Registered user - Desired Result | Status | Anonymous User - Desired Result | Status |
 |------|-----|----------------------------------|--------|---------------------------------|--------|
@@ -781,7 +781,7 @@ These tests ensure that there are appropriate levels of access to the various pa
 | Profile | `profile/` | N/A | N/A | Redirected to login | **PASS** |
   
 #### **Secure Usage**
-The functionality of RefereE-Pay is deliberately compartmentalised by a users role and the permissions granted to those roles restrict what each role can achieve. This section describes the testing which has been performed to validate this compartemtalisation.
+The functionality of RefereE-Pay is deliberately compartmentalised by a users role and the permissions granted to those roles restrict what each role can achieve. This section describes the testing which has been performed to validate this compartmentalisation.
 
 ##### **General users**
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
@@ -802,20 +802,20 @@ Aside from Superusers, coaches have one of the more prominent roles and are the 
 |  007   | **Add Messages** | Able to add messages to the Match | Coaches can add messages to the match  | **PASS** | **PASS** |
 |  008   | **Time Limit** | Add Message button should no longer render after kick-off date/time | The Add message does not render for matches whose kick off date has passed | **PASS** | **PASS** |
 |  009   | **Message tags** | Messages are tagged by Author | The messages are coloured by Coach or Referee, and the username is added in the message field |  **PASS** | **PASS** |
-|  010   | **Kit Bag** | Coaches can access the kit bag from their Account in the Navbar or the Grandtotal icon on the navbar | This is an important function which enables the coach user to check pending payments. This access works as desired |  **PASS** | **PASS** |
+|  010   | **Kit Bag** | Coaches can access the kit bag from their Account in the Navbar or the grand total icon on the navbar | This is an important function which enables the coach user to check pending payments. This access works as desired |  **PASS** | **PASS** |
 |  011   | **Checkout** | Once in the Kit bag Coaches can proceed to Checkout as long as there are items in their bag | This functions correctly. If no items exist in the bag a message is displayed and there is no option to proceed to checkout. |  **PASS** | **PASS** |
 |  012   | **Payment** | Authorised to make payments  | Registered Coaches can proceed through the payment process and pay their match fees |  **PASS** | **PASS** |
 
 ![Coaches]()
 
 ##### **Referees**
-Referees have similar access rights to Coaches with the exception that they have no requirement to make payments into the system, and thus don't need access to the kit bag or checout apps.
+Referees have similar access rights to Coaches with the exception that they have no requirement to make payments into the system, and thus don't need access to the kit bag or checkout apps.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  001   | **Assigned Role** | Users need to be assigned the role of Referee by a Superuser | Users are not able to edit or update this part of their user profile |  **PASS** | **PASS** |
 |  002   | **Match Details** | All authorised referees can view Match Details | Functions as designed and data renders as desired | **PASS** | **PASS** |
 |  003   | **Add Travel** | Have the ability to modify travel expenses up to Kick-off day and time | Match officials can add and update any travel expenses using the add travel function as desired | **PASS** | **PASS** |
-|  004   | **Add travel** | Access to add travel button is removed after kickoff | The Add Travel button no longer displays after kick-off date and time | **PASS** | **PASS** |
+|  004   | **Add travel** | Access to add travel button is removed after kick-off | The Add Travel button no longer displays after kick-off date and time | **PASS** | **PASS** |
 |  005   | **Add Travel** | Access to Add travel is reserved to refs and superusers. Cannot manipulate URLS to add travel | Access works correctly. An error message is displayed if an unauthorised user attempts to manipulate a URL to add travel | **PASS** | **PASS** |
 |  006   | **View Messages** | A registered referee can access the Match Messages page and view any messages posted there | Access to the Match messages is as desired and is not time limited. | **PASS** | **PASS** |
 |  007   | **Add Messages** | Able to add messages to the Match | Referees can also add messages to the match in reply to coaches | **PASS** | **PASS** |
@@ -827,16 +827,16 @@ Superusers of the RefereE-Pay web-app have the access rights of Coaches and Refe
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  001   | **Admin Menu**  | Should be able to access the Game admin menu on the navbar | Access to the Admin menu works as desired for super users |
-|  002   | **Add Competition** | Have the ability to add a new competition name | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Add Club** | Have the ability to add a new Club to the database | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Add Team** | Have the ability to add a new Team to a Club | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Add Match** | Have the ability to create a new match and assigns teams, venues and match officials | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Edit Club** | Have the ability to edit or update an existing Club | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Edit Team** | Have the ability to edit an existe Club's team data | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Edit Match** | Have the ability to edit and update the details of any future match. Cannot edit past matches | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Delete Club** | Should be able to permanently delete a Club from the database. Confirmation Modal should appear | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Delete Team** | Should be able to permanently delete a Team from the associated Club and the database. Confirmation Modal should appear | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
-|  002   | **Delete Match** | Should be able to permanently delete a Match from the database. Confirmation Modal should appear | Functions as desired. Cannot be acchieved through URL manipulation | **PASS** | **PASS** |
+|  002   | **Add Competition** | Have the ability to add a new competition name | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  003   | **Add Club** | Have the ability to add a new Club to the database | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  004   | **Add Team** | Have the ability to add a new Team to a Club | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  005   | **Add Match** | Have the ability to create a new match and assigns teams, venues and match officials | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  006   | **Edit Club** | Have the ability to edit or update an existing Club | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  007   | **Edit Team** | Have the ability to edit an existing Club's team data | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  008   | **Edit Match** | Have the ability to edit and update the details of any future match. Cannot edit past matches | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  009   | **Delete Club** | Should be able to permanently delete a Club from the database. Confirmation Modal should appear | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  010   | **Delete Team** | Should be able to permanently delete a Team from the associated Club and the database. Confirmation Modal should appear | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
+|  011   | **Delete Match** | Should be able to permanently delete a Match from the database. Confirmation Modal should appear | Functions as desired. Cannot be achieved through URL manipulation | **PASS** | **PASS** |
 
 ______
 
@@ -844,10 +844,10 @@ ______
 The following table explains the bugs and issues encountered while building this website.
 |  Issue #   |  Bug or Issue  |  Description  |  Solution  |
 |:----------:|----------------|---------------|------------|
-| 001 | **AllAuth Error** | Redirect to pages not functioning as desired, returning 404 | My definintion of the login redirect url was incorrect |
-| 002 | **Add to bag** |  After restuyling my kit bag summary table I was unable to add older matches prior to datetime_now to the bag | While editting the HTML I had inadvertently removed the { request.path } required for the redirect_url variable |
+| 001 | **AllAuth Error** | Redirect to pages not functioning as desired, returning 404 | My definition of the login redirect url was incorrect |
+| 002 | **Add to bag** |  After restyling my kit bag summary table I was unable to add older matches prior to datetime_now to the bag | While editing the HTML I had inadvertently removed the { request.path } required for the redirect_url variable |
 | 003 | **Chained Select** | Error for Edit Match view using the code at https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html. Unable to process the filter statement. | After much trial and error, I referred to the django Queryset API reference regarding the filter() method and field lookups and combined the `self.instance.age` with a __contains lookup. `team_name__contains=self.instance.age` |
-| 004 | **DateTime Input** | Despite using the correct and current DateTime input element, some browsers have not yet been updated to this version and thus the handy date time input feature doesn't display. Users then have to enter the date and time in a particular text format. This has limited impact in this application as it would only affect Admin/Superusers creating or editting Matches. | A potential solution would be to change my Models, Forms and Templates to use seperate Date input and Time input fields. |
-| 005 | **Duplicate Order Creation** | The payment process for this web app functions as desired other than it appears to create save duplicate orders into the database.  I believe I have adapted the Boutique Ado code to the best of may ability and can't seem to find any obvious erros. | This does not appear to occur in the development version of the app; and after searching through Slack it appears that this could be a function of "race condition" wherein the app and webhook are vieing with each other to execute the code. As undesirable as this is, I have checked the Stripe dashboard and confirmed that only a single payment is being processed.
+| 004 | **DateTime Input** | Despite using the correct and current DateTime input element, some browsers have not yet been updated to this version and thus the handy date time input feature doesn't display. Users then have to enter the date and time in a particular text format. This has limited impact in this application as it would only affect Admin/Superusers creating or editing Matches. | A potential solution would be to change my Models, Forms and Templates to use separate Date input and Time input fields. |
+| 005 | **Duplicate Order Creation** | The payment process for this web app functions as desired other than it appears to create save duplicate orders into the database.  I believe I have adapted the Boutique Ado code to the best of may ability and can't seem to find any obvious errors. | This does not appear to occur in the development version of the app; and after searching through Slack it appears that this could be a function of "race condition" wherein the app and webhook are vying with each other to execute the code. As undesirable as this is, I have checked the Stripe dashboard and confirmed that only a single payment is being processed.
 
 **[Back to Github Repo](https://github.com/GazzaJ/CI-MS4-RefereE-pay/)**
