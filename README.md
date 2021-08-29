@@ -48,6 +48,7 @@ My aim is to achieved the above with a visually appealing, interactive yet intui
    - [Wireframes](#wireframes)
 2. [Database Schema](#dbschema)
 3. [Features](#features)
+   - [Security Features](#security-features)
 4. [Technologies Used](#technologies)
 5. [Testing](#testing)
 6. [Database Creation](#database)
@@ -630,7 +631,7 @@ The following table lists the primary features provided by the W3Recipes app.
     - Users receive an **[Email Notification](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/success-email.jpg)** of the success of their payment. The email confirms the order number, payment date and Grand Total
 
 14. Each registered user has a personalised **[Profile Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/profile.jpg)** displaying the users role and team if appropriate as well as billing information, if saved, and a summary of any payments processed for that user. Profile information can also be updated from this page.
-    - Each order in the **[Order Summary]()** contains a link to the confirmation page summary for that order.
+    - Each order in the **[Order Summary](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/bag-remove.jpg)** contains a link to the confirmation page summary for that order.
 
 15. Superusers are provided with a unique navbar **[Admin Menu](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/features/admin.jpg)** which enables them to Access the Admin functions of the app.
     - **[Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/add-comp.jpg)** form allows Admin/Superusers to add new competitions to the list.
@@ -646,8 +647,8 @@ The following table lists the primary features provided by the W3Recipes app.
  
 _____
 
-### **Security Features**
-I have discussed the security aspects of this app in some detail in the TESTING.md document, but will highlight some of the built-in features below for good measure:
+### **Security Features** <a name="security-features"></a>
+I have discussed the security aspects of this app in some detail in the [TESTING.md]((https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/TESTING.md)) document, but will highlight some of the built-in features below for good measure:
 
 1. User **[Sign-up Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-up.jpg)** powered by the AllAuth package provides a comprehensive registration process for new users.
 2. User **[Log-in Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/pages/sign-in.jpg)** for returning registered users, is also provided as part of the AllAuth package
@@ -1093,20 +1094,20 @@ The content of this website was created by Gareth John. Snippets of code have be
 The photos used in this site, or in pre-populated recipes by the developer were obtained from the following sources:
 | Photo | Description | Source | Attribution |
 |-------|-------------|--------|-------------|
-| 001   | [App Logo](https://www.freelogodesign.org/manager) | Free Logo Design | Designed by the developer |
-| 002   |[Landing Page](https://pixabay.com/photos/football-goals-grass-lawn-4789850/)| Pixabay | olebertelsen |
-| 003   | [Matches Background](https://pixabay.com/photos/football-ball-sport-goal-kick-1678992/) | Pixabay | SeppH |
-| 004   | [Club Badges](https://www.cheltenhamyouthleague.co.uk/clubdirlist/1021)| Cheltenham Youth Football League website |  |
-| 005   | [Checkout](https://pixabay.com/photos/referee-linesman-sport-football-4733190/) | Pixabay | Planet_fox |
-| 006   | [Goal](https://thenounproject.com/term/goal/56918/) | thenounproject  | Amos Kofi Commey |
-| 007   | [Yellow Card](https://thenounproject.com/term/yellow-card/2022056/) | thenounproject adapted by the developer | inDhika coloured by the developer |
-| 008   | [Red Card](https://thenounproject.com/term/yellow-card/2022056/) | thenounproject adapted by the developer | inDhika coloured by the developer |
-| 009   | [Tactics Board](https://thenounproject.com/term/football-tactics/2278781/) | thenounproject | ProSymbols, US |
-| 010   | [Burrows](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Council | Cheltenham Borough Council |
-| 011   | [Beeches](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Council | Cheltenham Borough Council |
-| 012   | [King George V](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Council | Cheltenham Borough Council |
-| 013   | [Naunton Park](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Council | Cheltenham Borough Council |
-| 014   | [Priors Fam](https://thenounproject.com/term/football-tactics/2278781/) | Cheltenham Borough Council | Cheltenham Borough Council |
+| 001   | **[App Logo](https://www.freelogodesign.org/manager)** | Free Logo Design | Designed by the developer |
+| 002   |**[Landing Page](https://pixabay.com/photos/football-goals-grass-lawn-4789850/)**| Pixabay | olebertelsen |
+| 003   | **[Matches Background](https://pixabay.com/photos/football-ball-sport-goal-kick-1678992/)** | Pixabay | SeppH |
+| 004   | **[Club Badges](https://www.cheltenhamyouthleague.co.uk/clubdirlist/1021)**| Cheltenham Youth Football League website |  |
+| 005   | **[Checkout](https://pixabay.com/photos/referee-linesman-sport-football-4733190/)** | Pixabay | Planet_fox |
+| 006   | **[Goal](https://thenounproject.com/term/goal/56918/)** | thenounproject  | Amos Kofi Commey |
+| 007   | **[Yellow Card](https://thenounproject.com/term/yellow-card/2022056/)** | thenounproject adapted by the developer | inDhika coloured by the developer |
+| 008   | **[Red Card](https://thenounproject.com/term/yellow-card/2022056/)** | thenounproject adapted by the developer | inDhika coloured by the developer |
+| 009   | **[Tactics Board](https://thenounproject.com/term/football-tactics/2278781/)** | thenounproject | ProSymbols, US |
+| 010   | **Burrows** | Cheltenham Borough Council | Cheltenham Borough Council |
+| 011   | **Beeches** | Cheltenham Borough Council | Cheltenham Borough Council |
+| 012   | **King George V** | Cheltenham Borough Council | Cheltenham Borough Council |
+| 013   | **Naunton Park** | Cheltenham Borough Council | Cheltenham Borough Council |
+| 014   | **Priors Fam** | Cheltenham Borough Council | Cheltenham Borough Council |
 ____
 
 ### **Code Snippets** <a name="code"></a>
