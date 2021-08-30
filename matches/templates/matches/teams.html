@@ -128,7 +128,7 @@
                 {% endif %}
             </div>
         </div>
-        <!-- Return to Clubs Page -->
+        <!-- Return to Clubs/Fixtures Pages -->
         <div class="row my-5">
             <div class="col-12 text-center">
                 <a class="btn green-btn" href="{% url 'matches' %}">Back to Fixtures</a>
@@ -153,7 +153,7 @@
     {{ block.super }}
     <script>
 		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})          
+			window.scrollTo(0,0);
+		});          
 	</script>
 {% endblock %}

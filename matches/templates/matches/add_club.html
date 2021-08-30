@@ -24,6 +24,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- Form to create a new Club entry -->
             <div class="col-12 col-md-8 col-lg-6 match my-5 border-green rounded-3">
                 <form method="POST" action="{% url 'add_club' %}" class="form my-5 mx-3" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -51,7 +52,7 @@
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Image will be set to: ${file.name}`);
-        })        
+        });        
     </script>
 {% endblock %}
 

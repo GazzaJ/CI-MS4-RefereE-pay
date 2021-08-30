@@ -11,8 +11,7 @@
 
 {% block content %}    
     <div class="match-overlay"></div>
-    <div class="container">
-                
+    <div class="container">                
         <div class="row">
             <div class="col-12 col-md-8 col-lg-6 mt-5">
                 <h3 class="text-center">Create a New Competition
@@ -24,6 +23,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- Form to add new competition name -->
             <div class="col-12 col-md-8 col-lg-6 match my-5 border-green rounded-3">
                 <form method="POST" action="{% url 'add_competition' %}" class="form my-5 mx-3">
                     {% csrf_token %}

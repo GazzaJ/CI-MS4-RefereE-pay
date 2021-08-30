@@ -26,26 +26,27 @@
                                 <img src="{{ club.club_badge_url }}" class="card-img-top card-img" alt="{{ club.club_name }}">
                             </a>
                         {% endif %}
-                            <div class="card-body club-name">
-                                <h5 class="card-title mt-2">{{ club.club_name }}</h5>                                
-                            </div>
-                            {% if user.is_superuser %}                            
-                                <div class="row no-gutters">
-                                    <div class="col-6 d-flex align-items-stretch px-auto">
-                                        <a href="{% url 'edit_club' club.id %}" class="btn btn-block yellow-btn rounded-0 edit-btn">Edit Club</a>
-                                    </div>
-                                    <div class="col-6 d-flex align-items-stretch px-auto">
-                                        <button type="button" class="btn btn-block red-btn rounded-0" data-toggle="modal" data-target="#club{{ club.id }}Modal">Delete Club</button>
-                                    </div>
-                                </div>                            
-                            {% endif %}                    
-                            <div class="row">
-                                <div class="col-12">
-                                    <a class="btn btn-block blue-btn rounded-0" href="{% url 'teams' club.id %}">View the Teams</a>
+                        <div class="card-body club-name">
+                            <h5 class="card-title mt-2">{{ club.club_name }}</h5>                                
+                        </div>
+                        {% if user.is_superuser %}                            
+                            <div class="row no-gutters">
+                                <div class="col-6 d-flex align-items-stretch px-auto">
+                                    <a href="{% url 'edit_club' club.id %}" class="btn btn-block yellow-btn rounded-0 edit-btn">Edit Club</a>
                                 </div>
+                                <div class="col-6 d-flex align-items-stretch px-auto">
+                                    <button type="button" class="btn btn-block red-btn rounded-0" data-toggle="modal" data-target="#club{{ club.id }}Modal">Delete Club</button>
+                                </div>
+                            </div>                            
+                        {% endif %}                    
+                        <div class="row">
+                            <div class="col-12">
+                                <a class="btn btn-block blue-btn rounded-0" href="{% url 'teams' club.id %}">View the Teams</a>
                             </div>
+                        </div>
                     </div>
                 </div>
+
                 <!-- Delete Confirmation Modal -->    
                 <div class="modal fade" id="club{{ club.id }}Modal" tabindex="-1" aria-labelledby="clubModalLabel{{ club.id }}" aria-hidden="true">
                     <div class="modal-dialog">
@@ -91,7 +92,7 @@
     {{ block.super }}
     <script>
 		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})                    
+			window.scrollTo(0,0);
+		});                    
 	</script>
 {% endblock %}

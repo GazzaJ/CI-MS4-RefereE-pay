@@ -92,7 +92,8 @@
                     </div>
                 </div>
             </a>           
-        {% endfor %}                       
+        {% endfor %}
+        <!-- Back to top button -->                       
         <div class="row mb-3">
             <div class="col-12 btt-button text-center">
                 <a class="btt-link">
@@ -109,7 +110,7 @@
     {{ block.super }}
     <script>
 		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})            
+			window.scrollTo(0,0);
+		});            
 	</script>
 {% endblock %}

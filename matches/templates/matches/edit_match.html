@@ -11,11 +11,9 @@
 
 {% block content %}    
     <div class="match-overlay"></div>
-    <div class="container">
-                
+    <div class="container">                
         <div class="row">
-            <div class="col-12 mb-3">                
-                               
+            <div class="col-12 mb-3">
                 <div class="row">
                     <div class="col-12 col-md-6 mt-5">
                         <h3 class="text-center">Edit a Game
@@ -27,6 +25,7 @@
                     </div>
                 </div>
                 <div class="row">
+                    <!-- Edit Match Form -->
                     <div class="col-12 col-md-8 col-lg-6 match my-5 border-green rounded-3">
                         <form method="POST" id="matchForm" action="{% url 'edit_match' match.id %}" class="form my-5 mx-3"  data-teams-url="{% url 'ajax_load_teams' %}" >
                             {% csrf_token %}
@@ -37,13 +36,10 @@
                             </div>
                         </form>                        
                     </div>
-                </div>          
-
+                </div>
             </div>
         </div>
     </div>
-    <!-- Checkout Loader adapted from (https://codepen.io/glafontaine/pen/geMYaJ)-->
-    
 {% endblock %}
 
 {% block postloadjs %}
