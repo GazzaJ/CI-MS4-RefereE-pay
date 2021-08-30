@@ -45,7 +45,7 @@ card.addEventListener('change', function (event) {
 });
 
 // Code to manage payment form submit
-var form = document.getElementById('payment-form')
+var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
@@ -60,7 +60,7 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
-    }
+    };
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function() {
@@ -102,5 +102,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function() {
         // Reload the page. Error will be in Django.messages
         location.reload();
-    })
+    });
 });

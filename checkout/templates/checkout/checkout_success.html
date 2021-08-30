@@ -52,6 +52,7 @@
                         <p class="success-heading">Payment Details</p>                        
                         {% for item in order.lineitems.all %}
                             <div class="row mt-3 align-items-center ">
+                                <!-- Match -->
                                 <div class="col-2 text-center">
                                     {% if item.match.home_team.club_name.club_badge %}
                                         <img class="checkout-badge image-fluid w-100"
@@ -84,6 +85,7 @@
                                     {% endif %}
                                 </div>
                             </div>
+                            <!-- Match Fees -->
                             <div class="row mt-3">
                                 <div class="col-6 col-md-4">
                                     <p><strong>Match Fees:</strong></p>
