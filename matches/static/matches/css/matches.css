@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 body {
     background: url('/media/corner-ball.jpg') no-repeat center center fixed;
     background-size: cover;    
@@ -21,7 +28,8 @@ body {
 .club-badge {
     height: 5rem;
     width: 5rem;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .match-text {
@@ -44,7 +52,8 @@ body {
 .match-badge {
     height: 7rem;
     width: 7rem;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .venue-map {
@@ -105,7 +114,8 @@ body {
     margin: 0.5rem;
     height: 16rem;
     width: 95%;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .club-name {
@@ -113,10 +123,18 @@ body {
 }
 
 .edit-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 /* ---------- Teams ---------- */
@@ -226,7 +244,8 @@ https://codingislove.com/css-speech-bubbles/ -----*/
 .trav-badge {
     height: 4rem;
     width: 4rem;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .game-summary {
@@ -257,7 +276,8 @@ https://codingislove.com/css-speech-bubbles/ -----*/
     .match-badge {
         height: 5rem;
         width: 5rem;
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
     }
 
     .match-detail {
@@ -291,7 +311,9 @@ https://codingislove.com/css-speech-bubbles/ -----*/
         position: relative;
         bottom: 55px;
         right: 1px;
-        transform: translateX(570%);
+        -webkit-transform: translateX(570%);
+            -ms-transform: translateX(570%);
+                transform: translateX(570%);
         border: 1px solid #011e41;         
         border-radius: 50%;
         padding: 0.25rem 0.5rem;

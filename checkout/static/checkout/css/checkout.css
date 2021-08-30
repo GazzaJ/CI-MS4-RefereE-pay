@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 body {
     background: url('/media/assistant_ref.jpg') no-repeat center center fixed;
     background-size: cover;    
@@ -15,7 +22,8 @@ body {
 
 .checkout-badge {
     max-height: 4rem;    
-    object-fit: contain;
+    -o-object-fit: contain;    
+       object-fit: contain;
 }
 
 #payment-form {
@@ -39,25 +47,48 @@ body {
 
 .StripeElement,
 .stripe-style-input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 3px;
   background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-box-shadow: 0 1px 3px 0 #e6ebf1;
+          box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  transition: -webkit-box-shadow 150ms ease;
+  -o-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+  -webkit-box-shadow: 0 1px 3px 0 #cfd7df;
+          box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+.stripe-style-input::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input::-moz-placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input:-ms-input-placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input::-ms-input-placeholder {
+    color: #aab7c4;
 }
 
 .stripe-style-input::placeholder {
@@ -100,9 +131,15 @@ select option[value=""] {
 }
 
 .loading-spinner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0;
     height: 100%;
     color:#fff
@@ -123,15 +160,19 @@ select option[value=""] {
     background-color: rgb(235, 235, 235);
     bottom: 0;
     border-radius: 100%;
-    transform: scaleX(.6);
+    -webkit-transform: scaleX(.6);
+        -ms-transform: scaleX(.6);
+            transform: scaleX(.6);
     opacity: .6;
-    animation: shadowScale 1s linear infinite;
+    -webkit-animation: shadowScale 1s linear infinite;
+            animation: shadowScale 1s linear infinite;
 }
 
 .gravity {
     width: 60px;
     height: 60px;
-    animation: bounce 1s cubic-bezier(0.68, 0.35, 0.29, 0.54) infinite;
+    -webkit-animation: bounce 1s cubic-bezier(0.68, 0.35, 0.29, 0.54) infinite;
+            animation: bounce 1s cubic-bezier(0.68, 0.35, 0.29, 0.54) infinite;
 }
 
 .ball {
@@ -141,22 +182,57 @@ select option[value=""] {
     background-size: cover;
     background-color: #fff;
     border-radius: 30px;
-    animation: roll .6s linear infinite;
+    -webkit-animation: roll .6s linear infinite;
+            animation: roll .6s linear infinite;
+}
+
+@-webkit-keyframes roll {
+    0% {}
+
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+    }
 }
 
 @keyframes roll {
     0% {}
 
     100% {
-        transform: rotate(360deg)
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
     }
+}
+
+@-webkit-keyframes bounce {
+    0% {}
+
+    50% {
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px)
+    }
+
+    100% {}
 }
 
 @keyframes bounce {
     0% {}
 
     50% {
-        transform: translateY(100px)
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px)
+    }
+
+    100% {}
+}
+
+@-webkit-keyframes shadowScale {
+    0% {}
+
+    50% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        opacity: .8;
     }
 
     100% {}
@@ -166,7 +242,8 @@ select option[value=""] {
     0% {}
 
     50% {
-        transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
         opacity: .8;
     }
 
