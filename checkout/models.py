@@ -86,9 +86,12 @@ class OrderLineItem(models.Model):
                 self.match_fines = settings.NONPAYMENT_FINE
             else:
                 self.match_fines = 0
-        self.match_fees = self.match.ref_total + self.match.asst1_total + self.match.asst2_total
-        self.lineitem_total = self.match.ref_total + self.match.asst1_total + self.match.asst2_total + self.match_fines
+        self.match_fees = (self.match.ref_total + self.match.asst1_total +
+                           self.match.asst2_total)
+        self.lineitem_total = (self.match.ref_total + self.match.asst1_total +
+                               self.match.asst2_total + self.match_fines)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Match Total {self.lineitem_total} on {self.order.order_number}'
+        return f'Match Total {self.lineitem_total} \
+            on {self.order.order_number}'
