@@ -154,6 +154,7 @@
                         </div>
                     </li>
                 {% endif %}
+                <!-- Grand Total display and link to Kit bag (not req'd for Ref's or reular users) -->
                 {% if request.user.is_authenticated %}
                     {% if not request.user.userprofile.role == 'Referee' or not 'None' %}
                         <li class="nav-item">
@@ -175,7 +176,7 @@
             </form>            
         </div>
     </nav>    
-    <!-- Messages -->
+    <!-- App Messages -->
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -199,6 +200,7 @@
 
     {% block content %}
     {% endblock %}
+    <!-- Website Footer - FA links -->
     <footer class="mt-auto">
         <div class="row no-gutters justify-content-center">            
             <div class="col-2 text-center fa-link mx-1">
@@ -226,7 +228,8 @@
                     <img class="fa-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Football_Association_of_Ireland_logo.svg/1200px-Football_Association_of_Ireland_logo.svg.png" alt="">
                 </a>
             </div>            
-        </div>        
+        </div>
+        <!-- Website Footer - Developer section -->        
         <div class="row no-gutters mt-2">
             <div class="col-3 py-2 text-center">
                 <a class="social-link" href="https://github.com/GazzaJ" target="_blank" rel="noreferrer" aria-label="Github Profile">
@@ -271,8 +274,8 @@
                 });
                 $(".info-btn").hover(function() {
                     $(this).toggleClass("toggle-info");
-                });                          
-            });                            
+                });
+            });
         </script>
     {% endblock %}
 
