@@ -500,7 +500,7 @@ def load_teams(request):
 
 @login_required
 def edit_match(request, game_id):
-    """ Edit the selected match details """
+    """ A view to Edit the selected match details """
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have the permissions to \
                        edit a match!")
