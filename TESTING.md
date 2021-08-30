@@ -29,7 +29,7 @@ ______
 ______
 ## **Login Credentials** <a name="login"></a>
 
-I have pre-loaded a number of user profiles for a selection of Coaches and Referees to facilitate testing of this web-apps features. Some of the web-apps' functionality is dependent on which Role selected.
+I have pre-loaded a number of user profiles for a selection of Coaches and Referees to facilitate testing of this web-apps features. Some of the web-apps' functionality is dependent on which Role is selected.
 | Profile |      Username     |   Password   |    Role   |    Team    |
 |:-------:|:-----------------:|:------------:|:---------:|:----------:|
 |   001   |      CI_Admin     |   C!_4dm1n   | Superuser |      -     |
@@ -45,7 +45,6 @@ ______
 
 ### **User Story Testing** <a name="user-story-testing"></a>
 The following testing has been carried out to validate how the website addresses each of the user stories:
-|User Story|Description|Testing|
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
@@ -70,7 +69,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 04 |_As a _ **site user**, _I need to_ **receive an email confirming registration**, _in order to_ **verify that my account creation was successful**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a URL from a Full Recipe view to an Edit Recipe view| **PASS** |
+| 04 |_As a _ **site user**, _I need to_ **receive an email confirming registration**, _in order to_ **verify that my account creation was successful**|During the registration process users are sent an email from the app to confirm their email address. On confirmation they are taken back to the site and a success messages is displayed | **PASS** |
 
 ![Registration confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-4.png)
 
@@ -130,7 +129,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Description|Testing| Result |
 |:--------:|-----------|-------|--------|
-| 14 | _As a _ **Team Manager**, _I need to_ **easily select a fixture**, _in order to_ **discover the full details of that match **. | Clicking on any one of the fixtures opens up the full fixture detail. From here the user can discover the venue , date and time of KO, match officials and their fees. Several other links are provided to return users to the fixtures page  | **PASS** |
+| 14 | _As a _ **Team Manager**, _I need to_ **easily select a fixture**, _in order to_ **discover the full details of that match**. | Clicking on any one of the fixtures opens up the full fixture detail. From here the user can discover the venue , date and time of KO, match officials and their fees. Several other links are provided to return users to the fixtures page  | **PASS** |
 
 ![Select and View Fixture](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/user-stories/user-story-14.png)
 
