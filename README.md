@@ -699,7 +699,7 @@ This website has been built using the following core technologies:
 - ![Git](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/git-logo.png "git logo") - used for maintaining version control of the saved files.
 - ![GitHub](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Github logo") - used as the primary repository for storying the files and documentation.
 - ![Heroku](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-logo.png "Heroku logo")  - Deployment site
-- [AWS](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/aws.png "AWS logo") - used to store all media and static files
+- ![AWS](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/aws.png "AWS logo") - used to store all media and static files
 
 ##### Other
 
