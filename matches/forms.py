@@ -145,7 +145,7 @@ class GameForm(forms.ModelForm):
                 team_name__contains=self.instance.age).order_by('team_name')
             self.fields['away_team'].queryset = Team.objects.filter(
                 team_name__contains=self.instance.age).order_by('team_name')
-        
+
         super(GameForm, self).__init__(*args, **kwargs)
         self.fields['home_team'].widget.attrs['autofocus'] = True
         for field in self.fields:

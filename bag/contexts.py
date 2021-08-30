@@ -18,7 +18,8 @@ def bag_contents(request):
 
     for item_id, quantity in bag.items():
         match = get_object_or_404(Game, pk=item_id)
-        match_sub_total = match.ref_total + match.asst1_total + match.asst2_total
+        match_sub_total = (match.ref_total +
+                           match.asst1_total + match.asst2_total)
         payment_due_date = match.date_time + datetime.timedelta(days=1)
         today = datetime.datetime.now()
         if today > payment_due_date.replace(tzinfo=None):
