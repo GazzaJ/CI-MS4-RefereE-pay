@@ -18,20 +18,3 @@
     </div>
             
 {% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".green-btn").hover(function() {
-                $(this).toggleClass("toggle-grn");
-            });
-            $(".blue-btn").hover(function() {
-                $(this).toggleClass("toggle-blu");
-            });
-            $(".red-btn").hover(function() {
-                $(this).toggleClass("toggle-red");
-            });
-        });
-    </script>
-{% endblock %}
