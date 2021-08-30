@@ -507,6 +507,15 @@ def edit_match(request, game_id):
         return redirect(reverse('home'))
 
     match = get_object_or_404(Game, pk=game_id)
+    msg = True
+    today = datetime.datetime.now()
+    if match.date_time.replace(tzinfo=None) < today:
+        msg = False
+    if not msg:
+        messages.error(request, "That match has already been played!\
+            It's now too late to edit that match")
+        return redirect(reverse('match_detail', args=[match.id]))
+
     if request.method == "POST":
         form = GameForm(request.POST, instance=match)
         if form.is_valid():
