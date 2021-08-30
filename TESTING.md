@@ -327,15 +327,15 @@ The Add Competition page enables superusers to add a new Competition to the data
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Competition | Function only accessible by superusers | Access to the Add Competition Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to add a Competition. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
-|   003  | Add Competition link | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
-|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
-|   006  | Add Competition | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
-|   007  | Success Message | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
-|   008  | DB Updates | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
-|   009  | Cancel Button | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
+|   001  | **Add Competition** | Function only accessible by superusers | Access to the Add Competition Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to add a Competition. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Add Competition link** | Add Competition form displayed | The very simple form displays as desired | **PASS** | **PASS** |
+|   004  |**Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | **Incomplete fields indicated** | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
+|   006  | **Add Competition** | Ensure DB updates and users are redirected to the Fixtures page | The Competition gets created and users are redirected as desired | **PASS** | **PASS** |
+|   007  | **Success Message** | Display a message when a new Competition has been created | Message displays as desired | **PASS** | **PASS** |
+|   008  | **DB Update**s | Ensure the Competition is written to the DB correctly | The Competition name is added to the database as intended | **PASS** | **PASS** |
+|   009  | **Cancel Button** | Redirect users to the Fixtures page | Users are taken to the Fixtures page as planned | **PASS** | **PASS** |
 
 ![Add Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-comp.png)
 
@@ -343,16 +343,16 @@ The Add Competition page enables superusers to add a new Competition to the data
 The Add Club page enables superusers to add a new Club to the database. This section validates the functionality of this page.
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Club | Function only accessible by superusers | Access to the Add Club Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to add a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
-|   003  | Add Club link | Add Club form displayed | The  form displays as desired | **PASS** | **PASS** |
-|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
-|   006  | Image selection | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
-|   007  | Add Club | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
-|   008  | Success Message | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
-|   009  | DB Updates | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
-|   010  | Cancel Button | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
+|   001  | **Add Club** | Function only accessible by superusers | Access to the Add Club Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to add a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Add Club link** | Add Club form displayed | The  form displays as desired | **PASS** | **PASS** |
+|   004  | **Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | **Incomplete fields** indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
+|   006  | **Image selection** | Ensure the image selection input functions and uploads image file | Upload image functions correctly and the image file is saved to the DB | **PASS** | **PASS** |
+|   007  | **Add Club** | Ensure DB updates and users are redirected to the Clubs page | The new Club gets created and users are redirected as desired | **PASS** | **PASS** |
+|   008  | **Success Message** | Display a message when a new Club has been created | Message displays as desired | **PASS** | **PASS** |
+|   009  | **DB Updates** | Ensure the new Club is written to the DB correctly | The Club name and details name are added to the database as intended | **PASS** | **PASS** |
+|   010  | **Cancel Button** | Redirect users to the Clubs page | Users are redirected to the Clubs page as desired | **PASS** | **PASS** |
 
 ![Add Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-club.png)
 
@@ -361,17 +361,17 @@ The Add Team page enables superusers to add a new Team to the database. This sec
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Team | Function only accessible by superusers | Access to the Add Team Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to add a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
-|   003  | Add Team link | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
-|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
-|   006  | Club Select | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
-|   007  | Age Group Select | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
-|   008  | Add Team | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
-|   009  | Success Message | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
-|   010  | DB Updates | Ensure the new Team is written to the DB correctly | The Team name and details are added to the database as intended | **PASS** | **PASS** |
-|   011  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   001  | **Add Team** | Function only accessible by superusers | Access to the Add Team Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to add a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Add Team link** | Add Team form displayed | The form displays as desired | **PASS** | **PASS** |
+|   004  | **Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | **Incomplete fields** indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
+|   006  | **Club Select** | Ensure the dropdown is populated with the correct clubs | The dropdown functions as desired | **PASS** | **PASS** |
+|   007  | **Age Group Select** | Ensure the select element is populated with the various age groups and ages can be selected | The dropdown functions as desired and age groups can be selected | **PASS** | **PASS** |
+|   008  | **Add Team** | Ensure DB updates and users are redirected to the Clubs page | The new Team gets created and users are redirected as desired | **PASS** | **PASS** |
+|   009  | **Success Message** | Display a message when a new Team has been created | Message displays as desired | **PASS** | **PASS** |
+|   010  | **DB Updates** | Ensure the new Team is written to the DB correctly | The Team name and details are added to the database as intended | **PASS** | **PASS** |
+|   011  | **Cancel Button** | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Add Team](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-team.png)
 
@@ -380,28 +380,28 @@ The Add Match page enables superusers to add a new match to the database. This s
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   001  | Add Match | Function only accessible by superusers | Access to the Add Match Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to add a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
-|   003  | Add Match link | Add Match form displays and is empty | The form displays as desired | **PASS** | **PASS** |
-|   004  | Required Fields | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
-|   005  | Incomplete fields indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
-|   006  | Age Select | Ensure the dropdown is populated with the age groups | The dropdown functions as desired | **PASS** | **PASS** |
-|   007  | Competition Select | Ensure the select element is populated with the competitions and saves as desired | The competition select element functions as desired | **PASS** | **PASS** | 
-|   008  | Home Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
-|   009  | Away Team Select | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
-|   010  | Venue Select | Display a list of the venues and save when selected | The Venue select element functions as desired | **PASS** | **PASS** |
-|   011  | KO Date & Time | Ensure users can select the date and time of kick-off | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
+|   001  | **Add Match** | Function only accessible by superusers | Access to the Add Match Function is only accessible by a superuser | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to add a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   003  | **Add Match link** | Add Match form displays and is empty | The form displays as desired | **PASS** | **PASS** |
+|   004  | **Required Fields** | Required fields are clearly indicated | Required fields are highlighted with an asterix | **PASS** | **PASS** |
+|   005  | **Incomplete fields** indicated | Any incomplete, required fields are clearly indicated with a tooltip | Incomplete required fields are indicated | **PASS** | **PASS** |
+|   006  | **Age Select** | Ensure the dropdown is populated with the age groups | The dropdown functions as desired | **PASS** | **PASS** |
+|   007  | **Competition Select** | Ensure the select element is populated with the competitions and saves as desired | The competition select element functions as desired | **PASS** | **PASS** | 
+|   008  | **Home Team Select** | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
+|   009  | **Away Team Select** | The team select element has a list of teams conditionally filtered by age, saves as required | The select element and conditional select works as designed | **PASS** | **PASS** |
+|   010  | **Venue Select** | Display a list of the venues and save when selected | The Venue select element functions as desired | **PASS** | **PASS** |
+|   011  | **KO Date & Time** | Ensure users can select the date and time of kick-off | The date time select works in Chrome but not in Firefox | **PASS** | **FAIL** |
 > After reading the documentation I discovered I am using the correct version of the DateTime Input element. However, to date not all browsers have been modified to accept this element.
 
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
-|   012  | Referee Select | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
-|   013  | Asst1 Referee Select  | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
-|   014  | Asst2 Referee Select  | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
-|   015  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
-|   016  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
-|   017  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
-|   018  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   012  | **Referee Select** | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
+|   013  | **Asst1 Referee Select**  | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
+|   014  | **Asst2 Referee Select**  | Ensure the select element is populated with the various referee names can be selected | The dropdown functions as desired and match officials can be selected | **PASS** | **PASS** |
+|   015  | **Add Team** | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
+|   016  | **Success Message** | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
+|   017  | **DB Updates** | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   018  | **Cancel Button** | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Add Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-match.png)
 
@@ -413,13 +413,13 @@ The Add Travel page enables Match Officials and Superusers to add Match official
 |   001  | **Add Travel** | Function only accessible by superusers | Access to the Add Travel Function is only accessible by a superuser | **PASS** | **PASS** |
 |   002  | **Display Error** | Display a Error if non-authorised user attempts to add travel Expenses. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | **Add Travel link** | Redirects Match Officials and Superusers to the Add Travel Form | The Add Travel form displays as desired | **PASS** | **PASS** |
-|   004  | Match Summary | Display a brief match summary so users know which match they are adding expenses for | A Match summary is rendered as desired | **PASS** | **PASS** |
-|   005  | Error Validation | Ensure a warning is provided if the wrong input is given | A tooltip indicates to the user that the form required the number format | **PASS** | **PASS** |
-|   006  | Error Validation | Ensure the travel expenses are input in the correct number format | The application displays a tooltip indicating the correct format | **PASS** | **PASS** |
-|   007  | Add Team | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
-|   008  | Success Message | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
-|   009  | DB Updates | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
-|   010  | Cancel Button | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   004  | **Match Summary** | Display a brief match summary so users know which match they are adding expenses for | A Match summary is rendered as desired | **PASS** | **PASS** |
+|   005  | **Error Validation** | Ensure a warning is provided if the wrong input is given | A tooltip indicates to the user that the form required the number format | **PASS** | **PASS** |
+|   006  | **Error Validation** | Ensure the travel expenses are input in the correct number format | The application displays a tooltip indicating the correct format | **PASS** | **PASS** |
+|   007  | **Add Team** | Ensure DB updates and users are redirected to the Match Detail page | The new Match gets created and users are redirected as desired | **PASS** | **PASS** |
+|   008  | **Success Message** | Display a message when a new Match has been created | Message displays as desired | **PASS** | **PASS** |
+|   009  | **DB Updates** | Ensure the new Match is written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   010  | **Cancel Button** | Redirect users to the Fixtures page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Add Travel](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/add-travel.png)
 
@@ -451,14 +451,14 @@ The Edit Club page enables superusers to retrieve a previously uploaded club fro
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Edit Club** | Function only accessible by superusers | Access to the Edit Club Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to edit a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to edit a Club. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | **Edit Club link** | Redirects superusers to the Edit Club Form | The Edit Club form displays as desired | **PASS** | **PASS** |
 |   004  | **Load Data** | Populate the Edit Club form with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
-|   005  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
-|   006  | Update Club | Ensure DB updates and users are redirected to the Club Directory page | The users are redirected as desired and the new Club details are rendered correctly  | **PASS** | **PASS** |
-|   007  | Success Message | Display a message when the Club has been edited | Message displays as desired | **PASS** | **PASS** |
-|   008  | DB Updates | Ensure the new Club Details are written to the DB correctly | The Club details are added to the database as intended | **PASS** | **PASS** |
-|   009  | Cancel Button | Redirect users to the Club directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   005  | **Required Fields** | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
+|   006  | **Update Club** | Ensure DB updates and users are redirected to the Club Directory page | The users are redirected as desired and the new Club details are rendered correctly  | **PASS** | **PASS** |
+|   007  | **Success Message** | Display a message when the Club has been edited | Message displays as desired | **PASS** | **PASS** |
+|   008  | **DB Updates** | Ensure the new Club Details are written to the DB correctly | The Club details are added to the database as intended | **PASS** | **PASS** |
+|   009  | **Cancel Button** | Redirect users to the Club directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Edit Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-club.png)
 _____
@@ -469,14 +469,14 @@ The Edit Team page enables superusers to retrieve a previously uploaded team fro
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Edit Team** | Function only accessible by superusers | Access to the Edit Team Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to edit a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to edit a Team. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | **Edit Team link** | Redirects superusers to the Edit Team Form | The Edit Team form displays as desired | **PASS** | **PASS** |
 |   004  | **Load Data** | Populate the Edit Team form with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
-|   005  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
-|   006  | Update Team | Ensure DB updates and users are redirected to the Team Directory page | The users are redirected as desired and the new Team details are rendered correctly  | **PASS** | **PASS** |
-|   007  | Success Message | Display a message when the Team has been edited | Message displays as desired | **PASS** | **PASS** |
-|   008  | DB Updates | Ensure the new Team Details are written to the DB correctly | The Team details are added to the database as intended | **PASS** | **PASS** |
-|   009  | Cancel Button | Redirect users to the Team directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   005  | **Required Fields** | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
+|   006  | **Update Team** | Ensure DB updates and users are redirected to the Team Directory page | The users are redirected as desired and the new Team details are rendered correctly  | **PASS** | **PASS** |
+|   007  | **Success Message** | Display a message when the Team has been edited | Message displays as desired | **PASS** | **PASS** |
+|   008  | **DB Updates** | Ensure the new Team Details are written to the DB correctly | The Team details are added to the database as intended | **PASS** | **PASS** |
+|   009  | **Cancel Button** | Redirect users to the Team directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Edit Teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-team.png)
 
@@ -486,15 +486,15 @@ The Edit Match page enables superusers to retrieve a previously uploaded match f
 |   Test | Function        | Desired Result | Actual Result | Chrome v 92.0.4515.159 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:----------------------:|:-----------------------:|
 |   001  | **Edit Match** | Function only accessible by superusers | Access to the Edit Match Function is only accessible by a superuser | **PASS** | **PASS** |
-|   002  | Display Error | Display a Error if non-authorised user attempts to Edit a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
+|   002  | **Display Error** | Display a Error if non-authorised user attempts to Edit a Match. Redirect back to Home | A Error message displays and user redirected to home page | **PASS** | **PASS** |
 |   003  | **Edit Match link** | Redirects superusers to the Edit Match Form | The Edit Match form displays as desired | **PASS** | **PASS** |
 |   004  | **Load Data** | Edit Match form is populated with data from the database | The correct data is rendered from the database | **PASS** | **PASS** |
-|   005  | Select Elements | Ensure all select elements and conditional lists function as desired | The select elements are rendered pre-populated and function as desired. The age/team conditional lists function as desired | **PASS** | **PASS** |
-|   006  | Required Fields | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
-|   007  | Update Match | Ensure DB updates and users are redirected to the Match Directory page | The users are redirected as desired and the new Match details are rendered correctly  | **PASS** | **PASS** |
-|   008  | Success Message | Display a message when the Match has been edited | Message displays as desired | **PASS** | **PASS** |
-|   009  | DB Updates | Ensure the new Match Details are written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
-|   010  | Cancel Button | Redirect users to the Match directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
+|   005  | **Select Elements** | Ensure all select elements and conditional lists function as desired | The select elements are rendered pre-populated and function as desired. The age/team conditional lists function as desired | **PASS** | **PASS** |
+|   006  | **Required Fields** | Required fields are clearly indicated if left unpopulated | Required fields are highlighted with an asterix, and tooltip appears if left unpopulated | **PASS** | **PASS** |
+|   007  | **Update Match** | Ensure DB updates and users are redirected to the Match Directory page | The users are redirected as desired and the new Match details are rendered correctly  | **PASS** | **PASS** |
+|   008  | **Success Message** | Display a message when the Match has been edited | Message displays as desired | **PASS** | **PASS** |
+|   009  | **DB Updates** | Ensure the new Match Details are written to the DB correctly | The Match details are added to the database as intended | **PASS** | **PASS** |
+|   010  | **Cancel Button** | Redirect users to the Match directory page | Users are redirected to the Fixtures page as desired | **PASS** | **PASS** |
 
 ![Edit Match](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/functionality-testing/edit-match.png)
 > The DateTime input field will not render correctly in some browsers as they have not yet been updated to accept this input element.
@@ -529,7 +529,7 @@ The Delete Team function enables superusers to permanently remove a previously u
 |   004  | **Team Name** | The modal should clearly indicate which Team has been selected for deletion | The Team name is clearly displayed in the confirmation message | **PASS** | **PASS** |
 |   005  | **Cancel Delete** | There should be an option to cancel the deletion before any data is lost | The cancel takes the user right back to the Clubs page without deleting the record | **PASS** | **PASS** |
 |   006  | **Delete Team** | Ensure the Delete Team function is only called once the Delete Team button on the delete confirmation modal is clicked | Selecting the Delete Team button correctly deletes the selected club | **PASS** | **PASS** |
-|   007  | DB Update | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys |  | **PASS** | **PASS** |
+|   007  | **DB Update** | Ensure the record has been removed are no other records are affected aside from those linked through Foreign Keys |  | **PASS** | **PASS** |
 > Deleting a Team obviously has a downstream effect on any matches featuring that team. Thus matches featuring the deleted team are also removed from the database. This is as intended.
 No Errors occurred during testing.
 
@@ -562,7 +562,7 @@ _____
 |   006  | **Previous Orders Displayed** | Any previous payments made by the user should be displayed on this screen | Previous payments are correctly displayed | **PASS** | **PASS** |
 |   007  | **Order Link** | The order number should take the user to a checkout success page showing payment details | The order link functions correctly | **PASS** | **PASS** |
 |   008  | **Back to Profile Link** | The back to profile link on the Payment Summary should redirect users back to the Profile page | The link works as it should | **PASS** | **PASS** |
-|   009  | Update Profile | Profile data in the DB is updated if the user changes any of the form fields and selects update | The profile data is written to the database correctly if the user adds a new profile or changes an existing profile | **PASS** | **PASS** |
+|   009  | **Update Profile** | Profile data in the DB is updated if the user changes any of the form fields and selects update | The profile data is written to the database correctly if the user adds a new profile or changes an existing profile | **PASS** | **PASS** |
 
 > I have intentionally not included a Delete Profile function for this section of the app. Due to the nature of the app and the way it functions I didn't want users to have this ability and inadvertently affect downstream processes.
 
@@ -582,28 +582,28 @@ This web app was primarily developed on a Google Chrome browser, on a Windows La
 
 |       Page      |  Desired Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:---------------:|-----------------|-----------------------|-------------------------|
-|  Landing Page   | Minimal visible difference | No visible difference | No visible difference |
-|  Matches        | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
-|  Match Detail   | Minimal visible difference | No visible difference | Match officials totals show up and down arrows |
-|  Edit Match     | Minimal visible difference | No visible difference | Dropdown appearance slightly different. Date/Time picker does not function as desired |
-|  Add Match      | Minimal visible difference | No visible difference | Dropdown appearance slightly different. Date/Time picker does not function as desired |
-|  Add Travel     | Minimal visible difference | No visible difference | Match officials travel show up and down arrows |
-|  Messages       | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
-|  Add Message    | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
-|  Clubs          | Minimal visible difference | No visible difference | No visible difference  |
-|  Edit Club      | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
-|  Add Club       | Minimal visible difference | No visible difference | No visible difference  |
-|  Teams          | Minimal visible difference | No visible difference | No visible difference  |
-|  Edit Team      | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
-|  Add Team       | Minimal visible difference | No visible difference | Dropdown appearance slightly different | 
-| Add Competition | Minimal visible difference | No visible difference | No visible difference  |
-|  Kit Bag        | Minimal visible difference | No visible difference | No visible difference  |
-|  Checkout       | Minimal visible difference | No visible difference | No visible difference  |
-| Checkout Success| Minimal visible difference | No visible difference | No visible difference  |
-| Profile         | Minimal visible difference | No visible difference | No visible difference  |
-| Sign-up         | Minimal visible difference | No visible difference | No visible difference  |
-| Sign-in         | Minimal visible difference | No visible difference | No visible difference  |
-| Log-out         | Minimal visible difference | No visible difference | No visible difference  |
+|  **Landing Page**   | Minimal visible difference | No visible difference | No visible difference |
+|  **Matches**        | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  **Match Detail**   | Minimal visible difference | No visible difference | Match officials totals show up and down arrows |
+|  **Edit Match**     | Minimal visible difference | No visible difference | Dropdown appearance slightly different. Date/Time picker does not function as desired |
+|  **Add Match**      | Minimal visible difference | No visible difference | Dropdown appearance slightly different. Date/Time picker does not function as desired |
+|  **Add Travel**     | Minimal visible difference | No visible difference | Match officials travel show up and down arrows |
+|  **Messages**       | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  **Add Message**    | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  **Clubs**          | Minimal visible difference | No visible difference | No visible difference  |
+|  **Edit Club**      | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  **Add Club**       | Minimal visible difference | No visible difference | No visible difference  |
+|  **Teams**          | Minimal visible difference | No visible difference | No visible difference  |
+|  **Edit Team**      | Minimal visible difference | No visible difference | Dropdown appearance slightly different |
+|  **Add Team**       | Minimal visible difference | No visible difference | Dropdown appearance slightly different | 
+| **Add Competition** | Minimal visible difference | No visible difference | No visible difference  |
+|  **Kit Bag**        | Minimal visible difference | No visible difference | No visible difference  |
+|  **Checkout**       | Minimal visible difference | No visible difference | No visible difference  |
+| **Checkout Success**| Minimal visible difference | No visible difference | No visible difference  |
+| **Profil**e         | Minimal visible difference | No visible difference | No visible difference  |
+| **Sign-up**         | Minimal visible difference | No visible difference | No visible difference  |
+| **Sign-in**         | Minimal visible difference | No visible difference | No visible difference  |
+| **Log-out**         | Minimal visible difference | No visible difference | No visible difference  |
 
 ______
 
@@ -615,39 +615,39 @@ This section contains the results and any warnings or errors reported during HTM
 
 |      Page       | Error / Warning | Comment  |
 |-----------------|:---------------:|:--------:|
-|  Landing Page   |       None      | **PASS** |
-|  Matches        |       None      | **PASS** |
-|  Match Detail   |       None      | **PASS** |
-|  Edit Match     |       None      | **PASS** |
-|  Add Match      |       None      | **PASS** |
-|  Add Travel     |       None      | **PASS** |
-|  Messages       |       None      | **PASS** |
-|  Add Message    |       None      | **PASS** |
-|  Clubs          |       None      | **PASS** |
-|  Edit Club      |       None      | **PASS** |
-|  Add Club       |       None     | **PASS** |
-|  Teams          |       None      | **PASS** |
-|  Edit Team      |       None      | **PASS** |
-|  Add Team       |       None      | **PASS** | 
-| Add Competition |       None      | **PASS** |
-|  Kit Bag        |       None      | **PASS** |
-|  Checkout       |       None      | **PASS** |
-| Checkout Success|       None      | **PASS** |
-| Profile         |       None      | **PASS** |
-| Sign-up         |       None      | **PASS** |
-| Sign-in         |       None      | **PASS** |
-| Log-out         |       None      | **PASS** |
+|  **Landing Page**   |       None      | **PASS** |
+|  **Matches**        |       None      | **PASS** |
+|  **Match Detail**   |       None      | **PASS** |
+|  **Edit Match**     |       None      | **PASS** |
+|  **Add Match**      |       None      | **PASS** |
+|  **Add Travel**     |       None      | **PASS** |
+|  **Messages**       |       None      | **PASS** |
+|  **Add Message**    |       None      | **PASS** |
+|  **Clubs**          |       None      | **PASS** |
+|  **Edit Club**      |       None      | **PASS** |
+|  **Add Club**       |       None     | **PASS** |
+|  **Teams**          |       None      | **PASS** |
+|  **Edit Team**      |       None      | **PASS** |
+|  **Add Team**       |       None      | **PASS** | 
+| **Add Competitio**n |       None      | **PASS** |
+|  **Kit Ba**g        |       None      | **PASS** |
+|  **Checkou**t       |       None      | **PASS** |
+| **Checkout Success**|       None      | **PASS** |
+| **Profile**         |       None      | **PASS** |
+| **Sign-up**         |       None      | **PASS** |
+| **Sign-in**         |       None      | **PASS** |
+| **Log-out**         |       None      | **PASS** |
 
 #### **CSS Validation**
 The following section contains the results and any warnings or errors reported during CSS validation using the WC3 validator.
 
 |    CSS File     | Error / Warning |  Comment |
 |:---------------:|:---------------:|----------|
-|     base.css    |       None      | **PASS** |
-|     home.css    |       None      | **PASS** |
-|   matches.css   |       None      | **PASS** |
-|  checkout.css   |       None      | **PASS** |
-|  profile.css    |       None      | **PASS** |
+|     **base.css**    |       None      | **PASS** |
+|     **home.css**    |       None      | **PASS** |
+|   **matches.css**   |       None      | **PASS** |
+|  **checkout.css**   |       None      | **PASS** |
+|  **profile.css**    |       None      | **PASS** |
 
 
 |Test|Process|Result| Comment |
@@ -687,25 +687,25 @@ The table below contains lists the results of the Responsiveness testing and lin
 
 |  Test  | Page | Responsiveness Image Link | Result |
 |:------:|------|--------------------|--------|
-|   001  |Landing Page|![Home / Landing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/landing-page.png)| **PASS** |
-|   002  | Matches    | ![Fixtures Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/matches.png) | **PASS** |
-|   003  | Match Detail | ![Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-detail.png) | **PASS** |
-|   004  | Edit Match | ![Edit a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-match.png) | **PASS** |
-|   005  | Add Match  | ![Add a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-match.png) | **PASS** |
-|   006  | Add Travel | ![Add Match Officials travel expenses](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-travel.png) | **PASS** |
-|   007  | Messages   | ![Match Messages page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-messages.png) | **PASS** |
-|   008  | Add Message | ![https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-message.png](image.jpg) | **PASS** |
-|   009  | Clubs      | ![Clubs Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/clubs.png) | **PASS** |
-|   010  | Edit Club  | ![Edit a Clubs details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-club.png) | **PASS** |
-|   011  | Add Club   | ![Add a club to the DB](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-club.png) | **PASS** |
-|   012  | Teams      | ![Teams Directory by Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/teams.png) | **PASS** |
-|   013  | Edit Team  | ![Edit one of a Clubs teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-team.png) | **PASS** |
-|   014  | Add Team   | ![Add a new team to a club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-team.png) | **PASS** | 
-|   015  | Add Competition | ![Add a new Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-competition.png) | **PASS** |
-|   016  | Kit Bag    | ![Kit Bag view / Pending match payments](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/kit-bag.png) | **PASS** |
-|   017  | Checkout   | ![Checkout page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/checkout.png) | **PASS** |
-|   018  | Checkout Success | ![Successful Checkout confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/checkout-success.png) | **PASS** |
-|   019  | Profile    | ![User profile information page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/profile.png) | **PASS** |
+|   001  |**Landing Page**|![Home / Landing Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/landing-page.png)| **PASS** |
+|   002  | **Matches**    | ![Fixtures Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/matches.png) | **PASS** |
+|   003  | **Match Detail** | ![Match Detail Page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-detail.png) | **PASS** |
+|   004  | **Edit Matc**h | ![Edit a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-match.png) | **PASS** |
+|   005  |** Add Match**  | ![Add a Match page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-match.png) | **PASS** |
+|   006  | **Add Travel** | ![Add Match Officials travel expenses](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-travel.png) | **PASS** |
+|   007  | **Messages**   | ![Match Messages page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/match-messages.png) | **PASS** |
+|   008  | **Add Message** | ![https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-message.png](image.jpg) | **PASS** |
+|   009  | **Clubs**      | ![Clubs Directory](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/clubs.png) | **PASS** |
+|   010  | **Edit Club**  | ![Edit a Clubs details](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-club.png) | **PASS** |
+|   011  | **Add Club**   | ![Add a club to the DB](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-club.png) | **PASS** |
+|   012  | **Teams**      | ![Teams Directory by Club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/teams.png) | **PASS** |
+|   013  | **Edit Team**  | ![Edit one of a Clubs teams](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/edit-team.png) | **PASS** |
+|   014  | **Add Team**   | ![Add a new team to a club](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-team.png) | **PASS** | 
+|   015  | **Add Competition** | ![Add a new Competition](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/add-competition.png) | **PASS** |
+|   016  | **Kit Bag**    | ![Kit Bag view / Pending match payments](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/kit-bag.png) | **PASS** |
+|   017  | **Checkout**   | ![Checkout page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/checkout.png) | **PASS** |
+|   018  | **Checkout Success** | ![Successful Checkout confirmation](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/checkout-success.png) | **PASS** |
+|   019  | **Profile**    | ![User profile information page](https://github.com/GazzaJ/CI-MS4-RefereE-pay/blob/master/ReadMe_Images/responsiveness/profile.png) | **PASS** |
 
 ____
 
@@ -717,49 +717,49 @@ The website has been performance testing using the following tools:
 
 |    Page    | Performance | Accessibility | Best Practices | SEO  |
 |:----------:|:-----------:|:-------------:|:--------------:|:----:|
-|Landing Page|     97%     |       97%     |     100%       |  90% |
-| Matches    |     95%     |       96%     |     100%       | 100% |
-| Match Detail |   93%     |       95%     |      93%       |  90% |
-| Edit Match |     96%     |       91%     |     100%       |  90% |
-| Add Match  |     98%     |       93%     |     100%       |  90% |
-| Add Travel |     98%     |       97%     |     100%       |  90% |
-| Messages   |     95%     |       97%     |     100%       |  90% |
-| Add Message |    96%     |       92%     |     100%       |  90% |
-| Clubs      |     94%     |       97%     |     100%       |  80% |
-| Edit Club  |     98%     |       85%     |     100%       |  80% |
-| Add Club   |     98%     |       93%     |     100%       |  90% |
-| Teams      |     98%     |       92%     |     100%       |  90% |
-| Edit Team  |     98%     |       99%     |     100%       |  90% |
-| Add Team   |     94%     |       97%     |      93%       |  90% |
-| Add Competition |  98%   |       97%     |     100%       |  90% |
-| Kit Bag    |     97%     |       97%     |     100%       |  90% |
-| Checkout   |     87%     |       97%     |     100%       |  90% |
-| Checkout Success |  96%  |       97%     |     100%       |  90% |
-| Profile    |     97%     |       97%     |     100%       |  90% |
+|**Landing Page**|     97%     |       97%     |     100%       |  90% |
+| **Matches**    |     95%     |       96%     |     100%       | 100% |
+| **Match Detail** |   93%     |       95%     |      93%       |  90% |
+| **Edit Match** |     96%     |       91%     |     100%       |  90% |
+| **Add Match**  |     98%     |       93%     |     100%       |  90% |
+| **Add Travel** |     98%     |       97%     |     100%       |  90% |
+| **Messages**   |     95%     |       97%     |     100%       |  90% |
+| **Add Message** |    96%     |       92%     |     100%       |  90% |
+| **Clubs**      |     94%     |       97%     |     100%       |  80% |
+| **Edit Club**  |     98%     |       85%     |     100%       |  80% |
+| **Add Club**   |     98%     |       93%     |     100%       |  90% |
+| **Teams**      |     98%     |       92%     |     100%       |  90% |
+| **Edit Team**  |     98%     |       99%     |     100%       |  90% |
+| **Add Team**   |     94%     |       97%     |      93%       |  90% |
+| **Add Competition** |  98%   |       97%     |     100%       |  90% |
+| **Kit Bag**    |     97%     |       97%     |     100%       |  90% |
+| **Checkout**   |     87%     |       97%     |     100%       |  90% |
+| **Checkout Success** |  96%  |       97%     |     100%       |  90% |
+| **Profile**    |     97%     |       97%     |     100%       |  90% |
 
  - Google Lighthouse (Mobile)  
 
 |    Page    | Performance | Accessibility | Best Practices | SEO  |
 |:----------:|:-----------:|:-------------:|:--------------:|:----:|
-|Landing Page|     85%     |       98%     |     100%       |  92% |
-| Matches    |     79%     |       97%     |     100%       |  83% |
-| Match Detail |   82%     |       97%     |     100%       |  92% |
-| Edit Match |     78%     |       92%     |     100%       |  92% |
-| Add Match  |     81%     |       90%     |     100%       |  92% |
-| Add Travel |     82%     |       98%     |     100%       |  92% |
-| Messages   |     82%     |       98%     |     100%       |  92% |
-| Add Message |    82%     |       91%     |     100%       |  92% |
-| Clubs      |     87%     |       98%     |     100%       |  83% |
-| Edit Club  |     69%     |       82%     |      93%       |  83% |
-| Add Club   |     78%     |       90%     |     100%       |  92% |
-| Teams      |     83%     |       90%     |      93%       |  92% |
-| Edit Team  |     78%     |       99%     |     100%       |  92% |
-| Add Team   |     82%     |       98%     |     100%       |  92% |
-| Add Competition |  82%   |       98%     |     100%       |  92% |
-| Kit Bag    |     75%     |       95%     |     100%       |  92% |
-| Checkout   |     69%     |       97%     |     100%       |  92% |
-| Checkout Success |  79%  |       97%     |     100%       |  92% |
-| Profile    |     77%     |       96%     |     100%       |  92% |
+|**Landing Page**|     85%     |       98%     |     100%       |  92% |
+| **Matches**    |     79%     |       97%     |     100%       |  83% |
+| **Match Detail** |   82%     |       97%     |     100%       |  92% |
+| **Edit Match** |     78%     |       92%     |     100%       |  92% |
+| **Add Match**  |     81%     |       90%     |     100%       |  92% |
+|**Add Travel** |     82%     |       98%     |     100%       |  92% |
+| **Messages**   |     82%     |       98%     |     100%       |  92% |
+| **Add Message** |    82%     |       91%     |     100%       |  92% |
+| **Clubs**      |     87%     |       98%     |     100%       |  83% |
+| **Edit Club**  |     69%     |       82%     |      93%       |  83% |
+| **Add Club**   |     78%     |       90%     |     100%       |  92% |
+| **Teams**      |     83%     |       90%     |      93%       |  92% |
+| **Edit Team**  |     78%     |       99%     |     100%       |  92% |
+| **Add Team**   |     82%     |       98%     |     100%       |  92% |
+| **Add Competition** |  82%   |       98%     |     100%       |  92% |
+|**Kit Bag**    |     75%     |       95%     |     100%       |  92% |
+| **Checkout**   |     69%     |       97%     |     100%       |  92% |
+| **Checkout Succes**s |  79%  |       97%     |     100%       |  92% |
+| **Profile**    |     77%     |       96%     |     100%       |  92% |
 
 ____
 
@@ -770,21 +770,21 @@ These tests ensure that there are appropriate levels of access to the various pa
 
 | Page | URL | Registered user - Desired Result | Status | Anonymous User - Desired Result | Status |
 |------|-----|----------------------------------|--------|---------------------------------|--------|
-| Add Competition | `matches/comp/` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Add Club | `matches/club/` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Add Team | `matches/team/` | Error message displayed  | **PASS** | Redirected to login | **PASS** |
-| Add Match | `matches/add/` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Add Travel | `matches/travel/match.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Edit Club | `matches/edit_club/club.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Edit Team | `matches/edit_team/team.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Edit Match | `matches/edit/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Delete Club | `matches/delete_club/club.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Delete Team | `matches/delete_team/team.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Delete Match | `matches/delete/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Add Message | `matches/add_chat/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
-| Kit bag | `bag/` | N/A | N/A | Redirected to login | **PASS** |
-| Checkout | `checkout/` | N/A | N/A | Redirected to login | **PASS** |
-| Profile | `profile/` | N/A | N/A | Redirected to login | **PASS** |
+| **Add Competition** | `matches/comp/` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Add Club** | `matches/club/` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Add Team** | `matches/team/` | Error message displayed  | **PASS** | Redirected to login | **PASS** |
+| **Add Match** | `matches/add/` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Add Travel** | `matches/travel/match.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Edit Club** | `matches/edit_club/club.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Edit Team** | `matches/edit_team/team.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Edit Match** | `matches/edit/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Delete Club** | `matches/delete_club/club.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Delete Team** | `matches/delete_team/team.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Delete Match** | `matches/delete/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Add Message** | `matches/add_chat/game.id` | Error message displayed | **PASS** | Redirected to login | **PASS** |
+| **Kit bag** | `bag/` | N/A | N/A | Redirected to login | **PASS** |
+| **Checkout** | `checkout/` | N/A | N/A | Redirected to login | **PASS** |
+| **Profile** | `profile/` | N/A | N/A | Redirected to login | **PASS** |
   
 #### **Secure Usage**
 The functionality of RefereE-Pay is deliberately compartmentalised by a users role and the permissions granted to those roles restrict what each role can achieve. This section describes the testing which has been performed to validate this compartmentalisation.
